@@ -16,6 +16,6 @@ Step 1 is complete. Step 2 has an attributed incident fact sheet and reference c
 
 ## Next research task
 
-Use the [EEC550 findings](research/EEC550_SHORT_PLAN.md): axes and conditional comparison/weather policies are defined; actual inlet elevation and exact measurement timing remain unverified. Recover original records or explicitly agree an exploratory sensitivity study; review thermal/turbulence assumptions and predeclare criteria before any evaluated run. Resolve EEC360 duplicate-record handling; reserve EEC560 from future tuning. Verify incident location/study-area bounds and request the mentor's PHAST version/modules and acceptance criteria.
+Use the [EEC550 findings](research/EEC550_SHORT_PLAN.md): axes and conditional comparison/weather policies are defined; actual inlet elevation and exact measurement timing remain unverified. The user has requested planning for a conditional sensitivity study: [nine-case design](research/EEC550_SENSITIVITY_SUMMARY.md) is recorded, including numerical screening and comparison rules. Resolve thermophysical/humidity capability and full atmosphere/numerical setup before implementation or runs; continue evidence recovery. Resolve EEC360 duplicate-record handling; reserve EEC560 from future tuning. Verify incident location/study-area bounds and request the mentor's PHAST version/modules and acceptance criteria.
 
 Do not promise schedules until data access and modelling dependencies are understood.

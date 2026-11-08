@@ -13,3 +13,7 @@
 OpenFOAM Foundation 14 remains the planned research platform. A faithful reproduction is **not ready to run**. The next step is recovering those records or explicitly agreeing to a conditional sensitivity study.
 
 [Findings and evidence](EEC550_INPUT_RESOLUTION.md) · [Full comparison plan](EEC550_COMPARISON_PLAN.md) · [Structured input record](../../data/public/eec550-input-plan.json)
+
+## Sensitivity planning follow-up
+
+The user has now requested a clearly labelled conditional sensitivity-study plan. See the [short study report](EEC550_SENSITIVITY_SUMMARY.md): nine core physical cases, three model-time averaging windows, separate numerical checks and no fitting. This authorizes planning only. The unresolved historical inputs above remain unknown; no cases have been run.

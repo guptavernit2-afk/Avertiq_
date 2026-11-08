@@ -65,3 +65,14 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Define a conditional developed-plume mean comparison with a 150 s model averaging window after ABL/plume establishment. No historical-window recovery or fence-transition validation claimed.
 - Define a simplified neutral atmosphere matched to revised U=2.73 m/s at 6 m and z0=0.006 m; derive neutral u_star rather than forcing estimated 0.190 m/s. Keep estimated L=-90 m as separate consistent sensitivity; thermal/humidity/turbulence details remain open.
 - Original REDIPHEM archive redirect is unavailable; no time-series archive obtained and no messages sent. Faithful reproduction remains not run-ready. No coding, installation or simulations.
+
+## 2026-11-08 - EEC550 sensitivity-study design
+
+- User requested planning of a clearly labelled conditional sensitivity study, not coding or execution.
+- Record nine core physical cases: baseline; two inlet-height alternatives; source-displacement interpretation; ideal wind; estimated weak instability; two source-turbulence intensities; fixed-temperature versus adiabatic ground.
+- Label all unmeasured values and ranges as study assumptions, not observed bounds or probability distributions. Keep documented source state/geometry fixed and preserve historical unknowns.
+- Reuse each case for three 150 s model-time averaging windows after prediction-only readiness checks; do not vary 150/360 s release duration to find a better fit.
+- Separate numerical verification cases from physical sensitivities. Predeclare proposed internal screening tolerances and materiality rules; no experimental pass mark is asserted.
+- Compare every case with S00 and the same sensor records, report coverage/zeros and height-specific results, and do not select a new baseline by best experimental fit. EEC560 remains excluded from tuning.
+- Allow only documented targeted follow-up interactions/transport assumptions when indicated; no full factorial sweep planned.
+- Thermophysical/humidity suitability, full ABL recipes and numerical setup remain execution gates. No installation, solver configuration, code or simulations produced.

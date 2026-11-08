@@ -449,5 +449,7 @@
     "turbulence_inlet": null,
     "sensitivity": "consistent weakly unstable ABL using estimated L=-90m; full formulation must be specified before execution",
     "estimate_provenance": "REDIPHEM Lathen stability inferred from wind/cloud; L inferred from stability and roughness, not direct flux measurement"
-  }
+  },
+  "sensitivity_study": "data/public/eec550-sensitivity-plan.json",
+  "sensitivity_study_status": "conditional_assumptions_planned_not_run"
 }

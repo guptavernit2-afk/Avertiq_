@@ -136,3 +136,7 @@ Next research action: obtain original BA-Propane/EEC trial documentation through
 - [Foundation download and licence](https://openfoam.org/download/): free GPLv3 software; select release 14 and pin package at installation.
 - [Official Windows route](https://openfoam.org/download/windows/): WSL2/Ubuntu instructions; nothing installed in this task.
 - EPA SLAB links above. [Earlier SMEDIS review](SMEDIS_REVIEW.md) records experimental sources and limitations.
+
+## Sensitivity study planned
+
+The [version-1 sensitivity plan](EEC550_SENSITIVITY_STUDY.md) defines nine core physical cases, assumption labels, timing diagnostics, proposed numerical screening limits and comparison rules. It develops the conditional comparison route without resolving the original missing evidence. No execution is authorized by this planning update and no model has been run.

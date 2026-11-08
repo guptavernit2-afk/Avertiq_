@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "study_id": "EEC550-SENS-v1",
+  "date": "2026-11-08",
+  "status": "planning_only",
+  "execution_authorized": false,
+  "simulations_completed": 0,
+  "faithful_reproduction_claim": false,
+  "scope": "conditional flat-ground unfenced dispersion sensitivity; no calibration",
+  "baseline_input_lineage": "data/public/eec550-input-plan.json",
+  "plan": "docs/research/EEC550_SENSITIVITY_STUDY.md",
+  "core_physical_case_count": 9,
+  "baseline": {
+    "centre_m": [
+      2.5,
+      4.330127018922194,
+      0.5
+    ],
+    "centre_evidence": "assumed",
+    "source_plane_normal_azimuth_deg": 30,
+    "source_velocity_m_s": 18.1,
+    "source_temperature_K": 196,
+    "source_propane_mole_fraction": 0.2,
+    "source_width_m": 0.78,
+    "source_height_m": 0.39,
+    "source_profile": "assumed_uniform_top_hat",
+    "wind_from_deg": 197.73,
+    "wind_reference_m_s": 2.73,
+    "wind_reference_height_m": 6,
+    "regime": "assumed_neutral_class_D",
+    "roughness_m": 0.006,
+    "kappa": 0.4,
+    "derived_ustar_m_s": 0.15806032127083783,
+    "ambient_temperature_K": 283.05,
+    "ambient_pressure_Pa": 102500,
+    "evidence_relative_humidity_fraction": 0.99,
+    "humidity_phase_treatment": null,
+    "ground_thermal_condition": "assumed_adiabatic",
+    "closure": "proposed_transient_RANS_kEpsilon_buoyancy_coupling_review_required",
+    "Cmu": 0.09,
+    "source_turbulence_intensity_fraction": 0.1,
+    "source_turbulence_length_m": 0.039,
+    "source_turbulence_evidence": "assumed_isotropic",
+    "turbulent_Schmidt_assumed": 0.7,
+    "turbulent_Prandtl_assumed": 0.85
+  },
+  "core_cases": [
+    {
+      "id": "S00",
+      "factor": "baseline",
+      "overrides": {},
+      "status": "planned_conditional"
+    },
+    {
+      "id": "S01",
+      "factor": "inlet_height",
+      "overrides": {
+        "centre_height_m": 0.195
+      },
+      "evidence": "assumed ground-touching rectangle; not measured lower bound"
+    },
+    {
+      "id": "S02",
+      "factor": "inlet_height",
+      "overrides": {
+        "centre_height_m": 0.8
+      },
+      "evidence": "assumed elevated stress case; not measured upper bound"
+    },
+    {
+      "id": "S03",
+      "factor": "source_position",
+      "overrides": {
+        "centre_xy_m": [
+          1.5226591580582416,
+          4.762510796668221
+        ]
+      },
+      "evidence": "alternative interpretation of 5m downstream; jet velocity and inlet normal remain 30deg"
+    },
+    {
+      "id": "S04",
+      "factor": "wind_direction",
+      "overrides": {
+        "wind_from_deg": 210
+      },
+      "evidence": "documented ideal direction; not actual measured wind"
+    },
+    {
+      "id": "S05",
+      "factor": "atmosphere",
+      "overrides": {
+        "regime": "weakly_unstable",
+        "monin_obukhov_length_m": -90
+      },
+      "evidence": "estimated L; coupled wind/temperature/turbulence/heat-flux formulation required"
+    },
+    {
+      "id": "S06",
+      "factor": "source_turbulence",
+      "overrides": {
+        "source_turbulence_intensity_fraction": 0.05
+      },
+      "evidence": "assumed isotropic inlet turbulence; hold length scale fixed"
+    },
+    {
+      "id": "S07",
+      "factor": "source_turbulence",
+      "overrides": {
+        "source_turbulence_intensity_fraction": 0.15
+      },
+      "evidence": "assumed isotropic inlet turbulence; hold length scale fixed"
+    },
+    {
+      "id": "S08",
+      "factor": "ground_heat",
+      "overrides": {
+        "ground_thermal_condition": "fixed_temperature",
+        "ground_temperature_K": 283.05
+      },
+      "evidence": "assumed ambient-temperature surface; not measured ground temperature"
+    }
+  ],
+  "window_policy": {
+    "role": "model_time_diagnostic_not_historical_reconstruction",
+    "relative_to": "case_specific_t_ready_chosen_by_same_prediction_only_rule",
+    "primary": "W0",
+    "windows_s": {
+      "W0": [
+        0,
+        150
+      ],
+      "W1": [
+        75,
+        225
+      ],
+      "W2": [
+        150,
+        300
+      ]
+    },
+    "maintain_inlet": true,
+    "independent_replicates": false,
+    "release_duration_sweep": false
+  },
+  "proposed_numerical_screening": {
+    "is_experimental_accuracy_requirement": false,
+    "mass_budget_relative_tolerance": 0.01,
+    "ABL_speed_drift_relative": 0.05,
+    "ABL_temperature_drift_K": 0.2,
+    "plume_readiness_block_s": 30,
+    "consecutive_block_comparisons": 2,
+    "readiness_RMS_difference_limit": "max(0.01 concentration percentage points,0.05*previous vector RMS)",
+    "baseline_mesh_levels": 3,
+    "additional_checks": [
+      "halve time step",
+      "enlarge domain"
+    ],
+    "receptor_difference_RMS_limit": "max(0.01 concentration percentage points,0.05*reference vector RMS)",
+    "recheck_changed_source_ground_resolution": true
+  },
+  "comparisons": {
+    "primary_window": "W0",
+    "reference_case": "S00",
+    "sensor_count": 30,
+    "retain_zero_observations": true,
+    "concentration_unit": "mole/volume percent subject to instrument-basis review",
+    "sensitivity_metrics": [
+      "signed per-sensor delta",
+      "RMS delta",
+      "max absolute delta",
+      "by-height changes"
+    ],
+    "materiality_triage_rule": "RMS delta > max(0.02 percentage points,0.10*baseline vector RMS); not validation pass mark",
+    "relative_change_baseline_cutoff_percent": 0.05,
+    "observation_metrics": [
+      "MAE",
+      "RMSE",
+      "mean(predicted-observed) bias",
+      "by-height metrics"
+    ],
+    "FAC2": "observed>0 denominator; predicted=0 fails; observed-zero rows excluded and counted separately",
+    "missing_prediction_policy": "report coverage; no silent exclusions; common-set comparison if coverage differs",
+    "experimental_pass_threshold": null,
+    "envelope_interpretation": "finite tested cases only; not confidence interval or bound",
+    "baseline_selection_by_fit": false
+  },
+  "conditional_interactions": [
+    {
+      "id": "X01",
+      "components": [
+        "S01",
+        "S05"
+      ]
+    },
+    {
+      "id": "X02",
+      "components": [
+        "S01",
+        "S08"
+      ]
+    }
+  ],
+  "interaction_trigger": "material component sensitivity or unresolved numerical comparability; document before added runs",
+  "optional_followup_outside_core": {
+    "source_length_m": [
+      0.0195,
+      0.078
+    ],
+    "turbulent_Schmidt": [
+      0.5,
+      1
+    ],
+    "requires_versioned_extension": true
+  },
+  "open_execution_gates": [
+    "user instruction to implement/run",
+    "humidity/propane phase and thermophysical suitability",
+    "complete ABL and weakly unstable similarity recipe",
+    "inlet turbulence and buoyancy/transport capability",
+    "domain mesh wall treatment time step sampling residual settings"
+  ],
+  "uncertainty_labels": {
+    "height_range": "assumed design alternatives not measured bounds",
+    "position": "alternative source-note interpretation",
+    "ideal_wind": "documented ideal not historical measured direction",
+    "unstable_L": "estimate not direct measurement",
+    "source_turbulence": "assumed not observed",
+    "ground_heat": "idealized boundary alternatives",
+    "observation_window": "unrecovered historical indices"
+  },
+  "holdout": "EEC560 excluded from tuning",
+  "outputs_created": false
+}

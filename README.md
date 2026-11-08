@@ -28,6 +28,8 @@ Read the [short SMEDIS review](docs/research/SMEDIS_SHORTLIST.md): EEC550 first,
 
 Read the [short EEC550 plan](docs/research/EEC550_SHORT_PLAN.md). OpenFOAM Foundation 14 is selected as the first local research platform, with a documented mixed-source input plan and [follow-up findings](docs/research/EEC550_INPUT_RESOLUTION.md). Axes and conditional timing/weather policies are defined; actual inlet elevation and exact observation timing remain unverified. No software was installed and no simulation was run.
 
+Read the [short sensitivity-study report](docs/research/EEC550_SENSITIVITY_SUMMARY.md): nine conditional physical cases, three model averaging windows and separate numerical checks. Assumed ranges are not measured uncertainty bounds; no cases have been run.
+
 ## Demo flow
 
 Open incident -> confirm cargo and location -> select documented release assumptions -> review a hazard estimate -> inspect roads and terrain -> add simulated observations -> revise assessment -> export handover.

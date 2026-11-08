@@ -39,3 +39,7 @@ The [input plan](eec550-input-plan.json) records original workbook cells, equiva
 ## EEC550 input follow-up
 
 The structured input record is now schema version 2. It retains original values while recording the magnetic-north coordinate evidence, source-placement assumptions, full-trial/SMEDIS duration discrepancy, conditional stationary averaging policy and simplified neutral-weather plan. Four supporting reports were acquired locally and added to the manifest. The original REDIPHEM time-series link returns an unavailable-download page; no archive was acquired. [Review findings](../../docs/research/EEC550_INPUT_RESOLUTION.md). No model was run.
+
+## EEC550 sensitivity design
+
+[eec550-sensitivity-plan.json](eec550-sensitivity-plan.json) records nine planned physical cases, assumed baseline values, three averaging windows, proposed numerical screening and output-comparison rules. It is planning metadata, not executable solver configuration. Numerical controls are additional to the nine cases. Historical unknowns remain null in the input lineage. No predictions or results are included.

@@ -53,7 +53,7 @@ PHAST agreement is model benchmarking, not experimental validation. Differences 
 
 Record absolute/relative errors where meaningful for release rate, threshold distance and selected measurement locations/times. Handle zero values and below-detection observations explicitly. Add time-step/grid sensitivity when applicable.
 
-Agree numerical tolerances and experimental performance criteria with the modeller before evaluation. There are currently no agreed tolerances, completed runs, pass results or accuracy claims.
+The [EEC550 sensitivity design](research/EEC550_SENSITIVITY_STUDY.md) proposes internal numerical screening tolerances and a materiality triage rule before any run. These are study choices, not experimental accuracy requirements or SMEDIS pass marks. Review implementation-specific settings and experimental performance expectations before evaluation. No completed runs, pass results or accuracy claims exist.
 
 ## Terrain boundary
 
