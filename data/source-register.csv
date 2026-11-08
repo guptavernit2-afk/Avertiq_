@@ -1,0 +1,13 @@
+id,category,title,url,status,review_date,limitation
+SRC-001,incident,TOI reported propylene loss,https://timesofindia.indiatimes.com/city/pune/3-tonnes-of-propylene-gas-leaked-during-32-hour-high-risk-operation-on-punemumbai-expressway/articleshow/128018076.cms,reference_reviewed,2026-11-08,Reported quantities are not a release-rate measurement
+SRC-002,incident,TOI response chronology,https://timesofindia.indiatimes.com/city/pune/32-hour-delay-what-slowed-punemumbai-expressway-tanker-gas-leak-response/articleshow/127952077.cms,reference_reviewed,2026-11-08,Underlying gas detector records unavailable
+SRC-003,incident,Indian Express reopening report,https://indianexpress.com/article/cities/pune/traffic-resumes-on-pune-mumbai-expressway-after-gas-tanker-crisis-10515874/lite/,reference_reviewed,2026-11-08,Journalistic chronology needs cross-checking
+SRC-004,chemical,NOAA propylene datasheet,https://cameochemicals.noaa.gov/report?key=CH4355,reference_reviewed,2026-11-08,General chemical data not actual tanker conditions
+SRC-005,terrain,Copernicus DEM,https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM,reference_reviewed,2026-11-08,Tiles not downloaded; surface model and resolution limitations
+SRC-006,weather,Open-Meteo Historical Weather API,https://open-meteo.com/en/docs/historical-weather-api,reference_reviewed,2026-11-08,Series not downloaded; gridded estimates not on-site measurements
+SRC-007,validation,NOAA ALOHA example scenarios,https://response.restoration.noaa.gov/sites/default/files/ALOHA_Examples.pdf,reference_reviewed,2026-11-08,Reference cases not Adoshi ground truth
+SRC-008,validation,SMEDIS experimental datasets,https://admlc.com/smedis-dataset/,reference_reviewed,2026-11-08,Experimental spreadsheets not downloaded; applicability to be assessed
+SRC-009,model,DNV Phast overview,https://www.dnv.com/services/phast/,reference_reviewed,2026-11-08,Mentor version and modules not confirmed
+SRC-010,model,DNV Phast and Safeti FAQ,https://www.dnv.com/software/services/plant/phast-safeti-FAQ/,reference_reviewed,2026-11-08,Benchmarking is distinct from experimental validation
+SRC-011,model,NOAA ALOHA limitations,https://response.restoration.noaa.gov/node/204,reference_reviewed,2026-11-08,ALOHA omits terrain steering
+SRC-012,model,LLNL dense gas research,https://narac.llnl.gov/research-and-development/dense-gas-transport-in-complex-environments,reference_reviewed,2026-11-08,General modelling research not a selected engine or Adoshi evidence
