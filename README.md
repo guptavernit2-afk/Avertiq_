@@ -26,9 +26,9 @@ Read the [short SMEDIS review](docs/research/SMEDIS_SHORTLIST.md): EEC550 first,
 
 ## First comparison plan
 
-Read the [short EEC550 plan](docs/research/EEC550_SHORT_PLAN.md). OpenFOAM Foundation 14 is selected as the first local research platform, with a documented mixed-source input plan and [follow-up findings](docs/research/EEC550_INPUT_RESOLUTION.md). Axes and conditional timing/weather policies are defined; actual inlet elevation and exact observation timing remain unverified. No software was installed and no simulation was run.
+Read the [short humidity/phase report](docs/research/EEC550_PHASE_SUMMARY.md). The current 196 K / 20 mol% inlet does not support accepting the proposed unmodified gas-only model. OpenFOAM Foundation 14 remains a candidate platform; a suitable phase configuration and reconciled source are not yet selected.
 
-Read the [short sensitivity-study report](docs/research/EEC550_SENSITIVITY_SUMMARY.md): nine conditional physical cases, three model averaging windows and separate numerical checks. Assumed ranges are not measured uncertainty bounds; no cases have been run.
+The [nine-case sensitivity design](docs/research/EEC550_SENSITIVITY_SUMMARY.md) is preserved and held pending phase/enthalpy reconciliation. Inlet elevation and exact observation timing also remain unverified. No software was installed and no simulation was run.
 
 ## Demo flow
 

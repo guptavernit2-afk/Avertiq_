@@ -43,3 +43,7 @@ The structured input record is now schema version 2. It retains original values 
 ## EEC550 sensitivity design
 
 [eec550-sensitivity-plan.json](eec550-sensitivity-plan.json) records nine planned physical cases, assumed baseline values, three averaging windows, proposed numerical screening and output-comparison rules. It is planning metadata, not executable solver configuration. Numerical controls are additional to the nine cases. Historical unknowns remain null in the input lineage. No predictions or results are included.
+
+## Humidity and phase screen
+
+[eec550-phase-screen.json](eec550-phase-screen.json) records valid-range property correlations, ideal partial-pressure checks and limitations. It is neither a rigorous equilibrium flash nor a CFD output. NIST HTML snapshots and the IAPWS reference PDF remain local with manifest hashes. The current gas-only baseline is not accepted; the input and sensitivity records point to this superseding decision. [Short review](../../docs/research/EEC550_PHASE_SUMMARY.md).

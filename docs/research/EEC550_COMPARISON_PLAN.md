@@ -1,5 +1,7 @@
 # EEC550 input preparation and first local model
 
+**Phase-review update, 8 November 2026:** the [humidity/phase review](EEC550_PHASE_REVIEW.md) does not accept the proposed gas-only baseline under the current inlet conditions. The sensitivity matrix is held pending source-state and phase/enthalpy reconciliation. Original assumptions below remain planning history, not runnable inputs.
+
 Reviewed 8 November 2026. User preference: use a model we can run ourselves without a paid licence. Scope: planning and source review only.
 
 ## Follow-up correction

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-08",
+  "status": "property_screen_only",
+  "CFD_runs_performed": 0,
+  "rigorous_equilibrium_flash_performed": false,
+  "decision": "proposed_unmodified_gas_only_configuration_not_accepted_for_EEC550_physical_baseline",
+  "platform": "OpenFOAM Foundation 14 remains candidate; replacement phase configuration not selected",
+  "study_status": "nine_case_study_held_pending_source_phase_enthalpy_reconciliation",
+  "inputs": {
+    "source_temperature_K": 196.0,
+    "source_propane_mole_fraction": 0.2,
+    "source_pressure_assumed_Pa": 102500.0,
+    "pressure_basis": "selected ambient pressure assumed applicable at equivalent plane; actual source-plane pressure unverified",
+    "ambient_temperature_K": 283.05,
+    "ambient_RH_fraction": 0.99,
+    "source_total_water_inventory": null,
+    "source_water_phase_fractions": null,
+    "source_enthalpy": null,
+    "concentration_basis_status": "20 mol% documented; wet/dry and gas/total detail unresolved"
+  },
+  "correlations": {
+    "propane": {
+      "formula": "p_sat_Pa=1e5*10**(A-B/(T_K+C))",
+      "A": 4.01158,
+      "B": 834.26,
+      "C": -22.763,
+      "valid_range_K": [
+        166.02,
+        231.41
+      ],
+      "reference": "NIST Chemistry WebBook Kemp and Egan 1938 fit",
+      "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C74986&Mask=FEF&Plot=on&Type=ANTOINE&Units=SI"
+    },
+    "water_liquid": {
+      "formula": "p_sat_Pa=1e5*10**(A-B/(T_K+C))",
+      "A": 5.40221,
+      "B": 1838.675,
+      "C": -31.737,
+      "valid_range_K": [
+        273,
+        303
+      ],
+      "used_only_at_K": 283.05,
+      "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Plot=on&Type=ANTOINE"
+    },
+    "water_ice": {
+      "formula": "p_ice=611.657*exp(sum(a_i*(T/273.16)**b_i)/(T/273.16))",
+      "a": [
+        -21.2144006,
+        27.3203819,
+        -6.1059813
+      ],
+      "b": [
+        0.00333333333,
+        1.20666667,
+        1.70333333
+      ],
+      "valid_range_K": [
+        50,
+        273.16
+      ],
+      "reference": "IAPWS R14-08(2011) Eq6 PDF page5",
+      "source_url": "https://iapws.org/technical-guidance/release/MeltSub.download"
+    }
+  },
+  "derived": {
+    "propane_partial_pressure_Pa": 20500.0,
+    "propane_saturation_pressure_Pa": 15698.751404565292,
+    "propane_saturation_ratio": 1.3058363351137898,
+    "propane_saturated_gas_mole_fraction": 0.15315855028844186,
+    "propane_ideal_dew_temperature_K": 200.27169401041408,
+    "maximum_total_pressure_at_given_x_T_Pa": 78493.75702282645,
+    "ambient_water_saturation_Pa": 1218.8073818142136,
+    "ambient_water_partial_Pa": 1206.6193079960715,
+    "ambient_water_mole_fraction": 0.011771895687766551,
+    "ambient_dew_temperature_K": 282.90015895049646,
+    "source_water_ice_saturation_Pa": 0.08692625514096605,
+    "conditional_source_water_gas_mole_fraction": 0.009417516550213242,
+    "conditional_source_water_partial_Pa": 965.2954463968573,
+    "conditional_source_water_ice_saturation_ratio": 11104.762822595576
+  },
+  "conditional_water_assumption": "80 mol% source is ambient wet air retaining all original water as gas; diagnostic only, not actual inlet assignment or recovered measurement",
+  "checks": {
+    "iapws_230K_calculated_Pa": 8.947352740189151,
+    "iapws_230K_reference_Pa": 8.94735,
+    "iapws_triple_point_calculated_Pa": 611.657,
+    "iapws_triple_point_reference_Pa": 611.657,
+    "propane_partial_at_101325Pa": 20265.0,
+    "propane_saturation_ratio_at_101325Pa": 1.2908669917600464
+  },
+  "limits": [
+    "ideal partial pressures not fugacity flash",
+    "phase amounts kinetics residence time unmeasured",
+    "cold-source moisture and prior latent heat treatment unresolved",
+    "do not double-count latent heat against fixed source temperature",
+    "no actual condensate or fog claim",
+    "do not alter source to force all-gas feasibility"
+  ],
+  "findings": "docs/research/EEC550_PHASE_REVIEW.md"
+}

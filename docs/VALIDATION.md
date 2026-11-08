@@ -14,7 +14,10 @@ A dispersion model estimates concentration as a function of position and time. T
 
 ## Model decision
 
-OpenFOAM Foundation 14 multicomponentFluid is selected conditionally for the first local EEC550 dispersion-only research comparison; see the [input/model plan](research/EEC550_COMPARISON_PLAN.md). No engine or equations have been selected for production use. Evaluate an established applicable source/dispersion workflow and integration/licensing constraints before implementation. Use reviewed ALOHA runs as references; do not assume an ALOHA automation API exists.
+The [humidity/phase decision](research/EEC550_PHASE_REVIEW.md) supersedes acceptance of the earlier gas-only configuration: the proposed source is supersaturated in the ideal propane screen, and ambient moisture cannot be retained entirely as vapour at 196 K. Reconcile source phase/enthalpy before executing the sensitivity design. OpenFOAM as a platform remains a candidate; no replacement configuration or accuracy result exists.
+
+
+OpenFOAM Foundation 14 multicomponentFluid was selected conditionally before this phase review; that gas-only configuration is now not accepted for the current EEC550 inlet; see the [input/model plan](research/EEC550_COMPARISON_PLAN.md). No engine or equations have been selected for production use. Evaluate an established applicable source/dispersion workflow and integration/licensing constraints before implementation. Use reviewed ALOHA runs as references; do not assume an ALOHA automation API exists.
 
 The original project's mass-based blast/fireball rings and geometric ellipse are not validated propylene release models.
 

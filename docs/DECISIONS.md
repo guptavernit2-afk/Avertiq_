@@ -76,3 +76,12 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Compare every case with S00 and the same sensor records, report coverage/zeros and height-specific results, and do not select a new baseline by best experimental fit. EEC560 remains excluded from tuning.
 - Allow only documented targeted follow-up interactions/transport assumptions when indicated; no full factorial sweep planned.
 - Thermophysical/humidity suitability, full ABL recipes and numerical setup remain execution gates. No installation, solver configuration, code or simulations produced.
+
+## 2026-11-08 - EEC550 humidity/phase model decision
+
+- Review valid-range NIST propane/water saturation fits and IAPWS ice sublimation relation. Save property-screen arithmetic and reference checks, not a CFD result or rigorous flash.
+- At 196 K and assumed downstream pressure 102500 Pa, 20 mol% propane has ideal partial pressure 20500 Pa versus saturation about 15699 Pa. The proposed all-gas source needs thermodynamic reconciliation.
+- RH=99% at 283.05 K implies water partial pressure about 1207 Pa. Conditional carryover with 80 mol% ambient wet air gives about 965 Pa water at the inlet versus ice saturation about 0.0869 Pa. This is not an actual measured inlet inventory or phase fraction.
+- Do not accept the unmodified gas-only multicomponentFluid configuration as the EEC550 physical baseline. This supersedes its earlier conditional selection; OpenFOAM remains a possible platform, not a selected replacement phase model.
+- Hold the nine-case matrix pending source composition/pressure/phase/enthalpy reconciliation. Preserve all original source values and unknowns; do not force feasibility by warming, drying or lowering pressure without evidence.
+- Next assess enthalpy-conserving moist phase behaviour and model capability, including water/ice and possible propane phase transfer. Avoid latent-heat double counting. No coding, installation, simulation or claimed physical validation performed.

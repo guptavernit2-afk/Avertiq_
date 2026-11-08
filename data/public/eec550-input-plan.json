@@ -12,7 +12,9 @@
     "configuration": "proposed transient nonreacting variable-density species and energy with gravity",
     "exact_package": null,
     "installation_performed": false,
-    "production_engine_selected": false
+    "production_engine_selected": false,
+    "gas_only_configuration_suitability": "not_accepted_under_current_inlet; phase_review_supersedes_conditional_selection",
+    "replacement_phase_configuration": null
   },
   "original_workbook": {
     "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/eec550.xls",
@@ -413,6 +415,7 @@
     ]
   },
   "open_gates": [
+    "propane supersaturation and moist-source enthalpy/phase reconciliation; gas-only baseline not accepted",
     "actual equivalent-window centre height, displacement and profiles",
     "exact SMEDIS averaging indices and full-trial duration discrepancy",
     "inlet turbulence and transport/property review",
@@ -448,8 +451,10 @@
     "ground_thermal_boundary": null,
     "turbulence_inlet": null,
     "sensitivity": "consistent weakly unstable ABL using estimated L=-90m; full formulation must be specified before execution",
-    "estimate_provenance": "REDIPHEM Lathen stability inferred from wind/cloud; L inferred from stability and roughness, not direct flux measurement"
+    "estimate_provenance": "REDIPHEM Lathen stability inferred from wind/cloud; L inferred from stability and roughness, not direct flux measurement",
+    "humidity_phase_review_status": "reviewed; retained_moisture_cannot_all_remain_vapour_at_196K_in_equilibrium_screen"
   },
   "sensitivity_study": "data/public/eec550-sensitivity-plan.json",
-  "sensitivity_study_status": "conditional_assumptions_planned_not_run"
+  "sensitivity_study_status": "held_pending_source_phase_enthalpy_reconciliation",
+  "phase_review": "data/public/eec550-phase-screen.json"
 }

@@ -220,5 +220,38 @@
     "status": "targeted_coordinate_and_timing_review_pages_visually_checked",
     "pages": 128,
     "text_characters": 182776
+  },
+  {
+    "filename": "nist-propane-antoine.html",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C74986&Mask=FEF&Plot=on&Type=ANTOINE&Units=SI",
+    "returned_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C74986&Mask=FEF&Plot=on&Type=ANTOINE&Units=SI",
+    "local_path": "data/raw/2026-11-08/nist-propane-antoine.html",
+    "retrieved_utc": "2026-11-08T09:15:14.843169+00:00",
+    "bytes": 29545,
+    "sha256": "f76200b4145978879ba23dbabff486c6a611ee3e71b4b06f1e8a8ca83f9c5b35",
+    "committed": false,
+    "status": "reference_coefficients_and_validity_ranges_reviewed"
+  },
+  {
+    "filename": "nist-water-antoine.html",
+    "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Plot=on&Type=ANTOINE",
+    "returned_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Plot=on&Type=ANTOINE",
+    "local_path": "data/raw/2026-11-08/nist-water-antoine.html",
+    "retrieved_utc": "2026-11-08T09:15:16.084031+00:00",
+    "bytes": 35699,
+    "sha256": "802d326175adb7560c5253c8d0da019634bcc7810b4fbe01b5325d4bd9d89750",
+    "committed": false,
+    "status": "reference_coefficients_and_validity_ranges_reviewed"
+  },
+  {
+    "filename": "iapws-MeltSub2011.pdf",
+    "source_url": "https://iapws.org/technical-guidance/release/MeltSub.download",
+    "returned_url": "https://iapws.org/public/documents/MdUFK/MeltSub2011.pdf",
+    "local_path": "data/raw/2026-11-08/iapws-MeltSub2011.pdf",
+    "retrieved_utc": "2026-11-08T09:15:16.444004+00:00",
+    "bytes": 170418,
+    "sha256": "706b17a9c646979aa77c589db145a6a707e7b19527aefbdb70dc230898cfc839",
+    "committed": false,
+    "status": "equation6_visually_checked_and_reference_pressure_reproduced"
   }
 ]
