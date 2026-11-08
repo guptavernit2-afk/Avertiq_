@@ -82,7 +82,7 @@
     "filename": "smedis-batch1_24.zip",
     "source_url": "https://admlc.com/wp-content/uploads/2020/12/batch1_24.zip",
     "retrieved_utc": "2026-11-08T06:57:31.139155+00:00",
-    "status": "downloaded_archive_verified_not_analysed",
+    "status": "downloaded_integrity_verified_workbooks_reviewed_no_model_runs",
     "bytes": 54523,
     "sha256": "5720a7366b9ce52a4fa0b998db1f927620a1f970b6d1d88a86b73d34412f0df4",
     "local_path": "data/raw/2026-11-08/smedis-batch1_24.zip",
@@ -102,5 +102,65 @@
       "batch1/pg8.xls",
       "batch1/"
     ]
+  },
+  {
+    "filename": "smedis-batch2_24.zip",
+    "source_url": "https://admlc.com/wp-content/uploads/2020/12/batch2_24.zip",
+    "retrieved_utc": "2026-11-08T07:08:46.757429+00:00",
+    "bytes": 726967,
+    "sha256": "942d87abf44acdbb36779affd7826578f8ac9984e6e093f9b91ce6be07864705",
+    "local_path": "data/raw/2026-11-08/smedis-batch2_24.zip",
+    "committed": false,
+    "status": "downloaded_integrity_verified_workbooks_reviewed_no_model_runs"
+  },
+  {
+    "filename": "smedis-batch3_24.zip",
+    "source_url": "https://admlc.com/wp-content/uploads/2020/12/batch3_24.zip",
+    "retrieved_utc": "2026-11-08T07:08:47.485011+00:00",
+    "bytes": 44859,
+    "sha256": "b3916ad73039f24d32a872cb7d5d60855c46a1c9b4019165b9e9a89c25818580",
+    "local_path": "data/raw/2026-11-08/smedis-batch3_24.zip",
+    "committed": false,
+    "status": "downloaded_integrity_verified_workbooks_reviewed_no_model_runs"
+  },
+  {
+    "filename": "smedis-variable-definitions.pdf",
+    "source_url": "https://admlc.com/wp-content/uploads/2020/12/sme9718d-vardef.pdf",
+    "retrieved_utc": "2026-11-08T07:08:46.604371+00:00",
+    "bytes": 92316,
+    "sha256": "af6938632c7cdada4838ccde26abb3b6d02e0ebc867d3595fd338ccc22f133ee",
+    "local_path": "data/raw/2026-11-08/smedis-variable-definitions.pdf",
+    "committed": false,
+    "status": "downloaded_targeted_source_review"
+  },
+  {
+    "filename": "smedis-revision-history.pdf",
+    "source_url": "https://admlc.com/wp-content/uploads/2020/12/sdbrev.pdf",
+    "retrieved_utc": "2026-11-08T07:08:47.022486+00:00",
+    "bytes": 65419,
+    "sha256": "77f1a49ea1495b7a88552c317efb0d56cc424a2df14d34440b9a4e6393021ae6",
+    "local_path": "data/raw/2026-11-08/smedis-revision-history.pdf",
+    "committed": false,
+    "status": "downloaded_targeted_source_review"
+  },
+  {
+    "filename": "smedis-database-paper.pdf",
+    "source_url": "https://admlc.com/wp-content/uploads/2020/12/ijep_smedis_2001.pdf",
+    "retrieved_utc": "2026-11-08T07:08:47.141134+00:00",
+    "bytes": 569777,
+    "sha256": "b7fa3d1a0357e7b4e855abbf296b22fa78dbade5e37c228a6eefe1b058dba34f",
+    "local_path": "data/raw/2026-11-08/smedis-database-paper.pdf",
+    "committed": false,
+    "status": "downloaded_targeted_source_review"
+  },
+  {
+    "filename": "smedis-evaluation-protocol.pdf",
+    "source_url": "https://admlc.com/wp-content/uploads/2021/08/smedis_protocol_v2.0.pdf",
+    "retrieved_utc": "2026-11-08T07:08:48.437010+00:00",
+    "bytes": 1387015,
+    "sha256": "86298f0a9ee66fd534ab9222101415d1e666402dafd927012545758a8aabaa3f",
+    "local_path": "data/raw/2026-11-08/smedis-evaluation-protocol.pdf",
+    "committed": false,
+    "status": "downloaded_targeted_source_review"
   }
 ]

@@ -12,10 +12,10 @@
 
 ## Current status
 
-Step 1 is complete. Step 2 has an attributed incident fact sheet and reference chemistry notes; exact accident coordinates remain unverified. Step 3 has current tunnel geometry, 72 ERA5 weather hours and a terrain tile collected; a study-area road extract and terrain analysis remain pending. One SMEDIS archive is downloaded but not analysed. No model has been selected or run. See [collection report](research/2026-11-08-summary.md).
+Step 1 is complete. Step 2 has an attributed incident fact sheet and reference chemistry notes; exact accident coordinates remain unverified. Step 3 has current tunnel geometry, 72 ERA5 weather hours and a terrain tile collected; a study-area road extract and terrain analysis remain pending. All three SMEDIS batches have been header-screened (30 trials plus one terrain-support workbook), with a detailed three-case propane shortlist and documented data issues. No model has been selected or run. See [collection report](research/2026-11-08-summary.md).
 
 ## Next research task
 
-Verify the approximate incident location and study-area bounds; select applicable experimental validation cases. Request the mentor's PHAST version, available modules, preferred scenario input format, and comparison criteria.
+Agree the EEC550 equivalent-source and observation mapping; resolve EEC360 duplicate-record handling; reserve EEC560 from future tuning. Verify incident location/study-area bounds and request the mentor's PHAST version/modules and acceptance criteria.
 
 Do not promise schedules until data access and modelling dependencies are understood.

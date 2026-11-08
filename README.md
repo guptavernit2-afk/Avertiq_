@@ -20,6 +20,10 @@ Avertiq starts with an **Adoshi-inspired training demo**: one stationary propyle
 
 Start with the [short collection report](docs/research/2026-11-08-summary.md). Public weather data is tracked; larger raw terrain/map/experimental assets remain local with source URLs and checksums. No model results exist yet.
 
+## Validation cases selected
+
+Read the [short SMEDIS review](docs/research/SMEDIS_SHORTLIST.md): EEC550 first, EEC360 after duplicate-record review, and EEC560 reserved from future tuning. These are propane analogues, not validation of Adoshi. No model has been run.
+
 ## Demo flow
 
 Open incident -> confirm cargo and location -> select documented release assumptions -> review a hazard estimate -> inspect roads and terrain -> add simulated observations -> revise assessment -> export handover.

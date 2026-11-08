@@ -1,0 +1,637 @@
+{
+  "review_date": "2026-11-08",
+  "reader": "xlrd 2.0.2 in temporary dependency directory; original workbooks not edited",
+  "trial_count": 30,
+  "support_workbook_count": 1,
+  "model_runs": 0,
+  "workbooks": [
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/dat638.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/dat638.xls",
+      "sha256": "496f21144cf313d962ecb2938f57aa9b83593a6da6322e53da531bed14a24347",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Hamburg",
+      "trial_identification_raw": "DAT638",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 56,
+          "columns": 8
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "SF6",
+      "release_type_raw": "puff"
+    },
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/dat648.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/dat648.xls",
+      "sha256": "8d14e1657010ef402e8df8795df7d1b0524f35ad43022a32dc8e424fa86c8660",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Hamburg",
+      "trial_identification_raw": "DAT648",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 56,
+          "columns": 8
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "SF6",
+      "release_type_raw": "puff"
+    },
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/dt1.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/dt1.xls",
+      "sha256": "958c7690a2b80bac3bcf55c85c3b040fb705896fbf7046ed9b625a0ae3a96f7d",
+      "kind": "trial",
+      "dataset_reference_raw": "Desert Tortoise",
+      "trial_identification_raw": "DT1",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 138,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "ammonia",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/dt2.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/dt2.xls",
+      "sha256": "e73c1136edaa6ac3e1d0bcedf6343b5420702ebdb830742e4892a32914243e27",
+      "kind": "trial",
+      "dataset_reference_raw": "Desert Tortoise",
+      "trial_identification_raw": "DT2",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 145,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "ammonia",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/eec360.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/eec360.xls",
+      "sha256": "ae1960930e8fe3dd9a5da193c67c2c8bdb63d9aca58ca2bffdc6df3f9893e1b4",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Propane",
+      "trial_identification_raw": 360.0,
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 122,
+          "columns": 5
+        }
+      ],
+      "selection": "smaller_release_comparison_duplicate_review_required",
+      "review_depth": "detailed_conditions_and_observations",
+      "substance_raw": "propane",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/eec361.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/eec361.xls",
+      "sha256": "3e4433d28ec5c820ad86eb47fd8024db146ea0fe11d496a40525e84e15dc9cc9",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Propane",
+      "trial_identification_raw": "EEC361",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 129,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "propane",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/eec362.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/eec362.xls",
+      "sha256": "8fa396f5257df063f8f73e4e794a34e70b4a5dfd3cff61552abfa728db3c95d2",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Propane",
+      "trial_identification_raw": "EEC362",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 136,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "propane",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/eec550.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/eec550.xls",
+      "sha256": "555215dba9c1c12cac4137b6eb3c3c29721bd33cfc252de26f681de9d7cccc71",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Propane",
+      "trial_identification_raw": "EEC550",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 124,
+          "columns": 5
+        }
+      ],
+      "selection": "main_initial_comparison",
+      "review_depth": "detailed_conditions_and_observations",
+      "substance_raw": "propane",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/eec551.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/eec551.xls",
+      "sha256": "1e6d4c94d1a5af0003b0ea24c7fde1de319fe101e049f97777f4054d30fdee12",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Propane",
+      "trial_identification_raw": "EEC551",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 134,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "propane",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/pg17.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/pg17.xls",
+      "sha256": "4162abef8ecd706fbf3276593950955ceb1c8a8ffe759f467e7d9bccdb7f94a3",
+      "kind": "trial",
+      "dataset_reference_raw": "Prairie Grass",
+      "trial_identification_raw": "PG17",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 123,
+          "columns": 4
+        }
+      ],
+      "selection": "optional_passive_baseline",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "Sulfur dioxide",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch1_24.zip",
+      "archive_member": "batch1/pg8.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/pg8.xls",
+      "sha256": "3f414a0ffbfa9af6363dc25165cf605d0ef1c9ccb03a48a55d4dbd51e68dc5fc",
+      "kind": "trial",
+      "dataset_reference_raw": "Prairie Grass",
+      "trial_identification_raw": "PG8",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 201,
+          "columns": 4
+        }
+      ],
+      "selection": "optional_passive_baseline",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "Sulfur dioxide",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/dat231.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/dat231.xls",
+      "sha256": "8a2d69fe9ef9dd42ce00a0dbbe6a1a3f43a409d4fa814174c5ab5ba8fb045dca",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Hamburg",
+      "trial_identification_raw": "DAT 231",
+      "worksheets": [
+        {
+          "name": "dat231.xls",
+          "rows": 62,
+          "columns": 6
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "SF6",
+      "release_type_raw": "puff"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/dat647.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/dat647.xls",
+      "sha256": "1937565da04ea9490667238f49afee116245298e669c6902ebc97be0db965d79",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Hamburg",
+      "trial_identification_raw": "DAT637",
+      "worksheets": [
+        {
+          "name": "dat647.xls",
+          "rows": 57,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "SF6",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/emu/emudj.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/emu/emudj.xls",
+      "sha256": "bbeef3f528afc246506e5ccb33f3315c9d69bbe518737e8edbe8db35ad0d180c",
+      "kind": "trial",
+      "dataset_reference_raw": "EMU",
+      "trial_identification_raw": "C1-DJ",
+      "worksheets": [
+        {
+          "name": "emudj.xls",
+          "rows": 181,
+          "columns": 7
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "Chlorine",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/emu/emunj.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/emu/emunj.xls",
+      "sha256": "c0f1467304e7e9ec6bb34782fe79881a8e5b93f87d6afe4ad5dfeddc96343e72",
+      "kind": "trial",
+      "dataset_reference_raw": "EMU",
+      "trial_identification_raw": "C1-NJ",
+      "worksheets": [
+        {
+          "name": "emunj.xls",
+          "rows": 170,
+          "columns": 7
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "passive gas",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/emu/topog/amsite.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/emu/topog/amsite.xls",
+      "sha256": "bd6acd2c564407572ba70e71f4e6902eba7cda2c9c29db55ee3f29e01a2e1e03",
+      "kind": "terrain_support",
+      "dataset_reference_raw": null,
+      "trial_identification_raw": null,
+      "worksheets": [
+        {
+          "name": "Source",
+          "rows": 35,
+          "columns": 33
+        },
+        {
+          "name": "Source list",
+          "rows": 964,
+          "columns": 3
+        },
+        {
+          "name": "Amlwch",
+          "rows": 66,
+          "columns": 52
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/fladis16.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/fladis16.xls",
+      "sha256": "79a4708d62e52fa29ae00119f573b32d1fb5da075cc681e780f2b82aa1c3de19",
+      "kind": "trial",
+      "dataset_reference_raw": "FLADIS",
+      "trial_identification_raw": "Trial016",
+      "worksheets": [
+        {
+          "name": "fladis16.xls",
+          "rows": 191,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "ammonia",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/fladis24.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/fladis24.xls",
+      "sha256": "c74ac6bf81122e2ccd8efc851e47e7b20d7538528b410074bfd02411fbc0fb38",
+      "kind": "trial",
+      "dataset_reference_raw": "FLADIS",
+      "trial_identification_raw": "Trial024",
+      "worksheets": [
+        {
+          "name": "fladis24.xls",
+          "rows": 153,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "ammonia",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/ti08.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/ti08.xls",
+      "sha256": "791cc57375233889765281406b8350b9d3c57aee2e086192629566c701789f69",
+      "kind": "trial",
+      "dataset_reference_raw": "Thorney Island",
+      "trial_identification_raw": "Trial 008",
+      "worksheets": [
+        {
+          "name": "ti08.xls",
+          "rows": 196,
+          "columns": 6
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "R12",
+      "release_type_raw": "puff"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/ti21.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/ti21.xls",
+      "sha256": "c0a9e27f12b74296f024ca4c4f3fb98640b4b44fbe3c55bf9137ddcf06283d5b",
+      "kind": "trial",
+      "dataset_reference_raw": "Thorney Island",
+      "trial_identification_raw": "Trial 021",
+      "worksheets": [
+        {
+          "name": "ti21.xls",
+          "rows": 235,
+          "columns": 8
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "R12",
+      "release_type_raw": "puff"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/tuv11.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/tuv11.xls",
+      "sha256": "b849ff35fa1ff8a1342ba76239435964b92cc691f23bb47f863fbe7f0a3a6a6b",
+      "kind": "trial",
+      "dataset_reference_raw": "TNO-BA",
+      "trial_identification_raw": "TUV11",
+      "worksheets": [
+        {
+          "name": "Feuil1",
+          "rows": 51,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "SF6    ",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch2_24.zip",
+      "archive_member": "batch2/tuv13.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch2/tuv13.xls",
+      "sha256": "7ad72a7c69f63aa7db86858dcebd0b2b262035e6f838e7f85a83525da9a8fc79",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-TNO",
+      "trial_identification_raw": "TUV13",
+      "worksheets": [
+        {
+          "name": "tuv13.xls",
+          "rows": 62,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "SF6",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch3_24.zip",
+      "archive_member": "batch3/049101.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch3/049101.xls",
+      "sha256": "ab86d7f2b596c784b2afcd082b5662c238273165f2fb4d6cfaf660c0e8bfdf68",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Hamburg",
+      "trial_identification_raw": 49101.0,
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 75,
+          "columns": 8
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "SF6",
+      "release_type_raw": "puff"
+    },
+    {
+      "archive": "smedis-batch3_24.zip",
+      "archive_member": "batch3/129034.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch3/129034.xls",
+      "sha256": "65c63c2edb20ec1434b71f214e916128bd9449bae933a9a9687ee3165f5a44c4",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Hamburg",
+      "trial_identification_raw": 129034.0,
+      "worksheets": [
+        {
+          "name": "129034",
+          "rows": 60,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "SF6",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch3_24.zip",
+      "archive_member": "batch3/dat458.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch3/dat458.xls",
+      "sha256": "2d47c6bc4720d2cdbdecf7aba9329a9e1bd59e69d2c84f00e463da5c61698396",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Hamburg",
+      "trial_identification_raw": "DAT458",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 60,
+          "columns": 8
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "SF6",
+      "release_type_raw": "puff"
+    },
+    {
+      "archive": "smedis-batch3_24.zip",
+      "archive_member": "batch3/eec170.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch3/eec170.xls",
+      "sha256": "b54d85f37a40c70281d375bbd4e31650b8670026ec418eba5bce678bebc30f71",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Propane",
+      "trial_identification_raw": "EEC17",
+      "worksheets": [
+        {
+          "name": "eec170",
+          "rows": 101,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "propane",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch3_24.zip",
+      "archive_member": "batch3/eec171.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch3/eec171.xls",
+      "sha256": "532702a29d8537002b797962fd9759deeee93e969c360b1ab46f7ddaede3d86d",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Propane",
+      "trial_identification_raw": "EEC17",
+      "worksheets": [
+        {
+          "name": "specs",
+          "rows": 112,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "propane",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch3_24.zip",
+      "archive_member": "batch3/eec560.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch3/eec560.xls",
+      "sha256": "919a5e2c07660aaba68786ccfc1c86e92d7eee1f64fbf917a1dcda0abf6ea227",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Propane",
+      "trial_identification_raw": "EEC56",
+      "worksheets": [
+        {
+          "name": "eec560",
+          "rows": 113,
+          "columns": 5
+        }
+      ],
+      "selection": "prospective_evaluation_not_blind",
+      "review_depth": "detailed_conditions_and_observations",
+      "substance_raw": "propane",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch3_24.zip",
+      "archive_member": "batch3/eec561.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch3/eec561.xls",
+      "sha256": "bc794ecda520b6b3a1080d2b209bf6ebe5449b5f848f083c549430a14faeac5e",
+      "kind": "trial",
+      "dataset_reference_raw": "BA-Propane",
+      "trial_identification_raw": "EEC56",
+      "worksheets": [
+        {
+          "name": "eec561",
+          "rows": 123,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "propane",
+      "release_type_raw": "jet"
+    },
+    {
+      "archive": "smedis-batch3_24.zip",
+      "archive_member": "batch3/fladis9.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch3/fladis9.xls",
+      "sha256": "acb3d3c4d5086273bcc304e5eebed73a59fa6624731c2d77cf98b5fc752093d3",
+      "kind": "trial",
+      "dataset_reference_raw": "FLADIS",
+      "trial_identification_raw": "Trial009",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 191,
+          "columns": 5
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "ammonia",
+      "release_type_raw": " jet"
+    },
+    {
+      "archive": "smedis-batch3_24.zip",
+      "archive_member": "batch3/lat49.xls",
+      "local_path": "data/raw/2026-11-08/smedis-extracted/batch3/lat49.xls",
+      "sha256": "9271d0fe7d968b90eb1151de465f06564cc6a96866dd66b15ea4862bb3c27cb2",
+      "kind": "trial",
+      "dataset_reference_raw": "BA- Propane",
+      "trial_identification_raw": "EEC49",
+      "worksheets": [
+        {
+          "name": "Sheet 1",
+          "rows": 109,
+          "columns": 6
+        }
+      ],
+      "selection": "deferred_or_support",
+      "review_depth": "header_screening_with_targeted_checks",
+      "substance_raw": "Propane",
+      "release_type_raw": "puff"
+    }
+  ]
+}

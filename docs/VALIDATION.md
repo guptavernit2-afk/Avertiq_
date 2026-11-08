@@ -27,6 +27,10 @@ The original project's mass-based blast/fireball rings and geometric ellipse are
 5. Sensitivity: vary justified uncertain inputs and report resulting changes; do not attach unsupported probability/confidence claims.
 6. Tabletop review: evaluate provenance, missing-data handling, observation conflicts, assessment updates and handover clarity.
 
+## Selected experimental starting point
+
+The [SMEDIS review](research/SMEDIS_REVIEW.md) recommends EEC550 as the initial unobstructed propane case, EEC360 as a smaller-source comparison after duplicate-record handling is agreed, and EEC560 reserved from future fitting. Start with documented downstream equivalent sources for dispersion-only tests. Source-model validation remains separate. All selections are conditional on engine capability and agreed input/measurement handling. No model runs or accuracy claims exist.
+
 ## PHAST comparison checklist
 
 Ask the mentor for:

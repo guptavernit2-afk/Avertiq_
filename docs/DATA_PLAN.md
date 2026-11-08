@@ -36,4 +36,6 @@ Commit small redistributable fixtures only after review. Never commit proprietar
 
 ## Collection status
 
-First collection completed on 8 November 2026: 72 hourly ERA5 records; current OSM tunnel feature; one GLO-30 terrain tile; and one SMEDIS experimental archive (not analysed). The source register and data/public manifests record status and provenance. No verified accident coordinates, full road-network extract, real tanker record, field gas measurements, or physics results are available. See [research summary](research/2026-11-08-summary.md).
+First collection completed on 8 November 2026: 72 hourly ERA5 records; current OSM tunnel feature; one GLO-30 terrain tile; and one SMEDIS experimental archive (subsequently expanded and reviewed). The source register and data/public manifests record status and provenance. No verified accident coordinates, full road-network extract, real tanker record, field gas measurements, or physics results are available. See [research summary](research/2026-11-08-summary.md).
+
+SMEDIS follow-up: all three batches are now collected and header-screened; see [shortlist](research/SMEDIS_SHORTLIST.md). Case suitability and data issues were reviewed, but no predictions or experimental validation scores were computed.

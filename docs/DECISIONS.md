@@ -35,3 +35,12 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Commit the small attributed weather response and provenance. Retain large/raw OSM, terrain and experimental files locally with checksums.
 - Defer scenario numbers, terrain-dependent predictions and engine selection until evidence/model review.
 - Folder detachment from the desktop app is pending user action; no disk folder has been deleted.
+
+## 2026-11-08 - SMEDIS trial selection
+
+- Screen all three version-2.4 batches: 30 trials and one terrain-support workbook.
+- Select EEC550 for the first dispersion comparison, EEC360 for the lower-rate comparison after duplicate-coordinate review, and EEC560 as a prospective evaluation case excluded from future tuning.
+- Start with the documented downstream gas source when testing dispersion alone. Keep discharge/aerosol physics and terrain validation separate.
+- Preserve original units, estimates, missing markers, aliases and measurement records. Reconcile scale, averaging, source geometry and receptor heights before a run.
+- Defer complex-terrain and obstacle cases until the model can represent their defining physics. Resolve DAT647/DAT637 identity before using that file.
+- No engine selection, application implementation, model execution or accuracy claim was authorized or completed in this review.
