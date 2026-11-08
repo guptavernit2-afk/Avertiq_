@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "model": "ThermoPack C3 NIST_MEOS / ideal carrier gas; IAPWS-ice and NIST-water saturation Gibbs closure",
+  "provenance": {
+    "executed_utc": "2026-11-08T09:56:10.104569+00:00",
+    "python": "3.13.6",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "thermopack_native_sha256": {
+      "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+    },
+    "packages": {
+      "thermopack": "2.2.3",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1"
+    },
+    "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+    "source_sha256": {
+      "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+      "__main__.py": "3c375395bf554049d9c422555ff89da58f46133f5b027e735cfe91d7886dd995",
+      "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+      "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+      "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+      "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+    }
+  },
+  "meaning": "Property checkpoints and numerical verification; not experimental validation.",
+  "tolerance_basis": "Pre-case engineering screens: pure C3 pressure 0.5%, ideal-gas reduced threshold 5%; water fusion 5 kJ/kg; mass 1e-8 relative, energy 1 J/kg. Not accuracy guarantees.",
+  "rejected_property_candidate": {
+    "description": "Native PR water/ice Gibbs reference with ideal gas",
+    "reason": "Large ice-pressure discrepancies against IAPWS",
+    "accepted": false,
+    "points": [
+      {
+        "temperature_K": 196.0,
+        "native_PR_ice_pressure_Pa": 0.049805490751020295,
+        "IAPWS_ice_pressure_Pa": 0.08692625514096605,
+        "candidate_accepted": false
+      },
+      {
+        "temperature_K": 200.0,
+        "native_PR_ice_pressure_Pa": 0.0953156632783236,
+        "IAPWS_ice_pressure_Pa": 0.1626040176091974,
+        "candidate_accepted": false
+      },
+      {
+        "temperature_K": 230.0,
+        "native_PR_ice_pressure_Pa": 6.067216247505586,
+        "IAPWS_ice_pressure_Pa": 8.947352740189151,
+        "candidate_accepted": false
+      }
+    ]
+  },
+  "checks": [
+    {
+      "check": "C3 pure EOS pressure 196.0K",
+      "actual": 15714.94613269624,
+      "reference": 15698.751404565292,
+      "absolute_tolerance": 78.49375702282646,
+      "passed": true
+    },
+    {
+      "check": "C3 reduced ideal-gas saturation 196.0K",
+      "actual": 15624.812678305436,
+      "reference": 15698.751404565292,
+      "absolute_tolerance": 784.9375702282646,
+      "passed": true
+    },
+    {
+      "check": "C3 pure EOS pressure 200.0K",
+      "actual": 20192.021944639688,
+      "reference": 20162.728444227832,
+      "absolute_tolerance": 100.81364222113916,
+      "passed": true
+    },
+    {
+      "check": "C3 reduced ideal-gas saturation 200.0K",
+      "actual": 20032.23869730655,
+      "reference": 20162.728444227832,
+      "absolute_tolerance": 1008.1364222113916,
+      "passed": true
+    },
+    {
+      "check": "C3 pure EOS pressure 230.0K",
+      "actual": 96775.50232781416,
+      "reference": 96816.08382165543,
+      "absolute_tolerance": 484.0804191082771,
+      "passed": true
+    },
+    {
+      "check": "C3 reduced ideal-gas saturation 230.0K",
+      "actual": 93427.51058886739,
+      "reference": 96816.08382165543,
+      "absolute_tolerance": 4840.8041910827715,
+      "passed": true
+    },
+    {
+      "check": "ice reference pressure 196.0K",
+      "actual": 0.08692625514096726,
+      "reference": 0.08692625514,
+      "absolute_tolerance": 8.692625514e-08,
+      "passed": true
+    },
+    {
+      "check": "ice reference pressure 230.0K",
+      "actual": 8.947352740189093,
+      "reference": 8.94735,
+      "absolute_tolerance": 8.94735e-06,
+      "passed": true
+    },
+    {
+      "check": "ice reference pressure 273.16K",
+      "actual": 611.6569999999944,
+      "reference": 611.657,
+      "absolute_tolerance": 0.000611657,
+      "passed": true
+    },
+    {
+      "check": "water fusion enthalpy J/kg",
+      "actual": 334541.5212931193,
+      "reference": 333426.516,
+      "absolute_tolerance": 5000.0,
+      "passed": true
+    },
+    {
+      "check": "h=G-T*dG/dT 0 liquid",
+      "actual": 1438.321566286679,
+      "reference": 1438.3215671469886,
+      "absolute_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "check": "h=G-T*dG/dT 4 ice",
+      "actual": -295854.5497407977,
+      "reference": -295854.5497408717,
+      "absolute_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "check": "h=G-T*dG/dT 4 liquid",
+      "actual": -286989.6764170703,
+      "reference": -286989.67641118355,
+      "absolute_tolerance": 0.05,
+      "passed": true
+    },
+    {
+      "check": "PH roundtrip 190.0K",
+      "actual": 190.0000000000774,
+      "reference": 190.0,
+      "absolute_tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "PH mass residual 190.0K",
+      "actual": 0.0,
+      "reference": 0.0,
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "check": "PH energy residual 190.0K",
+      "actual": 4.368014583589981e-07,
+      "reference": 0.0,
+      "absolute_tolerance": 1.0,
+      "passed": true
+    },
+    {
+      "check": "PH roundtrip 200.0K",
+      "actual": 200.00000000000148,
+      "reference": 200.0,
+      "absolute_tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "PH mass residual 200.0K",
+      "actual": 0.0,
+      "reference": 0.0,
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "check": "PH energy residual 200.0K",
+      "actual": 1.5263470629244984e-08,
+      "reference": 0.0,
+      "absolute_tolerance": 1.0,
+      "passed": true
+    },
+    {
+      "check": "PH roundtrip 210.0K",
+      "actual": 210.00000000000446,
+      "reference": 210.0,
+      "absolute_tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "PH mass residual 210.0K",
+      "actual": 0.0,
+      "reference": 0.0,
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "check": "PH energy residual 210.0K",
+      "actual": 4.851679834331035e-09,
+      "reference": 0.0,
+      "absolute_tolerance": 1.0,
+      "passed": true
+    },
+    {
+      "check": "PH roundtrip 260.0K",
+      "actual": 260.00000000000017,
+      "reference": 260.0,
+      "absolute_tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "PH mass residual 260.0K",
+      "actual": 0.0,
+      "reference": 0.0,
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "check": "PH energy residual 260.0K",
+      "actual": 1.8247468403457435e-10,
+      "reference": 0.0,
+      "absolute_tolerance": 1.0,
+      "passed": true
+    },
+    {
+      "check": "PH roundtrip 280.0K",
+      "actual": 280.0000000001411,
+      "reference": 280.0,
+      "absolute_tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "PH mass residual 280.0K",
+      "actual": 0.0,
+      "reference": 0.0,
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "check": "PH energy residual 280.0K",
+      "actual": 1.6453849597447e-07,
+      "reference": 0.0,
+      "absolute_tolerance": 1.0,
+      "passed": true
+    },
+    {
+      "check": "PH roundtrip 295.0K",
+      "actual": 295.0,
+      "reference": 295.0,
+      "absolute_tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "PH mass residual 295.0K",
+      "actual": 0.0,
+      "reference": 0.0,
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "check": "PH energy residual 295.0K",
+      "actual": 0.0,
+      "reference": 0.0,
+      "absolute_tolerance": 1.0,
+      "passed": true
+    },
+    {
+      "check": "melting plateau temperature",
+      "actual": 273.16,
+      "reference": 273.16,
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "check": "melting plateau ice fraction",
+      "actual": 0.49999999999999184,
+      "reference": 0.5,
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "check": "melting energy residual J/kg",
+      "actual": 0.0,
+      "reference": 0.0,
+      "absolute_tolerance": 1.0,
+      "passed": true
+    }
+  ],
+  "test_suite_record": {
+    "command": ".venv/Scripts/python.exe -m pytest research/equilibrium -q",
+    "passed": 38,
+    "exit_code": 0,
+    "observed_output": "38 passed in 1.87s"
+  }
+}

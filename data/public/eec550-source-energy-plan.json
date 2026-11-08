@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "date": "2026-11-08",
-  "status": "conditional_mass_ledgers_closed_energy_specification_only",
-  "coding_authorized": false,
-  "library_installed": false,
-  "equilibrium_model_executed": false,
+  "status": "implemented_reduced_variant_see_verification_and_limitations",
+  "coding_authorized": true,
+  "library_installed": true,
+  "equilibrium_model_executed": true,
   "CFD_runs": 0,
   "unique_historical_source_reconstructed": false,
   "selected_next_model": {
     "physics": "zero_dimensional_constant_pressure_homogeneous_equilibrium_PH",
-    "property_library_candidate": "ThermoPack",
+    "property_library_candidate": "ThermoPack 2.2.3 installed in isolated .venv",
     "source_snapshot_commit": "d68c794c7342bfc6938eb424a1fbb88b7780b738",
     "licence": "Apache-2.0",
     "local_platforms_documented": [
@@ -17,12 +17,14 @@
       "Linux",
       "macOS"
     ],
-    "requires_later_implementation": true,
+    "requires_later_implementation": false,
     "ready_one_call_moist_ice_PH_flash_verified": false,
     "interface_limitation": "reviewed two_phase_phflash is vapour/liquid; explicit solid-aware phase/energy calculation required",
-    "candidate_fluid_EOS": "Peng-Robinson for initial property assessment; not accepted without NIST/IAPWS checks",
+    "candidate_fluid_EOS": "Initial PR candidate rejected for water/ice; implemented C3 NIST_MEOS plus ideal calorics and IAPWS/NIST water saturation closure",
     "ice_model": "built-in Feistel-Wagner water-ice Gibbs model; reference aligned to selected liquid model",
-    "CFD_model_selected": false
+    "CFD_model_selected": false,
+    "implementation_status": "Reduced solid-aware calculation implemented; no turnkey general mixture flash claimed",
+    "source_snapshot_role": "Earlier upstream source review only; installed PyPI 2.2.3 native hash is recorded in results"
   },
   "inputs": {
     "nominal_propane_kg_s": 3,
@@ -168,6 +170,10 @@
     "source placement and observation timing",
     "static/stagnation feed state"
   ],
-  "next_dependency": "implement and verify a solid-aware property/energy calculation only after user instruction; no CFD cases until reconciliation reviewed",
-  "full_report": "docs/research/EEC550_SOURCE_ENERGY_RECONCILIATION.md"
+  "next_dependency": "Scientific review of reduced-model applicability, source assumptions and phase-bearing dispersion representation before any CFD.",
+  "full_report": "docs/research/EEC550_SOURCE_ENERGY_RECONCILIATION.md",
+  "implementation_results": "data/public/eec550-equilibrium-results.json",
+  "verification_record": "data/public/eec550-equilibrium-verification.json",
+  "conditional_ledgers_status": "Preserved planning arithmetic uses rounded MW; executed feeds use installed backend MW and specified N2/O2/Ar mixture.",
+  "implementation_property_revision": "C3 NIST_MEOS/ideal gas calorics; water IAPWS/NIST saturation Gibbs/enthalpy closure; native PR/water-ice closure rejected."
 }

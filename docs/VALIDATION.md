@@ -56,7 +56,7 @@ PHAST agreement is model benchmarking, not experimental validation. Differences 
 
 Record absolute/relative errors where meaningful for release rate, threshold distance and selected measurement locations/times. Handle zero values and below-detection observations explicitly. Add time-step/grid sensitivity when applicable.
 
-The [EEC550 sensitivity design](research/EEC550_SENSITIVITY_STUDY.md) proposes internal numerical screening tolerances and a materiality triage rule before any run. These are study choices, not experimental accuracy requirements or SMEDIS pass marks. Review implementation-specific settings and experimental performance expectations before evaluation. No completed runs, pass results or accuracy claims exist.
+The [EEC550 sensitivity design](research/EEC550_SENSITIVITY_STUDY.md) proposes internal numerical screening tolerances and a materiality triage rule before any run. These are study choices, not experimental accuracy requirements or SMEDIS pass marks. Review implementation-specific settings and experimental performance expectations before evaluation. Standalone thermodynamic numerical runs and checks now exist; no dispersion-validation or accuracy claim exists.
 
 ## Terrain boundary
 
@@ -66,4 +66,8 @@ Actual Adoshi plume validation requires field release/weather/concentration reco
 
 ## Source-energy thermodynamic milestone
 
-The [reconciliation plan](research/EEC550_SOURCE_ENERGY_RECONCILIATION.md) defines conditional mass ledgers, H00–H04 and a pressure-enthalpy homogeneous-equilibrium assessment using local ThermoPack properties with explicit ice-aware calculation. No unique historical source, computed equilibrium state or numerical energy residual exists yet. Component and energy residual targets are proposed numerical checks, not experimental accuracy criteria. Confirm fluid/ice references and phase stability before any dispersion validation.
+The [reconciliation plan](research/EEC550_SOURCE_ENERGY_RECONCILIATION.md) defines conditional mass ledgers, H00–H04 and a pressure-enthalpy homogeneous-equilibrium assessment using local ThermoPack properties with explicit ice-aware calculation. The planning record did not contain computed states. The [implementation report](research/EEC550_EQUILIBRIUM_VERIFICATION.md) now records conditional equilibrium states and numerical residuals; a unique historical source remains unestablished. Component and energy residual targets are proposed numerical checks, not experimental accuracy criteria. Confirm fluid/ice references and phase stability before any dispersion validation.
+
+## Standalone implementation verified
+
+The reduced ThermoPack-based package passed 38 tests and 34 CLI checkpoints. The original PR/water-ice closure failed a property screen and was replaced with an explicit IAPWS/NIST saturation-Gibbs/enthalpy water closure. This verifies the defined reduced model, not physical phase rates, the historical EEC550 source or dispersion. See the [verification report](research/EEC550_EQUILIBRIUM_VERIFICATION.md).

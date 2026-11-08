@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "avertiq-equilibrium"
+version = "0.1.0"
+description = "Standalone conditional source-equilibrium research; no app or CFD"
+requires-python = ">=3.11"
+dependencies = ["thermopack==2.2.3", "numpy>=2.0,<3", "scipy>=1.14,<2"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+avertiq-equilibrium = "avertiq_equilibrium.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

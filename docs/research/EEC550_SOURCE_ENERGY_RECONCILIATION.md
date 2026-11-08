@@ -1,5 +1,7 @@
 # EEC550 source mass/energy reconciliation and local model decision
 
+**Implementation follow-up:** the [standalone calculation is now implemented and verified](EEC550_EQUILIBRIUM_SUMMARY.md), using a revised water-property closure. This earlier planning record is preserved as history; conditional numerical results now exist, while historical source uncertainty remains.
+
 8 November 2026. Planning, property arithmetic and read-only software review only. No application code, library installation, model execution or equilibrium solution.
 
 ## Decision and result

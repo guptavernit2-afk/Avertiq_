@@ -235,5 +235,6 @@
   "phase_review": "data/public/eec550-phase-screen.json",
   "gas_only_baseline_suitability": "not_accepted_under_current_inlet",
   "source_energy_followup": "data/public/eec550-source-energy-plan.json",
-  "next_thermodynamic_model": "0D solid-aware PH/HEM with ThermoPack property candidate; explicit implementation and property checks required"
+  "next_thermodynamic_model": "Reduced ThermoPack-based 0D equilibrium now implemented and numerically verified; see committed result/verification records and limitations.",
+  "equilibrium_implementation_results": "data/public/eec550-equilibrium-results.json"
 }

@@ -1,5 +1,7 @@
 # EEC550 source and model decision: short report
 
+**Implementation follow-up:** the [standalone calculation is now implemented and verified](EEC550_EQUILIBRIUM_SUMMARY.md), using a revised water-property closure. This earlier planning record is preserved as history; conditional numerical results now exist, while historical source uncertainty remains.
+
 8 November 2026. Research only.
 
 **Choose a small homogeneous-equilibrium model first:** conserve mass and energy, then calculate temperature and the amounts of propane vapour/liquid and water vapour/liquid/ice.

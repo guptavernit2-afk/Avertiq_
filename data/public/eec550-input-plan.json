@@ -4,7 +4,7 @@
   "case": "EEC550",
   "purpose": "dispersion_only_research_comparison_plan",
   "run_ready": false,
-  "model_run_performed": false,
+  "model_run_performed": true,
   "selected_platform": {
     "distribution": "OpenFOAM Foundation",
     "major_release": 14,
@@ -458,5 +458,7 @@
   "sensitivity_study_status": "held_pending_source_phase_enthalpy_reconciliation",
   "phase_review": "data/public/eec550-phase-screen.json",
   "source_energy_followup": "data/public/eec550-source-energy-plan.json",
-  "next_thermodynamic_model": "0D solid-aware PH/HEM with ThermoPack property candidate; explicit implementation and property checks required"
+  "next_thermodynamic_model": "Reduced ThermoPack-based 0D equilibrium now implemented and numerically verified; see committed result/verification records and limitations.",
+  "run_scope": "conditional 0D reduced equilibrium only; no CFD or historical reconstruction",
+  "equilibrium_results": "data/public/eec550-equilibrium-results.json"
 }

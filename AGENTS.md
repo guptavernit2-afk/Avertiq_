@@ -2,7 +2,7 @@
 
 ## Current authorization
 
-This repository currently contains planning and research records only. Do not treat repository setup as authorization to implement an application or physics engine. Begin implementation when the user requests it.
+The user has authorized implementation and verification of the standalone ThermoPack-based equilibrium calculation under research/equilibrium, including water ice and mass/energy checks. This authorization excludes app and CFD implementation. Keep new work within that research scope unless the user expands it.
 
 ## Repository boundary
 
@@ -25,4 +25,4 @@ Update the relevant planning record with substantive decisions. Keep the roadmap
 
 ## Verification
 
-For documentation changes, check links, paths, CSV structure, scope consistency, and Git status. Application tests are not relevant until application code exists.
+For documentation changes, check links, paths, CSV structure, scope consistency, and Git status. For the equilibrium research package, run its property checks and meaningful conservation/phase-limit tests. Numerical verification is not experimental validation. No application or CFD tests are required for this standalone work.

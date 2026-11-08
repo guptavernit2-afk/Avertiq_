@@ -2,7 +2,7 @@
 
 Chemical transport incident assessment.
 
-**Current stage:** planning and research. No application or physics engine has been implemented.
+**Current stage:** standalone thermodynamic research implemented and numerically verified. No application or CFD has been implemented.
 
 Avertiq starts with an **Adoshi-inspired training demo**: one stationary propylene tanker, real geographic context, and explicitly hypothetical release conditions. It does not reconstruct the historical gas cloud or provide operational clearance decisions.
 
@@ -18,17 +18,17 @@ Avertiq starts with an **Adoshi-inspired training demo**: one stationary propyle
 
 ## Research collected
 
-Start with the [short collection report](docs/research/2026-11-08-summary.md). Public weather data is tracked; larger raw terrain/map/experimental assets remain local with source URLs and checksums. No model results exist yet.
+Start with the [short collection report](docs/research/2026-11-08-summary.md). Public weather data is tracked; larger raw terrain/map/experimental assets remain local with source URLs and checksums. Conditional thermodynamic results are available below; no dispersion results exist.
 
 ## Validation cases selected
 
-Read the [short SMEDIS review](docs/research/SMEDIS_SHORTLIST.md): EEC550 first, EEC360 after duplicate-record review, and EEC560 reserved from future tuning. These are propane analogues, not validation of Adoshi. No model has been run.
+Read the [short SMEDIS review](docs/research/SMEDIS_SHORTLIST.md): EEC550 first, EEC360 after duplicate-record review, and EEC560 reserved from future tuning. These are propane analogues, not validation of Adoshi. No dispersion model has been run.
 
-## First comparison plan
+## Standalone equilibrium calculation
 
-Read the [short source/energy report](docs/research/EEC550_SOURCE_ENERGY_SUMMARY.md). Next model: a local, zero-dimensional homogeneous-equilibrium mass/energy calculation using ThermoPack fluid/ice properties and an explicit solid-aware calculation. No installation, implementation or model run has occurred; the historical source remains non-unique.
+Read the [short implementation report](docs/research/EEC550_EQUILIBRIUM_SUMMARY.md). The [research package](research/equilibrium/README.md) runs locally with ThermoPack 2.2.3 and an explicit reference-saturation water/ice closure. It passed 38 tests and 34 property/numerical checkpoints. Results are conditional source studies, not experimental validation.
 
-The earlier gas-only baseline is not accepted. The [nine-case sensitivity design](docs/research/EEC550_SENSITIVITY_SUMMARY.md) stays held until the thermodynamic model and source reconciliation are verified. OpenFOAM remains a candidate for later dispersion work.
+The primary assumed case gives about 204.3 K with water ice. The original gas-only baseline remains unaccepted and the nine-case CFD study remains held pending review. Run instructions, dependency pins, source/native-library hashes and results are recorded in the repo. No app or CFD work was performed.
 
 ## Demo flow
 

@@ -95,3 +95,13 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - The reviewed Python PH call is vapour/liquid only; explicit solid-aware phase stability and energy calculation must be implemented and checked later. No ready one-call moist/ice flash or replacement CFD solver claimed.
 - Define H00-H04 and component/energy numerical targets; leave equilibrium T, phase split, enthalpy target and energy residual null until coherent properties are evaluated. Do not double-count latent heat or mix enthalpy references.
 - Preserve the gas-only rejection and hold on the nine-case dispersion study. No installation, application code or model execution authorized/completed in this research task.
+
+## 2026-11-08 - Standalone equilibrium implementation and verification
+
+- User authorized standalone ThermoPack-based equilibrium implementation, including ice and conservation checks; app and CFD remain out of scope.
+- Install ThermoPack 2.2.3, NumPy 2.5.4 and SciPy 1.18.1 in ignored .venv; record runtime/test pins.
+- Initial native PR/water-ice Gibbs plus ideal-gas closure failed ice-pressure screening (about 43% low at 196 K). Reject it; retain the adverse check in the verification record.
+- Implement a reduced ideal-gas/pure-immiscible-condensate model with native C3 NIST_MEOS and an IAPWS/NIST water saturation Gibbs/enthalpy closure sharing ThermoPack gas references. Native condensed volumes are used for density; no latent-heat double counting. Melting at 273.16 K is an explicit low-pressure approximation.
+- Enumerate phase sets and use a PH outer root plus melting lever rule. Verify phase limits, conservation, reference invariance, scale changes, invalid inputs and failure handling. 38 tests and all 34 CLI checkpoints passed; dependency check passed.
+- Execute H00-H04 with explicit assumptions. H00 gives about 204.3 K with water ice; H04 at 196 K requires about 496 kW extra heat removal. These are reduced-model conditional results, not measurements or field validation.
+- Preserve source unknowns and the hold on the nine CFD cases. No application, CFD, mapping or operational predictions implemented.

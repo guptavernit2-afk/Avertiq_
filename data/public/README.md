@@ -51,3 +51,7 @@ The structured input record is now schema version 2. It retains original values 
 ## Source-energy specification
 
 [eec550-source-energy-plan.json](eec550-source-energy-plan.json) contains conditional component ledgers, energy equations, unsolved state fields, H00-H04 and the next-model decision. It is planning metadata, not executable input or a flash result. Pinned ThermoPack reference snapshots are ignored locally with manifest hashes; no downloaded source was installed or executed. [Short report](../../docs/research/EEC550_SOURCE_ENERGY_SUMMARY.md).
+
+## Implemented equilibrium results
+
+[eec550-equilibrium-results.json](eec550-equilibrium-results.json) and [verification](eec550-equilibrium-verification.json) now record executed conditional 0D cases and numerical/property checks. They are distinct from the earlier planning records above and do not validate source reconstruction or dispersion. Native-library and normalized source hashes are included. Large/local output remains ignored; small first-party result records are tracked. [Short report](../../docs/research/EEC550_EQUILIBRIUM_SUMMARY.md).
