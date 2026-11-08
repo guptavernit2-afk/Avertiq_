@@ -59,3 +59,7 @@ The structured input record is now schema version 2. It retains original values 
 ## Conditional dispersion handoff
 
 [eec550-dispersion-handoff.json](eec550-dispersion-handoff.json) derives an H00 boundary ledger from existing equilibrium results and records their normalized-text hash. It preserves gas/ice mass, enthalpy and velocity/area consistency. This is planning metadata, not solver configuration. Original source values and historical sensitivity matrix remain preserved; implementation/execution gates are explicit. [Short decision](../../docs/research/EEC550_DISPERSION_SUMMARY.md). No new equilibrium or CFD run.
+
+## Executed mixing milestone and handoff checks
+
+[eec550-mixing-results.json](eec550-mixing-results.json) contains 11 executed conditional 0D H00/ambient thermal-enthalpy equilibrium states, with provenance. It is not CFD or a plume prediction. [eec550-handoff-checks.json](eec550-handoff-checks.json) records 16 passed arithmetic boundary checks; these are not physical validation. [Milestone report](../../docs/research/EEC550_MIXING_MILESTONE.md).

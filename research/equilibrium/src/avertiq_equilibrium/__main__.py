@@ -8,18 +8,22 @@ from .verification import verify
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("verify", "cases"))
+    parser.add_argument("command", choices=("verify", "cases", "mixing"))
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.output.exists():
         parser.error("Output already exists; select a new path to preserve prior runs")
     try:
         verification = verify()
-        if args.command == "cases":
+        if args.command in ("cases", "mixing"):
             if not verification["passed"]:
-                raise RuntimeError("Property/numerical verification failed; cases refused")
-            from .cases import run_cases
-            result = run_cases()
+                raise RuntimeError("Property/numerical verification failed; calculation refused")
+            if args.command == "cases":
+                from .cases import run_cases
+                result = run_cases()
+            else:
+                from .mixing import run_mixing
+                result = run_mixing()
             result["verification_passed"] = True
         else:
             result = verification

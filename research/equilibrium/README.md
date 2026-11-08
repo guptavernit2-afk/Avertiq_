@@ -53,3 +53,13 @@ Reference fits and units originate in the tracked [phase-screen record](../../da
 Passing numerical and property checks **does not validate EEC550 dispersion or identify the historical source**. The same limitations apply to the committed small result records. Original inlet position, observation window and source-basis uncertainties persist. No results from this package should be used for responder clearance or tanker consequence predictions.
 
 ThermoPack is an external dependency, not vendored source. See its [versioned documentation](https://thermotools.github.io/thermopack/v2.2.0/thermo_methods.html) and [PyPI release](https://pypi.org/project/thermopack/2.2.3/) for upstream terms and citation guidance.
+
+## H00/ambient mixing diagnostic
+
+The verification-gated mixing command adds humid ambient air to H00 at 11 prescribed wet-air/source mass ratios and solves constant-pressure thermal-enthalpy equilibrium. It predicts phase/composition changes, not distance, time or momentum. Kinetic-energy conversion is excluded explicitly.
+
+~~~powershell
+.\.venv\Scripts\python.exe -m avertiq_equilibrium mixing --output outputs/thermodynamics/my-new-mixing-run/mixing.json
+~~~
+
+Use a fresh output path. [Executed milestone and limitations](../../docs/research/EEC550_MIXING_MILESTONE.md). The expanded research suite has 51 passing tests. Earlier case outputs retain their original source hashes; new mixing output includes the extended CLI/module snapshot.

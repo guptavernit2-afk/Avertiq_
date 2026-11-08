@@ -1,0 +1,723 @@
+{
+  "schema_version": 1,
+  "study_id": "EEC550-H00-MIXING-v1",
+  "status": "conditional_0D_equilibrium_path_not_dispersion_or_field_validation",
+  "model": "ThermoPack C3 NIST_MEOS / ideal carrier gas; IAPWS-ice and NIST-water saturation Gibbs closure",
+  "ratio_definition": "added wet-air mass / original H00 total mass",
+  "ratio_range_reviewed": [
+    0.0,
+    100.0
+  ],
+  "energy_policy": "Conserve thermal enthalpy at fixed pressure; kinetic/potential energy and work excluded. This is not a dynamic mixing control volume.",
+  "assumptions": [
+    "Recompute conditional H00 from unchanged feed and energy definitions.",
+    "Ambient wet air is 283.05 K, RH 0.99, 102500 Pa; ideal-gas composition.",
+    "Instantaneous equilibrium; no phase slip, finite-rate nucleation, deposition or mixing rate.",
+    "No prediction of distance, time, velocity, terrain flow or hazard footprint.",
+    "Grid samples do not locate exact phase-transition ratios.",
+    "The path is a diagnostic of the reduced model, not evidence for HEM relaxation times."
+  ],
+  "ambient": {
+    "temperature_K": 283.05,
+    "relative_humidity": 0.99,
+    "pressure_Pa": 102500.0,
+    "component_mol_per_kg": {
+      "C3": 0.0,
+      "N2": 26.77427449947946,
+      "O2": 7.1821878190935,
+      "AR": 0.32025987888061336,
+      "H2O": 0.40830856405141075
+    },
+    "thermal_enthalpy_J_kg": -113973.35352587722,
+    "bulk_density_kg_m3": 1.2556957868736431
+  },
+  "source": {
+    "case_id": "H00",
+    "temperature_K": 204.26096230749067,
+    "mass_flow_kg_s": 10.84567145041835,
+    "thermal_enthalpy_flux_W": -193794.19825542008,
+    "component_flow_mol_s": {
+      "C3": 68.03183890060548,
+      "N2": 210.06216104623005,
+      "O2": 56.3490859238043,
+      "AR": 2.512653788448067,
+      "H2O": 3.2034548439394652
+    },
+    "energy_target_W": -193794.19825587195
+  },
+  "provenance": {
+    "executed_utc": "2026-11-08T12:43:22.086828+00:00",
+    "python": "3.13.6",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "thermopack_native_sha256": {
+      "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+    },
+    "packages": {
+      "thermopack": "2.2.3",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1"
+    },
+    "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+    "source_sha256": {
+      "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+      "__main__.py": "4d4b73f13f20bf6fc43a48cf305d84db6c300d453c9b937ba2710d456e5b189f",
+      "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+      "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+      "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
+      "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+      "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+    }
+  },
+  "points": [
+    {
+      "added_wet_air_to_H00_mass_ratio": 0.0,
+      "added_wet_air_mass_kg_s": 0.0,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 210.06216104623005,
+        "O2": 56.3490859238043,
+        "AR": 2.512653788448067,
+        "H2O": 3.2034548439394652
+      },
+      "target_thermal_enthalpy_flux_W": -193794.19825542008,
+      "temperature_K": 204.2609623075291,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 10.84567145041835,
+      "gas_mole_fractions": {
+        "C3": 0.20190080219921847,
+        "N2": 0.6234098550371215,
+        "O2": 0.16722943014711786,
+        "AR": 0.007456902881572045,
+        "H2O": 3.0097349700723686e-06
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 210.06216104623005,
+        "O2": 56.3490859238043,
+        "AR": 2.512653788448067,
+        "H2O": 0.0010141505253428587
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.057691969091855415,
+        "gas": 10.787979481326493
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.005319354302368256,
+        "gas": 0.9946806456976317
+      },
+      "bulk_density_kg_m3": 1.9425926315504995,
+      "volume_flow_m3_s": 5.583091006456546,
+      "thermal_enthalpy_flux_W": -193794.1982549691,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.8029263614155223,
+          "H2O_ice": 1.0
+        },
+        "energy_residual_J_kg": 4.158276034999653e-08
+      }
+    },
+    {
+      "added_wet_air_to_H00_mass_ratio": 0.1,
+      "added_wet_air_mass_kg_s": 1.084567145041835,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 239.1006595006969,
+        "O2": 64.13865086191278,
+        "AR": 2.859997130957058,
+        "H2O": 3.646292897548835
+      },
+      "target_thermal_enthalpy_flux_W": -317405.9528998245,
+      "temperature_K": 212.68969215179538,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 11.930238595460185,
+      "gas_mole_fractions": {
+        "C3": 0.18183774661043337,
+        "N2": 0.6390761419839892,
+        "O2": 0.17143190499970082,
+        "AR": 0.007644294818567773,
+        "H2O": 9.911587308783223e-06
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 239.1006595006969,
+        "O2": 64.13865086191278,
+        "AR": 2.859997130957058,
+        "H2O": 0.0037082702772656133
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.06562116206029732,
+        "gas": 11.864617433399888
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.005500406512009588,
+        "gas": 0.9944995934879903
+      },
+      "bulk_density_kg_m3": 1.848244502461422,
+      "volume_flow_m3_s": 6.454902789956602,
+      "thermal_enthalpy_flux_W": -317405.9528998125,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.45501839673960837,
+          "H2O_ice": 1.0
+        },
+        "energy_residual_J_kg": 1.005074462864233e-09
+      }
+    },
+    {
+      "added_wet_air_to_H00_mass_ratio": 0.25,
+      "added_wet_air_mass_kg_s": 2.7114178626045873,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 282.6584071823971,
+        "O2": 75.8229982690755,
+        "AR": 3.3810121447205437,
+        "H2O": 4.310549977962889
+      },
+      "target_thermal_enthalpy_flux_W": -502823.5848664311,
+      "temperature_K": 222.85649249795895,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 13.557089313022939,
+      "gas_mole_fractions": {
+        "C3": 0.15824663266125474,
+        "N2": 0.6574824648699901,
+        "O2": 0.1763693933349574,
+        "AR": 0.007864461633478956,
+        "H2O": 3.704750031865124e-05
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 282.6584071823971,
+        "O2": 75.8229982690755,
+        "AR": 3.3810121447205437,
+        "H2O": 0.01592709766370726
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.07736763118858977,
+        "gas": 13.479721681834349
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.005706802500317707,
+        "gas": 0.9942931974996823
+      },
+      "bulk_density_kg_m3": 1.7444094560977168,
+      "volume_flow_m3_s": 7.771735738781451,
+      "thermal_enthalpy_flux_W": -502823.58486643084,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.2394239977098111,
+          "H2O_ice": 0.9999999999999997
+        },
+        "energy_residual_J_kg": 1.7174087909136405e-11
+      }
+    },
+    {
+      "added_wet_air_to_H00_mass_ratio": 0.5,
+      "added_wet_air_mass_kg_s": 5.422835725209175,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 355.25465331856424,
+        "O2": 95.2969106143467,
+        "AR": 4.24937050099302,
+        "H2O": 5.417645111986314
+      },
+      "target_thermal_enthalpy_flux_W": -811852.9714774421,
+      "temperature_K": 235.30407492620742,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 16.268507175627526,
+      "gas_mole_fractions": {
+        "C3": 0.13010084886119927,
+        "N2": 0.6793720808599946,
+        "O2": 0.18224127357324738,
+        "AR": 0.00812629378007319,
+        "H2O": 0.0001595029254855428
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 355.25465331856424,
+        "O2": 95.2969106143467,
+        "AR": 4.24937050099302,
+        "H2O": 0.08340666049292755
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.09609630570365335,
+        "gas": 16.172410869923873
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.005906891435473496,
+        "gas": 0.9940931085645265
+      },
+      "bulk_density_kg_m3": 1.6299388821344185,
+      "volume_flow_m3_s": 9.981053494670782,
+      "thermal_enthalpy_flux_W": -811852.9714769057,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.11417843365288244,
+          "H2O_ice": 0.9999999999999998
+        },
+        "energy_residual_J_kg": 3.296709291557976e-08
+      }
+    },
+    {
+      "added_wet_air_to_H00_mass_ratio": 1.0,
+      "added_wet_air_mass_kg_s": 10.84567145041835,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 500.44714559089846,
+        "O2": 134.2447353048891,
+        "AR": 5.986087213537974,
+        "H2O": 7.631835380033163
+      },
+      "target_thermal_enthalpy_flux_W": -1429911.7446994642,
+      "temperature_K": 250.458620034637,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 21.691342900836702,
+      "gas_mole_fractions": {
+        "C3": 0.09591946056614742,
+        "N2": 0.7055905150098772,
+        "O2": 0.1892743574534718,
+        "AR": 0.00843990498718336,
+        "H2O": 0.0007757619833201343
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 500.44714559089846,
+        "O2": 134.2447353048891,
+        "AR": 5.986087213537974,
+        "H2O": 0.5502169628868392
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.12757535578489101,
+        "gas": 21.56376754505181
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.005881395004823332,
+        "gas": 0.9941186049951767
+      },
+      "bulk_density_kg_m3": 1.5053256942717546,
+      "volume_flow_m3_s": 14.409734041861634,
+      "thermal_enthalpy_flux_W": -1429911.7446990665,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.047429656244724984,
+          "H2O_ice": 1.0000000000000002
+        },
+        "energy_residual_J_kg": 1.8333338843003113e-08
+      }
+    },
+    {
+      "added_wet_air_to_H00_mass_ratio": 2.0,
+      "added_wet_air_mass_kg_s": 21.6913429008367,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 790.8321301355669,
+        "O2": 212.14038468597388,
+        "AR": 9.45952063862788,
+        "H2O": 12.06021591612686
+      },
+      "target_thermal_enthalpy_flux_W": -2666029.291143508,
+      "temperature_K": 263.91250115694896,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 32.537014351255046,
+      "gas_mole_fractions": {
+        "C3": 0.06279461085599738,
+        "N2": 0.7299522792090872,
+        "O2": 0.1958093904040974,
+        "AR": 0.008731307678670244,
+        "H2O": 0.0027124118521475943
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 790.8321301355669,
+        "O2": 212.14038468597388,
+        "AR": 9.45952063862788,
+        "H2O": 2.938633803792001
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.16432530175371246,
+        "gas": 32.37268904950134
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.005050411201830938,
+        "gas": 0.9949495887981693
+      },
+      "bulk_density_kg_m3": 1.4028596638377513,
+      "volume_flow_m3_s": 23.193349406201285,
+      "thermal_enthalpy_flux_W": -2666029.291143528,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.019989596808721224,
+          "H2O_ice": 0.9999999999999996
+        },
+        "energy_residual_J_kg": -6.154048167440547e-10
+      }
+    },
+    {
+      "added_wet_air_to_H00_mass_ratio": 5.0,
+      "added_wet_air_mass_kg_s": 54.22835725209175,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 1661.9870837695723,
+        "O2": 445.8273328292283,
+        "AR": 19.8798209138976,
+        "H2O": 25.34535752440795
+      },
+      "target_thermal_enthalpy_flux_W": -6374381.93047564,
+      "temperature_K": 273.94804484747726,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 65.0740287025101,
+      "gas_mole_fractions": {
+        "C3": 0.03078800714740509,
+        "N2": 0.7521371028754763,
+        "O2": 0.20176045997681633,
+        "AR": 0.008996670945208939,
+        "H2O": 0.006317759055093193
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 1661.9870837695723,
+        "O2": 445.8273328292283,
+        "AR": 19.8798209138976,
+        "H2O": 13.960265898053335
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.20510242564877842,
+        "water_ice": 0.0,
+        "gas": 64.86892627686133
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0031518323014303705,
+        "water_ice": 0.0,
+        "gas": 0.9968481676985697
+      },
+      "bulk_density_kg_m3": 1.3252457815066792,
+      "volume_flow_m3_s": 49.103366040167344,
+      "thermal_enthalpy_flux_W": -6374381.930475609,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.007316035922982542,
+          "H2O_liquid": 1.0
+        },
+        "energy_residual_J_kg": 4.722874175012512e-10
+      }
+    },
+    {
+      "added_wet_air_to_H00_mass_ratio": 10.0,
+      "added_wet_air_mass_kg_s": 108.4567145041835,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 3113.9120064929143,
+        "O2": 835.3055797346523,
+        "AR": 37.24698803934714,
+        "H2O": 47.48726020487644
+      },
+      "target_thermal_enthalpy_flux_W": -12554969.66269586,
+      "temperature_K": 278.32746979443596,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 119.30238595460183,
+      "gas_mole_fractions": {
+        "C3": 0.016634759614114168,
+        "N2": 0.7613961128287616,
+        "O2": 0.20424418548372578,
+        "AR": 0.009107422383357197,
+        "H2O": 0.008617519690041096
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 3113.9120064929143,
+        "O2": 835.3055797346523,
+        "AR": 37.24698803934714,
+        "H2O": 35.24341348330877
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.2205728986890416,
+        "water_ice": 0.0,
+        "gas": 119.08181305591279
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0018488557200605884,
+        "water_ice": 0.0,
+        "gas": 0.9981511442799395
+      },
+      "bulk_density_kg_m3": 1.2920694222511755,
+      "volume_flow_m3_s": 92.33434666903658,
+      "thermal_enthalpy_flux_W": -12554969.662697554,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.0035096864530030332,
+          "H2O_liquid": 1.0
+        },
+        "energy_residual_J_kg": -1.4192041735822725e-08
+      }
+    },
+    {
+      "added_wet_air_to_H00_mass_ratio": 20.0,
+      "added_wet_air_mass_kg_s": 216.913429008367,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 6017.761851939599,
+        "O2": 1614.2620735455002,
+        "AR": 71.9813222902462,
+        "H2O": 91.77106556581342
+      },
+      "target_thermal_enthalpy_flux_W": -24916145.1271363,
+      "temperature_K": 280.61424093759405,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 227.75910045878535,
+      "gas_mole_fractions": {
+        "C3": 0.008665088969200443,
+        "N2": 0.7664711506431583,
+        "O2": 0.20560556223261606,
+        "AR": 0.009168127333393648,
+        "H2O": 0.010090070821631688
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 6017.761851939599,
+        "O2": 1614.2620735455002,
+        "AR": 71.9813222902462,
+        "H2O": 79.21973739368167
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.22611217702095343,
+        "water_ice": 0.0,
+        "gas": 227.5329882817644
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0009927690114927815,
+        "water_ice": 0.0,
+        "gas": 0.9990072309885072
+      },
+      "bulk_density_kg_m3": 1.2744297089299192,
+      "volume_flow_m3_s": 178.71452529933904,
+      "thermal_enthalpy_flux_W": -24916145.127136208,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.0017215372894975568,
+          "H2O_liquid": 1.0
+        },
+        "energy_residual_J_kg": 4.0890685497943824e-10
+      }
+    },
+    {
+      "added_wet_air_to_H00_mass_ratio": 50.0,
+      "added_wet_air_mass_kg_s": 542.2835725209175,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 14729.31138827965,
+        "O2": 3951.1315549780443,
+        "AR": 176.18432504294339,
+        "H2O": 224.62248164862433
+      },
+      "target_thermal_enthalpy_flux_W": -61999671.52045762,
+      "temperature_K": 282.01570302975483,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 553.1292439713358,
+      "gas_mole_fractions": {
+        "C3": 0.0035549802324376448,
+        "N2": 0.769675076683644,
+        "O2": 0.20646501403892745,
+        "AR": 0.009206451022264785,
+        "H2O": 0.011098478022725962
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 14729.31138827965,
+        "O2": 3951.1315549780443,
+        "AR": 176.18432504294339,
+        "H2O": 212.39214271699802
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.2203295558532479,
+        "water_ice": 0.0,
+        "gas": 552.9089144154825
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.00039833286389150997,
+        "water_ice": 0.0,
+        "gas": 0.9996016671361084
+      },
+      "bulk_density_kg_m3": 1.2634781456056756,
+      "volume_flow_m3_s": 437.7829928401186,
+      "thermal_enthalpy_flux_W": -61999671.520457655,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.0006811809293211699,
+          "H2O_liquid": 1.0
+        },
+        "energy_residual_J_kg": -6.734936434955455e-11
+      }
+    },
+    {
+      "added_wet_air_to_H00_mass_ratio": 100.0,
+      "added_wet_air_mass_kg_s": 1084.567145041835,
+      "total_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 29248.56061551307,
+        "O2": 7845.914024032284,
+        "AR": 349.8559962974387,
+        "H2O": 446.04150845330923
+      },
+      "target_thermal_enthalpy_flux_W": -123805548.84265982,
+      "temperature_K": 282.487622582612,
+      "pressure_Pa": 102500.0,
+      "total_mass_kg_s": 1095.4128164922531,
+      "gas_mole_fractions": {
+        "C3": 0.0017928053542895306,
+        "N2": 0.770771111352203,
+        "O2": 0.20675902487556025,
+        "AR": 0.0092195612161641,
+        "H2O": 0.011457497201782959
+      },
+      "gas_component_flow_mol_s": {
+        "C3": 68.03183890060548,
+        "N2": 29248.56061551307,
+        "O2": 7845.914024032284,
+        "AR": 349.8559962974387,
+        "H2O": 434.7792703601857
+      },
+      "phase_mass_kg_s": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.20288921924762035,
+        "water_ice": 0.0,
+        "gas": 1095.2099272730056
+      },
+      "phase_mass_fractions": {
+        "propane_liquid": 0.0,
+        "water_liquid": 0.00018521713110616612,
+        "water_ice": 0.0,
+        "gas": 0.9998147828688939
+      },
+      "bulk_density_kg_m3": 1.2597631103810838,
+      "volume_flow_m3_s": 869.5387311038867,
+      "thermal_enthalpy_flux_W": -123805548.84265976,
+      "diagnostics": {
+        "component_residual_mol": {
+          "C3": 0.0,
+          "N2": 0.0,
+          "O2": 0.0,
+          "AR": 0.0,
+          "H2O": 0.0
+        },
+        "maximum_component_relative_residual": 0.0,
+        "gas_saturation_ratios": {
+          "C3_liquid": 0.0003394011031834643,
+          "H2O_liquid": 0.9999999999999997
+        },
+        "energy_residual_J_kg": 5.441295179132328e-11
+      }
+    }
+  ],
+  "verification_passed": true
+}

@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-08",
+  "scope": "Arithmetic boundary-contract checks only; not CFD or independent physical validation",
+  "input": "data/public/eec550-dispersion-handoff.json",
+  "input_sha256_canonical_LF": "d5ff7a93500af57f9b1e4cac9c1821b3aa1e0414d44fd48c493003dd8d86be2d",
+  "passed": true,
+  "checks": [
+    {
+      "name": "total phase mass",
+      "absolute_residual": 2.914335439641036e-16,
+      "tolerance": 1e-10,
+      "units": "kg/s",
+      "passed": true
+    },
+    {
+      "name": "total component C3",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-10,
+      "units": "kg/s",
+      "passed": true
+    },
+    {
+      "name": "total component N2",
+      "absolute_residual": 8.881784197001252e-16,
+      "tolerance": 1e-10,
+      "units": "kg/s",
+      "passed": true
+    },
+    {
+      "name": "total component O2",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-10,
+      "units": "kg/s",
+      "passed": true
+    },
+    {
+      "name": "total component AR",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-10,
+      "units": "kg/s",
+      "passed": true
+    },
+    {
+      "name": "total component H2O",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-10,
+      "units": "kg/s",
+      "passed": true
+    },
+    {
+      "name": "gas mole fraction sum",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-12,
+      "units": "1",
+      "passed": true
+    },
+    {
+      "name": "gas mass fraction sum",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-12,
+      "units": "1",
+      "passed": true
+    },
+    {
+      "name": "rectangular window area",
+      "absolute_residual": 5.551115123125783e-17,
+      "tolerance": 1e-12,
+      "units": "m2",
+      "passed": true
+    },
+    {
+      "name": "volume flow",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-12,
+      "units": "m3/s",
+      "passed": true
+    },
+    {
+      "name": "bulk density",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-10,
+      "units": "kg/s",
+      "passed": true
+    },
+    {
+      "name": "velocity magnitude",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-12,
+      "units": "m/s",
+      "passed": true
+    },
+    {
+      "name": "kinetic energy flux",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-08,
+      "units": "W",
+      "passed": true
+    },
+    {
+      "name": "advective momentum",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-10,
+      "units": "N",
+      "passed": true
+    },
+    {
+      "name": "enthalpy flux against H00",
+      "absolute_residual": 0.0,
+      "tolerance": 1e-08,
+      "units": "W",
+      "passed": true
+    },
+    {
+      "name": "source energy balance",
+      "absolute_residual": 4.51868753970075e-07,
+      "tolerance": 1e-05,
+      "units": "W",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Uniform common-velocity/common-temperature inlet assumed.",
+    "Pressure thrust zero only under stated ambient-pressure assumption.",
+    "Gas/condensate enthalpy reference mapping and local transport closure remain unverified.",
+    "Historical source accuracy and phase-relaxation applicability not established."
+  ]
+}

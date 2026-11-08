@@ -47,3 +47,9 @@ Initial planning baseline: 8 November 2026.
 ## Source-to-dispersion plan
 
 The [short handoff decision](docs/research/EEC550_DISPERSION_SUMMARY.md) selects H00 as a conditional phase-bearing candidate and preserves the original equivalent source separately. Warm-air mixing checks and an implementation audit come next; the nine-case study remains held. No CFD solver has been selected or run.
+
+## Current checkpoints
+
+[Scope and checkpoint board](docs/PROJECT_CHECKPOINTS.md) | [Today's short report](docs/research/TODAY_SHORT_REPORT.md)
+
+Completed the standalone mixing milestone: 11 conditional states, 16 source handoff checks and 51 passing research tests. Mixing retains changing water phases; no spatial dispersion or app exists yet. Next is one bounded dispersion implementation feasibility decision.

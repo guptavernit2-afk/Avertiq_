@@ -75,3 +75,7 @@ The reduced ThermoPack-based package passed 38 tests and 34 CLI checkpoints. The
 ## Equilibrium-to-dispersion review
 
 The [handoff plan](research/EEC550_DISPERSION_HANDOFF.md) defines a conditional H00 boundary, conservative total-component/enthalpy transport requirements, phase-bearing model gates and a versioned revision of the held sensitivity matrix. Preserve gas-versus-total concentration bases and the original source note. A phase-bearing implementation audit and numerical checks precede the conditional 30-receptor comparison. No new model execution occurred in this review.
+
+## Mixing research checkpoint
+
+The [executed 11-point mixing path](research/EEC550_MIXING_MILESTONE.md) conserves total component flow and thermal enthalpy as declared humid air is added to H00. It tests the reduced closure beyond the initial source and reveals changing ice/liquid-water phases. It does not validate relaxation times, transport, distance or dilution rates. The suite now has 51 passing tests; 16 additional handoff arithmetic checks passed. No dispersion or Adoshi validation claim follows.

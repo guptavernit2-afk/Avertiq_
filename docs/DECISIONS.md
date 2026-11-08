@@ -115,3 +115,12 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Plan conservative H00/ambient mixing and phase-transition checks before coupling. Preserve phase-rate/slip/particle-size limitations.
 - Keep S00-S08 as historical v1 on hold; freeze a v2 source/geometry/turbulence recipe before execution. Extend budgets to total water/propane and energy; preserve 30-receptor/150 s policy and holdout.
 - Save [full plan](research/EEC550_DISPERSION_HANDOFF.md) and [short report](research/EEC550_DISPERSION_SUMMARY.md). No new field validation or terrain claim.
+
+## 2026-11-08 - Parallel checkpoint bundle and research milestone closure
+
+- User requested clear scope and multiple checkpoints completed together. Parallelize scope documentation, standalone mixing implementation/tests and independent source review; integrate results after review.
+- Complete the existing authorized standalone thermodynamic scope; do not expand to app or CFD implementation/runs.
+- Freeze the [checkpoint board](PROJECT_CHECKPOINTS.md). Execute 11 H00/ambient PH mixing points, where ratio is added wet-air mass / original H00 total mass. Conserve components and thermal enthalpy; explicitly exclude momentum/kinetic-energy conversion.
+- Humidity initially increases ice flow; between sampled ratios 2 and 5 ice disappears and liquid water remains. Liquid water persists at ratio 100. No spatial, temporal or phase-rate inference.
+- Expanded suite passed 51 tests. All 16 arithmetic source handoff checks passed; independent review found no material inconsistency. Preserve original source/run records.
+- Close this research milestone with results and reproducible commands. Next: bounded phase-bearing dispersion implementation feasibility, rather than another general setup cycle. Nine-case CFD matrix remains held.

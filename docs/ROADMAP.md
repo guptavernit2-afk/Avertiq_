@@ -16,6 +16,8 @@ Step 1 is complete. Step 2 has an attributed incident fact sheet and reference c
 
 ## Next milestone
 
-Review the [H00 source-to-dispersion plan](research/EEC550_DISPERSION_SUMMARY.md). Use a conditional phase-bearing source, preserve the original source record, and plan conservative warm-air mixing checks before selecting a transport implementation. Freeze revised inlet/atmosphere/comparison inputs before releasing the nine-case hold. App and CFD implementation require a separate user instruction.
+Today's [scope, mixing and handoff checkpoints](PROJECT_CHECKPOINTS.md) are complete within the standalone research scope: 11 mixing states, 16 handoff checks and 51 passing tests. See the [short report](research/TODAY_SHORT_REPORT.md).
+
+Next session: make a bounded phase-bearing dispersion implementation feasibility decision using the [executed mixing path](research/EEC550_MIXING_MILESTONE.md) as a regression case. Select one implementable route or explicitly reject it. The nine-case comparison remains held. App and CFD implementation/runs remain outside current authorization.
 
 Do not promise schedules until data access and modelling dependencies are understood.
