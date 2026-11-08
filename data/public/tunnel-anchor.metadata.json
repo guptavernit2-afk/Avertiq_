@@ -1,0 +1,53 @@
+{
+  "source_url": "https://api.openstreetmap.org/api/0.6/way/42680772/full",
+  "retrieved_utc": "2026-11-08T06:56:42.224046+00:00",
+  "sha256": "dba24345b5826c226bcd53a1f1d5c1e6f670c79ab3d0f18360f6ebe8e358c79b",
+  "bytes": 1442,
+  "way_id": "42680772",
+  "way_version": "12",
+  "way_timestamp": "2026-02-19T18:48:34Z",
+  "node_count": 2,
+  "bbox": {
+    "south": 18.7633788,
+    "north": 18.7656149,
+    "west": 73.3458412,
+    "east": 73.3472332
+  },
+  "bbox_center": {
+    "lat": 18.76449685,
+    "lon": 73.3465372
+  },
+  "endpoints": [
+    [
+      18.7633788,
+      73.3472332
+    ],
+    [
+      18.7656149,
+      73.3458412
+    ]
+  ],
+  "tags": {
+    "bicycle": "no",
+    "highway": "motorway",
+    "int_ref": "AH47",
+    "lanes": "3",
+    "layer": "-1",
+    "lit": "24/7",
+    "maxspeed": "60",
+    "motorcycle": "no",
+    "name": "Adoshi Tunnel",
+    "name:en": "Adoshi Tunnel",
+    "name:mr": "आडोशी बोगदा",
+    "oneway": "yes",
+    "ref": "MPE;NH48",
+    "ref:old": "NH4",
+    "surface": "concrete",
+    "toll": "yes",
+    "tunnel": "yes"
+  },
+  "evidence_status": "community_mapped_feature_not_verified_incident_location",
+  "licence": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "licence_url": "https://www.openstreetmap.org/copyright"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "WEATHER-001",
+  "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=18.7644969&longitude=73.3465372&start_date=2026-02-03&end_date=2026-02-05&hourly=temperature_2m%2Crelative_humidity_2m%2Cwind_speed_10m%2Cwind_direction_10m%2Ccloud_cover%2Csurface_pressure&wind_speed_unit=ms&timezone=Asia%2FKolkata&models=era5",
+  "retrieved_utc": "2026-11-08T06:57:30.587308+00:00",
+  "sha256": "c9d42cd85724b17257a38eca98bbb3364c2a048948ceb54474a1c7d37bafaf64",
+  "bytes": 3678,
+  "local_path": "data/public/weather-era5-2026-02-03_05.json",
+  "requested_model": "era5",
+  "requested_coordinates": {
+    "lat": 18.76449685,
+    "lon": 73.3465372
+  },
+  "returned_coordinates": {
+    "lat": 18.75,
+    "lon": 73.25
+  },
+  "returned_elevation_m": 381.0,
+  "timezone": "Asia/Kolkata",
+  "utc_offset_seconds": 19800,
+  "hour_count": 72,
+  "units": {
+    "time": "iso8601",
+    "temperature_2m": "\u00b0C",
+    "relative_humidity_2m": "%",
+    "wind_speed_10m": "m/s",
+    "wind_direction_10m": "\u00b0",
+    "cloud_cover": "%",
+    "surface_pressure": "hPa"
+  },
+  "evidence_status": "gridded_reanalysis_not_on_site_measurement",
+  "synthetic": false,
+  "attribution": "Weather data by Open-Meteo.com; ERA5 from Copernicus Climate Change Service / ECMWF",
+  "licence_url": "https://open-meteo.com/en/licence",
+  "licence": "CC-BY-4.0; underlying source terms apply",
+  "modifications": "API response copied without modification; separate provenance metadata added",
+  "limitations": [
+    "Tunnel bounding-box centre is a geographic proxy, not the verified accident position.",
+    "ERA5 approximately 0.25-degree grid; local valley wind and tunnel ventilation unresolved.",
+    "Provider may perform interpolation and elevation adjustment; retain request and returned metadata.",
+    "Hourly sampling does not establish peak gusts or source conditions."
+  ]
+}

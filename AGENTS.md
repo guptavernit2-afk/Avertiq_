@@ -4,6 +4,10 @@
 
 This repository currently contains planning and research records only. Do not treat repository setup as authorization to implement an application or physics engine. Begin implementation when the user requests it.
 
+## Repository boundary
+
+Use C:/Users/Vernit/OneDrive/Documents/Desktop/Avertiq_ explicitly as the working directory for every repository command. Never fall back to the chat's inherited SurakshaMitra directory. Before mutations, verify the Git top-level resolves to this folder and origin is https://github.com/guptavernit2-afk/Avertiq_.git. Stop on a mismatch. Do not modify or delete the original prototype as part of Avertiq work.
+
 ## Evidence and modelling
 
 - Preserve the distinction between reported history, measurements, assumptions, and calculations.

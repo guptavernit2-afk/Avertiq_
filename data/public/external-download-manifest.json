@@ -1,0 +1,106 @@
+[
+  {
+    "filename": "osm-way-42680772.osm",
+    "source_url": "https://api.openstreetmap.org/api/0.6/way/42680772/full",
+    "retrieved_utc": "2026-11-08T06:56:42.224046+00:00",
+    "status": "downloaded_xml_parsed",
+    "bytes": 1442,
+    "sha256": "dba24345b5826c226bcd53a1f1d5c1e6f670c79ab3d0f18360f6ebe8e358c79b",
+    "local_path": "data/raw/2026-11-08/osm-way-42680772.osm",
+    "committed": false,
+    "licence": "ODbL-1.0"
+  },
+  {
+    "filename": "terrain-glo30-N18-E073.tif",
+    "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N18_00_E073_00_DEM/Copernicus_DSM_COG_10_N18_00_E073_00_DEM.tif",
+    "retrieved_utc": "2026-11-08T06:58:08.723088+00:00",
+    "status": "downloaded_header_and_georeferencing_verified_pixels_not_analysed",
+    "bytes": 45785199,
+    "sha256": "e5e127b1a1b56c0415276707bbb8c4e7bb357cf0976030a19f8d166cd9d590c9",
+    "local_path": "data/raw/2026-11-08/terrain-glo30-N18-E073.tif",
+    "committed": false,
+    "raster_metadata": {
+      "width": 3600,
+      "height": 3600,
+      "mode": "F",
+      "bits_per_sample": [
+        32
+      ],
+      "pixel_scale_degrees": [
+        0.0002777777777777778,
+        0.0002777777777777778,
+        0.0
+      ],
+      "model_tiepoint": [
+        0.0,
+        0.0,
+        0.0,
+        73.0,
+        19.0,
+        0.0
+      ],
+      "geokey_directory": [
+        1,
+        1,
+        0,
+        7,
+        1024,
+        0,
+        1,
+        2,
+        1025,
+        0,
+        1,
+        2,
+        2048,
+        0,
+        1,
+        4326,
+        2049,
+        34737,
+        7,
+        0,
+        2054,
+        0,
+        1,
+        9102,
+        2057,
+        34736,
+        1,
+        1,
+        2059,
+        34736,
+        1,
+        0
+      ],
+      "georeferencing_text": "WGS 84|",
+      "vertical_reference_from_product_documentation": "EGM2008; not explicitly encoded in inspected TIFF GeoKeys"
+    },
+    "attribution_url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM"
+  },
+  {
+    "filename": "smedis-batch1_24.zip",
+    "source_url": "https://admlc.com/wp-content/uploads/2020/12/batch1_24.zip",
+    "retrieved_utc": "2026-11-08T06:57:31.139155+00:00",
+    "status": "downloaded_archive_verified_not_analysed",
+    "bytes": 54523,
+    "sha256": "5720a7366b9ce52a4fa0b998db1f927620a1f970b6d1d88a86b73d34412f0df4",
+    "local_path": "data/raw/2026-11-08/smedis-batch1_24.zip",
+    "committed": false,
+    "archive_members": [
+      "batch1/dat638.xls",
+      "batch1/dat648.xls",
+      "batch1/dt1.xls",
+      "batch1/dt2.xls",
+      "batch1/eec360.xls",
+      "batch1/eec361.xls",
+      "batch1/eec362.xls",
+      "batch1/eec550.xls",
+      "batch1/eec551.xls",
+      "batch1/equivsrc.txt",
+      "batch1/pg17.xls",
+      "batch1/pg8.xls",
+      "batch1/"
+    ]
+  }
+]

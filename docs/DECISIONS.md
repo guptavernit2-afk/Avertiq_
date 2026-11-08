@@ -26,3 +26,12 @@
 ## How to add decisions
 
 Record date, decision, reason, evidence, affected documents and any superseded decision. Do not rewrite history to imply unresolved questions were already settled.
+
+## 2026-11-08 - First data collection and repository boundary
+
+- Use the explicit Avertiq path and verify origin before mutations. Do not work in or delete SurakshaMitra.
+- Use current OSM tunnel geometry as a regional sampling anchor only; the accident position is unverified and the way version postdates the incident.
+- Collect ERA5 explicitly for reproducibility; preserve returned grid coordinates and do not describe it as on-site wind.
+- Commit the small attributed weather response and provenance. Retain large/raw OSM, terrain and experimental files locally with checksums.
+- Defer scenario numbers, terrain-dependent predictions and engine selection until evidence/model review.
+- Folder detachment from the desktop app is pending user action; no disk folder has been deleted.
