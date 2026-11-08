@@ -253,5 +253,82 @@
     "sha256": "706b17a9c646979aa77c589db145a6a707e7b19527aefbdb70dc230898cfc839",
     "committed": false,
     "status": "equation6_visually_checked_and_reference_pressure_reproduced"
+  },
+  {
+    "filename": "thermopack-README.txt",
+    "source_url": "https://raw.githubusercontent.com/thermotools/thermopack/d68c794c7342bfc6938eb424a1fbb88b7780b738/README.md",
+    "local_path": "data/raw/2026-11-08/thermopack-README.txt",
+    "bytes": 55682,
+    "sha256": "c2ebf0a7ad6410c2384efeeb736f0d1aae319395ff221e0cb34b609737ad9afd",
+    "retrieved_utc": "2026-11-08T09:26:00.746033+00:00",
+    "committed": false,
+    "status": "read_only_reference_snapshot_not_installed_or_executed",
+    "source_commit": "d68c794c7342bfc6938eb424a1fbb88b7780b738"
+  },
+  {
+    "filename": "thermopack-solideos.txt",
+    "source_url": "https://raw.githubusercontent.com/thermotools/thermopack/d68c794c7342bfc6938eb424a1fbb88b7780b738/src/solideos.f90",
+    "local_path": "data/raw/2026-11-08/thermopack-solideos.txt",
+    "bytes": 21020,
+    "sha256": "f4b748cf8f9f434570fe884b85c9769f7f5046b12ad74aabd3b5a2766dae796c",
+    "retrieved_utc": "2026-11-08T09:26:02.542577+00:00",
+    "committed": false,
+    "status": "read_only_reference_snapshot_not_installed_or_executed",
+    "source_commit": "d68c794c7342bfc6938eb424a1fbb88b7780b738"
+  },
+  {
+    "filename": "thermopack-h2o-gibbs.txt",
+    "source_url": "https://raw.githubusercontent.com/thermotools/thermopack/d68c794c7342bfc6938eb424a1fbb88b7780b738/src/h2o_gibbs.f90",
+    "local_path": "data/raw/2026-11-08/thermopack-h2o-gibbs.txt",
+    "bytes": 10965,
+    "sha256": "5c58d1e4cf86532799f62319f8aea3b67b18d0699a1c28dd70b5a26b6d3eb55e",
+    "retrieved_utc": "2026-11-08T09:26:00.407159+00:00",
+    "committed": false,
+    "status": "read_only_reference_snapshot_not_installed_or_executed",
+    "source_commit": "d68c794c7342bfc6938eb424a1fbb88b7780b738"
+  },
+  {
+    "filename": "thermopack-ph-solver.txt",
+    "source_url": "https://raw.githubusercontent.com/thermotools/thermopack/d68c794c7342bfc6938eb424a1fbb88b7780b738/src/ph_solver.f90",
+    "local_path": "data/raw/2026-11-08/thermopack-ph-solver.txt",
+    "bytes": 30548,
+    "sha256": "3f65ad37ceb9d37c78b17fb8768523701aadd14ab43f8e299434ba9e39c85d78",
+    "retrieved_utc": "2026-11-08T09:26:00.411158+00:00",
+    "committed": false,
+    "status": "read_only_reference_snapshot_not_installed_or_executed",
+    "source_commit": "d68c794c7342bfc6938eb424a1fbb88b7780b738"
+  },
+  {
+    "filename": "thermopack-python-interface.txt",
+    "source_url": "https://raw.githubusercontent.com/thermotools/thermopack/d68c794c7342bfc6938eb424a1fbb88b7780b738/addon/pycThermopack/thermopack/thermo.py",
+    "local_path": "data/raw/2026-11-08/thermopack-python-interface.txt",
+    "bytes": 227834,
+    "sha256": "009380cd4a3ea8f102e52191ad78b86d72a4784cd379b5a7af807a5409b23153",
+    "retrieved_utc": "2026-11-08T09:26:00.530773+00:00",
+    "committed": false,
+    "status": "read_only_reference_snapshot_not_installed_or_executed",
+    "source_commit": "d68c794c7342bfc6938eb424a1fbb88b7780b738"
+  },
+  {
+    "filename": "thermopack-LICENSE.txt",
+    "source_url": "https://raw.githubusercontent.com/thermotools/thermopack/d68c794c7342bfc6938eb424a1fbb88b7780b738/LICENSE",
+    "local_path": "data/raw/2026-11-08/thermopack-LICENSE.txt",
+    "bytes": 10799,
+    "sha256": "fd3c5b3647771ed04f7349a252da23a3da1223bba79c20fc861e2f88a28bcfb1",
+    "retrieved_utc": "2026-11-08T09:26:00.785155+00:00",
+    "committed": false,
+    "status": "read_only_reference_snapshot_not_installed_or_executed",
+    "source_commit": "d68c794c7342bfc6938eb424a1fbb88b7780b738"
+  },
+  {
+    "filename": "thermopack-flash-memo.pdf",
+    "source_url": "https://thermotools.github.io/thermopack/memo/flash/flash.pdf",
+    "local_path": "data/raw/2026-11-08/thermopack-flash-memo.pdf",
+    "bytes": 578780,
+    "sha256": "e3e9eda4450cef5ae0f2eabd0eed55d800811d78d6adf7856b9a490a30e6b392",
+    "retrieved_utc": "2026-11-08T09:26:01.242133+00:00",
+    "committed": false,
+    "status": "read_only_reference_snapshot_not_installed_or_executed",
+    "source_commit": null
   }
 ]

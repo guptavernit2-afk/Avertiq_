@@ -26,9 +26,9 @@ Read the [short SMEDIS review](docs/research/SMEDIS_SHORTLIST.md): EEC550 first,
 
 ## First comparison plan
 
-Read the [short humidity/phase report](docs/research/EEC550_PHASE_SUMMARY.md). The current 196 K / 20 mol% inlet does not support accepting the proposed unmodified gas-only model. OpenFOAM Foundation 14 remains a candidate platform; a suitable phase configuration and reconciled source are not yet selected.
+Read the [short source/energy report](docs/research/EEC550_SOURCE_ENERGY_SUMMARY.md). Next model: a local, zero-dimensional homogeneous-equilibrium mass/energy calculation using ThermoPack fluid/ice properties and an explicit solid-aware calculation. No installation, implementation or model run has occurred; the historical source remains non-unique.
 
-The [nine-case sensitivity design](docs/research/EEC550_SENSITIVITY_SUMMARY.md) is preserved and held pending phase/enthalpy reconciliation. Inlet elevation and exact observation timing also remain unverified. No software was installed and no simulation was run.
+The earlier gas-only baseline is not accepted. The [nine-case sensitivity design](docs/research/EEC550_SENSITIVITY_SUMMARY.md) stays held until the thermodynamic model and source reconciliation are verified. OpenFOAM remains a candidate for later dispersion work.
 
 ## Demo flow
 

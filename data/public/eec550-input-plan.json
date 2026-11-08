@@ -456,5 +456,7 @@
   },
   "sensitivity_study": "data/public/eec550-sensitivity-plan.json",
   "sensitivity_study_status": "held_pending_source_phase_enthalpy_reconciliation",
-  "phase_review": "data/public/eec550-phase-screen.json"
+  "phase_review": "data/public/eec550-phase-screen.json",
+  "source_energy_followup": "data/public/eec550-source-energy-plan.json",
+  "next_thermodynamic_model": "0D solid-aware PH/HEM with ThermoPack property candidate; explicit implementation and property checks required"
 }

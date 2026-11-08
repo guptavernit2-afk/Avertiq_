@@ -233,5 +233,7 @@
   "holdout": "EEC560 excluded from tuning",
   "outputs_created": false,
   "phase_review": "data/public/eec550-phase-screen.json",
-  "gas_only_baseline_suitability": "not_accepted_under_current_inlet"
+  "gas_only_baseline_suitability": "not_accepted_under_current_inlet",
+  "source_energy_followup": "data/public/eec550-source-energy-plan.json",
+  "next_thermodynamic_model": "0D solid-aware PH/HEM with ThermoPack property candidate; explicit implementation and property checks required"
 }

@@ -1,5 +1,7 @@
 # EEC550 humidity and phase review
 
+**Follow-up:** the [source/energy review](EEC550_SOURCE_ENERGY_SUMMARY.md) defines conditional component ledgers and selects a local 0D HEM route with ThermoPack properties. No numerical energy solution or replacement CFD source has been produced.
+
 8 November 2026. Property screening and model-selection research only. No application code, solver configuration, installation, CFD runs or rigorous equilibrium flash calculation.
 
 ## Decision

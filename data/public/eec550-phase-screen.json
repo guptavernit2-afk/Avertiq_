@@ -97,5 +97,7 @@
     "no actual condensate or fog claim",
     "do not alter source to force all-gas feasibility"
   ],
-  "findings": "docs/research/EEC550_PHASE_REVIEW.md"
+  "findings": "docs/research/EEC550_PHASE_REVIEW.md",
+  "source_energy_followup": "data/public/eec550-source-energy-plan.json",
+  "next_thermodynamic_model": "0D solid-aware PH/HEM with ThermoPack property candidate; explicit implementation and property checks required"
 }

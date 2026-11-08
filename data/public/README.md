@@ -47,3 +47,7 @@ The structured input record is now schema version 2. It retains original values 
 ## Humidity and phase screen
 
 [eec550-phase-screen.json](eec550-phase-screen.json) records valid-range property correlations, ideal partial-pressure checks and limitations. It is neither a rigorous equilibrium flash nor a CFD output. NIST HTML snapshots and the IAPWS reference PDF remain local with manifest hashes. The current gas-only baseline is not accepted; the input and sensitivity records point to this superseding decision. [Short review](../../docs/research/EEC550_PHASE_SUMMARY.md).
+
+## Source-energy specification
+
+[eec550-source-energy-plan.json](eec550-source-energy-plan.json) contains conditional component ledgers, energy equations, unsolved state fields, H00-H04 and the next-model decision. It is planning metadata, not executable input or a flash result. Pinned ThermoPack reference snapshots are ignored locally with manifest hashes; no downloaded source was installed or executed. [Short report](../../docs/research/EEC550_SOURCE_ENERGY_SUMMARY.md).

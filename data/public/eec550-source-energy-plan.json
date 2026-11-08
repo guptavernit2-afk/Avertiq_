@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-08",
+  "status": "conditional_mass_ledgers_closed_energy_specification_only",
+  "coding_authorized": false,
+  "library_installed": false,
+  "equilibrium_model_executed": false,
+  "CFD_runs": 0,
+  "unique_historical_source_reconstructed": false,
+  "selected_next_model": {
+    "physics": "zero_dimensional_constant_pressure_homogeneous_equilibrium_PH",
+    "property_library_candidate": "ThermoPack",
+    "source_snapshot_commit": "d68c794c7342bfc6938eb424a1fbb88b7780b738",
+    "licence": "Apache-2.0",
+    "local_platforms_documented": [
+      "Windows",
+      "Linux",
+      "macOS"
+    ],
+    "requires_later_implementation": true,
+    "ready_one_call_moist_ice_PH_flash_verified": false,
+    "interface_limitation": "reviewed two_phase_phflash is vapour/liquid; explicit solid-aware phase/energy calculation required",
+    "candidate_fluid_EOS": "Peng-Robinson for initial property assessment; not accepted without NIST/IAPWS checks",
+    "ice_model": "built-in Feistel-Wagner water-ice Gibbs model; reference aligned to selected liquid model",
+    "CFD_model_selected": false
+  },
+  "inputs": {
+    "nominal_propane_kg_s": 3,
+    "propane_liquid_feed_temperature_K": 286.45,
+    "feed_pressure_absolute_branch_Pa": 1013250,
+    "feed_pressure_gauge_branch_absolute_Pa": 1115750,
+    "downstream_pressure_assumed_Pa": 102500,
+    "ambient_temperature_K": 283.05,
+    "ambient_water_mole_fraction_from_prior_screen": 0.011771895687766551,
+    "propane_MW_kg_mol": 0.0441,
+    "water_MW_kg_mol": 0.0180153,
+    "dry_air_MW_approx_kg_mol": 0.028965,
+    "original_equivalent_temperature_K": 196,
+    "original_concentration_mol_fraction": 0.2,
+    "original_concentration_basis_confirmed": false,
+    "original_area_m2": 0.3042,
+    "prescribed_outlet_speed_m_s": 18.1
+  },
+  "conditional_ledgers": [
+    {
+      "id": "R-W",
+      "interpretation": "wet_total_feed",
+      "status": "conditional_assumption_not_historical_inlet",
+      "propane_mol_s": 68.02721088435374,
+      "dry_air_mol_s": 268.9056066155737,
+      "total_water_mol_s": 3.203236921841238,
+      "propane_kg_s": 3,
+      "dry_air_kg_s": 7.788850895620092,
+      "total_water_kg_s": 0.05770727411804646,
+      "total_mixture_kg_s": 10.846558169738138,
+      "water_vapour_liquid_ice_split": null,
+      "approximate_dry_air_cp_kJ_kgK": 1.005,
+      "assumed_water_latent_scale_kJ_kg": 2800,
+      "dry_air_cooling_283_05_to196K_scale_kW": 681.4095678160477,
+      "water_latent_scale_kW": 161.58036753053008,
+      "prescribed_outlet_kinetic_power_kW": 1.776720460993956,
+      "numeric_equilibrium_temperature_K": null,
+      "computed_energy_residual_J_kg": null
+    },
+    {
+      "id": "R-D",
+      "interpretation": "dry_feed_plus_moisture",
+      "status": "conditional_assumption_not_historical_inlet",
+      "propane_mol_s": 68.02721088435374,
+      "dry_air_mol_s": 272.10884353741494,
+      "total_water_mol_s": 3.241394277154828,
+      "propane_kg_s": 3,
+      "dry_air_kg_s": 7.881632653061224,
+      "total_water_kg_s": 0.05839469032122738,
+      "total_mixture_kg_s": 10.940027343382452,
+      "water_vapour_liquid_ice_split": null,
+      "approximate_dry_air_cp_kJ_kgK": 1.005,
+      "assumed_water_latent_scale_kJ_kg": 2800,
+      "dry_air_cooling_283_05_to196K_scale_kW": 689.5266030612245,
+      "water_latent_scale_kW": 163.50513289943666,
+      "prescribed_outlet_kinetic_power_kW": 1.7920311789827628,
+      "numeric_equilibrium_temperature_K": null,
+      "computed_energy_residual_J_kg": null
+    }
+  ],
+  "window_dry_ideal_diagnostic": {
+    "formula": "m_dot_propane=(p*x/(R*T))*MW*A*U",
+    "propane_kg_s": 3.054498939597013,
+    "relative_mismatch_to_nominal": 0.01816631319900419,
+    "is_validated_inlet": false
+  },
+  "energy_specification": {
+    "equation": "sum_in(mdot*(h+U^2/2+g*z))+Qdot-Wdot=sum_out(mdot_phase*(h_phase+U_phase^2/2+g*z))",
+    "heat_assumed_W": 0,
+    "work_assumed_W": 0,
+    "net_potential_energy_change_assumed_W": 0,
+    "rainout_and_deposition_assumed": false,
+    "all_water_retained_assumed": true,
+    "common_phase_temperature_and_velocity_assumed": true,
+    "latent_heat_added_separately_to_phase_enthalpy": false,
+    "feed_static_vs_stagnation_confirmed": false,
+    "initial_feed_stagnation_approximation": "liquid enthalpy at documented T and pressure branch; negligible feed KE, not recovered historical condition",
+    "thermal_enthalpy_target_J_kg": null,
+    "temperature_and_phase_split": null,
+    "property_reference_consistency_required": true
+  },
+  "cases": [
+    {
+      "id": "H00",
+      "basis": "R-W",
+      "mode": "PH",
+      "pressure_branch": "absolute",
+      "moisture": "ambient_retained",
+      "status": "planned_not_run"
+    },
+    {
+      "id": "H01",
+      "basis": "R-D",
+      "mode": "PH",
+      "status": "planned_not_run"
+    },
+    {
+      "id": "H02",
+      "basis": "R-W propane and dry-air unchanged",
+      "water_removed_counterfactual": true,
+      "mode": "PH",
+      "status": "planned_not_run"
+    },
+    {
+      "id": "H03",
+      "basis": "R-W",
+      "mode": "PH",
+      "pressure_branch": "gauge",
+      "status": "planned_not_run"
+    },
+    {
+      "id": "H04",
+      "basis": "R-W",
+      "mode": "TP_energy_audit",
+      "imposed_temperature_K": 196,
+      "heat_required_not_measured": true,
+      "status": "planned_not_run"
+    }
+  ],
+  "planned_phase_candidates": [
+    "gas",
+    "propane-rich liquid",
+    "water-rich liquid",
+    "water ice"
+  ],
+  "first_reduced_model_option": "pure immiscible condensates and gas; explicit omitted-solubility assessment",
+  "equilibrium_limits": [
+    "instantaneous relaxation",
+    "no phase slip",
+    "no deposition",
+    "not a nucleation model or plume prediction"
+  ],
+  "proposed_numerical_targets": {
+    "nonzero_component_relative_mass_residual_max": 1e-08,
+    "absolute_energy_residual_J_kg_max": 1,
+    "experimental_accuracy_requirements": false
+  },
+  "original_unknowns_retained": [
+    "source pressure",
+    "wet/dry and gas/total concentration basis",
+    "historical source enthalpy",
+    "true entrainment and condensed water",
+    "source placement and observation timing",
+    "static/stagnation feed state"
+  ],
+  "next_dependency": "implement and verify a solid-aware property/energy calculation only after user instruction; no CFD cases until reconciliation reviewed",
+  "full_report": "docs/research/EEC550_SOURCE_ENERGY_RECONCILIATION.md"
+}

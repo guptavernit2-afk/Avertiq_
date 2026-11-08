@@ -63,3 +63,7 @@ The [EEC550 sensitivity design](research/EEC550_SENSITIVITY_STUDY.md) proposes i
 Version 1 displays terrain and flags features for investigation. An ALOHA/free-field footprint over terrain remains subject to its original assumptions. Do not validate terrain-dependent gas movement using a visual overlay or synthetic detector points.
 
 Actual Adoshi plume validation requires field release/weather/concentration records not currently available.
+
+## Source-energy thermodynamic milestone
+
+The [reconciliation plan](research/EEC550_SOURCE_ENERGY_RECONCILIATION.md) defines conditional mass ledgers, H00–H04 and a pressure-enthalpy homogeneous-equilibrium assessment using local ThermoPack properties with explicit ice-aware calculation. No unique historical source, computed equilibrium state or numerical energy residual exists yet. Component and energy residual targets are proposed numerical checks, not experimental accuracy criteria. Confirm fluid/ice references and phase stability before any dispersion validation.

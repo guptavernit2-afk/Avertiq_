@@ -1,5 +1,7 @@
 # EEC550 phase check: short report
 
+**Follow-up:** the [source/energy review](EEC550_SOURCE_ENERGY_SUMMARY.md) defines conditional component ledgers and selects a local 0D HEM route with ThermoPack properties. No numerical energy solution or replacement CFD source has been produced.
+
 8 November 2026. Research and property arithmetic only.
 
 **Decision: the proposed gas-only OpenFOAM setup is not suitable as the EEC550 physical baseline unchanged.**

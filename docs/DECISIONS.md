@@ -85,3 +85,13 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Do not accept the unmodified gas-only multicomponentFluid configuration as the EEC550 physical baseline. This supersedes its earlier conditional selection; OpenFOAM remains a possible platform, not a selected replacement phase model.
 - Hold the nine-case matrix pending source composition/pressure/phase/enthalpy reconciliation. Preserve all original source values and unknowns; do not force feasibility by warming, drying or lowering pressure without evidence.
 - Next assess enthalpy-conserving moist phase behaviour and model capability, including water/ice and possible propane phase transfer. Avoid latent-heat double counting. No coding, installation, simulation or claimed physical validation performed.
+
+## 2026-11-08 - EEC550 source-energy specification and local model
+
+- Preserve original window/source records and underdetermined historical inputs. Close two conditional feed-basis component ledgers; do not present assumed entrainment as measured.
+- Anchor forward reconstruction to nominal propane 3 kg/s, documented feed/ambient states and explicit pressure/heat assumptions; solve temperature/phase amounts rather than enforcing the rounded 196 K window state.
+- Record the original dry ideal-window diagnostic of 3.05450 kg/s propane and the independent mass/area/velocity constraint. No discrepancy is silently renormalized.
+- Select a local zero-dimensional constant-pressure homogeneous-equilibrium PH calculation as the next thermodynamic model, using ThermoPack fluid/ice properties. Research source snapshot d68c794c7342bfc6938eb424a1fbb88b7780b738; free Apache-2.0 local distribution documented.
+- The reviewed Python PH call is vapour/liquid only; explicit solid-aware phase stability and energy calculation must be implemented and checked later. No ready one-call moist/ice flash or replacement CFD solver claimed.
+- Define H00-H04 and component/energy numerical targets; leave equilibrium T, phase split, enthalpy target and energy residual null until coherent properties are evaluated. Do not double-count latent heat or mix enthalpy references.
+- Preserve the gas-only rejection and hold on the nine-case dispersion study. No installation, application code or model execution authorized/completed in this research task.
