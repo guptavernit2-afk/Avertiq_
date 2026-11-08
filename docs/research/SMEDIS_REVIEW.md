@@ -105,4 +105,4 @@ Acceptance thresholds and uncertainty/exclusion rules remain to be agreed with t
 
 ## Next concrete task
 
-Prepare an agreed input mapping for EEC550 and its downstream source, reconcile EEC360's duplicate pair, and obtain the mentor's PHAST version/modules. Select an engine only after checking whether it can represent those sources and receptors.
+The [EEC550 comparison plan](EEC550_COMPARISON_PLAN.md) selects OpenFOAM Foundation 14 conditionally; the [follow-up findings](EEC550_INPUT_RESOLUTION.md) establish axes and clarify timing/weather handling. Original B27=150 s must be retained alongside the conflicting full-trial duration of 360 s; do not treat it as verified total release time. Recover source-window elevation and exact averaging indices before a faithful reproduction. EEC360 duplicate handling and any mentor PHAST benchmark remain separate follow-ups.

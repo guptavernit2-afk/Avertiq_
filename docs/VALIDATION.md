@@ -31,6 +31,10 @@ The original project's mass-based blast/fireball rings and geometric ellipse are
 
 The [SMEDIS review](research/SMEDIS_REVIEW.md) recommends EEC550 as the initial unobstructed propane case, EEC360 as a smaller-source comparison after duplicate-record handling is agreed, and EEC560 reserved from future fitting. Start with documented downstream equivalent sources for dispersion-only tests. Source-model validation remains separate. All selections are conditional on engine capability and agreed input/measurement handling. No model runs or accuracy claims exist.
 
+## EEC550 follow-up
+
+The [input-resolution review](research/EEC550_INPUT_RESOLUTION.md) confirms the local magnetic-north coordinate frame and shows that the original trial contained fenced and unfenced phases. REDIPHEM lists a 360 s full release; SMEDIS B27 lists 150 s. Preserve that discrepancy. The conditional first comparison uses a developed unfenced plume and a separate 150 s model averaging window, not a fresh 150 s pulse. Exact historical averaging indices and actual downstream inlet elevation remain unverified. A neutral weather baseline is declared separately from estimated unstable sensitivity; thermal/humidity/turbulence setup still needs review. No results exist.
+
 ## PHAST comparison checklist
 
 Ask the mentor for:

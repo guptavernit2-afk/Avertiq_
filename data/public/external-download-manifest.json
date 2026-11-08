@@ -172,5 +172,53 @@
     "local_path": "data/raw/2026-11-08/slab-users-manual.pdf",
     "committed": false,
     "status": "downloaded_targeted_input_capability_review"
+  },
+  {
+    "filename": "riso-m-2923.pdf",
+    "source_url": "https://backend.orbit.dtu.dk/ws/files/401713093/ris-m-2923.pdf",
+    "local_path": "data/raw/2026-11-08/riso-m-2923.pdf",
+    "bytes": 2914850,
+    "sha256": "0bb170b2d8973bf1ed80f0d3ba46a6a9f3c7da2ebbd74a8f96d9a1010643033f",
+    "retrieved_utc": "2026-11-08T08:56:08.683026+00:00",
+    "committed": false,
+    "status": "targeted_layout_instruments_processing_and_profiles_reviewed_visually",
+    "pages": 33,
+    "text_characters": 1699
+  },
+  {
+    "filename": "rediphem-riso-r-845.pdf",
+    "source_url": "https://backend.orbit.dtu.dk/ws/files/111814383/ris_r_845.pdf",
+    "local_path": "data/raw/2026-11-08/rediphem-riso-r-845.pdf",
+    "bytes": 1100924,
+    "sha256": "8af4db80f51568c852bb1bfb75515e47cb4a08f95853d1350fb9708555fd8906",
+    "retrieved_utc": "2026-11-08T08:56:10.703726+00:00",
+    "committed": false,
+    "status": "targeted_meteorology_review_and_trial_table_visually_checked",
+    "pages": 81,
+    "text_characters": 183927
+  },
+  {
+    "filename": "aea-fladis-1994-volume2-part1.pdf",
+    "source_url": "https://admlc.com/wp-content/uploads/2025/02/webber_jones_martin_tickle_wren_1994_complex_features_in_dense_gas_dispersion_modelling_volume_2_part_1_aea_cs_fladis_1994.pdf",
+    "local_path": "data/raw/2026-11-08/aea-fladis-1994-volume2-part1.pdf",
+    "bytes": 7181213,
+    "sha256": "5a853d2fd2ccf991f18250be5dde1908deca4d5d8cde1928072d80fc49a67b06",
+    "retrieved_utc": "2026-11-08T08:56:11.461670+00:00",
+    "committed": false,
+    "status": "targeted_source_interface_and_physical_height_review",
+    "pages": 193,
+    "text_characters": 180007
+  },
+  {
+    "filename": "aea-srd-r582.pdf",
+    "source_url": "https://admlc.com/wp-content/uploads/2025/02/jones_martin_webber_wren_1992_effects_of_natural_and_man-made_obstacles_on_heavy_gas_dispersion_part_ii_srd_r582.pdf",
+    "local_path": "data/raw/2026-11-08/aea-srd-r582.pdf",
+    "bytes": 12331010,
+    "sha256": "65962aeb751fdba7d89cbcb8897842dc93228785278a8ee98bdc258b82511362",
+    "retrieved_utc": "2026-11-08T08:56:16.251969+00:00",
+    "committed": false,
+    "status": "targeted_coordinate_and_timing_review_pages_visually_checked",
+    "pages": 128,
+    "text_characters": 182776
   }
 ]

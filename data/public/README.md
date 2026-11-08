@@ -35,3 +35,7 @@ News articles and photos are not included. Source URLs and short attributed fact
 ## EEC550 input preparation
 
 The [input plan](eec550-input-plan.json) records original workbook cells, equivalent-source provenance, observation ranges and unresolved gates. It is not a runnable solver configuration or a prediction dataset. Full concentration records remain in the unchanged local workbook pending reuse-term review. The SLAB manual was downloaded locally and its checksum added to the external manifest after a targeted input-capability review. See the [short comparison plan](../../docs/research/EEC550_SHORT_PLAN.md). No model has been installed or run.
+
+## EEC550 input follow-up
+
+The structured input record is now schema version 2. It retains original values while recording the magnetic-north coordinate evidence, source-placement assumptions, full-trial/SMEDIS duration discrepancy, conditional stationary averaging policy and simplified neutral-weather plan. Four supporting reports were acquired locally and added to the manifest. The original REDIPHEM time-series link returns an unavailable-download page; no archive was acquired. [Review findings](../../docs/research/EEC550_INPUT_RESOLUTION.md). No model was run.

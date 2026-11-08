@@ -54,3 +54,14 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Record source/atmosphere/observation lineage and unresolved fields in data/public/eec550-input-plan.json. No invented source-plane height or averaging start.
 - Resolve readiness gates and agree numerical/performance criteria before an evaluated run. PHAST remains an optional later external benchmark; EEC560 remains excluded from tuning.
 - No installation, model configuration files, application code, simulations or validation results were produced. See research/EEC550_SHORT_PLAN.md and research/EEC550_COMPARISON_PLAN.md.
+
+## 2026-11-08 - EEC550 inlet, timing and atmosphere follow-up
+
+- Acquire four public primary/supporting reports locally with hashes; preserve originals outside tracked data.
+- Use original local X east, Y magnetic north, Z up coordinates supported by R582; do not apply unverified declination or Adoshi geography.
+- Adopt EEC55 unfenced-to-EEC550 mapping as a strong documented cross-reference inference, not an explicit source-note key.
+- Keep actual equivalent-window centre height unknown. Record candidate jet-aligned placement at (2.500,4.330,0.500) m as assumed, with separate geometry sensitivities.
+- Correct the fresh 150-second-pulse interpretation: original EEC55 had fenced/unfenced phases; REDIPHEM Table 30 lists 360 s full-release duration on 6 September 1989. Retain conflicting SMEDIS B27=150 s and missing averaging indices.
+- Define a conditional developed-plume mean comparison with a 150 s model averaging window after ABL/plume establishment. No historical-window recovery or fence-transition validation claimed.
+- Define a simplified neutral atmosphere matched to revised U=2.73 m/s at 6 m and z0=0.006 m; derive neutral u_star rather than forcing estimated 0.190 m/s. Keep estimated L=-90 m as separate consistent sensitivity; thermal/humidity/turbulence details remain open.
+- Original REDIPHEM archive redirect is unavailable; no time-series archive obtained and no messages sent. Faithful reproduction remains not run-ready. No coding, installation or simulations.

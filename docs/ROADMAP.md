@@ -16,6 +16,6 @@ Step 1 is complete. Step 2 has an attributed incident fact sheet and reference c
 
 ## Next research task
 
-Resolve EEC550 source-plane placement/family mapping, observation timing and ABL assumptions using the [comparison plan](research/EEC550_SHORT_PLAN.md); predeclare numerical and measurement comparison criteria. Resolve EEC360 duplicate-record handling; reserve EEC560 from future tuning. Verify incident location/study-area bounds and request the mentor's PHAST version/modules and acceptance criteria.
+Use the [EEC550 findings](research/EEC550_SHORT_PLAN.md): axes and conditional comparison/weather policies are defined; actual inlet elevation and exact measurement timing remain unverified. Recover original records or explicitly agree an exploratory sensitivity study; review thermal/turbulence assumptions and predeclare criteria before any evaluated run. Resolve EEC360 duplicate-record handling; reserve EEC560 from future tuning. Verify incident location/study-area bounds and request the mentor's PHAST version/modules and acceptance criteria.
 
 Do not promise schedules until data access and modelling dependencies are understood.

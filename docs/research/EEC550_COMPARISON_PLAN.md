@@ -2,6 +2,10 @@
 
 Reviewed 8 November 2026. User preference: use a model we can run ourselves without a paid licence. Scope: planning and source review only.
 
+## Follow-up correction
+
+Read the [input-resolution findings](EEC550_INPUT_RESOLUTION.md) before using this plan. Original trial reports establish magnetic-north axes and a fenced/unfenced sequence; REDIPHEM lists a 360 s full release, conflicting with SMEDIS B27=150 s. The first comparison is now a conditional developed-plume mean comparison, not a fresh 150 s pulse. Actual equivalent-inlet elevation and exact SMEDIS averaging indices remain unknown.
+
 ## Decision and boundaries
 
 Select **OpenFOAM Foundation 14, multicomponentFluid**, as the first research comparison platform, conditional on the readiness gates below. Use a nonreacting, transient, variable-density gas calculation with energy, species transport and gravity. An ideal-gas mixture is a proposed thermodynamic approximation requiring property review; do not use a passive scalar in constant-density air or a small-density-change Boussinesq approximation for this cold dense inlet.
@@ -30,7 +34,7 @@ Local originals:
 - Supporting variable definitions and revision history: see the [SMEDIS review](SMEDIS_REVIEW.md).
 - Originals are ignored in Git; archive download URLs/hashes are in the [manifest](../../data/public/external-download-manifest.json). Input lineage is in the [structured record](../../data/public/eec550-input-plan.json).
 
-These are experimental coordinates and weather, not Adoshi data. September 6 is listed, but year and time zone are not established; use relative experimental time, not an invented calendar timestamp. Public availability does not establish unrestricted redistribution rights. Do not commit full measurement exports pending terms review.
+These are experimental coordinates and weather, not Adoshi data. The follow-up REDIPHEM trial table supports 6 September 1989 at 08:30 for Lathen 55; time zone and exact observation-window alignment remain unverified. Use relative model time. Public availability does not establish unrestricted redistribution rights. Do not commit full measurement exports pending terms review.
 
 ## Inputs: physical release, retained as context
 
@@ -44,14 +48,14 @@ These are experimental coordinates and weather, not Adoshi data. September 6 is 
 | Phase field | 1.0 | B20 | Definitions describe pre-release liquid fraction; not post-flash quality |
 | Exit temperature / pressure | 13.3 C / 10 atm | B21/B22 | 286.45 K; pressure absolute/gauge unresolved |
 | Propane release rate | 3 kg/s | B23 | Do not equate to total mixed-inlet flow |
-| Start / duration | 08:30:00 / 150 s | B24:B27 | Relative t=0; nominal released mass 450 kg |
+| Start / duration | 08:30:00 / 150 s | B24:B27 | Preserve original; full-trial summary lists 360 s; 450 kg is interval arithmetic only |
 | Upstream concentration / effective MW | 1 / 98.8 g/mol | B44/B45 | Do not substitute for mixed-inlet fraction or propane MW |
 
 Liquid-property strings in B8/B10 are retained in the structured record; they are not needed to bypass discharge physics in this dispersion-only test.
 
 ## Inputs: proposed downstream inlet
 
-The batch note lists **EEC55**, not the full EEC550 identifier. Confirm this family mapping before treating it as an exact case input.
+The batch note lists **EEC55**, not the full EEC550 identifier. Follow-up cross-references strongly support the unobstructed EEC55-to-EEC550 mapping; adopt it for planning while retaining that the note has no explicit full key.
 
 | Quantity | Note value | Proposed interpretation |
 |---|---|---|
@@ -73,7 +77,7 @@ Conditional arithmetic check, not a new measurement: assume dry air MW=28.965 g/
 | Measured wind-from | 197.73 degrees | B29 | Primary directional evidence |
 | Direction standard deviation | -999 | B30 | Missing marker, not physical |
 | Ideal wind-from | 210 degrees | B31 | Separate directional sensitivity only |
-| Experimental X-axis azimuth | 90 degrees from N | B32 | Verify Y handedness before transforming |
+| Experimental X-axis azimuth | 90 degrees from N | B32 | Y is magnetic north per R582; retain local frame |
 | Corrected wind / height | 2.73 m/s at 6 m | B33/B34 | Preserve measurement correction |
 | Friction velocity | 0.190 m/s, estimated | B35 | Uncertain, not independently exact |
 | Roughness length | 0.006 m | B36 | Not wall-function sand-grain height |
@@ -85,9 +89,9 @@ Conditional arithmetic check, not a new measurement: assume dry air MW=28.965 g/
 | Relative humidity | 0.99 = 99% | B42 | Review water-vapour/condensation sensitivity |
 | Ground slope / fences | 0% / 0 | B43/B28 | Flat unobstructed benchmark |
 
-Under the meteorological wind-from convention, measured downwind is 17.73 degrees from N; this differs from the 30-degree jet by 12.27 degrees. Ideal wind aligns them. Do not silently rotate measurements to erase this difference. Once axis handedness is confirmed, document the transform explicitly and test a cardinal-direction example.
+Under the meteorological wind-from convention, measured downwind is 17.73 degrees from N; this differs from the 30-degree jet by 12.27 degrees. Ideal wind aligns them. Do not silently rotate measurements to erase this difference. R582 confirms the local magnetic-north frame; use the transform and cardinal-direction checks in the follow-up findings.
 
-Choose a single consistent atmospheric-boundary-layer (ABL) formulation. A tentative baseline is transient RANS k–epsilon with reviewed ground functions and thermophysical transport. Reconcile measured U, estimated friction velocity, roughness and estimated L; they need not fit one neutral log law exactly. The neutral formula U(z)=u*/kappa*ln((z+z0)/z0) is only a diagnostic, not the final unstable profile. Test an empty domain before adding gas so boundary-condition drift is not mistaken for plume physics. Record ground temperature/heat exchange and water treatment as unresolved assumptions; high humidity plus a cold source warrants review. Do not initialize the atmosphere with temperatures measured inside the plume.
+Choose a single consistent atmospheric-boundary-layer (ABL) formulation. The follow-up defines a simplified neutral baseline matched to corrected wind and roughness, with derived u_star=0.15806 m/s (kappa=0.4); estimated L=-90 m is a separate consistent unstable sensitivity. A tentative closure is transient RANS k–epsilon with reviewed ground functions and thermophysical transport. Reconcile measured U, estimated friction velocity, roughness and estimated L; they need not fit one neutral log law exactly. The neutral formula U(z)=u*/kappa*ln((z+z0)/z0) is only a diagnostic, not the final unstable profile. Test an empty domain before adding gas so boundary-condition drift is not mistaken for plume physics. Record ground temperature/heat exchange and water treatment as unresolved assumptions; high humidity plus a cold source warrants review. Do not initialize the atmosphere with temperatures measured inside the plume.
 
 ## Observations and matching
 
@@ -105,7 +109,7 @@ Choose a single consistent atmospheric-boundary-layer (ABL) formulation. A tenta
 1. **Source and unit checks:** separate physical propane mass flow from mixed inlet flow; track mole-to-mass conversion, dimensions and source plane displacement. Document any discrepancy.
 2. **Conservation:** integrate propane storage plus boundary outflow and compare with integrated inlet flux, accounting for open-boundary inflow/background. Confirm species sum to one, bounded nonnegative concentrations and sensible temperatures.
 3. **Numerics:** use a 3D flat domain covering all sensors with upstream/lateral/top/outlet buffers. Choose dimensions and source resolution after mapping is confirmed; do not invent a final mesh here. Compare at least three sensible spatial resolutions, reduce time step, and enlarge domain. Demonstrate stable receptor predictions and mass balance. Resolve the 0.39 m inlet and 0.05 m sensors adequately.
-4. **Averaging:** model finite injection and transport, define the source switch-off boundary treatment, and average using the reviewed experimental window. Record whether any pre-run/spin-up is used.
+4. **Averaging:** establish the ABL and developed unfenced plume, then average for 150 s with maintained inlet. The model window is not a recovered historical window. Do not score a fresh 150 s pulse or claim fence-removal dynamics without original timing records.
 5. **Experimental scores:** retain a paired observed/predicted table with row IDs. Start with MAE (percentage points), RMSE and mean signed bias over all records; report results by height too. Define bias as mean(predicted-observed). Report factor-of-two and geometric metrics only on explicitly reported eligible positive pairs; show omitted count and zero behaviour separately.
 6. **Supplementary comparisons:** arc peak concentration/width and vertical profiles after matching their definitions. Do not move the cloud centre or sensors to improve scores.
 7. **Predeclare criteria:** numerical tolerances and experimental performance expectations must be recorded before evaluation with mentor/modeller input. No arbitrary universal pass mark is claimed. If tuning is needed, label EEC550 developmental and keep EEC560 excluded.
@@ -117,7 +121,7 @@ Example RMSE definition: sqrt(mean((predicted-observed)^2)), in concentration pe
 | Gate | Status | Required evidence |
 |---|---|---|
 | Source and original observations preserved | Prepared locally | Workbook/archive hashes; cell lineage |
-| Family mapping and inlet placement | Open | Original trial documentation or recorded modelling interpretation/sensitivity |
+| Family mapping and inlet placement | Mapping supported; actual window placement open | Original trial documentation or recorded modelling interpretation/sensitivity |
 | Measurement basis/window | Open | Instrument definition and timing, or explicit conditional comparison |
 | ABL, humidity, heat and inlet turbulence | Open | Consistent documented setup and sensitivity plan |
 | Solver availability and thermophysical capability | Documentation reviewed | Later pin package/version and prove no-gas/species/gravity behaviour |

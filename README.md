@@ -26,7 +26,7 @@ Read the [short SMEDIS review](docs/research/SMEDIS_SHORTLIST.md): EEC550 first,
 
 ## First comparison plan
 
-Read the [short EEC550 plan](docs/research/EEC550_SHORT_PLAN.md). OpenFOAM Foundation 14 is selected as the first local research platform, with a documented mixed-source input plan and unresolved readiness gates. No software was installed and no simulation was run.
+Read the [short EEC550 plan](docs/research/EEC550_SHORT_PLAN.md). OpenFOAM Foundation 14 is selected as the first local research platform, with a documented mixed-source input plan and [follow-up findings](docs/research/EEC550_INPUT_RESOLUTION.md). Axes and conditional timing/weather policies are defined; actual inlet elevation and exact observation timing remain unverified. No software was installed and no simulation was run.
 
 ## Demo flow
 

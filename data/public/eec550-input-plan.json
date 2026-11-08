@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "review_date": "2026-11-08",
   "case": "EEC550",
   "purpose": "dispersion_only_research_comparison_plan",
@@ -310,7 +310,41 @@
     "displacement_axis": null,
     "profile_and_turbulence": null,
     "air_composition_and_humidity": null,
-    "mass_flow_reconciliation": "conditional ideal dry-air check only; do not force rounded inlet values to nominal 3 kg/s"
+    "mass_flow_reconciliation": "conditional ideal dry-air check only; do not force rounded inlet values to nominal 3 kg/s",
+    "family_mapping_status": "strongly_supported_cross_reference_adopted_for_planning_not_explicit_full_key_in_note",
+    "assumed_placement_candidate": {
+      "status": "assumed_not_measured_not_authorized_to_run",
+      "displacement_axis": "original horizontal jet azimuth 30 degrees clockwise from local magnetic north",
+      "centre_m": [
+        2.5,
+        4.330127018922194,
+        0.5
+      ],
+      "vertical_extent_m": [
+        0.305,
+        0.695
+      ],
+      "plane_normal": "horizontal jet direction",
+      "velocity_m_s": [
+        9.05,
+        15.675059808498341,
+        0
+      ],
+      "profile": "uniform top-hat approximation; turbulence unresolved"
+    },
+    "geometry_sensitivities": [
+      {
+        "interpretation": "ground_touching_rectangle_not_observed_bound",
+        "centre_height_m": 0.195
+      },
+      {
+        "interpretation": "5m_displacement_along_measured_downwind_not_default_jet",
+        "centre_xy_m": [
+          1.5226591580582416,
+          4.762510796668221
+        ]
+      }
+    ]
   },
   "observations": {
     "range": "A95:E124",
@@ -334,27 +368,58 @@
     "instrument_basis_confirmed": false,
     "zero_handling": "preserve original zeros; detection limits unknown",
     "full_measurement_export_committed": false,
-    "supplementary_arc_range": "A89:D92"
+    "supplementary_arc_range": "A89:D92",
+    "comparison_policy": "developed unfenced continuous-plume mean; 150s model averaging after separately established ABL and plume; conditional stationary comparison not historical timing replay",
+    "historical_start_end_confirmed": false,
+    "original_trial_timing_context": {
+      "reference": "Risø-R-845(EN) Table 30 PDF page 51",
+      "trial": "Lathen 55",
+      "date": "1989-09-06",
+      "listed_clock_start": "08:30",
+      "time_zone": null,
+      "listed_full_release_duration_s": 360,
+      "smedis_B27_s": 150,
+      "duration_conflict_resolved": false,
+      "policy": "retain both source values; do not use 150s as established full-trial duration"
+    },
+    "example_other_analysis_interval": {
+      "reference": "SRD/HSE R582 Table 1 printed page 50 PDF page 31",
+      "sensor_id": 19,
+      "xy_m": [
+        13.9,
+        28.1
+      ],
+      "unfenced_interval_on_analysis_time_axis_s": [
+        303,
+        516
+      ],
+      "is_proven_smedis_interval": false
+    }
   },
   "coordinate_handling": {
     "x_axis_azimuth_from_north_deg": 90,
-    "y_axis_handedness_confirmed": false,
-    "wind_convention": "meteorological from; verify against trial documentation",
+    "y_axis_handedness_confirmed": true,
+    "wind_convention": "meteorological from; compatible with SMEDIS definitions",
     "measured_wind_from_deg": 197.73,
     "derived_downwind_deg": 17.73,
     "ideal_wind_from_deg_sensitivity_only": 210,
     "jet_azimuth_deg": 30,
-    "derived_jet_measured_wind_difference_deg": 12.27
+    "derived_jet_measured_wind_difference_deg": 12.27,
+    "frame": "local X east, Y magnetic north, Z up; no geographic declination transform",
+    "frame_evidence": "SRD/HSE R582 section 2.5.3 printed page 7 PDF page 9; workbook B32",
+    "derived_wind_U6_xy_m_s": [
+      0.8313719002997999,
+      2.6003308949808486
+    ]
   },
   "open_gates": [
-    "EEC55 family mapping",
-    "equivalent inlet centre height and displacement axis",
-    "source timing and profiles",
-    "measurement basis and averaging-window alignment",
-    "ABL consistency and heat/humidity treatment",
-    "property and transport model review",
+    "actual equivalent-window centre height, displacement and profiles",
+    "exact SMEDIS averaging indices and full-trial duration discrepancy",
+    "inlet turbulence and transport/property review",
+    "humidity phase behaviour and ground heat treatment",
+    "consistent unstable sensitivity specification",
     "exact version and local runtime feasibility",
-    "mesh/time/domain checks and preregistered tolerances"
+    "mesh/time/domain checks and predeclared tolerances"
   ],
   "excluded": [
     "Adoshi weather and terrain",
@@ -362,5 +427,27 @@
     "ignition and fire",
     "production integration"
   ],
-  "plan": "docs/research/EEC550_COMPARISON_PLAN.md"
+  "plan": "docs/research/EEC550_COMPARISON_PLAN.md",
+  "followup_findings": "docs/research/EEC550_INPUT_RESOLUTION.md",
+  "atmosphere_plan": {
+    "status": "declared_simplification_with_open_thermal_and_transport_gates",
+    "baseline": "neutral class D; zero imposed background sensible heat flux; retain gas density/thermal buoyancy",
+    "wind_reference_m_s": 2.73,
+    "wind_reference_height_m": 6,
+    "roughness_length_m": 0.006,
+    "kappa_assumed": 0.4,
+    "displacement_height_assumed_m": 0,
+    "wind_profile": "U(z)=u_star/kappa*ln((z+z0)/z0)",
+    "derived_neutral_ustar_m_s": 0.15806032127083783,
+    "original_estimated_ustar_m_s": 0.19,
+    "diagnostic_U6_with_original_ustar_m_s": 3.2816585201747297,
+    "ambient_temperature_K": 283.05,
+    "ambient_pressure_Pa": 102500,
+    "ambient_relative_humidity_fraction": 0.99,
+    "humidity_model": null,
+    "ground_thermal_boundary": null,
+    "turbulence_inlet": null,
+    "sensitivity": "consistent weakly unstable ABL using estimated L=-90m; full formulation must be specified before execution",
+    "estimate_provenance": "REDIPHEM Lathen stability inferred from wind/cloud; L inferred from stability and roughness, not direct flux measurement"
+  }
 }
