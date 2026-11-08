@@ -24,6 +24,10 @@ Start with the [short collection report](docs/research/2026-11-08-summary.md). P
 
 Read the [short SMEDIS review](docs/research/SMEDIS_SHORTLIST.md): EEC550 first, EEC360 after duplicate-record review, and EEC560 reserved from future tuning. These are propane analogues, not validation of Adoshi. No model has been run.
 
+## First comparison plan
+
+Read the [short EEC550 plan](docs/research/EEC550_SHORT_PLAN.md). OpenFOAM Foundation 14 is selected as the first local research platform, with a documented mixed-source input plan and unresolved readiness gates. No software was installed and no simulation was run.
+
 ## Demo flow
 
 Open incident -> confirm cargo and location -> select documented release assumptions -> review a hazard estimate -> inspect roads and terrain -> add simulated observations -> revise assessment -> export handover.

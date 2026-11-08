@@ -162,5 +162,15 @@
     "local_path": "data/raw/2026-11-08/smedis-evaluation-protocol.pdf",
     "committed": false,
     "status": "downloaded_targeted_source_review"
+  },
+  {
+    "filename": "slab-users-manual.pdf",
+    "source_url": "https://gaftp.epa.gov/Air/aqmg/SCRAM/models/nonepa/slab/SLAB.PDF",
+    "retrieved_utc": "2026-11-08T07:18:43.256394+00:00",
+    "bytes": 6388209,
+    "sha256": "2ce0e7b775ee20972fdc6e751e6cbb109d6d881ab0a46c9ab18ccbe6e655503d",
+    "local_path": "data/raw/2026-11-08/slab-users-manual.pdf",
+    "committed": false,
+    "status": "downloaded_targeted_input_capability_review"
   }
 ]

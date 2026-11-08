@@ -31,3 +31,7 @@ News articles and photos are not included. Source URLs and short attributed fact
 ## SMEDIS follow-up
 
 [Case inventory](smedis-case-inventory.json) records 30 trials plus one terrain-support workbook, their original IDs/aliases, source hashes and review depth. Batches 2/3 and four supporting PDFs remain in the ignored raw directory; their URLs and checksums are in the external manifest. The [short review](../../docs/research/SMEDIS_SHORTLIST.md) links to case-level findings. Originals remain unchanged; no spreadsheet was authored and no physics engine was run.
+
+## EEC550 input preparation
+
+The [input plan](eec550-input-plan.json) records original workbook cells, equivalent-source provenance, observation ranges and unresolved gates. It is not a runnable solver configuration or a prediction dataset. Full concentration records remain in the unchanged local workbook pending reuse-term review. The SLAB manual was downloaded locally and its checksum added to the external manifest after a targeted input-capability review. See the [short comparison plan](../../docs/research/EEC550_SHORT_PLAN.md). No model has been installed or run.

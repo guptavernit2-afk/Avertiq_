@@ -14,14 +14,14 @@ A dispersion model estimates concentration as a function of position and time. T
 
 ## Model decision
 
-No engine or equations have been selected for production use. Evaluate an established applicable source/dispersion workflow and integration/licensing constraints before implementation. Use reviewed ALOHA runs as references; do not assume an ALOHA automation API exists.
+OpenFOAM Foundation 14 multicomponentFluid is selected conditionally for the first local EEC550 dispersion-only research comparison; see the [input/model plan](research/EEC550_COMPARISON_PLAN.md). No engine or equations have been selected for production use. Evaluate an established applicable source/dispersion workflow and integration/licensing constraints before implementation. Use reviewed ALOHA runs as references; do not assume an ALOHA automation API exists.
 
 The original project's mass-based blast/fireball rings and geometric ellipse are not validated propylene release models.
 
 ## Test ladder
 
 1. Verification: units, mass conservation, valid domains, coordinate transformations, wind-from convention, reproducibility, and numerical convergence where applicable.
-2. Reference comparison: reproduce relevant official ALOHA examples with version differences documented.
+2. First research comparison: prepare and verify the EEC550 flat-ground mixed-source setup; compare matching sensor concentrations only after source/averaging gates are reviewed. Relevant official ALOHA examples can be separate screening checks with assumptions and version differences documented.
 3. Matched PHAST comparison: use the same source inputs and assessment definitions; report stage-by-stage differences.
 4. Experimental validation: select applicable SMEDIS cases using measured source, weather and concentration records. Keep evaluation cases separate from tuning cases.
 5. Sensitivity: vary justified uncertain inputs and report resulting changes; do not attach unsupported probability/confidence claims.

@@ -44,3 +44,13 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Preserve original units, estimates, missing markers, aliases and measurement records. Reconcile scale, averaging, source geometry and receptor heights before a run.
 - Defer complex-terrain and obstacle cases until the model can represent their defining physics. Resolve DAT647/DAT637 identity before using that file.
 - No engine selection, application implementation, model execution or accuracy claim was authorized or completed in this review.
+
+## 2026-11-08 - EEC550 local research comparison
+
+- User selected a model we can run ourselves without a paid licence.
+- Select OpenFOAM Foundation 14 multicomponentFluid conditionally for the first flat-ground, nonreacting, variable-density mixed-source dispersion comparison. This does not select a production engine.
+- Target the documented downstream EEC55 propane-air source, subject to family mapping and geometry/timing review. Do not enter it as a pure-propane SLAB jet: the standard SLAB initialization and temperature restrictions change this source.
+- Preserve physical release inputs separately from equivalent mixed inlet inputs; preserve measured and ideal wind as distinct cases.
+- Record source/atmosphere/observation lineage and unresolved fields in data/public/eec550-input-plan.json. No invented source-plane height or averaging start.
+- Resolve readiness gates and agree numerical/performance criteria before an evaluated run. PHAST remains an optional later external benchmark; EEC560 remains excluded from tuning.
+- No installation, model configuration files, application code, simulations or validation results were produced. See research/EEC550_SHORT_PLAN.md and research/EEC550_COMPARISON_PLAN.md.

@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-08",
+  "case": "EEC550",
+  "purpose": "dispersion_only_research_comparison_plan",
+  "run_ready": false,
+  "model_run_performed": false,
+  "selected_platform": {
+    "distribution": "OpenFOAM Foundation",
+    "major_release": 14,
+    "module": "multicomponentFluid",
+    "configuration": "proposed transient nonreacting variable-density species and energy with gravity",
+    "exact_package": null,
+    "installation_performed": false,
+    "production_engine_selected": false
+  },
+  "original_workbook": {
+    "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/eec550.xls",
+    "worksheet": "Sheet 1",
+    "sha256": "555215dba9c1c12cac4137b6eb3c3c29721bd33cfc252de26f681de9d7cccc71",
+    "archive_source": "https://admlc.com/wp-content/uploads/2020/12/batch1_24.zip"
+  },
+  "workbook_inputs": [
+    {
+      "cell": "B4",
+      "original_label": "month",
+      "original_value": 9.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B5",
+      "original_label": "day",
+      "original_value": 6.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B6",
+      "original_label": "substance",
+      "original_value": "propane",
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B7",
+      "original_label": "Molecular weight (g/g-mol)",
+      "original_value": 44.1,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B8",
+      "original_label": "Heat capacity liquid (J/g-K)",
+      "original_value": " 2,57   (13,3 °C)",
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B9",
+      "original_label": "Normal boiling point (K)",
+      "original_value": 231.1,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B10",
+      "original_label": "Latent heat of vaporization (J/g)",
+      "original_value": " 351,1  (13,3 °C)",
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B11",
+      "original_label": "Critical temperature (K)",
+      "original_value": 369.9,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B12",
+      "original_label": "release type (puff/jet/cyclone)",
+      "original_value": "jet",
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B13",
+      "original_label": "nozzle diameter (m)",
+      "original_value": 0.0155,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B14",
+      "original_label": "pool mass fraction",
+      "original_value": 0.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B15",
+      "original_label": "release point x",
+      "original_value": 0.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B16",
+      "original_label": "y",
+      "original_value": 0.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B17",
+      "original_label": "z",
+      "original_value": 0.5,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B18",
+      "original_label": "release direction a",
+      "original_value": 30.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B19",
+      "original_label": "b",
+      "original_value": 0.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B20",
+      "original_label": "phase (liquid to gas mass ratio)",
+      "original_value": 1.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B21",
+      "original_label": "exit temperature (°C)",
+      "original_value": 13.3,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B22",
+      "original_label": "exit pressure (atm)",
+      "original_value": 10.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B23",
+      "original_label": "release rate (kg/s)",
+      "original_value": 3.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B24",
+      "original_label": "release starttime h",
+      "original_value": 8.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B25",
+      "original_label": "m",
+      "original_value": 30.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B26",
+      "original_label": "s",
+      "original_value": 0.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B27",
+      "original_label": "release duration  (s)",
+      "original_value": 150.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B28",
+      "original_label": "number of fences",
+      "original_value": 0.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B29",
+      "original_label": "site average wind direction",
+      "original_value": 197.73,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B30",
+      "original_label": "wind direction standard deviation",
+      "original_value": -999.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B31",
+      "original_label": "ideal wind direction (deg from N)",
+      "original_value": 210.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B32",
+      "original_label": "x-axis orientation (deg from N)",
+      "original_value": 90.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B33",
+      "original_label": "site average windspeed at Zref",
+      "original_value": 2.73,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B34",
+      "original_label": "reference height",
+      "original_value": 6.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B35",
+      "original_label": "friction velocity  (m/s)",
+      "original_value": "0,190 estimated",
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B36",
+      "original_label": "surface roughness  (m)",
+      "original_value": 0.006,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B37",
+      "original_label": "Monin-Obukov length  (m)",
+      "original_value": "-90 estimated",
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B38",
+      "original_label": "stability class",
+      "original_value": "D",
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B39",
+      "original_label": "cloud cover",
+      "original_value": "morning haze lifting",
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B40",
+      "original_label": "ambient temperature  (°C)",
+      "original_value": 9.9,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B41",
+      "original_label": "ambient pressure (bar)",
+      "original_value": 1.025,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B42",
+      "original_label": "relative humidity",
+      "original_value": 0.99,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B43",
+      "original_label": "ground slope  (%)",
+      "original_value": 0.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B44",
+      "original_label": "initial concentration",
+      "original_value": 1.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B45",
+      "original_label": "effective molecular weight  (g/mol)",
+      "original_value": 98.8,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B46",
+      "original_label": "lenght scale",
+      "original_value": 0.46,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B47",
+      "original_label": "time scale",
+      "original_value": 0.1395,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    },
+    {
+      "cell": "B48",
+      "original_label": "averaging time for mean values (s)",
+      "original_value": 150.0,
+      "status": "original_workbook_value_not_automatically_solver_input"
+    }
+  ],
+  "equivalent_source": {
+    "local_path": "data/raw/2026-11-08/smedis-extracted/batch1/equivsrc.txt",
+    "sha256": "40c032af12be3b49871abdfeb082e775d51458790bda690e3969e5641e4eeb06",
+    "note_date": "1998-02-06",
+    "original_case_label": "EEC55",
+    "family_mapping_confirmed": false,
+    "downstream_distance_m": 5,
+    "velocity_m_s": 18.1,
+    "propane_mole_fraction": 0.2,
+    "temperature_K": 196,
+    "half_width_m": 0.39,
+    "derived_full_width_m": 0.78,
+    "derived_height_m": 0.39,
+    "derived_area_m2": 0.3042,
+    "centre_height_m": null,
+    "displacement_axis": null,
+    "profile_and_turbulence": null,
+    "air_composition_and_humidity": null,
+    "mass_flow_reconciliation": "conditional ideal dry-air check only; do not force rounded inlet values to nominal 3 kg/s"
+  },
+  "observations": {
+    "range": "A95:E124",
+    "record_count": 30,
+    "fields": [
+      "x_m",
+      "y_m",
+      "height_m",
+      "mean_concentration_percent",
+      "standard_deviation_percent"
+    ],
+    "heights_m": [
+      0.05,
+      1.0,
+      2.0,
+      4.0
+    ],
+    "averaging_duration_s": 150,
+    "averaging_duration_cell": "B48",
+    "averaging_start_relative_s": null,
+    "instrument_basis_confirmed": false,
+    "zero_handling": "preserve original zeros; detection limits unknown",
+    "full_measurement_export_committed": false,
+    "supplementary_arc_range": "A89:D92"
+  },
+  "coordinate_handling": {
+    "x_axis_azimuth_from_north_deg": 90,
+    "y_axis_handedness_confirmed": false,
+    "wind_convention": "meteorological from; verify against trial documentation",
+    "measured_wind_from_deg": 197.73,
+    "derived_downwind_deg": 17.73,
+    "ideal_wind_from_deg_sensitivity_only": 210,
+    "jet_azimuth_deg": 30,
+    "derived_jet_measured_wind_difference_deg": 12.27
+  },
+  "open_gates": [
+    "EEC55 family mapping",
+    "equivalent inlet centre height and displacement axis",
+    "source timing and profiles",
+    "measurement basis and averaging-window alignment",
+    "ABL consistency and heat/humidity treatment",
+    "property and transport model review",
+    "exact version and local runtime feasibility",
+    "mesh/time/domain checks and preregistered tolerances"
+  ],
+  "excluded": [
+    "Adoshi weather and terrain",
+    "pressurised discharge and flash validation",
+    "ignition and fire",
+    "production integration"
+  ],
+  "plan": "docs/research/EEC550_COMPARISON_PLAN.md"
+}
