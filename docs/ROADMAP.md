@@ -16,6 +16,6 @@ Step 1 is complete. Step 2 has an attributed incident fact sheet and reference c
 
 ## Next milestone
 
-Review the [implemented equilibrium model and conditional results](research/EEC550_EQUILIBRIUM_SUMMARY.md), including its revised water-property closure and unknown source basis. Numerical checks passed; experimental applicability remains unestablished. Resolve source placement/timing and a suitable phase-bearing dispersion configuration before reviving the nine-case matrix. App and CFD implementation require a separate user instruction.
+Review the [H00 source-to-dispersion plan](research/EEC550_DISPERSION_SUMMARY.md). Use a conditional phase-bearing source, preserve the original source record, and plan conservative warm-air mixing checks before selecting a transport implementation. Freeze revised inlet/atmosphere/comparison inputs before releasing the nine-case hold. App and CFD implementation require a separate user instruction.
 
 Do not promise schedules until data access and modelling dependencies are understood.

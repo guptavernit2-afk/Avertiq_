@@ -55,3 +55,7 @@ The structured input record is now schema version 2. It retains original values 
 ## Implemented equilibrium results
 
 [eec550-equilibrium-results.json](eec550-equilibrium-results.json) and [verification](eec550-equilibrium-verification.json) now record executed conditional 0D cases and numerical/property checks. They are distinct from the earlier planning records above and do not validate source reconstruction or dispersion. Native-library and normalized source hashes are included. Large/local output remains ignored; small first-party result records are tracked. [Short report](../../docs/research/EEC550_EQUILIBRIUM_SUMMARY.md).
+
+## Conditional dispersion handoff
+
+[eec550-dispersion-handoff.json](eec550-dispersion-handoff.json) derives an H00 boundary ledger from existing equilibrium results and records their normalized-text hash. It preserves gas/ice mass, enthalpy and velocity/area consistency. This is planning metadata, not solver configuration. Original source values and historical sensitivity matrix remain preserved; implementation/execution gates are explicit. [Short decision](../../docs/research/EEC550_DISPERSION_SUMMARY.md). No new equilibrium or CFD run.

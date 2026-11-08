@@ -1,5 +1,7 @@
 # EEC550 sensitivity study: planning version 1
 
+**Latest handoff review:** [H00 phase-bearing candidate](EEC550_DISPERSION_HANDOFF.md). Original S00-S08 values below remain historical v1; freeze a revised source/geometry recipe before execution. No cases are run-ready.
+
 **Phase-review update, 8 November 2026:** the [humidity/phase review](EEC550_PHASE_REVIEW.md) does not accept the proposed gas-only baseline under the current inlet conditions. The sensitivity matrix is held pending source-state and phase/enthalpy reconciliation. Original assumptions below remain planning history, not runnable inputs.
 
 8 November 2026. Authorization: plan a conditional sensitivity study only. No code, solver setup, installation or simulations. Model platform remains OpenFOAM Foundation 14; no production engine decision changes.

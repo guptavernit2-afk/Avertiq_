@@ -43,3 +43,7 @@ Keep each reviewed decision and completed milestone in Git. Record what changed,
 The previous [SurakshaMitra prototype](https://github.com/guptavernit2-afk/SurakshaMitra) remains a separate project. Its existing equations are not accepted as validated models for this demo.
 
 Initial planning baseline: 8 November 2026.
+
+## Source-to-dispersion plan
+
+The [short handoff decision](docs/research/EEC550_DISPERSION_SUMMARY.md) selects H00 as a conditional phase-bearing candidate and preserves the original equivalent source separately. Warm-air mixing checks and an implementation audit come next; the nine-case study remains held. No CFD solver has been selected or run.

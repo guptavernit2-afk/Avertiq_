@@ -460,5 +460,14 @@
   "source_energy_followup": "data/public/eec550-source-energy-plan.json",
   "next_thermodynamic_model": "Reduced ThermoPack-based 0D equilibrium now implemented and numerically verified; see committed result/verification records and limitations.",
   "run_scope": "conditional 0D reduced equilibrium only; no CFD or historical reconstruction",
-  "equilibrium_results": "data/public/eec550-equilibrium-results.json"
+  "equilibrium_results": "data/public/eec550-equilibrium-results.json",
+  "dispersion_handoff_review": {
+    "date": "2026-11-08",
+    "plan": "docs/research/EEC550_DISPERSION_HANDOFF.md",
+    "source": "data/public/eec550-dispersion-handoff.json",
+    "status": "H00_conditional_candidate_phase_bearing_implementation_unselected",
+    "historical_values_preserved": true,
+    "CFD_authorized": false,
+    "CFD_runs": 0
+  }
 }

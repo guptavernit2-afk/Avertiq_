@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-08",
+  "id": "EEC550-H00-HANDOFF-v1",
+  "status": "conditional_candidate_not_solver_input",
+  "CFD_run_authorized": false,
+  "CFD_runs_completed": 0,
+  "run_ready": false,
+  "is_historical_source_reconstruction": false,
+  "plan": "docs/research/EEC550_DISPERSION_HANDOFF.md",
+  "lineage": {
+    "results": "data/public/eec550-equilibrium-results.json",
+    "results_sha256_canonical_LF": "0805a7bea694639a1166ebcfb1bd13675f5c5a83dad77d8cfa643f75e1619240",
+    "case_id": "H00",
+    "derivation": "Arithmetic from existing results; no new equilibrium or dispersion run."
+  },
+  "evidence_status": {
+    "original_window": "reported rounded equivalent state; retained separately",
+    "feed_and_H00": "conditional assumptions and reduced-model calculation",
+    "geometry_and_velocity_direction": "assumed uniform rectangular inlet"
+  },
+  "preferred_research_model": "phase-bearing homogeneous-equilibrium mixture; common velocity and temperature; local PH partition; CFD implementation not selected",
+  "boundary": {
+    "pressure_Pa": 102500.0,
+    "temperature_K": 204.26096230749067,
+    "total_component_mass_kg_s": {
+      "C3": 3.0,
+      "N2": 5.8844713173880425,
+      "O2": 1.803114400475814,
+      "AR": 0.1003754935409234,
+      "H2O": 0.05771023901356947
+    },
+    "total_mass_kg_s": 10.84567145041835,
+    "gas_mass_kg_s": 10.787979481326493,
+    "ice_mass_kg_s": 0.05769196909185552,
+    "liquid_propane_mass_kg_s": 0.0,
+    "liquid_water_mass_kg_s": 0.0,
+    "gas_mole_fractions": {
+      "C3": 0.20190080219921847,
+      "N2": 0.6234098550371215,
+      "O2": 0.16722943014711786,
+      "AR": 0.007456902881572045,
+      "H2O": 3.009734970055373e-06
+    },
+    "gas_mass_fractions": {
+      "C3": 0.2780872919894652,
+      "N2": 0.5454655644807072,
+      "O2": 0.16714106692517572,
+      "AR": 0.009304383060300481,
+      "H2O": 1.6935443514304827e-06
+    },
+    "ice_total_mass_fraction": 0.005319354302368266,
+    "bulk_density_kg_m3": 1.9425926315508648,
+    "bulk_volume_flow_m3_s": 5.583091006455496,
+    "thermal_enthalpy_flux_W": -193794.19825542008,
+    "thermal_enthalpy_J_kg": -17868.344909889824,
+    "enthalpy_reference": "Existing reduced-model reference; map per-species/phase offsets before use with different thermodynamics.",
+    "kinetic_energy_flux_W": 1776.575211935778,
+    "total_enthalpy_plus_kinetic_flux_W": -192017.62304348432,
+    "speed_m_s": 18.1,
+    "velocity_xyz_m_s": [
+      9.05,
+      15.67505980849834,
+      0
+    ],
+    "advective_momentum_flux_magnitude_N": 196.30665325257215,
+    "pressure_thrust_assumption": "Zero excess-pressure thrust at assumed ambient static pressure; momentum is advective only.",
+    "window_area_m2": 0.30845806665499975,
+    "window_width_m": 0.7854400889374056,
+    "window_height_m": 0.3927200444687028,
+    "aspect_ratio_width_to_height": 2,
+    "window_centre_xyz_m": [
+      2.5,
+      4.330127018922193,
+      0.5
+    ],
+    "coordinates": "X east; Y magnetic north; Z up; origin original nozzle",
+    "source_profile": "Assumed uniform top hat; phase co-motion; normal azimuth 30 degrees",
+    "original_reference_area_m2": 0.3042,
+    "area_change_percent": 1.3997589266928845
+  },
+  "case_policy": {
+    "H00": "primary conditional candidate",
+    "H01": "source-basis alternative; future dispersion only if justified",
+    "H02": "counterfactual dry diagnostic",
+    "H03": "pressure-interpretation diagnostic",
+    "H04": "196 K nonadiabatic audit only"
+  },
+  "sensitivity_matrix_policy": "Original S00-S08 remains held historical v1; freeze v2 source, source-size-dependent heights and turbulence length before execution; no automatic 9x5 expansion.",
+  "next_milestones": [
+    "Review phase-equilibrium/relaxation applicability.",
+    "Plan conservative H00/ambient entrainment and phase-transition checks.",
+    "Audit phase-bearing implementation and property references.",
+    "Freeze revised inputs and numerical gates; separate instruction required for CFD."
+  ],
+  "open_gates": [
+    "Historical source basis, placement and averaging remain unresolved; comparison stays conditional.",
+    "No selected verified phase-bearing CFD implementation.",
+    "No particle-size or phase-relaxation evidence; HEM applicability unproven.",
+    "Conservative enthalpy-reference mapping and local closure unverified in transport.",
+    "Boundary/ABL/mesh and revised sensitivity recipe not frozen.",
+    "Sensor concentration basis requires review."
+  ]
+}

@@ -105,3 +105,13 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Enumerate phase sets and use a PH outer root plus melting lever rule. Verify phase limits, conservation, reference invariance, scale changes, invalid inputs and failure handling. 38 tests and all 34 CLI checkpoints passed; dependency check passed.
 - Execute H00-H04 with explicit assumptions. H00 gives about 204.3 K with water ice; H04 at 196 K requires about 496 kW extra heat removal. These are reduced-model conditional results, not measurements or field validation.
 - Preserve source unknowns and the hold on the nine CFD cases. No application, CFD, mapping or operational predictions implemented.
+
+## 2026-11-08 - Conditional dispersion handoff
+
+- Review existing H00-H04; no new equilibrium, CFD or app execution. Preserve reported 196 K source and historical inputs.
+- Select H00 only as a conditional candidate: about 204.3 K, propane gas and water ice. H01 is a source-basis alternative; H02/H03 diagnostics and H04 nonadiabatic audit do not become automatic CFD cases.
+- Preserve 18.1 m/s and derive area from conserved volume flow (0.308458 m²). Record component fluxes, gas basis, bulk density, enthalpy reference, momentum and assumed geometry.
+- Prefer a common-velocity/common-temperature HEM research formulation, subject to applicability and capability review. No CFD implementation selected; multiphaseEuler capabilities do not establish an ice-aerosol model.
+- Plan conservative H00/ambient mixing and phase-transition checks before coupling. Preserve phase-rate/slip/particle-size limitations.
+- Keep S00-S08 as historical v1 on hold; freeze a v2 source/geometry/turbulence recipe before execution. Extend budgets to total water/propane and energy; preserve 30-receptor/150 s policy and holdout.
+- Save [full plan](research/EEC550_DISPERSION_HANDOFF.md) and [short report](research/EEC550_DISPERSION_SUMMARY.md). No new field validation or terrain claim.

@@ -71,3 +71,7 @@ The [reconciliation plan](research/EEC550_SOURCE_ENERGY_RECONCILIATION.md) defin
 ## Standalone implementation verified
 
 The reduced ThermoPack-based package passed 38 tests and 34 CLI checkpoints. The original PR/water-ice closure failed a property screen and was replaced with an explicit IAPWS/NIST saturation-Gibbs/enthalpy water closure. This verifies the defined reduced model, not physical phase rates, the historical EEC550 source or dispersion. See the [verification report](research/EEC550_EQUILIBRIUM_VERIFICATION.md).
+
+## Equilibrium-to-dispersion review
+
+The [handoff plan](research/EEC550_DISPERSION_HANDOFF.md) defines a conditional H00 boundary, conservative total-component/enthalpy transport requirements, phase-bearing model gates and a versioned revision of the held sensitivity matrix. Preserve gas-versus-total concentration bases and the original source note. A phase-bearing implementation audit and numerical checks precede the conditional 30-receptor comparison. No new model execution occurred in this review.
