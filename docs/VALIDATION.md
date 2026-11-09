@@ -95,3 +95,7 @@ The [new flow stage](research/VARIABLE_DENSITY_SUMMARY.md) adds density-dependen
 ## Conservative thermal and phase coupling
 
 The [new 1D prototype](research/THERMAL_PHASE_SUMMARY.md) passes 210 package tests and 210 independent checks. UV round trips, ideal-gas acoustics, stationary contacts, closed periodic species/momentum/total-energy budgets and independently rebuilt cell thermodynamics are tested. Heat/control comparisons distinguish physical conduction response from numerical mixing. An acoustic refinement benchmark reduces error across three meshes. No moving-contact/strong-shock, multidimensional thermal-buoyancy or EEC550 validation claim follows.
+
+## Integrated 2D thermal/gravity verification
+
+The [2D integrated prototype](research/THERMAL_2D_SUMMARY.md) passes 232 package tests and 552 independent checks. Conservative component/total-energy budgets, gravity plus wall-force momentum balance, per-cell thermodynamic reconstruction, hydrostatic rest, heat/gravity controls, reference invariance and a nontrivial 1D reduction are covered. These demonstrate implemented coupling and numerical accounting; tiny closed-box runs do not establish long-time atmospheric accuracy or EEC550 validation.

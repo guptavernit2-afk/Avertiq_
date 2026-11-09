@@ -164,3 +164,14 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Complete 210 package tests and 210 independent checks, including TP reconstruction at every final control cell. JSON serialization regression added after CLI caught NumPy booleans.
 - Acoustic cell-average pressure RMSE falls across 8/16/32 cells. Save raw first-party outputs and source/runtime provenance. No strong-wave, moving-contact, multidimensional or field-validity claim.
 - Next: compatible multidimensional thermal/buoyancy integration and open-domain atmosphere/source verification before EEC550 receptor comparison.
+
+## 2026-11-09 - Integrated 2D thermal, phase and buoyancy flow
+
+- User authorized integration of thermal/phase feedback into 2D buoyancy, parallel checkpoints, tests and commit/push; no app.
+- Build a conservative compressible formulation with five component masses, two momentum components and energy including gravitational potential. Retain old frozen-endpoint projection model as a regression baseline.
+- Use UV equilibrium closure; gas HLLC face flux plus face potential times mass flux; Fourier heat flux; no duplicate gravity energy source.
+- Preserve a canonical analytic isothermal hydrostatic reference through shared-flux correction. Reject arbitrary altered reference arrays rather than freezing an unphysical background.
+- Account for corrected wall traction and full gravitational impulse in vertical momentum. Closed-wall component and total-energy budgets remain conservative.
+- Complete 232 package tests and 552 independent numerical checks. Nontrivial 1D reduction, axis symmetry and caloric-reference shifts are tested. Strict JSON export passes.
+- Save the synthetic 4x4/0.0003-second case, controls and provenance. Gravity-off matched initial pressure is not hydrostatic and is not mislabelled a rest case.
+- This closes 2D integration, not field validation. Next: boundaries/atmosphere/source, convergence and scaling before the EEC550 comparison.

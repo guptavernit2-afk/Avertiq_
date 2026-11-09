@@ -2,14 +2,14 @@
 
 9 November 2026.
 
-**Built:** a 1D conservative thermal/phase-coupled flow prototype.
+**Built:** integrated 2D conservative heat/phase/buoyancy research solver. No app.
 
-- Species, momentum and total energy transported conservatively.
-- Heat changes pressure/temperature/phases through a UV equilibrium closure.
-- Contact-resolving flux fixes a spurious-motion defect exposed by the no-heat control.
-- 210 package tests and 210 independent thermal checks passed.
-- Acoustic pressure error roughly halves with each grid refinement.
+- Density, pressure, temperature and phases evolve with mass/energy transport.
+- Gravity and pressure drive both velocity components.
+- Hydrostatic reference stays at rest; wall/gravity and total-energy budgets pass.
+- 232 package tests and 552 independent checks passed.
+- The 2D-to-1D thermal-flow regression matches at recorded precision.
 
-**Boundary:** this is not yet integrated into the 2D buoyant solver, and is not an EEC550 release prediction. No app.
+**Next:** open-domain atmosphere/source setup, numerical refinement and runtime/scaling before EEC550 comparison. Current runs are tiny closed-box tests, not field predictions.
 
-[Short results and commands](THERMAL_PHASE_SUMMARY.md) | [Model equations](THERMAL_COUPLING_MODEL.md)
+[Short results and commands](THERMAL_2D_SUMMARY.md) | [Model equations](THERMAL_2D_MODEL.md)

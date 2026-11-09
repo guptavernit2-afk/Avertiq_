@@ -45,6 +45,10 @@ jobs:
           python -m avertiq_equilibrium thermal-checks --output outputs/ci-thermal-checks.json
           python -m avertiq_equilibrium thermal-flow --output outputs/ci-thermal-flow.json
           python research/equilibrium/tools/acoustic_benchmark.py --output outputs/ci-thermal-acoustic.json
+      - name: Verify integrated 2D thermal buoyancy
+        run: |
+          python -m avertiq_equilibrium thermal2d-checks --output outputs/ci-thermal2d-checks.json
+          python -m avertiq_equilibrium thermal2d --output outputs/ci-thermal2d.json
       - name: Save research artifacts
         uses: actions/upload-artifact@v4
         with:

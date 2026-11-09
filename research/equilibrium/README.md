@@ -107,3 +107,14 @@ The verification-gated stage uses a MAC variable-coefficient projection and cons
 The separate periodic 1D Euler/HLLC/Fourier stage transports five component densities, momentum and total internal-plus-kinetic energy. EquilibriumUV.solve inverts conserved density/internal energy; sound_speed and heat_capacity_cv supply numerical timestep properties. Thermal-flow APIs: initialize_profile, solve_thermal_flow, run_thermal_flow. Independent runner: thermal_checks.run_thermal_checks.
 
 Default HLLC preserves stationary equal-pressure composition contacts; flux_scheme='rusanov' retains the diffusive baseline. Conductivities are prescribed synthetic inputs. Full suite: 210 tests passed; independent thermal checks: 210 passed. This is not integrated into the 2D buoyant solver. [Results, limitations and commands](../../docs/research/THERMAL_PHASE_SUMMARY.md).
+
+## Integrated 2D thermal, phase and gravity flow
+
+~~~powershell
+.\.venv\Scripts\python.exe -m avertiq_equilibrium thermal2d-checks --output outputs/my-new-thermal2d-checks.json
+.\.venv\Scripts\python.exe -m avertiq_equilibrium thermal2d --output outputs/my-new-thermal2d.json
+~~~
+
+The new conservative compressible formulation integrates the UV phase model with 2D heat transport and gravity. It retains the earlier frozen-density solver as a baseline. Public APIs: thermal2d.initialize_thermal2d, solve_thermal2d, run_thermal2d; thermal2d_checks.run_thermal2d_checks.
+
+Hydrostatic-reference flux correction, gravitational-potential energy flux, wall traction, caloric-reference invariance and nonzero-velocity 1D reduction are checked. Full suite: 232 tests; independent integration checks: 552. No app or field-validation claim. [Results and limits](../../docs/research/THERMAL_2D_SUMMARY.md).

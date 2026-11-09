@@ -12,13 +12,11 @@
 
 ## Current status
 
-Step 1 is complete. Step 2 has an attributed incident fact sheet and reference chemistry notes; exact accident coordinates remain unverified. Step 3 has current tunnel geometry, 72 ERA5 weather hours and a terrain tile collected; a study-area road extract and terrain analysis remain pending. All three SMEDIS batches have been header-screened (30 trials plus one terrain-support workbook), with a detailed three-case propane shortlist and documented data issues. The [phase review](research/EEC550_PHASE_SUMMARY.md) does not accept the proposed gas-only EEC550 baseline; OpenFOAM remains a candidate platform and the nine-case matrix is held pending source/phase reconciliation. ThermoPack 2.2.3 is now installed locally and the standalone reduced equilibrium calculation has been run and numerically verified; no dispersion model has been installed or run. See [collection report](research/2026-11-08-summary.md).
+The [integrated 2D thermal/phase/buoyancy prototype](research/THERMAL_2D_SUMMARY.md) is implemented and tested. The research package has 232 passing tests and 552 independent integration checks. Original thermodynamic, 1D and frozen-density baselines remain available. Public incident/geography/weather evidence and SMEDIS case records are preserved; no EEC550 field comparison or product application exists.
 
 ## Next milestone
 
-The [conservative 1D thermal/phase flow prototype](research/THERMAL_PHASE_SUMMARY.md) is implemented: UV equilibrium EOS, contact-resolving conservative momentum/energy and heat transport. The package passes 210 tests; 210 independent thermal checks and an acoustic refinement benchmark pass.
-
-Next: multidimensional integration of thermal/phase feedback with buoyancy and compatible boundaries, then refinement and atmosphere/source studies. The existing 2D buoyant solver is still frozen-endpoint; EEC550 field comparison remains held. No product app.
+Define and verify open-domain boundaries, atmosphere and source configuration, with mesh/time/domain and runtime/scaling studies. The current 4x4, 0.0003-second closed-box case verifies integration, not a 150-second field release. Review transport/phase assumptions and lock the EEC550 comparison recipe before sensor evaluation.
 
 Do not promise schedules until data access and modelling dependencies are understood.
 

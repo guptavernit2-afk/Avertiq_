@@ -67,3 +67,13 @@ Tomorrow's proposed starting point is checkpoint 5, informed by today's mixing r
 - Next: integrate thermal and buoyancy physics multidimensionally before an atmospheric release comparison.
 
 [Short report](research/THERMAL_PHASE_SUMMARY.md)
+
+## 2D thermal/phase/buoyancy integration: completed 9 November
+
+- Conservative 2D species, momentum and energy with gravity and UV feedback implemented.
+- Hydrostatic rest, potential-energy accounting and wall-force budgets checked.
+- 232 package tests and 552 independent checks passed.
+- Nonzero-velocity reduction to the verified 1D thermal solver matches.
+- Next: open boundaries, atmosphere/source configuration, convergence and computational scaling before EEC550 comparison.
+
+[Short report](research/THERMAL_2D_SUMMARY.md)

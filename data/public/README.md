@@ -79,3 +79,7 @@ The structured input record is now schema version 2. It retains original values 
 ## Conservative thermal/phase flow v1
 
 [thermal-phase-flow-v1](thermal-phase-flow-v1/flow.json) contains the executed 1D coupled flow, controls/210 checks and an analytical acoustic grid comparison. These are first-party synthetic numerical results, not industrial measurements or EEC550 predictions. [Interpretation](../../docs/research/THERMAL_PHASE_SUMMARY.md).
+
+## Integrated thermal 2D v1
+
+[integrated-thermal2d-v1](integrated-thermal2d-v1/flow.json) contains the executed 4x4 heat/phase/gravity case and 552 independent numerical checks with controls. These are first-party synthetic research outputs, not industrial measurements or EEC550 predictions. [Interpretation](../../docs/research/THERMAL_2D_SUMMARY.md).

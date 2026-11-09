@@ -2,7 +2,7 @@
 
 Chemical transport incident assessment.
 
-**Current stage:** standalone thermodynamics, transport and bounded variable-density buoyant-flow research prototypes. No product application or EEC550 field validation.
+**Current stage:** integrated 2D conservative thermal/phase/buoyancy research prototype, with earlier verified baselines retained. No product application or EEC550 field validation.
 
 Avertiq starts with an **Adoshi-inspired training demo**: one stationary propylene tanker, real geographic context, and explicitly hypothetical release conditions. It does not reconstruct the historical gas cloud or provide operational clearance decisions.
 
@@ -18,11 +18,11 @@ Avertiq starts with an **Adoshi-inspired training demo**: one stationary propyle
 
 ## Research collected
 
-Start with the [short collection report](docs/research/2026-11-08-summary.md). Public weather data is tracked; larger raw terrain/map/experimental assets remain local with source URLs and checksums. Conditional thermodynamic results are available below; no dispersion results exist.
+Start with the [short collection report](docs/research/2026-11-08-summary.md). Public weather data is tracked; larger raw terrain/map/experimental assets remain local with source URLs and checksums. Conditional thermodynamic results are available below; no field-dispersion comparison results exist.
 
 ## Validation cases selected
 
-Read the [short SMEDIS review](docs/research/SMEDIS_SHORTLIST.md): EEC550 first, EEC360 after duplicate-record review, and EEC560 reserved from future tuning. These are propane analogues, not validation of Adoshi. No dispersion model has been run.
+Read the [short SMEDIS review](docs/research/SMEDIS_SHORTLIST.md): EEC550 first, EEC360 after duplicate-record review, and EEC560 reserved from future tuning. These are propane analogues, not validation of Adoshi. No EEC550 field comparison has been run.
 
 ## Standalone equilibrium calculation
 
@@ -71,3 +71,7 @@ A 2D frozen-endpoint variable-density incompressible prototype now computes dens
 ## Conservative thermal and phase coupling
 
 A separate 1D conservative Euler/HLLC/Fourier prototype now couples component mass, momentum, total energy and equilibrium pressure/temperature/phase feedback. It passes 210 package tests and 210 independent thermal checks; an acoustic refinement benchmark also passes. [Short report](docs/research/THERMAL_PHASE_SUMMARY.md). Integration into 2D buoyancy and EEC550 field validation remain outstanding.
+
+## Integrated 2D thermal buoyancy
+
+Heat/phase feedback, conservative momentum/energy and gravity now run together in a 2D compressible research prototype. The package passes 232 tests and 552 independent integration checks. [Short report and commands](docs/research/THERMAL_2D_SUMMARY.md). These are tiny closed-box verification runs; open-domain atmosphere/source configuration, convergence and field validation remain outstanding.
