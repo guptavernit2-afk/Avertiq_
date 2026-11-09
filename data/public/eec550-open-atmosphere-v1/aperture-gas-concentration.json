@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "duration_s": 0.001,
+  "rectangle_m": {
+    "x_min": 0.0,
+    "x_max": 4.0,
+    "z_min": 0.0,
+    "z_max": 0.8
+  },
+  "quantity": "100 * gas C3 moles / total gas moles, with liquid propane, liquid water and ice removed",
+  "averaging": "Area-weighted mean of piecewise-constant final cell mole percentages using exact cell/rectangle overlap",
+  "interpretation": "Inlet-adjacent spatial startup diagnostic; experimental receptor basis and historical 150 s timing still require matching.",
+  "grids": [
+    {
+      "nx": 4,
+      "nz": 4,
+      "dx_m": 4.0,
+      "dz_m": 0.4,
+      "overlapping_cells": 2,
+      "peak_gas_propane_mol_percent": 0.09340805777195091,
+      "box_mean_gas_propane_mol_percent": 0.06193220966272424,
+      "box_mean_change_percentage_points": null
+    },
+    {
+      "nx": 4,
+      "nz": 8,
+      "dx_m": 4.0,
+      "dz_m": 0.2,
+      "overlapping_cells": 4,
+      "peak_gas_propane_mol_percent": 0.12591584982464646,
+      "box_mean_gas_propane_mol_percent": 0.061910085041738755,
+      "box_mean_change_percentage_points": -2.2124620985483623e-05
+    },
+    {
+      "nx": 4,
+      "nz": 16,
+      "dx_m": 4.0,
+      "dz_m": 0.1,
+      "overlapping_cells": 8,
+      "peak_gas_propane_mol_percent": 0.12590638317203226,
+      "box_mean_gas_propane_mol_percent": 0.061873855724812854,
+      "box_mean_change_percentage_points": -3.622931692590092e-05
+    }
+  ],
+  "provenance": {
+    "grid_record": {
+      "name": "aperture.json",
+      "sha256_exact_bytes": "84df21c872e27f86a992012c6f132909193a3adc523c55fb8ae6a93978e09925",
+      "sha256_UTF8_LF": "84df21c872e27f86a992012c6f132909193a3adc523c55fb8ae6a93978e09925"
+    },
+    "molar_mass_record": {
+      "name": "eec550-equilibrium-results.json",
+      "sha256_exact_bytes": "f431005102842036a29a997fac891839afc204184a7d9bdc6d161a053be2f27e",
+      "sha256_UTF8_LF": "0805a7bea694639a1166ebcfb1bd13675f5c5a83dad77d8cfa643f75e1619240"
+    },
+    "script_sha256_UTF8_LF": "122b7a3329462106763c59a7014027523e5df9c92e510c65f3d41982ab0985ef"
+  }
+}

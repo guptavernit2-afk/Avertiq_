@@ -1,15 +1,7 @@
-# Latest completed checkpoint
+# Open-domain milestone
 
-9 November 2026.
+Wind enters around the H00 release window. The outlet passes tracer and admits ambient air during backflow. The package passed **295 tests and 283 atmospheric checks**.
 
-**Built:** integrated 2D conservative heat/phase/buoyancy research solver. No app.
+At 1 ms, the larger-domain peak gas concentration still rises with grid refinement. A separate vertical study reaches nearly four cells across the opening. Its last two peaks agree at about **0.126 mol%**. Horizontal resolution and developed-plume sampling remain open before an EEC550 receptor comparison.
 
-- Density, pressure, temperature and phases evolve with mass/energy transport.
-- Gravity and pressure drive both velocity components.
-- Hydrostatic reference stays at rest; wall/gravity and total-energy budgets pass.
-- 232 package tests and 552 independent checks passed.
-- The 2D-to-1D thermal-flow regression matches at recorded precision.
-
-**Next:** open-domain atmosphere/source setup, numerical refinement and runtime/scaling before EEC550 comparison. Current runs are tiny closed-box tests, not field predictions.
-
-[Short results and commands](THERMAL_2D_SUMMARY.md) | [Model equations](THERMAL_2D_MODEL.md)
+[Results and run commands](OPEN_ATMOSPHERE_SUMMARY.md)

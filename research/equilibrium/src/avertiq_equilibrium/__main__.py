@@ -9,7 +9,7 @@ from .verification import verify
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
-    for command in ("verify", "cases", "mixing", "study", "bundle", "transport", "flow", "flow-checks", "thermal-flow", "thermal-checks", "thermal2d", "thermal2d-checks"):
+    for command in ("verify", "cases", "mixing", "study", "bundle", "transport", "flow", "flow-checks", "thermal-flow", "thermal-checks", "thermal2d", "thermal2d-checks", "atmospheric", "atmospheric-checks", "atmospheric-refinement"):
         child = commands.add_parser(command)
         child.add_argument("--output", type=Path, required=True,
                            help="Fresh output directory for bundle; fresh JSON path otherwise")
@@ -39,7 +39,18 @@ def main():
             verification = verify()
             if args.command != "verify" and not verification["passed"]:
                 raise RuntimeError("Property/numerical verification failed; calculation refused")
-            if args.command == "thermal2d":
+            if args.command == "atmospheric":
+                from .atmospheric import run_atmospheric
+                result = run_atmospheric()
+            elif args.command == "atmospheric-checks":
+                from .atmospheric_checks import run_atmospheric_checks
+                result = run_atmospheric_checks()
+                if not result["passed"]:
+                    raise RuntimeError("Atmospheric boundary checks failed")
+            elif args.command == "atmospheric-refinement":
+                from .atmospheric_checks import run_refinement
+                result = run_refinement()
+            elif args.command == "thermal2d":
                 from .thermal2d import run_thermal2d
                 result = run_thermal2d()
             elif args.command == "thermal2d-checks":

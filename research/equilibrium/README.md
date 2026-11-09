@@ -118,3 +118,15 @@ Default HLLC preserves stationary equal-pressure composition contacts; flux_sche
 The new conservative compressible formulation integrates the UV phase model with 2D heat transport and gravity. It retains the earlier frozen-density solver as a baseline. Public APIs: thermal2d.initialize_thermal2d, solve_thermal2d, run_thermal2d; thermal2d_checks.run_thermal2d_checks.
 
 Hydrostatic-reference flux correction, gravitational-potential energy flux, wall traction, caloric-reference invariance and nonzero-velocity 1D reduction are checked. Full suite: 232 tests; independent integration checks: 552. No app or field-validation claim. [Results and limits](../../docs/research/THERMAL_2D_SUMMARY.md).
+
+## Open atmospheric source and refinement
+
+~~~powershell
+.\.venv\Scripts\python.exe -m avertiq_equilibrium atmospheric-checks --output outputs/my-new-atmospheric-checks.json
+.\.venv\Scripts\python.exe -m avertiq_equilibrium atmospheric --output outputs/my-new-atmospheric.json
+.\.venv\Scripts\python.exe -m avertiq_equilibrium atmospheric-refinement --output outputs/my-new-refinement.json
+~~~
+
+The case builder eec550_case.build_eec550_case provides H00/source/weather provenance and exact face overlaps. atmospheric.run_atmospheric accepts explicit grid, time/CFL and case settings. Atmospheric boundaries extend the existing solver without replacing the closed baseline. atmospheric_checks.run_atmospheric_checks and run_refinement provide independent ledgers and raw refinement runs.
+
+Full suite: 295 tests; independent atmospheric checks: 283. Spatial convergence remains unestablished. The forced subsonic source, extrapolating outlets, 2D slab and short startup horizon are explicit limitations. [Report](../../docs/research/OPEN_ATMOSPHERE_SUMMARY.md).

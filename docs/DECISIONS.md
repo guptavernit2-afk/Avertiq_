@@ -175,3 +175,15 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Complete 232 package tests and 552 independent numerical checks. Nontrivial 1D reduction, axis symmetry and caloric-reference shifts are tested. Strict JSON export passes.
 - Save the synthetic 4x4/0.0003-second case, controls and provenance. Gravity-off matched initial pressure is not hydrostatic and is not mislabelled a rest case.
 - This closes 2D integration, not field validation. Next: boundaries/atmosphere/source, convergence and scaling before the EEC550 comparison.
+
+## 2026-11-09 - Open atmosphere, source/weather and refinement
+
+- User authorized open atmospheric boundaries, EEC550 source/weather setup, parallel checkpoints, refinement tests and commit/push; no app.
+- Extend the coupled solver with ambient inflow, prescribed conservative source patch, extrapolated right/top outflow and ambient-reservoir backflow. Do not claim nonreflecting boundaries or characteristic-compatible source forcing.
+- Preserve H00 and original 196 K records separately. Normalize finite source flow by width for a 2D slab; integrate overlap and potential-energy first moment exactly across boundary faces. Separate gross source from displaced ambient and full boundary fluxes.
+- Preserve shifted neutral-log convention and raw wind direction. Record along-plane projection/omitted crosswind, pressure-datum excess and inviscid-ground assumptions. Match numerical defaults to the executable case.
+- Live-property source compatibility and closed-baseline regressions pass. Full suite: 295 tests; independent open-boundary checks: 283.
+- Execute matched .001s studies on 4/8/12 grids and CFL .2/.1/.05 (different actual step counts). Save raw runs and descriptive field/inventory changes.
+- Mass inventory agrees; peak fields do not converge. Explicitly flag source underresolution and no sensor-readiness. Next: source-resolving geometry, inlet/outlet/domain and runtime studies before any EEC550 scoring.
+
+- Added a local aperture study at fixed horizontal spacing and matched timesteps. Compare gas propane mol% over a common physical rectangle on both grid families. The vertical result applies to the lower 1.6 m domain at 1 ms.

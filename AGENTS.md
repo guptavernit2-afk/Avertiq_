@@ -2,7 +2,7 @@
 
 ## Current authorization
 
-The user has authorized research implementation of equilibrium thermodynamics, conservative thermal flow and integration of heat/phase feedback with 2D buoyancy, with parallel checkpoints, mathematical tests, commits and push. A new conservative compressible 2D formulation may replace the frozen-endpoint incompressible approximation for this stage; keep the old solver as a regression baseline. Distinguish bounded synthetic verification from EEC550 field validation. No product application is authorized.
+The user has authorized research implementation of equilibrium thermodynamics, conservative thermal flow and integration of heat/phase feedback with 2D buoyancy, and open atmospheric boundaries, EEC550 source/weather setup and grid/time-step studies, with parallel checkpoints, mathematical tests, commits and push. A new conservative compressible 2D formulation may replace the frozen-endpoint incompressible approximation for this stage; keep the old solver as a regression baseline. Distinguish bounded synthetic verification from EEC550 field validation. No product application is authorized.
 
 ## Repository boundary
 

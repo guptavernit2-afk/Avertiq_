@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "duration_s": 0.001,
+  "rectangle_m": {
+    "x_min": 0.0,
+    "x_max": 4.0,
+    "z_min": 0.0,
+    "z_max": 0.8
+  },
+  "quantity": "100 * gas C3 moles / total gas moles, with liquid propane, liquid water and ice removed",
+  "averaging": "Area-weighted mean of piecewise-constant final cell mole percentages using exact cell/rectangle overlap",
+  "interpretation": "Inlet-adjacent spatial startup diagnostic; experimental receptor basis and historical 150 s timing still require matching.",
+  "grids": [
+    {
+      "nx": 4,
+      "nz": 4,
+      "dx_m": 4.0,
+      "dz_m": 2.0,
+      "overlapping_cells": 1,
+      "peak_gas_propane_mol_percent": 0.024831488892627863,
+      "box_mean_gas_propane_mol_percent": 0.024831488892627863,
+      "box_mean_change_percentage_points": null
+    },
+    {
+      "nx": 8,
+      "nz": 8,
+      "dx_m": 2.0,
+      "dz_m": 1.0,
+      "overlapping_cells": 2,
+      "peak_gas_propane_mol_percent": 0.09897312948637578,
+      "box_mean_gas_propane_mol_percent": 0.04950177432403725,
+      "box_mean_change_percentage_points": 0.024670285431409384
+    },
+    {
+      "nx": 12,
+      "nz": 12,
+      "dx_m": 1.3333333333333333,
+      "dz_m": 0.6666666666666666,
+      "overlapping_cells": 6,
+      "peak_gas_propane_mol_percent": 0.204866992181361,
+      "box_mean_gas_propane_mol_percent": 0.057883157095463836,
+      "box_mean_change_percentage_points": 0.008381382771426589
+    }
+  ],
+  "provenance": {
+    "grid_record": {
+      "name": "refinement.json",
+      "sha256_exact_bytes": "49061eefddb374751007b98f66c8ad40f50fd57fd54c23f379aeddd84a8c977f",
+      "sha256_UTF8_LF": "49061eefddb374751007b98f66c8ad40f50fd57fd54c23f379aeddd84a8c977f"
+    },
+    "molar_mass_record": {
+      "name": "eec550-equilibrium-results.json",
+      "sha256_exact_bytes": "f431005102842036a29a997fac891839afc204184a7d9bdc6d161a053be2f27e",
+      "sha256_UTF8_LF": "0805a7bea694639a1166ebcfb1bd13675f5c5a83dad77d8cfa643f75e1619240"
+    },
+    "script_sha256_UTF8_LF": "122b7a3329462106763c59a7014027523e5df9c92e510c65f3d41982ab0985ef"
+  }
+}

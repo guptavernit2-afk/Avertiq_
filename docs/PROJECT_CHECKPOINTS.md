@@ -77,3 +77,13 @@ Tomorrow's proposed starting point is checkpoint 5, informed by today's mixing r
 - Next: open boundaries, atmosphere/source configuration, convergence and computational scaling before EEC550 comparison.
 
 [Short report](research/THERMAL_2D_SUMMARY.md)
+
+## Open atmosphere/source/weather: completed 9 November
+
+- Open inflow, source patch, outlets and backflow implemented and checked.
+- Conditional H00 and selected EEC550 weather traced to prior records.
+- 295 package tests and 283 independent checks passed.
+- 4/8/12-grid and three-level time-step studies executed and saved.
+- **Outcome:** spatial source/field convergence not established. Next: source-resolving mesh, boundary/domain and runtime studies.
+
+[Short report](research/OPEN_ATMOSPHERE_SUMMARY.md)

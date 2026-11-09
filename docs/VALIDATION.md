@@ -99,3 +99,7 @@ The [new 1D prototype](research/THERMAL_PHASE_SUMMARY.md) passes 210 package tes
 ## Integrated 2D thermal/gravity verification
 
 The [2D integrated prototype](research/THERMAL_2D_SUMMARY.md) passes 232 package tests and 552 independent checks. Conservative component/total-energy budgets, gravity plus wall-force momentum balance, per-cell thermodynamic reconstruction, hydrostatic rest, heat/gravity controls, reference invariance and a nontrivial 1D reduction are covered. These demonstrate implemented coupling and numerical accounting; tiny closed-box runs do not establish long-time atmospheric accuracy or EEC550 validation.
+
+## Open boundaries and refinement
+
+The [open-atmosphere checkpoint](research/OPEN_ATMOSPHERE_SUMMARY.md) passes 295 package tests and 283 independent checks of source geometry, live thermodynamic compatibility, actual outlet/backflow and boundary/source/gravity budgets. Grid/time studies are executed, not merely planned. They show mass conservation but unresolved spatial fields; no convergence or EEC550 accuracy is claimed. Source inlet compatibility, reflection, domain, source-resolution and computational scaling remain gates.

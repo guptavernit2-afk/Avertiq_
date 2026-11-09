@@ -2,7 +2,7 @@
 
 Chemical transport incident assessment.
 
-**Current stage:** integrated 2D conservative thermal/phase/buoyancy research prototype, with earlier verified baselines retained. No product application or EEC550 field validation.
+**Current stage:** open-boundary 2D thermal/phase/buoyancy research with conditional EEC550 inputs and executed grid/time studies. Spatial convergence is not established; no product app or EEC550 field validation.
 
 Avertiq starts with an **Adoshi-inspired training demo**: one stationary propylene tanker, real geographic context, and explicitly hypothetical release conditions. It does not reconstruct the historical gas cloud or provide operational clearance decisions.
 
@@ -75,3 +75,7 @@ A separate 1D conservative Euler/HLLC/Fourier prototype now couples component ma
 ## Integrated 2D thermal buoyancy
 
 Heat/phase feedback, conservative momentum/energy and gravity now run together in a 2D compressible research prototype. The package passes 232 tests and 552 independent integration checks. [Short report and commands](docs/research/THERMAL_2D_SUMMARY.md). These are tiny closed-box verification runs; open-domain atmosphere/source configuration, convergence and field validation remain outstanding.
+
+## Open atmosphere and EEC550 input checkpoint
+
+Open-boundary flow, a traceable conditional H00 source/weather setup and actual grid/time studies are implemented. The package passes 295 tests and 283 independent atmospheric checks. **Spatial convergence is not established:** the source is underresolved and peak fields change strongly. [Results and commands](docs/research/OPEN_ATMOSPHERE_SUMMARY.md). No sensor accuracy or app claim.

@@ -107,7 +107,7 @@ def _riemann(left,right,pl,pr,cl,cr,normal):
 
 def solve_thermal2d(conserved, *, properties=None,length_x_m=1.,height_m=1.,
                     gravity_m_s2=9.81,duration_s=3e-4,conductivity_W_m_K=10.,
-                    cfl=.25,reference=None):
+                    cfl=.25,reference=None,atmosphere=None,max_timestep_s=None):
     """Conservative unsplit FV update with well-balanced reference flux correction."""
     q=np.asarray(conserved,dtype=float).copy()
     if q.ndim!=3 or q.shape[2]!=8 or min(q.shape[:2])<4 or max(q.shape[:2])>16:
@@ -119,8 +119,12 @@ def solve_thermal2d(conserved, *, properties=None,length_x_m=1.,height_m=1.,
     g=_number(gravity_m_s2,"gravity");duration=_number(duration_s,"duration")
     conductivity=_number(conductivity_W_m_K,"conductivity")
     cfl=_number(cfl,"CFL",True)
+    step_cap = math.inf if max_timestep_s is None else _number(max_timestep_s,"maximum timestep",True)
     if cfl>.4:raise ValueError("CFL must not exceed .4")
     props=properties or Properties();eos=EquilibriumUV(props)
+    if atmosphere is not None:
+        atmosphere.begin_run(nx, nz, lx, height, g)
+        reference=atmosphere.reference
     if reference is None:
         _,reference=initialize_thermal2d(props,nx=nx,nz=nz,length_x_m=lx,height_m=height,gravity_m_s2=g,blob=False)
     bar=np.asarray(reference["conserved"],dtype=float)
@@ -131,7 +135,10 @@ def solve_thermal2d(conserved, *, properties=None,length_x_m=1.,height_m=1.,
     if (reference["metadata"]["gravity_m_s2"]!=g or reference["metadata"]["height_m"]!=height
             or not np.isfinite(bar).all() or not np.isfinite(pf).all()):
         raise ValueError("Reference configuration mismatch")
-    _,expected=initialize_thermal2d(props,nx=nx,nz=nz,length_x_m=lx,height_m=height,gravity_m_s2=g,blob=False)
+    if atmosphere is None:
+        _,expected=initialize_thermal2d(props,nx=nx,nz=nz,length_x_m=lx,height_m=height,gravity_m_s2=g,blob=False)
+    else:
+        expected=atmosphere.canonical_reference()
     if (not np.allclose(bar,expected["conserved"],rtol=5e-11,atol=1e-10)
             or not np.allclose(pf,expected["pressure_faces_Pa"],rtol=1e-12,atol=1e-9)
             or not np.allclose(pc,expected["pressure_cells_Pa"],rtol=1e-12,atol=1e-9)):
@@ -168,6 +175,8 @@ def solve_thermal2d(conserved, *, properties=None,length_x_m=1.,height_m=1.,
         sound=np.array([[r["c"] for r in line] for line in records])
         return pressure,sound
     def fluxes(array,records):
+        if atmosphere is not None:
+            return atmosphere.fluxes(array,records,_riemann)
         pressure,sound=fields(records)
         gas=array.copy();gas[:,:,7]-=array[:,:,:5].sum(2)*phi
         right=np.roll(gas,-1,axis=1)
@@ -194,6 +203,8 @@ def solve_thermal2d(conserved, *, properties=None,length_x_m=1.,height_m=1.,
     fxbar,fzbar=fluxes(bar,bar_records)
     physical_x=np.zeros_like(fxbar);physical_x[:,:,5]=pc[:,None]
     physical_z=np.zeros_like(fzbar);physical_z[:,:,6]=pf[:,None]
+    if atmosphere is not None:
+        physical_x,physical_z=atmosphere.physical_reference_fluxes()
     original=q.copy();initial=q.sum((0,1))*dx*dz
     boundary=np.zeros(8);gravity_impulse=0.
     elapsed=0.;steps=0;retries=0;max_courant=0.;max_fourier=0.
@@ -204,7 +215,7 @@ def solve_thermal2d(conserved, *, properties=None,length_x_m=1.,height_m=1.,
         sound=np.array([[r["c"] for r in line] for line in records])
         rho=q[:,:,:5].sum(2)
         rate=np.max((np.abs(u)+sound)/dx+(np.abs(w)+sound)/dz)
-        dt=min(duration-elapsed,cfl/float(rate))
+        dt=min(duration-elapsed,cfl/float(rate),step_cap)
         cv=np.array([[r.get("cv",math.inf) for r in line] for line in records])
         if conductivity:
             dt=min(dt,.15*float(np.min(rho*cv))/(conductivity*(1/dx**2+1/dz**2)))
@@ -213,9 +224,16 @@ def solve_thermal2d(conserved, *, properties=None,length_x_m=1.,height_m=1.,
         fx=fx-fxbar+physical_x;fz=fz-fzbar+physical_z
         if conductivity:
             t=np.array([[r["state"].temperature_K for r in line] for line in records])
-            fx[:,:,7]-=conductivity*(np.roll(t,-1,axis=1)-t)/dx
+            if atmosphere is None:
+                fx[:,:,7]-=conductivity*(np.roll(t,-1,axis=1)-t)/dx
+            else:
+                fx[:,1:-1,7]-=conductivity*(t[:,1:]-t[:,:-1])/dx
             fz[1:-1,:,7]-=conductivity*(t[1:]-t[:-1])/dz
-        rhs=-(fx-np.roll(fx,1,axis=1))/dx-(fz[1:]-fz[:-1])/dz
+        if atmosphere is not None:
+            atmosphere.apply_source(fx)
+            rhs=-(fx[:,1:]-fx[:,:-1])/dx-(fz[1:]-fz[:-1])/dz
+        else:
+            rhs=-(fx-np.roll(fx,1,axis=1))/dx-(fz[1:]-fz[:-1])/dz
         rhs[:,:,6]-=rho*g
         for attempt in range(13):
             candidate=q+dt*rhs
@@ -225,6 +243,9 @@ def solve_thermal2d(conserved, *, properties=None,length_x_m=1.,height_m=1.,
                 if attempt==12:raise RuntimeError("No admissible 2D thermal timestep")
         q=candidate
         boundary+=dt*dx*np.sum(fz[0]-fz[-1],axis=0)
+        if atmosphere is not None:
+            boundary+=dt*dz*np.sum(fx[:,0]-fx[:,-1],axis=0)
+            atmosphere.record_fluxes(fx,fz,dt)
         gravity_impulse-=dt*g*float(rho.sum())*dx*dz
         elapsed+=dt;steps+=1
         if duration-elapsed<=8*np.finfo(float).eps*max(duration,1e-30):elapsed=duration
@@ -255,14 +276,14 @@ def solve_thermal2d(conserved, *, properties=None,length_x_m=1.,height_m=1.,
                           "temperature_K":s.temperature_K,"pressure_Pa":s.pressure_Pa,
                           "phase_mass_fractions":{k:float(v) for k,v in phases.items()},
                           "volume_constraint_relative_residual":float(s.volume_m3*rec["rho"]-1.)})
-    return {"schema_version":1,"model":"2D conservative well-balanced Euler-HLLC/Fourier/gravity with equilibrium UV EOS",
+    result={"schema_version":1,"model":"2D conservative well-balanced Euler-HLLC/Fourier/gravity with equilibrium UV EOS",
             "field_prediction_ready":False,"column_names":COLUMNS,
             "initial_conserved":original.tolist(),"final_conserved":q.tolist(),"cells":cells,
             "reference":{"conserved":bar.tolist(),"pressure_faces_Pa":pf.tolist(),
                          "pressure_cells_Pa":pc.tolist(),"metadata":reference["metadata"]},
             "configuration":{"nx":nx,"nz":nz,"length_x_m":lx,"height_m":height,
                              "duration_s":duration,"gravity_m_s2":g,"conductivity_W_m_K":conductivity,
-                             "cfl":cfl,"boundary":"periodic x; reflecting adiabatic z"},
+                             "cfl":cfl,"boundary":("periodic x; reflecting adiabatic z" if atmosphere is None else "ambient inflow; extrapolating right/top outflow with reservoir backflow; reflecting adiabatic ground")},
             "diagnostics":{"steps":steps,"elapsed_s":elapsed,"timestep_retries":retries,
                            "maximum_acoustic_courant":max_courant,"maximum_thermal_fourier":max_fourier,
                            "initial_integrals":initial.tolist(),"final_integrals":final.tolist(),
@@ -276,6 +297,11 @@ def solve_thermal2d(conserved, *, properties=None,length_x_m=1.,height_m=1.,
                            "Synthetic prescribed conductivity; no ground heat, release inlet, open boundary or terrain.",
                            "First-order reference-corrected HLLC; strong shocks and arbitrary moving contacts unvalidated."],
             "provenance":provenance()}
+    if atmosphere is not None:
+        result["atmospheric"]=atmosphere.summary()
+        result["limitations"]=[x for x in result["limitations"] if "closed-box" not in x and "release inlet" not in x]
+        result["limitations"].extend(atmosphere.limitations)
+    return result
 
 
 def run_thermal2d(properties=None,**options):

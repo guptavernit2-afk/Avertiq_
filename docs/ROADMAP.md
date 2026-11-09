@@ -12,11 +12,11 @@
 
 ## Current status
 
-The [integrated 2D thermal/phase/buoyancy prototype](research/THERMAL_2D_SUMMARY.md) is implemented and tested. The research package has 232 passing tests and 552 independent integration checks. Original thermodynamic, 1D and frozen-density baselines remain available. Public incident/geography/weather evidence and SMEDIS case records are preserved; no EEC550 field comparison or product application exists.
+Open boundaries and a [conditional EEC550 source/weather setup](research/OPEN_ATMOSPHERE_SUMMARY.md) run on the coupled 2D solver. The package passes 295 tests and 283 independent atmospheric checks. Actual grid/time studies are saved; spatial convergence is explicitly not established. Earlier baselines and public evidence remain preserved. No product app or EEC550 field validation exists.
 
 ## Next milestone
 
-Define and verify open-domain boundaries, atmosphere and source configuration, with mesh/time/domain and runtime/scaling studies. The current 4x4, 0.0003-second closed-box case verifies integration, not a 150-second field release. Review transport/phase assumptions and lock the EEC550 comparison recipe before sensor evaluation.
+Resolve the source vertically and study inlet compatibility/reflection, domain size and runtime scaling. Grid/time smoke studies show conservation but strongly mesh-dependent peak fields. The 2D slab omits crosswind/finite-width dispersion; longer atmospheric runs and appropriate dimensionality are required before receptor scoring.
 
 Do not promise schedules until data access and modelling dependencies are understood.
 

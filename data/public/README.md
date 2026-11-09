@@ -83,3 +83,7 @@ The structured input record is now schema version 2. It retains original values 
 ## Integrated thermal 2D v1
 
 [integrated-thermal2d-v1](integrated-thermal2d-v1/flow.json) contains the executed 4x4 heat/phase/gravity case and 552 independent numerical checks with controls. These are first-party synthetic research outputs, not industrial measurements or EEC550 predictions. [Interpretation](../../docs/research/THERMAL_2D_SUMMARY.md).
+
+## EEC550 open-atmosphere v1
+
+[eec550-open-atmosphere-v1](eec550-open-atmosphere-v1/case.json) contains the conditional setup, short open-domain run, independent boundary controls and raw grid/time studies. These first-party synthetic results explicitly flag unresolved spatial convergence. They are not experimental measurements, sensor scores or a 150-second release prediction. [Interpretation](../../docs/research/OPEN_ATMOSPHERE_SUMMARY.md).

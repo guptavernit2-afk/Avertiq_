@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "case_id": "EEC550-H00-2D-OPEN-v1",
+  "status": "conditional_2D_source_weather_smoke_setup_not_field_validation",
+  "faithful_reproduction": false,
+  "sensor_comparison_ready": false,
+  "lineage": {
+    "source_handoff": {
+      "path": "data/public/eec550-dispersion-handoff.json",
+      "sha256_normalized_UTF8_LF": "d5ff7a93500af57f9b1e4cac9c1821b3aa1e0414d44fd48c493003dd8d86be2d"
+    },
+    "ambient_property_record": {
+      "path": "data/public/eec550-research-bundle-v1/study.json",
+      "sha256_normalized_UTF8_LF": "dcedb06960581c2dd7622a716018c54bbb368dc32d733ab599031853ceac60ee"
+    },
+    "original_input_plan": "data/public/eec550-input-plan.json"
+  },
+  "source": {
+    "basis": "conditional H00 reduced-equilibrium result",
+    "temperature_K": 204.26096230749067,
+    "pressure_Pa": 102500.0,
+    "density_kg_m3": 1.9425926315508648,
+    "thermal_enthalpy_J_kg": -17868.344909889824,
+    "speed_m_s": 18.1,
+    "velocity_z_m_s": 0.0,
+    "centre_height_m": 0.5,
+    "height_m": 0.3927200444687028,
+    "width_m": 0.7854400889374056,
+    "area_m2": 0.30845806665499975,
+    "total_mass_flow_kg_s": 10.84567145041835,
+    "propane_mass_flow_kg_s": 3.0,
+    "total_component_mass_kg_s": {
+      "C3": 3.0,
+      "N2": 5.8844713173880425,
+      "O2": 1.803114400475814,
+      "AR": 0.1003754935409234,
+      "H2O": 0.05771023901356947
+    },
+    "component_mass_fractions": {
+      "C3": 0.2766080471563871,
+      "N2": 0.542564039883493,
+      "O2": 0.16625198437172486,
+      "AR": 0.009254889750237789,
+      "H2O": 0.005321038838157265
+    },
+    "phase_mass_fractions": {
+      "gas": 0.9946806456976317,
+      "water_ice": 0.005319354302368266,
+      "water_liquid": 0.0,
+      "propane_liquid": 0.0
+    },
+    "per_depth": {
+      "total_mass_kg_m_s": 13.808400670114864,
+      "propane_mass_kg_m_s": 3.8195147437134196,
+      "component_mass_kg_m_s": {
+        "C3": 3.8195147437134196,
+        "N2": 7.491941651907452,
+        "O2": 2.2956740124064514,
+        "AR": 0.12779522582902267,
+        "H2O": 0.07347503625851799
+      },
+      "advective_momentum_N_m": 249.93205212907907,
+      "pressure_traction_N_m": 40253.80455804204,
+      "full_normal_momentum_N_m": 40503.736610171116,
+      "enthalpy_plus_kinetic_W_m": -244471.380755798,
+      "potential_energy_W_m": 67.73020528691342
+    },
+    "hydrostatic_ambient_pressure_at_centre_Pa": 102493.84101542737,
+    "pressure_excess_at_centre_Pa": 6.15898457262665,
+    "pressure_datum_note": "H00 stays at 102500 Pa; assigning ambient 102500 Pa at ground creates a small positive source pressure excess. This is an explicit datum assumption, not measured thrust.",
+    "geometry_evidence": "Centre height 0.5 m, top-hat profile and aspect ratio are assumptions; area/width/height are H00 flow-consistent calculations."
+  },
+  "atmosphere": {
+    "temperature_K": 283.05,
+    "relative_humidity": 0.99,
+    "ground_pressure_Pa": 102500.0,
+    "pressure_datum_height_m": 0.0,
+    "pressure_datum_evidence": "Ground datum assumed; original database pressure measurement height is unknown.",
+    "density_at_ground_kg_m3": 1.2556920732932841,
+    "humidity_definition": "Relative to the adopted normalized liquid-water saturation closure; original source-feed water convention remains unchanged.",
+    "wind_reference_speed_m_s": 2.73,
+    "wind_reference_height_m": 6.0,
+    "wind_from_deg_magnetic": 197.73,
+    "downwind_deg_magnetic": 17.730000000000018,
+    "wind_direction_datum_note": "Raw selected wind-from 197.73 degrees is treated in the common local magnetic-north frame for this projection. Its independent compass datum was not recovered; no declination correction is applied.",
+    "roughness_length_m": 0.006,
+    "kappa": 0.4,
+    "friction_velocity_m_s": 0.15806032127083783,
+    "recorded_estimated_friction_velocity_m_s": 0.19,
+    "wind_profile": "shifted neutral log: U(z)=ustar/kappa*ln((z+z0)/z0)",
+    "stability": "assumed neutral; not simultaneous enforcement of estimated L=-90 m",
+    "plane_wind_at_reference_m_s": 2.6676385634488398,
+    "omitted_crosswind_at_reference_m_s": -0.5801762618382531,
+    "wind_projection_angle_deg": -12.269999999999982
+  },
+  "plane": {
+    "heading_deg_magnetic": 30.0,
+    "axes": "x along original 30-degree jet; z up; cross-plane axis clockwise from x",
+    "origin": "equivalent source window centre projected to ground; computational x=0 at window",
+    "original_window_horizontal_distance_from_nozzle_m": 5.0,
+    "original_window_centre_xyz_m": [
+      2.5,
+      4.330127018922193,
+      0.5
+    ],
+    "cross_plane_depth_m": 0.7854400889374056,
+    "meaning": "2D infinite-slab approximation normalized per metre of depth. The finite source width only converts nominal kg/s to kg/(m s); finite-width side entrainment and omitted crosswind are not represented."
+  },
+  "domain": {
+    "length_x_m": 16.0,
+    "height_m": 8.0
+  },
+  "numerics": {
+    "default_nx": 4,
+    "default_nz": 4,
+    "smoke_duration_s": 0.001,
+    "cfl": 0.2,
+    "conductivity_W_m_K": 0.0,
+    "conductivity_evidence": "Zero explicit conduction for atmospheric smoke; positive overrides are synthetic numerical coefficients, not measured industrial transport."
+  },
+  "boundaries": {
+    "left": "prescribed source flux on exact patch overlap; neutral ambient inflow outside",
+    "right": "open outflow treatment with declared backflow state",
+    "top": "open treatment with declared ambient backflow state",
+    "bottom": "impermeable, free-slip, adiabatic approximation"
+  },
+  "original_reported_equivalent_source": {
+    "temperature_K": 196.0,
+    "propane_mole_fraction": 0.2,
+    "speed_m_s": 18.1,
+    "width_m": 0.78,
+    "height_m": 0.39,
+    "area_m2": 0.3042,
+    "meaning": "Reported rounded equivalent-source record preserved separately; H00 is not a measured correction."
+  },
+  "evidence": {
+    "selected_database_inputs": [
+      "wind 2.73 m/s at 6 m (revised)",
+      "wind-from 197.73 degrees",
+      "z0 0.006 m",
+      "283.05 K",
+      "102500 Pa",
+      "RH 99%"
+    ],
+    "assumptions": [
+      "neutral shifted-log profile",
+      "pressure datum at ground",
+      "source window placement/height",
+      "2D slab and crosswind omission",
+      "free-slip adiabatic ground",
+      "short smoke duration and domain"
+    ],
+    "calculated": [
+      "H00 temperature and phase state",
+      "flow-consistent source geometry",
+      "per-depth component/energy/momentum flux",
+      "projected wind",
+      "neutral friction velocity"
+    ]
+  },
+  "comparison_policy": {
+    "historical_averaging_s": 150.0,
+    "full_release_duration_discrepancy_s": [
+      150.0,
+      360.0
+    ],
+    "actual_historical_averaging_indices_known": false,
+    "policy": "Future developed unfenced plume comparison, not a fresh 150-second pulse. Current short 2D smoke is not this comparison.",
+    "receptors": "30 original 3D sensor positions are not reduced or fitted to this 2D plane."
+  },
+  "limitations": [
+    "No finite-width crosswind dispersion; projected weather does not recover oblique 3D flow.",
+    "No turbulence closure or maintained turbulent atmospheric boundary layer.",
+    "Short domain/time and coarse smoke grid do not resolve EEC550 concentration footprints.",
+    "Source composition, position and time assumptions remain unresolved historically.",
+    "Open boundary reflections and backflow behaviour require numerical checks; no nonreflecting claim.",
+    "No terrain, operational safety or Adoshi reconstruction claim."
+  ]
+}

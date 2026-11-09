@@ -5,3 +5,5 @@
 # Preserve exact bytes of the curated generated bundle and its manifest hashes.
 data/public/eec550-research-bundle-v1/*.json text eol=lf
 data/public/eec550-research-bundle-v1/*.html text eol=lf
+
+data/public/eec550-open-atmosphere-v1/*.json text eol=lf

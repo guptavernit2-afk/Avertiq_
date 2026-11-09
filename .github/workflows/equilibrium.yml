@@ -49,6 +49,19 @@ jobs:
         run: |
           python -m avertiq_equilibrium thermal2d-checks --output outputs/ci-thermal2d-checks.json
           python -m avertiq_equilibrium thermal2d --output outputs/ci-thermal2d.json
+      - name: Verify open atmospheric setup
+        run: |
+          python -m avertiq_equilibrium atmospheric-checks --output outputs/ci-atmospheric-checks.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m avertiq_equilibrium atmospheric --output outputs/ci-atmospheric.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m avertiq_equilibrium atmospheric-refinement --output outputs/ci-atmospheric-refinement.json
+      - name: Compare gas concentrations on matched physical areas
+        run: python research/equilibrium/tools/receptor_refinement.py --input outputs/ci-atmospheric-refinement.json --output outputs/ci-gas-refinement.json
+      - name: Refine the release aperture at fixed timestep
+        run: python research/equilibrium/tools/aperture_refinement.py --output outputs/ci-aperture.json
+      - name: Evaluate aperture concentration sensitivity
+        run: python research/equilibrium/tools/receptor_refinement.py --input outputs/ci-aperture.json --output outputs/ci-aperture-gas.json
       - name: Save research artifacts
         uses: actions/upload-artifact@v4
         with:
