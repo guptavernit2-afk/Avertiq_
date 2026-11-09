@@ -16,9 +16,9 @@ Step 1 is complete. Step 2 has an attributed incident fact sheet and reference c
 
 ## Next milestone
 
-The [research workbench v1](research/WORKBENCH_V1.md) is implemented: 132 conditional equilibrium states, four checked source exports, an offline report, a reproducible bundle and 136 passing tests. Read the [short report](research/TODAY_SHORT_REPORT.md).
+The [frozen-endpoint 2D variable-density flow stage](research/VARIABLE_DENSITY_SUMMARY.md) is implemented: density-dependent motion, buoyancy and pressure projection, with 173 passing tests and 22 independent checks.
 
-Next: select and demonstrate one phase-bearing transport implementation using the new interfaces and regression cases. It must conserve total components/energy, handle changing water/propane phases, and use compatible property references. Only after numerical transport checks should the held EEC550 receptor comparison proceed. No app or CFD implementation/runs were included in this batch.
+Next: compatible thermal/phase EOS coupling and conservative momentum/energy, then an open-domain atmosphere/source configuration and numerical studies. The EEC550 receptor comparison remains held; current box tests are numerical hydrodynamic verification only. No product app.
 
 Do not promise schedules until data access and modelling dependencies are understood.
 

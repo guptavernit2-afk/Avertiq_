@@ -1,0 +1,122 @@
+{
+  "scope": "Exploratory matched-time mesh comparison, not an analytical accuracy bound",
+  "cases": [
+    {
+      "cells_per_axis": 12,
+      "configuration": {
+        "nx": 12,
+        "nz": 12,
+        "length_x_m": 10.0,
+        "height_m": 10.0,
+        "duration_s": 0.25,
+        "rho_light_kg_m3": 1.2556920732932841,
+        "rho_heavy_kg_m3": 1.9425926315508648,
+        "gravity_m_s2": 9.81,
+        "kinematic_viscosity_m2_s": 0.01,
+        "boundary": "periodic x; impermeable free-slip z"
+      },
+      "diagnostics": {
+        "steps": 25,
+        "elapsed_s": 0.25,
+        "relative_mass_residual": 0.0,
+        "initial_mass_kg_per_m_depth": 127.77895433574805,
+        "final_mass_kg_per_m_depth": 127.77895433574805,
+        "fraction_sum_residual": 0.0,
+        "max_divergence_s_inv": 2.0122792321330962e-16,
+        "maximum_relative_pressure_residual": 1.3712897981177652e-14,
+        "minimum_fraction": 1.9130165481535385e-20,
+        "maximum_fraction": 0.6585525631100215,
+        "initial_dense_centroid_z_m": 6.499989685066398,
+        "final_dense_centroid_z_m": 6.474502684166811
+      }
+    },
+    {
+      "cells_per_axis": 24,
+      "configuration": {
+        "nx": 24,
+        "nz": 24,
+        "length_x_m": 10.0,
+        "height_m": 10.0,
+        "duration_s": 0.25,
+        "rho_light_kg_m3": 1.2556920732932841,
+        "rho_heavy_kg_m3": 1.9425926315508648,
+        "gravity_m_s2": 9.81,
+        "kinematic_viscosity_m2_s": 0.01,
+        "boundary": "periodic x; impermeable free-slip z"
+      },
+      "diagnostics": {
+        "steps": 25,
+        "elapsed_s": 0.25,
+        "relative_mass_residual": 0.0,
+        "initial_mass_kg_per_m_depth": 127.77894942573126,
+        "final_mass_kg_per_m_depth": 127.77894942573126,
+        "fraction_sum_residual": 0.0,
+        "max_divergence_s_inv": 1.1405806854547507e-15,
+        "maximum_relative_pressure_residual": 6.038877543527353e-14,
+        "minimum_fraction": 4.866365711834395e-22,
+        "maximum_fraction": 0.762179980604542,
+        "initial_dense_centroid_z_m": 6.499981824424788,
+        "final_dense_centroid_z_m": 6.473258797433036
+      }
+    },
+    {
+      "cells_per_axis": 48,
+      "configuration": {
+        "nx": 48,
+        "nz": 48,
+        "length_x_m": 10.0,
+        "height_m": 10.0,
+        "duration_s": 0.25,
+        "rho_light_kg_m3": 1.2556920732932841,
+        "rho_heavy_kg_m3": 1.9425926315508648,
+        "gravity_m_s2": 9.81,
+        "kinematic_viscosity_m2_s": 0.01,
+        "boundary": "periodic x; impermeable free-slip z"
+      },
+      "diagnostics": {
+        "steps": 25,
+        "elapsed_s": 0.25,
+        "relative_mass_residual": 2.224287333039239e-16,
+        "initial_mass_kg_per_m_depth": 127.77894747783748,
+        "final_mass_kg_per_m_depth": 127.7789474778375,
+        "fraction_sum_residual": 0.0,
+        "max_divergence_s_inv": 1.3931564235569738e-14,
+        "maximum_relative_pressure_residual": 6.522824365951584e-13,
+        "minimum_fraction": 7.80236064354854e-23,
+        "maximum_fraction": 0.781315190011751,
+        "initial_dense_centroid_z_m": 6.499978842915657,
+        "final_dense_centroid_z_m": 6.472899467814401
+      }
+    }
+  ],
+  "provenance": {
+    "executed_utc": "2026-11-09T03:20:58.094746+00:00",
+    "python": "3.13.6",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "thermopack_native_sha256": {
+      "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+    },
+    "packages": {
+      "thermopack": "2.2.3",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1"
+    },
+    "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+    "source_sha256": {
+      "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+      "__main__.py": "3eae1b17bc06e11581ef64009d8b731513a50bebe253be29f1bd2faa09d37784",
+      "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
+      "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+      "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+      "flow.py": "717fb660e0b9eee025f4b777bd908bb36d920279fe418bec13a13161e7028d6d",
+      "flow_checks.py": "6c53d753a1c777e1347e6d7731c57350cdf1f5099cac4d2ebac1d4f13267b6b3",
+      "handoff.py": "816225917d2baf35b8fb0c43034f6d38cfbe043528eaf3096b0e66280350e3eb",
+      "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
+      "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+      "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
+      "study.py": "684b4bc3105710774eadd493d3bb4482d1ba44a18d8512aaa8ab72b2cb1b2bd1",
+      "transport.py": "fe68399e95472057e94eb9ae51b02e26de5fd9cceccaeaf245918a50f6f11e8b",
+      "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+    }
+  }
+}

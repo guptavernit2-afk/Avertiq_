@@ -87,3 +87,7 @@ The [implemented workbench](research/WORKBENCH_V1.md) extends the verified sourc
 ## First numerical transport checks
 
 The [transport prototype](research/TRANSPORT_PROTOTYPE_SUMMARY.md) passes analytical shift/diffusion/refinement and conservation tests; the research suite has 154 passing tests. This verifies prescribed-flow numerical transport with local equilibrium diagnostics, not atmospheric dispersion. Fixed reference-mass accounting does not solve variable-density continuity or buoyancy.
+
+## Variable-density hydrodynamic verification
+
+The [new flow stage](research/VARIABLE_DENSITY_SUMMARY.md) adds density-dependent flow/gravity/projection. Package tests: 173 passed; independent checks: 22 passed. Hydrostatic rest, buoyancy sign/controls, projection, scalar/density conservation and a small grid comparison provide numerical evidence. Endpoints are frozen; velocity-form advection is not a conservative momentum scheme. This does not validate thermal phase coupling, atmospheric turbulence or EEC550 field concentrations.

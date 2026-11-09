@@ -1,4 +1,4 @@
-"""CLI for standalone equilibrium research. No product app; includes a limited 1D transport diagnostic."""
+"""CLI for standalone equilibrium research. No product app; includes bounded transport and buoyant-flow prototypes."""
 import argparse
 import json
 from pathlib import Path
@@ -9,7 +9,7 @@ from .verification import verify
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
-    for command in ("verify", "cases", "mixing", "study", "bundle", "transport"):
+    for command in ("verify", "cases", "mixing", "study", "bundle", "transport", "flow", "flow-checks"):
         child = commands.add_parser(command)
         child.add_argument("--output", type=Path, required=True,
                            help="Fresh output directory for bundle; fresh JSON path otherwise")
@@ -39,7 +39,15 @@ def main():
             verification = verify()
             if args.command != "verify" and not verification["passed"]:
                 raise RuntimeError("Property/numerical verification failed; calculation refused")
-            if args.command == "transport":
+            if args.command == "flow":
+                from .flow import run_flow
+                result = run_flow()
+            elif args.command == "flow-checks":
+                from .flow_checks import run_flow_checks
+                result = run_flow_checks()
+                if not result["passed"]:
+                    raise RuntimeError("Flow verification checks failed")
+            elif args.command == "transport":
                 from .transport import run_transport
                 result = run_transport()
             elif args.command == "cases":

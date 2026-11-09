@@ -1,19 +1,14 @@
-# Latest completed batch
+# Latest implementation checkpoint
 
-9 November 2026, continuing the 8 November session.
+9 November 2026.
 
-**Built:** a reusable local equilibrium research workbench.
+**Built:** a 2D variable-density buoyant-flow research prototype. No app.
 
-- One-command study, source export and offline report.
-- 132 calculated states across 12 source/humidity paths.
-- Four source contracts, each passing 39 checks.
-- 136 passing Python tests; report-filter smoke check passed.
-- Versioned results, provenance and checksums saved; GitHub CI passed.
+- Density now affects motion and pressure correction.
+- 173 tests and 22 independent flow checks passed.
+- Dense blobs sink; light blobs rise; zero-gravity/hydrostatic controls pass.
+- Three grids give consistent descent trends; results and provenance saved.
 
-**Useful result:** humid mixing can produce more ice before melting; liquid water can remain afterwards.
+**Still missing:** evolving thermal/phase density feedback, conservative momentum/energy coupling and an open atmospheric release domain. We have not reached an EEC550 field comparison.
 
-**Next:** phase-bearing transport implementation. There is no dispersion model or tanker app yet.
-
-Browser visual inspection timed out; report structure and filtering checks passed.
-
-[Open report](../../data/public/eec550-research-bundle-v1/report.html) | [Full milestone](WORKBENCH_V1.md) | [Checkpoints](../PROJECT_CHECKPOINTS.md)
+[Short results and commands](VARIABLE_DENSITY_SUMMARY.md) | [Model equations](VARIABLE_DENSITY_MODEL.md)

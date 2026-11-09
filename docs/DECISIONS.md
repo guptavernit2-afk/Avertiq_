@@ -144,3 +144,12 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Couple mass-specific conserved component/enthalpy interpolation to local PH diagnostics; keep density feedback explicitly excluded.
 - 154 package tests passed; execute synthetic pulse and 3-grid analytical Fourier benchmark. Save model decision and numerical evidence.
 - Add transport command to CI. Buoyancy, variable-density continuity/momentum, atmospheric domain and receptor comparison remain future gates.
+
+## 2026-11-09 - Variable-density buoyancy implementation
+
+- User authorized variable-density flow/buoyancy, parallel checkpoints, tests and commit/push; no app.
+- Implement a bounded 2D variable-density incompressible MAC model with conservative volume fraction, affine frozen-endpoint density, velocity-form advection, gravity and variable-coefficient projection.
+- Use H00/ambient densities only as fixed endpoint properties; do not claim evolving PH feedback, conservative momentum/energy or field-ready dense-gas modelling.
+- Independent numerical checks caught a tiny-final-timestep bug; fix and add regression coverage. Review projection operators, hydrostatic balance and alpha/mass-fraction distinction.
+- Complete 173 passing package tests and 22 independent checks; run endpoint case and 12/24/48 grid comparison. Dense centroid descent approaches about 0.027 m in the specified synthetic 0.25 s experiment.
+- Save [results](research/VARIABLE_DENSITY_SUMMARY.md), references and provenance. EEC550 receptor comparison remains held pending thermal/EOS, momentum, atmosphere and boundary work.

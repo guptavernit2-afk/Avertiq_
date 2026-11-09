@@ -36,6 +36,10 @@ jobs:
         run: python -m avertiq_equilibrium bundle --output outputs/ci-research
       - name: Run verified transport prototype
         run: python -m avertiq_equilibrium transport --output outputs/ci-transport.json
+      - name: Verify variable-density flow and buoyancy
+        run: |
+          python -m avertiq_equilibrium flow-checks --output outputs/ci-flow-checks.json
+          python -m avertiq_equilibrium flow --output outputs/ci-flow.json
       - name: Save research artifacts
         uses: actions/upload-artifact@v4
         with:

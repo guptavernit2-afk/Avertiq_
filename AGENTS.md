@@ -2,7 +2,7 @@
 
 ## Current authorization
 
-The user has authorized standalone thermodynamic research and now a first locally runnable dispersion/transport prototype, with parallel checkpoints, mathematical verification, commits and push. Keep the initial 1D prescribed-flow diagnostic clearly separate from buoyant dense-gas field modelling and EEC550 validation. No product application is authorized.
+The user has authorized standalone thermodynamic research and now locally runnable dispersion/transport and variable-density buoyant-flow prototypes, with parallel checkpoints, mathematical verification, commits and push. Keep the initial 1D prescribed-flow diagnostic and the frozen-endpoint 2D incompressible buoyant-flow stage clearly separate from full thermal/phase-coupled dense-gas modelling and EEC550 validation. No product application is authorized.
 
 ## Repository boundary
 
@@ -25,4 +25,4 @@ Update the relevant planning record with substantive decisions. Keep the roadmap
 
 ## Verification
 
-For documentation changes, check links, paths, CSV structure, scope consistency, and Git status. For the equilibrium research package, run its property checks and meaningful conservation/phase-limit tests. Numerical verification is not experimental validation. No application or CFD tests are required for this standalone work.
+For documentation changes, check links, paths, CSV structure, scope consistency, and Git status. For the equilibrium research package, run its property checks and meaningful conservation/phase-limit tests. Numerical verification is not experimental validation. For flow changes, verify projection/divergence, hydrostatic balance, buoyancy controls, scalar/density conservation and timestep stability. No product application is authorized.

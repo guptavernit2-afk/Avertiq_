@@ -86,3 +86,12 @@ The complete suite now has 136 passing tests. Earlier run records keep their his
 ## Transport diagnostic
 
 Run python -m avertiq_equilibrium transport --output outputs/my-fresh-transport.json from the configured environment. The verification-gated command solves a synthetic periodic pulse and postprocesses phase equilibrium. Full suite: 154 tests passed. [Scope and equations](../../docs/research/DISPERSION_MODEL_DECISION.md). No variable-density momentum, buoyancy or EEC550 field prediction.
+
+## Variable-density buoyant-flow stage
+
+~~~powershell
+.\.venv\Scripts\python.exe -m avertiq_equilibrium flow-checks --output outputs/my-new-flow-checks.json
+.\.venv\Scripts\python.exe -m avertiq_equilibrium flow --output outputs/my-new-flow.json
+~~~
+
+The verification-gated stage uses a MAC variable-coefficient projection and conservative volume-fraction transport. Densities affect flow, but endpoint thermodynamics remain frozen; this is not full moist-propane energy/phase coupling. Public APIs: flow.project_velocity, advect_fraction, simulate_flow, run_flow; flow_checks.run_flow_checks. The full suite passes 173 tests. [Results and limitations](../../docs/research/VARIABLE_DENSITY_SUMMARY.md).

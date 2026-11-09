@@ -2,7 +2,7 @@
 
 Chemical transport incident assessment.
 
-**Current stage:** standalone thermodynamic research implemented and numerically verified. No application or CFD has been implemented.
+**Current stage:** standalone thermodynamics, transport and bounded variable-density buoyant-flow research prototypes. No product application or EEC550 field validation.
 
 Avertiq starts with an **Adoshi-inspired training demo**: one stationary propylene tanker, real geographic context, and explicitly hypothetical release conditions. It does not reconstruct the historical gas cloud or provide operational clearance decisions.
 
@@ -63,3 +63,7 @@ The reusable study/bundle commands now run 132 conditional states, export four c
 ## First transport prototype
 
 A self-run 1D conservative advection-diffusion diagnostic with equilibrium phase postprocessing is implemented. The full suite has 154 passing tests. [Short report and run command](docs/research/TRANSPORT_PROTOTYPE_SUMMARY.md). Prescribed flow and periodic boundaries do not model a buoyant atmospheric cloud; no app or field-prediction claim.
+
+## Variable-density buoyant flow
+
+A 2D frozen-endpoint variable-density incompressible prototype now computes density-dependent motion, gravity and pressure correction. The package passes 173 tests and 22 independent flow checks. [Short report and commands](docs/research/VARIABLE_DENSITY_SUMMARY.md). This is a synthetic hydrodynamic milestone; evolving thermal/phase coupling and EEC550 field validation remain outstanding.

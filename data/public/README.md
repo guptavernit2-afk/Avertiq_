@@ -71,3 +71,7 @@ The structured input record is now schema version 2. It retains original values 
 ## First transport prototype
 
 [transport-prototype-v1](transport-prototype-v1/transport.json) contains a synthetic periodic pulse result and Fourier grid-refinement evidence. These are numerical verification outputs, not measurements or EEC550 predictions.
+
+## Variable-density flow v1
+
+[variable-density-flow-v1](variable-density-flow-v1/flow.json) contains the synthetic 2D endpoint-density flow, 22 independent checks and a three-grid comparison. These are computed hydrodynamic verification cases, not experimental measurements or EEC550 field predictions. [Interpretation](../../docs/research/VARIABLE_DENSITY_SUMMARY.md).

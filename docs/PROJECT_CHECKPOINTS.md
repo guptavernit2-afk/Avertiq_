@@ -47,3 +47,13 @@ Tomorrow's proposed starting point is checkpoint 5, informed by today's mixing r
 - CI workflow added; remote execution status is separate from local checks.
 
 [Workbench v1 milestone](research/WORKBENCH_V1.md) | [Open offline report](../data/public/eec550-research-bundle-v1/report.html)
+
+## Variable-density flow: completed 9 November
+
+- Density-dependent 2D motion and pressure projection implemented.
+- Buoyancy, hydrostatic/zero-gravity controls and mass budgets checked.
+- Full suite: 173 tests passed; independent flow checks: 22 passed.
+- Endpoint case and 12/24/48-cell grid comparison saved.
+- Next: compatible thermal/phase EOS and conservative momentum/energy coupling before atmospheric comparison.
+
+[Short report](research/VARIABLE_DENSITY_SUMMARY.md)
