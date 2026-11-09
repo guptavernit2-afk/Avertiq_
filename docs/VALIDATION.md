@@ -83,3 +83,7 @@ The [executed 11-point mixing path](research/EEC550_MIXING_MILESTONE.md) conserv
 ## Research workbench v1
 
 The [implemented workbench](research/WORKBENCH_V1.md) extends the verified source calculation to 132 conditional equilibrium states with fixed source interpretations and declared downstream RH sensitivities. The complete local suite passes 136 tests; each of four exported reference-source contracts passes 39 checks. This establishes repeatable numerical source/mixing accounting and a strict interface, not a validated transport closure. The offline report is tested for data safety, structure and filtering; browser layout inspection remains unverified. Original measurement records are unchanged.
+
+## First numerical transport checks
+
+The [transport prototype](research/TRANSPORT_PROTOTYPE_SUMMARY.md) passes analytical shift/diffusion/refinement and conservation tests; the research suite has 154 passing tests. This verifies prescribed-flow numerical transport with local equilibrium diagnostics, not atmospheric dispersion. Fixed reference-mass accounting does not solve variable-density continuity or buoyancy.

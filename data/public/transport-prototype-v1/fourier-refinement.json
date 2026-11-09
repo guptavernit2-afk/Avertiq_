@@ -1,0 +1,58 @@
+{
+  "initialization": "exact cell averages of mean .4 amplitude .2 sinusoid",
+  "length_m": 20.0,
+  "velocity_m_s": 0.5,
+  "diffusivity_m2_s": 0.05,
+  "duration_s": 2.0,
+  "cases": [
+    {
+      "cells": 40,
+      "rmse": 0.0017192228384373149,
+      "numerics": {
+        "scheme": "first-order upwind advection; central diffusion; forward Euler",
+        "steps": 4,
+        "dt_s": 0.5,
+        "dx_m": 0.5,
+        "courant": 0.5,
+        "fourier": 0.1,
+        "positivity_weight_sum": 0.7,
+        "leading_upwind_numerical_diffusivity_m2_s": 0.0625,
+        "numerical_diffusivity_note": "Leading modified-equation estimate, not extra physical diffusion; refine grid/time to assess error"
+      },
+      "relative_mass_residual": 0.0
+    },
+    {
+      "cells": 80,
+      "rmse": 0.0009578046770014189,
+      "numerics": {
+        "scheme": "first-order upwind advection; central diffusion; forward Euler",
+        "steps": 9,
+        "dt_s": 0.2222222222222222,
+        "dx_m": 0.25,
+        "courant": 0.4444444444444444,
+        "fourier": 0.17777777777777778,
+        "positivity_weight_sum": 0.8,
+        "leading_upwind_numerical_diffusivity_m2_s": 0.034722222222222224,
+        "numerical_diffusivity_note": "Leading modified-equation estimate, not extra physical diffusion; refine grid/time to assess error"
+      },
+      "relative_mass_residual": 0.0
+    },
+    {
+      "cells": 160,
+      "rmse": 0.0005970829897161537,
+      "numerics": {
+        "scheme": "first-order upwind advection; central diffusion; forward Euler",
+        "steps": 26,
+        "dt_s": 0.07692307692307693,
+        "dx_m": 0.125,
+        "courant": 0.3076923076923077,
+        "fourier": 0.24615384615384617,
+        "positivity_weight_sum": 0.8,
+        "leading_upwind_numerical_diffusivity_m2_s": 0.021634615384615384,
+        "numerical_diffusivity_note": "Leading modified-equation estimate, not extra physical diffusion; refine grid/time to assess error"
+      },
+      "relative_mass_residual": 2.220446049250313e-16
+    }
+  ],
+  "monotonic_refinement_passed": true
+}

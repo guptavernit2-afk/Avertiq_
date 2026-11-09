@@ -2,7 +2,7 @@
 
 ## Current authorization
 
-The user has authorized implementation and verification of the standalone ThermoPack-based equilibrium calculation under research/equilibrium, including water ice and mass/energy checks. The completed workbench also includes configurable studies, strict source exports, offline research reports and automated research checks. This authorization excludes product-app and CFD implementation. Keep new work within that research scope unless the user expands it.
+The user has authorized standalone thermodynamic research and now a first locally runnable dispersion/transport prototype, with parallel checkpoints, mathematical verification, commits and push. Keep the initial 1D prescribed-flow diagnostic clearly separate from buoyant dense-gas field modelling and EEC550 validation. No product application is authorized.
 
 ## Repository boundary
 

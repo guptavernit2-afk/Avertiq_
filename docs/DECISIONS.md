@@ -136,3 +136,11 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Store curated first-party results and exact-byte manifest under data/public/eec550-research-bundle-v1. Next stage is conservative phase-bearing transport, not another source-setup loop.
 
 - Remote verification completed successfully: GitHub Actions run 42552591781 on code commit 5b441d3. Record saved in data/public/eec550-workbench-ci.json; no deployment or CFD run.
+
+## 2026-11-09 - First transport implementation
+
+- User authorized dispersion prototype and parallel checkpoints; no app.
+- Select a bounded self-run 1D conservative scalar advection-diffusion implementation as the first numerical transport milestone, not a field-ready dense-gas model.
+- Couple mass-specific conserved component/enthalpy interpolation to local PH diagnostics; keep density feedback explicitly excluded.
+- 154 package tests passed; execute synthetic pulse and 3-grid analytical Fourier benchmark. Save model decision and numerical evidence.
+- Add transport command to CI. Buoyancy, variable-density continuity/momentum, atmospheric domain and receptor comparison remain future gates.

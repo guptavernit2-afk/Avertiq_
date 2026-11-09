@@ -21,3 +21,7 @@ The [research workbench v1](research/WORKBENCH_V1.md) is implemented: 132 condit
 Next: select and demonstrate one phase-bearing transport implementation using the new interfaces and regression cases. It must conserve total components/energy, handle changing water/propane phases, and use compatible property references. Only after numerical transport checks should the held EEC550 receptor comparison proceed. No app or CFD implementation/runs were included in this batch.
 
 Do not promise schedules until data access and modelling dependencies are understood.
+
+## Transport milestone completed
+
+The [first 1D transport diagnostic](research/TRANSPORT_PROTOTYPE_SUMMARY.md) is implemented and tested. Next physical milestone: compatible variable-density momentum and buoyancy, then open-domain atmosphere/source checks before receptor comparison.

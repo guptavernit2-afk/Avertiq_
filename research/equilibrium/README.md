@@ -82,3 +82,7 @@ Public research APIs:
 The complete suite now has 136 passing tests. Earlier run records keep their historical source hashes. New downstream RH uses the adopted normalized saturation curve; old mixing results are preserved. Bundle source exports are the four fixed 102500 Pa reference cases, independent of study subsets; use study for custom pressures.
 
 [Full workbench milestone](../../docs/research/WORKBENCH_V1.md). A GitHub workflow checks the standalone package on Windows/Python 3.13 and generates a research artifact; no deployment or CFD is configured.
+
+## Transport diagnostic
+
+Run python -m avertiq_equilibrium transport --output outputs/my-fresh-transport.json from the configured environment. The verification-gated command solves a synthetic periodic pulse and postprocesses phase equilibrium. Full suite: 154 tests passed. [Scope and equations](../../docs/research/DISPERSION_MODEL_DECISION.md). No variable-density momentum, buoyancy or EEC550 field prediction.

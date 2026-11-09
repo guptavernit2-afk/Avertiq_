@@ -59,3 +59,7 @@ Completed the standalone mixing milestone: 11 conditional states, 16 source hand
 [Open the offline results report](data/public/eec550-research-bundle-v1/report.html) | [Latest short report](docs/research/TODAY_SHORT_REPORT.md)
 
 The reusable study/bundle commands now run 132 conditional states, export four checked source contracts and produce an offline report with provenance and checksums. The complete research suite passes 136 tests. See [workbench v1](docs/research/WORKBENCH_V1.md) for commands and limits. No dispersion solver or product application exists yet.
+
+## First transport prototype
+
+A self-run 1D conservative advection-diffusion diagnostic with equilibrium phase postprocessing is implemented. The full suite has 154 passing tests. [Short report and run command](docs/research/TRANSPORT_PROTOTYPE_SUMMARY.md). Prescribed flow and periodic boundaries do not model a buoyant atmospheric cloud; no app or field-prediction claim.

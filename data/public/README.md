@@ -67,3 +67,7 @@ The structured input record is now schema version 2. It retains original values 
 ## Research workbench bundle v1
 
 [eec550-research-bundle-v1](eec550-research-bundle-v1/report.html) contains the executed 132-state study, four v2 source contracts with audits, property verification, offline HTML and exact-byte checksums. These are first-party research outputs, not external measurement data or CFD predictions. LF rules preserve manifest hashes across Git checkouts. [Milestone and interpretation](../../docs/research/WORKBENCH_V1.md).
+
+## First transport prototype
+
+[transport-prototype-v1](transport-prototype-v1/transport.json) contains a synthetic periodic pulse result and Fourier grid-refinement evidence. These are numerical verification outputs, not measurements or EEC550 predictions.
