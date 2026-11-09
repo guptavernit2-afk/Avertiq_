@@ -187,3 +187,12 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Mass inventory agrees; peak fields do not converge. Explicitly flag source underresolution and no sensor-readiness. Next: source-resolving geometry, inlet/outlet/domain and runtime studies before any EEC550 scoring.
 
 - Added a local aperture study at fixed horizontal spacing and matched timesteps. Compare gas propane mol% over a common physical rectangle on both grid families. The vertical result applies to the lower 1.6 m domain at 1 ms.
+
+## First product walkthrough — D-001
+
+- Define one stationary propylene-tanker demo with five screens in the product brief.
+- Use explicitly fictional weather and direct-release assumptions, visible missing tanker/phase inputs and an approximate demo location.
+- Load prepared illustrative assessment A, then B after a simulated wind update. Preserve both input snapshots and revision history.
+- Carry simulation labels through maps, observations and exports; unsupported edits mark a fixture outdated.
+- Track product walkthrough acceptance separately from the calculation-validation milestone so both workstreams can progress.
+- Update planning documents only. Application implementation remains pending.

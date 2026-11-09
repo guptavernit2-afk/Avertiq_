@@ -12,8 +12,8 @@ This is a training and evaluation demo inspired by the February 2026 Adoshi inci
 - An approximate incident location until independently verified.
 - Public roads and terrain context, with coverage and limitations recorded.
 - Reported incident background separated from hypothetical tank/release inputs.
-- Three documented unignited-release scenarios.
-- Traceable flammable-cloud assessment outputs when a suitable calculation workflow has been selected and checked.
+- One complete first walkthrough, D-001, with two revisions after a simulated weather update. The three research scenarios remain available for later assessment work.
+- Clearly labelled illustrative assessment fixtures for the first walkthrough. Physics-generated flammable-cloud outputs follow selection and comparison of a suitable calculation workflow.
 - Distinct layers for model envelopes, field observations, and operational annotations.
 - Synthetic observations and response updates for demonstrating the workflow.
 - Versioned assessments and a short handover report.
@@ -31,3 +31,5 @@ This is a training and evaluation demo inspired by the February 2026 Adoshi inci
 A reviewer can identify the origin and status of every important input, reproduce each supported assessment, distinguish synthetic observations from predictions, and explain the model's limitations. Earlier assessments remain available when conditions change.
 
 Displaying a 3D landscape does not change the physics. Geographic context must never imply that terrain effects were calculated.
+
+The five screen sketches and walkthrough acceptance criteria are defined in [the product brief](PRODUCT_BRIEF.md).
