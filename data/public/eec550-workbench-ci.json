@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "observed_client_date": "2026-11-09",
+  "service": "GitHub Actions",
+  "workflow": ".github/workflows/equilibrium.yml",
+  "run_id": 42552591781,
+  "url": "https://github.com/guptavernit2-afk/Avertiq_/actions/runs/42552591781",
+  "code_commit": "5b441d3ea6fa59162fd4e5af4ec13ba5e17e2e76",
+  "status": "completed",
+  "conclusion": "success",
+  "scope": "Windows/Python 3.13 pinned dependency installation, pip check, complete Python tests and verified research bundle generation; artifact upload. No deployment, CFD or physical validation.",
+  "local_verification": {
+    "python_tests_passed": 136,
+    "source_contracts": 4,
+    "arithmetic_checks_per_contract": 39,
+    "study_states": 132,
+    "report_filter_smoke_check": "passed locally; not a browser layout audit"
+  },
+  "visual_layout_verified": false,
+  "visual_check_limitation": "Native browser app approval timed out."
+}

@@ -14,7 +14,7 @@ A local, reusable **zero-dimensional equilibrium research workbench**. One comma
 | Offline results report | 12 selectable paths, 24 SVG plots, full data table, assumptions and embedded provenance; no external assets |
 | Reproducible bundle | Verification, study, handoffs, HTML and exact-byte SHA-256 manifest; existing runs protected |
 | Automated checks | 136 passing Python tests; property gate passed; report JavaScript smoke check passed; dependency check passed |
-| Continuous integration | Windows/Python 3.13 GitHub workflow added; remote result recorded separately after push |
+| Continuous integration | Windows/Python 3.13 GitHub workflow passed on code commit 5b441d3; [run record](../../data/public/eec550-workbench-ci.json) |
 
 [Open the offline report](../../data/public/eec550-research-bundle-v1/report.html) · [Study JSON](../../data/public/eec550-research-bundle-v1/study.json) · [Manifest](../../data/public/eec550-research-bundle-v1/manifest.json)
 
@@ -72,3 +72,5 @@ Native ThermoPack calls remain serial. Source contracts are a versioned research
 Use these interfaces and regression data to select and test one phase-bearing transport implementation. The workbench now supplies repeatable source states, conserved-component ledgers, phase-change test cases and auditable outputs. A future solver must demonstrate conservative transport, buoyancy, changing phase partition and compatible enthalpy references before the EEC550 receptor comparison. HEM remains a conditional research approximation, not a validated atmospheric aerosol model.
 
 No app, CFD, terrain-flow calculation, hazard map or historical Adoshi reconstruction was produced in this batch. The nine-case dispersion matrix remains held.
+
+GitHub verification: [successful run 42552591781](https://github.com/guptavernit2-afk/Avertiq_/actions/runs/42552591781). This validates the code commit recorded in the linked result; documentation-only commits may follow.

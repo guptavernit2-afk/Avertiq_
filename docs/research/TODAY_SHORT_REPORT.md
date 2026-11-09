@@ -8,7 +8,7 @@
 - 132 calculated states across 12 source/humidity paths.
 - Four source contracts, each passing 39 checks.
 - 136 passing Python tests; report-filter smoke check passed.
-- Versioned results, provenance, checksums and CI workflow saved.
+- Versioned results, provenance and checksums saved; GitHub CI passed.
 
 **Useful result:** humid mixing can produce more ice before melting; liquid water can remain afterwards.
 

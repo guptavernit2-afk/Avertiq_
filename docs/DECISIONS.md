@@ -134,3 +134,5 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Export only adiabatic PH sources H00-H03, with 39 passed checks each; reject H04. Keep mixture component/phase/enthalpy/geometry consistency and explicit not-ready-for-CFD status.
 - Full local suite: 136 passed; generated bundle/property gate and report-script smoke check passed; dependency check passed. Browser visual QA timed out awaiting app approval.
 - Store curated first-party results and exact-byte manifest under data/public/eec550-research-bundle-v1. Next stage is conservative phase-bearing transport, not another source-setup loop.
+
+- Remote verification completed successfully: GitHub Actions run 42552591781 on code commit 5b441d3. Record saved in data/public/eec550-workbench-ci.json; no deployment or CFD run.
