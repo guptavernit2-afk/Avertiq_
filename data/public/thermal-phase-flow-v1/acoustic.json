@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "scope": "Linearized pure-N2 acoustic verification; not multiphase or EEC550 validation",
+  "temperature_K": 260.0,
+  "pressure_Pa": 102500.0,
+  "pressure_amplitude_Pa": 0.1,
+  "duration_s": 0.0001,
+  "length_m": 1.0,
+  "analytic_sound_speed_m_s": 328.7999836162878,
+  "initialization": "Linearized right-going cell averages; nonlinear terms O(amplitude squared)",
+  "cases": [
+    {
+      "cells": 8,
+      "pressure_RMSE_Pa": 0.004063242787668797,
+      "normalized_pressure_RMSE": 0.04063242787668797,
+      "conservation": 1.8768280954030574e-16
+    },
+    {
+      "cells": 16,
+      "pressure_RMSE_Pa": 0.0020629767344557378,
+      "normalized_pressure_RMSE": 0.020629767344557376,
+      "conservation": 1.671722823724045e-16
+    },
+    {
+      "cells": 32,
+      "pressure_RMSE_Pa": 0.0010264175517513535,
+      "normalized_pressure_RMSE": 0.010264175517513534,
+      "conservation": 1.8768280954030665e-16
+    }
+  ],
+  "provenance": {
+    "executed_utc": "2026-11-09T03:44:02.277826+00:00",
+    "python": "3.13.6",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "thermopack_native_sha256": {
+      "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+    },
+    "packages": {
+      "thermopack": "2.2.3",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1"
+    },
+    "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+    "source_sha256": {
+      "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+      "__main__.py": "3267a193bb30dd68015f7eb1a4b8c6f9c9c17a9eec776e7b04ffb7442b17c36d",
+      "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
+      "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+      "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+      "equilibrium_uv.py": "d3e923706dddac03d6d3de921262f415285d45fa2b7b45a5940f7eaa9d850814",
+      "flow.py": "717fb660e0b9eee025f4b777bd908bb36d920279fe418bec13a13161e7028d6d",
+      "flow_checks.py": "6c53d753a1c777e1347e6d7731c57350cdf1f5099cac4d2ebac1d4f13267b6b3",
+      "handoff.py": "816225917d2baf35b8fb0c43034f6d38cfbe043528eaf3096b0e66280350e3eb",
+      "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
+      "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+      "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
+      "study.py": "684b4bc3105710774eadd493d3bb4482d1ba44a18d8512aaa8ab72b2cb1b2bd1",
+      "thermal_checks.py": "d1d3fb2cfbb5cc6f330553ad522783f289fdcc9daccb727b65cf61ac77319e8e",
+      "thermal_flow.py": "4fde484ed9b9b20271a68e01a4a00b2161c85c7f29fb447b6ae7d49605b97c2d",
+      "transport.py": "fe68399e95472057e94eb9ae51b02e26de5fd9cceccaeaf245918a50f6f11e8b",
+      "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+    }
+  },
+  "benchmark_script_sha256_LF": "b0c1fc66d80a7fdd8acb14ea38e11b431a340d8361d162a695d18a5e0dd592c8"
+}

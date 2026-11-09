@@ -16,9 +16,9 @@ Step 1 is complete. Step 2 has an attributed incident fact sheet and reference c
 
 ## Next milestone
 
-The [frozen-endpoint 2D variable-density flow stage](research/VARIABLE_DENSITY_SUMMARY.md) is implemented: density-dependent motion, buoyancy and pressure projection, with 173 passing tests and 22 independent checks.
+The [conservative 1D thermal/phase flow prototype](research/THERMAL_PHASE_SUMMARY.md) is implemented: UV equilibrium EOS, contact-resolving conservative momentum/energy and heat transport. The package passes 210 tests; 210 independent thermal checks and an acoustic refinement benchmark pass.
 
-Next: compatible thermal/phase EOS coupling and conservative momentum/energy, then an open-domain atmosphere/source configuration and numerical studies. The EEC550 receptor comparison remains held; current box tests are numerical hydrodynamic verification only. No product app.
+Next: multidimensional integration of thermal/phase feedback with buoyancy and compatible boundaries, then refinement and atmosphere/source studies. The existing 2D buoyant solver is still frozen-endpoint; EEC550 field comparison remains held. No product app.
 
 Do not promise schedules until data access and modelling dependencies are understood.
 

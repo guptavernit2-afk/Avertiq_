@@ -40,6 +40,11 @@ jobs:
         run: |
           python -m avertiq_equilibrium flow-checks --output outputs/ci-flow-checks.json
           python -m avertiq_equilibrium flow --output outputs/ci-flow.json
+      - name: Verify conservative thermal and phase coupling
+        run: |
+          python -m avertiq_equilibrium thermal-checks --output outputs/ci-thermal-checks.json
+          python -m avertiq_equilibrium thermal-flow --output outputs/ci-thermal-flow.json
+          python research/equilibrium/tools/acoustic_benchmark.py --output outputs/ci-thermal-acoustic.json
       - name: Save research artifacts
         uses: actions/upload-artifact@v4
         with:

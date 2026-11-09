@@ -57,3 +57,13 @@ Tomorrow's proposed starting point is checkpoint 5, informed by today's mixing r
 - Next: compatible thermal/phase EOS and conservative momentum/energy coupling before atmospheric comparison.
 
 [Short report](research/VARIABLE_DENSITY_SUMMARY.md)
+
+## Conservative heat and phase feedback: completed 9 November
+
+- UV EOS, sound speed and thermal capacity implemented.
+- Conservative 1D species/momentum/internal-plus-kinetic energy coupled to heat and phase equilibrium.
+- HLLC resolves stationary contacts; zero-heat control passes.
+- 210 package tests, 210 independent checks and an acoustic refinement benchmark pass.
+- Next: integrate thermal and buoyancy physics multidimensionally before an atmospheric release comparison.
+
+[Short report](research/THERMAL_PHASE_SUMMARY.md)

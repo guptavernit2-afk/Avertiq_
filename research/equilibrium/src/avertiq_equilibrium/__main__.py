@@ -9,7 +9,7 @@ from .verification import verify
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
-    for command in ("verify", "cases", "mixing", "study", "bundle", "transport", "flow", "flow-checks"):
+    for command in ("verify", "cases", "mixing", "study", "bundle", "transport", "flow", "flow-checks", "thermal-flow", "thermal-checks"):
         child = commands.add_parser(command)
         child.add_argument("--output", type=Path, required=True,
                            help="Fresh output directory for bundle; fresh JSON path otherwise")
@@ -39,7 +39,15 @@ def main():
             verification = verify()
             if args.command != "verify" and not verification["passed"]:
                 raise RuntimeError("Property/numerical verification failed; calculation refused")
-            if args.command == "flow":
+            if args.command == "thermal-flow":
+                from .thermal_flow import run_thermal_flow
+                result = run_thermal_flow()
+            elif args.command == "thermal-checks":
+                from .thermal_checks import run_thermal_checks
+                result = run_thermal_checks()
+                if not result["passed"]:
+                    raise RuntimeError("Thermal flow checks failed")
+            elif args.command == "flow":
                 from .flow import run_flow
                 result = run_flow()
             elif args.command == "flow-checks":

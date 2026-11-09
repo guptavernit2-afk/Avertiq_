@@ -91,3 +91,7 @@ The [transport prototype](research/TRANSPORT_PROTOTYPE_SUMMARY.md) passes analyt
 ## Variable-density hydrodynamic verification
 
 The [new flow stage](research/VARIABLE_DENSITY_SUMMARY.md) adds density-dependent flow/gravity/projection. Package tests: 173 passed; independent checks: 22 passed. Hydrostatic rest, buoyancy sign/controls, projection, scalar/density conservation and a small grid comparison provide numerical evidence. Endpoints are frozen; velocity-form advection is not a conservative momentum scheme. This does not validate thermal phase coupling, atmospheric turbulence or EEC550 field concentrations.
+
+## Conservative thermal and phase coupling
+
+The [new 1D prototype](research/THERMAL_PHASE_SUMMARY.md) passes 210 package tests and 210 independent checks. UV round trips, ideal-gas acoustics, stationary contacts, closed periodic species/momentum/total-energy budgets and independently rebuilt cell thermodynamics are tested. Heat/control comparisons distinguish physical conduction response from numerical mixing. An acoustic refinement benchmark reduces error across three meshes. No moving-contact/strong-shock, multidimensional thermal-buoyancy or EEC550 validation claim follows.

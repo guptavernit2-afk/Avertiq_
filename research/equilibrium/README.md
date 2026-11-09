@@ -95,3 +95,15 @@ Run python -m avertiq_equilibrium transport --output outputs/my-fresh-transport.
 ~~~
 
 The verification-gated stage uses a MAC variable-coefficient projection and conservative volume-fraction transport. Densities affect flow, but endpoint thermodynamics remain frozen; this is not full moist-propane energy/phase coupling. Public APIs: flow.project_velocity, advect_fraction, simulate_flow, run_flow; flow_checks.run_flow_checks. The full suite passes 173 tests. [Results and limitations](../../docs/research/VARIABLE_DENSITY_SUMMARY.md).
+
+## Conservative thermal/phase flow
+
+~~~powershell
+.\.venv\Scripts\python.exe -m avertiq_equilibrium thermal-checks --output outputs/my-new-thermal-checks.json
+.\.venv\Scripts\python.exe -m avertiq_equilibrium thermal-flow --output outputs/my-new-thermal-flow.json
+.\.venv\Scripts\python.exe research/equilibrium/tools/acoustic_benchmark.py --output outputs/my-new-acoustic-check.json
+~~~
+
+The separate periodic 1D Euler/HLLC/Fourier stage transports five component densities, momentum and total internal-plus-kinetic energy. EquilibriumUV.solve inverts conserved density/internal energy; sound_speed and heat_capacity_cv supply numerical timestep properties. Thermal-flow APIs: initialize_profile, solve_thermal_flow, run_thermal_flow. Independent runner: thermal_checks.run_thermal_checks.
+
+Default HLLC preserves stationary equal-pressure composition contacts; flux_scheme='rusanov' retains the diffusive baseline. Conductivities are prescribed synthetic inputs. Full suite: 210 tests passed; independent thermal checks: 210 passed. This is not integrated into the 2D buoyant solver. [Results, limitations and commands](../../docs/research/THERMAL_PHASE_SUMMARY.md).

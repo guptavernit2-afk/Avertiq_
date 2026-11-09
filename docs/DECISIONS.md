@@ -153,3 +153,14 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Independent numerical checks caught a tiny-final-timestep bug; fix and add regression coverage. Review projection operators, hydrostatic balance and alpha/mass-fraction distinction.
 - Complete 173 passing package tests and 22 independent checks; run endpoint case and 12/24/48 grid comparison. Dense centroid descent approaches about 0.027 m in the specified synthetic 0.25 s experiment.
 - Save [results](research/VARIABLE_DENSITY_SUMMARY.md), references and provenance. EEC550 receptor comparison remains held pending thermal/EOS, momentum, atmosphere and boundary work.
+
+## 2026-11-09 - Conservative heat/phase flow coupling
+
+- User authorized thermal/phase feedback, conservative momentum/energy, parallel checkpoints, tests and commit/push; no app.
+- Reject a mere isobaric parcel exchange operator as insufficient for spatial flow coupling. Implement a separate 1D compressible conservative prototype with UV thermodynamic closure; do not imply 2D buoyancy integration.
+- Invert density/composition/internal energy via bounded pressure root and existing solid-aware PH solver. Preserve energy references and phase latent effects without adding another latent source.
+- Transport all five component masses, momentum and total internal-plus-kinetic energy, including pressure work and Fourier conduction. Synthetic conductivity explicitly labelled.
+- Independent no-heat control exposed ~492 Pa spurious pressure drift with Rusanov. Replace default with conservative HLLC and verify smooth/sharp stationary contacts. Keep Rusanov as a labelled baseline.
+- Complete 210 package tests and 210 independent checks, including TP reconstruction at every final control cell. JSON serialization regression added after CLI caught NumPy booleans.
+- Acoustic cell-average pressure RMSE falls across 8/16/32 cells. Save raw first-party outputs and source/runtime provenance. No strong-wave, moving-contact, multidimensional or field-validity claim.
+- Next: compatible multidimensional thermal/buoyancy integration and open-domain atmosphere/source verification before EEC550 receptor comparison.

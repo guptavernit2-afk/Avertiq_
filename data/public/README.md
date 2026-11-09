@@ -75,3 +75,7 @@ The structured input record is now schema version 2. It retains original values 
 ## Variable-density flow v1
 
 [variable-density-flow-v1](variable-density-flow-v1/flow.json) contains the synthetic 2D endpoint-density flow, 22 independent checks and a three-grid comparison. These are computed hydrodynamic verification cases, not experimental measurements or EEC550 field predictions. [Interpretation](../../docs/research/VARIABLE_DENSITY_SUMMARY.md).
+
+## Conservative thermal/phase flow v1
+
+[thermal-phase-flow-v1](thermal-phase-flow-v1/flow.json) contains the executed 1D coupled flow, controls/210 checks and an analytical acoustic grid comparison. These are first-party synthetic numerical results, not industrial measurements or EEC550 predictions. [Interpretation](../../docs/research/THERMAL_PHASE_SUMMARY.md).

@@ -2,7 +2,7 @@
 
 ## Current authorization
 
-The user has authorized standalone thermodynamic research and now locally runnable dispersion/transport and variable-density buoyant-flow prototypes, with parallel checkpoints, mathematical verification, commits and push. Keep the initial 1D prescribed-flow diagnostic and the frozen-endpoint 2D incompressible buoyant-flow stage clearly separate from full thermal/phase-coupled dense-gas modelling and EEC550 validation. No product application is authorized.
+The user has authorized standalone thermodynamic research and now locally runnable dispersion/transport and variable-density buoyant-flow and conservative thermal/phase-coupled flow prototypes, with parallel checkpoints, mathematical verification, commits and push. Keep the initial 1D prescribed-flow diagnostic and the frozen-endpoint 2D incompressible buoyant-flow stage clearly separate from full thermal/phase-coupled dense-gas modelling and EEC550 validation. The thermal stage may add a separate bounded 1D conservative Euler/energy solver with equilibrium UV feedback; do not imply it has been integrated with 2D buoyancy. No product application is authorized.
 
 ## Repository boundary
 

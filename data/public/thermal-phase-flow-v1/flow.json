@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "model": "1D conservative Euler/hllc/Fourier with equilibrium UV EOS",
+  "field_prediction_ready": false,
+  "column_names": [
+    "rho_C3_kg_m3",
+    "rho_N2_kg_m3",
+    "rho_O2_kg_m3",
+    "rho_AR_kg_m3",
+    "rho_H2O_kg_m3",
+    "momentum_kg_m2_s",
+    "total_energy_J_m3"
+  ],
+  "initial_conserved": [
+    [
+      0.3680355120651489,
+      1.014353997015672,
+      0.3108174380584798,
+      0.017302537064765557,
+      0.009949902201365216,
+      0.0,
+      -170741.47509685194
+    ],
+    [
+      0.25285293208052967,
+      0.9844719561741693,
+      0.3016610100208908,
+      0.01679281844508041,
+      0.009658130348737273,
+      0.0,
+      -193109.3737436216
+    ],
+    [
+      0.1218289143608448,
+      0.9538042339548023,
+      0.2922638342032206,
+      0.016269697915212437,
+      0.009358852068704474,
+      0.0,
+      -219059.02191659348
+    ],
+    [
+      0.04579529280691884,
+      0.9461648450330589,
+      0.28992297953120816,
+      0.01613938757941299,
+      0.009284860300893209,
+      0.0,
+      -235662.04956948286
+    ],
+    [
+      0.045795292806918825,
+      0.9461648450330589,
+      0.2899229795312082,
+      0.01613938757941299,
+      0.009284860300893209,
+      0.0,
+      -235662.0495694828
+    ],
+    [
+      0.12182891436084468,
+      0.9538042339548021,
+      0.2922638342032206,
+      0.016269697915212437,
+      0.009358852068704474,
+      0.0,
+      -219059.02191659363
+    ],
+    [
+      0.25285293208052967,
+      0.9844719561741693,
+      0.3016610100208908,
+      0.01679281844508041,
+      0.009658130348737273,
+      0.0,
+      -193109.3737436216
+    ],
+    [
+      0.36803551206514884,
+      1.014353997015672,
+      0.3108174380584798,
+      0.017302537064765557,
+      0.009949902201365216,
+      0.0,
+      -170741.47509685188
+    ]
+  ],
+  "final_conserved": [
+    [
+      0.3680352591956534,
+      1.0143533000742764,
+      0.310817224502325,
+      0.01730252517655457,
+      0.009949895364995713,
+      0.00030285645009024773,
+      -170738.05005228496
+    ],
+    [
+      0.25285300012307177,
+      0.9844719334998667,
+      0.30166100307305144,
+      0.016792818058309164,
+      0.009658130125340192,
+      0.0005756855868684942,
+      -193108.46804812277
+    ],
+    [
+      0.12182909749851854,
+      0.9538049564049884,
+      0.29226405557575585,
+      0.01626971023854449,
+      0.009358859156309844,
+      0.00026950809124927854,
+      -219061.20806871643
+    ],
+    [
+      0.045795294496198555,
+      0.9461648421985713,
+      0.28992297866266703,
+      0.016139387531063178,
+      0.00928486027305442,
+      2.0116120291591014e-06,
+      -235664.19415742572
+    ],
+    [
+      0.04579529449619852,
+      0.946164842198571,
+      0.28992297866266703,
+      0.016139387531063174,
+      0.009284860273054417,
+      -2.011612029416027e-06,
+      -235664.1941574256
+    ],
+    [
+      0.12182909749851846,
+      0.9538049564049884,
+      0.2922640555757559,
+      0.016269710238544493,
+      0.009358859156309848,
+      -0.0002695080912280925,
+      -219061.20806871666
+    ],
+    [
+      0.25285300012307177,
+      0.9844719334998666,
+      0.30166100307305144,
+      0.016792818058309164,
+      0.009658130125340192,
+      -0.0005756855868964852,
+      -193108.46804812277
+    ],
+    [
+      0.3680352591956533,
+      1.0143533000742762,
+      0.310817224502325,
+      0.017302525176554565,
+      0.009949895364995713,
+      -0.0003028564500831858,
+      -170738.0500522849
+    ]
+  ],
+  "cells": [
+    {
+      "x_m": 0.0625,
+      "density_kg_m3": 1.720458204313805,
+      "velocity_m_s": 0.00017603243678392078,
+      "internal_energy_J_kg": -99239.87088103051,
+      "component_mol_per_kg": {
+        "C3": 4.85105564718394,
+        "N2": 21.04677210697655,
+        "O2": 5.645787722871917,
+        "AR": 0.251750488549717,
+        "H2O": 0.3210259357553708
+      },
+      "temperature_K": 225.35096401488084,
+      "pressure_Pa": 102500.98870535972,
+      "phase_mass_fractions": {
+        "gas": 0.9942455195060187,
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.005754480493981335
+      },
+      "volume_constraint_relative_residual": -2.220446049250313e-16
+    },
+    {
+      "x_m": 0.1875,
+      "density_kg_m3": 1.5654368848796394,
+      "velocity_m_s": 0.0003677475549662652,
+      "internal_energy_J_kg": -123357.55590879412,
+      "component_mol_per_kg": {
+        "C3": 3.662886856284893,
+        "N2": 22.449576647739686,
+        "O2": 6.02208944807586,
+        "AR": 0.2685301033372889,
+        "H2O": 0.3424705438898506
+      },
+      "temperature_K": 242.9444024728908,
+      "pressure_Pa": 102500.27312431973,
+      "phase_mass_fractions": {
+        "gas": 0.9940423255390278,
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.005957674460972257
+      },
+      "volume_constraint_relative_residual": -1.0058620603103918e-13
+    },
+    {
+      "x_m": 0.3125,
+      "density_kg_m3": 1.3935266788741172,
+      "velocity_m_s": 0.0001934000226440044,
+      "internal_energy_J_kg": -157199.1490293751,
+      "component_mol_per_kg": {
+        "C3": 1.9825616210715504,
+        "N2": 24.433442818919435,
+        "O2": 6.554260710069752,
+        "AR": 0.2922600736754104,
+        "H2O": 0.3727978142942197
+      },
+      "temperature_K": 265.15411048593586,
+      "pressure_Pa": 102499.568171415,
+      "phase_mass_fractions": {
+        "gas": 0.9951022299051165,
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.004897770094883413
+      },
+      "volume_constraint_relative_residual": 3.9968028886505635e-15
+    },
+    {
+      "x_m": 0.4375,
+      "density_kg_m3": 1.3073073631615546,
+      "velocity_m_s": 1.538744510926854e-06,
+      "internal_energy_J_kg": -180266.86057018925,
+      "component_mol_per_kg": {
+        "C3": 0.7943906142155268,
+        "N2": 25.836249975939225,
+        "O2": 6.930563137083436,
+        "AR": 0.30903971975727723,
+        "H2O": 0.394242462423294
+      },
+      "temperature_K": 276.32822587135047,
+      "pressure_Pa": 102499.53161805433,
+      "phase_mass_fractions": {
+        "gas": 0.9975019248750471,
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0024980751249529466,
+        "water_ice": 0.0
+      },
+      "volume_constraint_relative_residual": 5.329070518200751e-15
+    },
+    {
+      "x_m": 0.5625,
+      "density_kg_m3": 1.3073073631615542,
+      "velocity_m_s": -1.5387445111233847e-06,
+      "internal_energy_J_kg": -180266.86057018922,
+      "component_mol_per_kg": {
+        "C3": 0.7943906142155266,
+        "N2": 25.836249975939225,
+        "O2": 6.930563137083438,
+        "AR": 0.30903971975727723,
+        "H2O": 0.394242462423294
+      },
+      "temperature_K": 276.32822587135047,
+      "pressure_Pa": 102499.5316180542,
+      "phase_mass_fractions": {
+        "gas": 0.9975019248750471,
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0024980751249529466,
+        "water_ice": 0.0
+      },
+      "volume_constraint_relative_residual": 6.217248937900877e-15
+    },
+    {
+      "x_m": 0.6875,
+      "density_kg_m3": 1.3935266788741172,
+      "velocity_m_s": -0.00019340002262880127,
+      "internal_energy_J_kg": -157199.1490293753,
+      "component_mol_per_kg": {
+        "C3": 1.982561621071549,
+        "N2": 24.433442818919435,
+        "O2": 6.5542607100697525,
+        "AR": 0.29226007367541046,
+        "H2O": 0.3727978142942199
+      },
+      "temperature_K": 265.1541104859358,
+      "pressure_Pa": 102499.56817141498,
+      "phase_mass_fractions": {
+        "gas": 0.9951022299051167,
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.004897770094883418
+      },
+      "volume_constraint_relative_residual": 3.9968028886505635e-15
+    },
+    {
+      "x_m": 0.8125,
+      "density_kg_m3": 1.5654368848796394,
+      "velocity_m_s": -0.00036774755498414585,
+      "internal_energy_J_kg": -123357.55590879412,
+      "component_mol_per_kg": {
+        "C3": 3.662886856284893,
+        "N2": 22.449576647739683,
+        "O2": 6.02208944807586,
+        "AR": 0.2685301033372889,
+        "H2O": 0.3424705438898506
+      },
+      "temperature_K": 242.94440247289074,
+      "pressure_Pa": 102500.27312431968,
+      "phase_mass_fractions": {
+        "gas": 0.9940423255390277,
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.005957674460972257
+      },
+      "volume_constraint_relative_residual": -1.0025313912365164e-13
+    },
+    {
+      "x_m": 0.9375,
+      "density_kg_m3": 1.7204582043138048,
+      "velocity_m_s": -0.0001760324367798161,
+      "internal_energy_J_kg": -99239.8708810305,
+      "component_mol_per_kg": {
+        "C3": 4.851055647183938,
+        "N2": 21.04677210697655,
+        "O2": 5.645787722871918,
+        "AR": 0.25175048854971693,
+        "H2O": 0.3210259357553708
+      },
+      "temperature_K": 225.35096401488087,
+      "pressure_Pa": 102500.98870535969,
+      "phase_mass_fractions": {
+        "gas": 0.9942455195060187,
+        "propane_liquid": 0.0,
+        "water_liquid": 0.0,
+        "water_ice": 0.005754480493981336
+      },
+      "volume_constraint_relative_residual": 2.220446049250313e-16
+    }
+  ],
+  "configuration": {
+    "cells": 8,
+    "length_m": 1.0,
+    "duration_s": 0.0003,
+    "conductivity_W_m_K": 10.0,
+    "cfl": 0.3,
+    "flux_scheme": "hllc",
+    "boundary": "periodic"
+  },
+  "diagnostics": {
+    "steps": 3,
+    "elapsed_s": 0.0003,
+    "timestep_retries": 0,
+    "maximum_acoustic_courant": 0.3,
+    "maximum_thermal_fourier": 5.692251446042416e-05,
+    "initial_integrals": [
+      0.19712816282836051,
+      0.9746987580444257,
+      0.29866631545344985,
+      0.016626110251117848,
+      0.009562936229925042,
+      0.0,
+      -204642.9800816375
+    ],
+    "final_integrals": [
+      0.19712816282836054,
+      0.9746987580444257,
+      0.2986663154534498,
+      0.016626110251117848,
+      0.009562936229925044,
+      0.0,
+      -204642.98008163745
+    ],
+    "integral_residuals": [
+      2.7755575615628914e-17,
+      0.0,
+      -5.551115123125783e-17,
+      0.0,
+      1.734723475976807e-18,
+      0.0,
+      5.820766091346741e-11
+    ],
+    "maximum_relative_conservation_residual": 2.8443517041359945e-16
+  },
+  "limitations": [
+    "Synthetic periodic 1D thermal-acoustic case; no 2D gravity/atmosphere coupling.",
+    "Conduction coefficient is prescribed synthetic research input, not validated gas transport.",
+    "HLLC preserves stationary contacts; moving/general mixture interfaces may still create pressure errors. Rusanov is a more diffusive baseline.",
+    "Instantaneous equilibrium; no slip, phase rates, turbulence or field validation.",
+    "No viscous momentum exchange; Euler pressure flux provides conservative momentum coupling."
+  ],
+  "provenance": {
+    "executed_utc": "2026-11-09T03:42:20.912537+00:00",
+    "python": "3.13.6",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "thermopack_native_sha256": {
+      "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+    },
+    "packages": {
+      "thermopack": "2.2.3",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1"
+    },
+    "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+    "source_sha256": {
+      "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+      "__main__.py": "3267a193bb30dd68015f7eb1a4b8c6f9c9c17a9eec776e7b04ffb7442b17c36d",
+      "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
+      "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+      "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+      "equilibrium_uv.py": "d3e923706dddac03d6d3de921262f415285d45fa2b7b45a5940f7eaa9d850814",
+      "flow.py": "717fb660e0b9eee025f4b777bd908bb36d920279fe418bec13a13161e7028d6d",
+      "flow_checks.py": "6c53d753a1c777e1347e6d7731c57350cdf1f5099cac4d2ebac1d4f13267b6b3",
+      "handoff.py": "816225917d2baf35b8fb0c43034f6d38cfbe043528eaf3096b0e66280350e3eb",
+      "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
+      "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+      "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
+      "study.py": "684b4bc3105710774eadd493d3bb4482d1ba44a18d8512aaa8ab72b2cb1b2bd1",
+      "thermal_checks.py": "d1d3fb2cfbb5cc6f330553ad522783f289fdcc9daccb727b65cf61ac77319e8e",
+      "thermal_flow.py": "4fde484ed9b9b20271a68e01a4a00b2161c85c7f29fb447b6ae7d49605b97c2d",
+      "transport.py": "fe68399e95472057e94eb9ae51b02e26de5fd9cceccaeaf245918a50f6f11e8b",
+      "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+    }
+  },
+  "initial_condition": "Synthetic smooth periodic H00/ambient source mass-fraction profile at 102500 Pa",
+  "verification_passed": true
+}
