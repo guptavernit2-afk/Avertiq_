@@ -16,8 +16,8 @@ Step 1 is complete. Step 2 has an attributed incident fact sheet and reference c
 
 ## Next milestone
 
-Today's [scope, mixing and handoff checkpoints](PROJECT_CHECKPOINTS.md) are complete within the standalone research scope: 11 mixing states, 16 handoff checks and 51 passing tests. See the [short report](research/TODAY_SHORT_REPORT.md).
+The [research workbench v1](research/WORKBENCH_V1.md) is implemented: 132 conditional equilibrium states, four checked source exports, an offline report, a reproducible bundle and 136 passing tests. Read the [short report](research/TODAY_SHORT_REPORT.md).
 
-Next session: make a bounded phase-bearing dispersion implementation feasibility decision using the [executed mixing path](research/EEC550_MIXING_MILESTONE.md) as a regression case. Select one implementable route or explicitly reject it. The nine-case comparison remains held. App and CFD implementation/runs remain outside current authorization.
+Next: select and demonstrate one phase-bearing transport implementation using the new interfaces and regression cases. It must conserve total components/energy, handle changing water/propane phases, and use compatible property references. Only after numerical transport checks should the held EEC550 receptor comparison proceed. No app or CFD implementation/runs were included in this batch.
 
 Do not promise schedules until data access and modelling dependencies are understood.

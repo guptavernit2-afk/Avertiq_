@@ -37,3 +37,13 @@ Tomorrow's proposed starting point is checkpoint 5, informed by today's mixing r
 [Demo scope](DEMO_SCOPE.md) | [Source handoff](research/EEC550_DISPERSION_HANDOFF.md) | [Roadmap](ROADMAP.md)
 
 [Today: short report](research/TODAY_SHORT_REPORT.md) | [Executed mixing milestone](research/EEC550_MIXING_MILESTONE.md)
+
+## Larger implementation batch: completed 9 November
+
+- Reusable study API and CLI: 132 states, 12 paths.
+- Strict source-export API: four PH sources, 39 checks each.
+- Offline report and checksum bundle: generated and saved.
+- Full local suite: 136 passed; report-filter smoke test passed.
+- CI workflow added; remote execution status is separate from local checks.
+
+[Workbench v1 milestone](research/WORKBENCH_V1.md) | [Open offline report](../data/public/eec550-research-bundle-v1/report.html)

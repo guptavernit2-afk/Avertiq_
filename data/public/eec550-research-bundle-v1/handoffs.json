@@ -1,0 +1,1624 @@
+{
+  "schema_version": 1,
+  "scope": "Conditional 0D source contracts; not executable CFD boundaries.",
+  "cases": [
+    {
+      "source": {
+        "schema_version": 2,
+        "id": "EEC550-H00-HANDOFF-v2",
+        "status": "conditional_candidate_not_solver_input",
+        "generated_utc": "2026-11-08T12:54:25.102042+00:00",
+        "CFD_run_authorized": false,
+        "CFD_runs_completed": 0,
+        "run_ready": false,
+        "is_historical_source_reconstruction": false,
+        "units": {
+          "mass_flow": "kg/s",
+          "molar_mass": "kg/mol",
+          "pressure": "Pa_absolute",
+          "temperature": "K",
+          "enthalpy": "J/kg",
+          "energy_flux": "W",
+          "volume_flow": "m3/s",
+          "density": "kg/m3",
+          "length": "m",
+          "area": "m2",
+          "speed": "m/s",
+          "momentum_flux": "N",
+          "gas_fractions": "dimensionless_gas_phase",
+          "phase_fractions": "dimensionless_total_mass"
+        },
+        "molar_masses_kg_mol": {
+          "C3": 0.044097000000000004,
+          "N2": 0.028013000000000003,
+          "O2": 0.031999,
+          "AR": 0.039948000000000004,
+          "H2O": 0.018015
+        },
+        "source_case": {
+          "case_id": "H00",
+          "mode": "PH",
+          "energy_target_enforced": true,
+          "assumption": {
+            "concentration_feed_basis": "wet",
+            "counterfactual_dry": false,
+            "feed_pressure_Pa": 1013250.0,
+            "feed_temperature_K": 286.45,
+            "outlet_speed_prescribed_m_s": 18.1
+          }
+        },
+        "source_energy": {
+          "thermal_in_W": -192046.8595463126,
+          "ambient_incoming_kinetic_W": 29.236502376411455,
+          "propane_feed_kinetic_W_assumed": 0.0,
+          "outgoing_kinetic_W": 1776.575211935778,
+          "external_heat_W_assumed": 0.0,
+          "work_W_assumed": 0.0,
+          "potential_change_W_assumed": 0.0,
+          "target_outgoing_thermal_W": -193794.19825587195
+        },
+        "provenance": {
+          "executed_utc": "2026-11-08T12:54:25.085468+00:00",
+          "python": "3.13.6",
+          "platform": "Windows-11-10.0.26300-SP0",
+          "thermopack_native_sha256": {
+            "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+          },
+          "packages": {
+            "thermopack": "2.2.3",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+          "source_sha256": {
+            "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+            "__main__.py": "7b8759301b281dc8c0f93c7155d3fe4583e80bb1a489cf8a3b162b408c101ab7",
+            "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
+            "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+            "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+            "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+            "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
+            "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+            "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
+            "study.py": "684b4bc3105710774eadd493d3bb4482d1ba44a18d8512aaa8ab72b2cb1b2bd1",
+            "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+          }
+        },
+        "evidence_status": {
+          "source": "conditional reduced-model calculation",
+          "geometry": "assumed uniform rectangular inlet",
+          "pressure": "assumed downstream absolute pressure",
+          "enthalpy": "same reference as source calculation; not an absolute energy zero"
+        },
+        "boundary": {
+          "pressure_Pa": 102500.0,
+          "ambient_static_pressure_Pa": 102500.0,
+          "excess_pressure_Pa": 0.0,
+          "temperature_K": 204.26096230749067,
+          "total_component_mass_kg_s": {
+            "C3": 3.0,
+            "N2": 5.8844713173880425,
+            "O2": 1.803114400475814,
+            "AR": 0.1003754935409234,
+            "H2O": 0.05771023901356947
+          },
+          "total_mass_kg_s": 10.84567145041835,
+          "gas_mass_kg_s": 10.787979481326493,
+          "ice_mass_kg_s": 0.05769196909185552,
+          "liquid_propane_mass_kg_s": 0.0,
+          "liquid_water_mass_kg_s": 0.0,
+          "gas_mole_fractions": {
+            "C3": 0.20190080219921847,
+            "N2": 0.6234098550371215,
+            "O2": 0.16722943014711786,
+            "AR": 0.007456902881572045,
+            "H2O": 3.009734970055373e-06
+          },
+          "gas_mass_fractions": {
+            "C3": 0.2780872919894652,
+            "N2": 0.5454655644807072,
+            "O2": 0.16714106692517572,
+            "AR": 0.009304383060300481,
+            "H2O": 1.6935443514304827e-06
+          },
+          "phase_mass_fractions": {
+            "gas": 0.9946806456976317,
+            "ice": 0.005319354302368266,
+            "liquid_propane": 0.0,
+            "liquid_water": 0.0
+          },
+          "bulk_density_kg_m3": 1.9425926315508648,
+          "bulk_volume_flow_m3_s": 5.583091006455496,
+          "thermal_enthalpy_flux_W": -193794.19825542008,
+          "thermal_enthalpy_J_kg": -17868.344909889824,
+          "enthalpy_reference": "Reduced ThermoPack/reference-saturation closure; map species and phase offsets before any different property package.",
+          "kinetic_energy_flux_W": 1776.575211935778,
+          "total_enthalpy_plus_kinetic_flux_W": -192017.62304348432,
+          "speed_m_s": 18.1,
+          "velocity_xyz_m_s": [
+            9.049999999999999,
+            15.675059808498341,
+            0.0
+          ],
+          "advective_momentum_flux_magnitude_N": 196.30665325257215,
+          "pressure_thrust_assumption": "Zero excess-pressure thrust; advective momentum only.",
+          "normal_azimuth_deg": 30.0,
+          "window_area_m2": 0.30845806665499975,
+          "window_width_m": 0.7854400889374056,
+          "window_height_m": 0.3927200444687028,
+          "aspect_ratio_width_to_height": 2.0,
+          "window_centre_xyz_m": [
+            2.5,
+            4.330127018922193,
+            0.5
+          ],
+          "coordinates": "X east; Y magnetic north; Z up; origin original nozzle",
+          "source_profile": "Assumed uniform top hat; common phase velocity and temperature"
+        }
+      },
+      "audit": {
+        "schema_version": 1,
+        "passed": true,
+        "handoff_id": "EEC550-H00-HANDOFF-v2",
+        "scope": "Arithmetic contract checks only; not transport or physical validation",
+        "checks": [
+          {
+            "name": "ambient static pressure",
+            "absolute_residual": 0.0,
+            "tolerance": 0.00010250000000000001,
+            "passed": true
+          },
+          {
+            "name": "excess pressure",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "phase mass sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.084567145041835e-08,
+            "passed": true
+          },
+          {
+            "name": "gas mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 9.946806456976317e-10,
+            "passed": true
+          },
+          {
+            "name": "ice mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 5.319354302368266e-12,
+            "passed": true
+          },
+          {
+            "name": "liquid_propane mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "liquid_water mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "phase fraction sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "gas mole fraction sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "gas mass fraction sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "C3 gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 2.780872919894652e-10,
+            "passed": true
+          },
+          {
+            "name": "C3 total component",
+            "absolute_residual": 0.0,
+            "tolerance": 3.0000000000000004e-09,
+            "passed": true
+          },
+          {
+            "name": "N2 gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 5.454655644807071e-10,
+            "passed": true
+          },
+          {
+            "name": "N2 total component",
+            "absolute_residual": 8.881784197001252e-16,
+            "tolerance": 5.8844713173880425e-09,
+            "passed": true
+          },
+          {
+            "name": "O2 gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 1.6714106692517573e-10,
+            "passed": true
+          },
+          {
+            "name": "O2 total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1.803114400475814e-09,
+            "passed": true
+          },
+          {
+            "name": "AR gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 9.304383060300481e-12,
+            "passed": true
+          },
+          {
+            "name": "AR total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "H2O gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "H2O total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "component mass sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.084567145041835e-08,
+            "passed": true
+          },
+          {
+            "name": "nominal propane feed",
+            "absolute_residual": 0.0,
+            "tolerance": 3.0000000000000004e-09,
+            "passed": true
+          },
+          {
+            "name": "source solved speed",
+            "absolute_residual": 0.0,
+            "tolerance": 1.8100000000000003e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity magnitude",
+            "absolute_residual": 0.0,
+            "tolerance": 1.8100000000000003e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 0",
+            "absolute_residual": 0.0,
+            "tolerance": 9.05e-09,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 1",
+            "absolute_residual": 0.0,
+            "tolerance": 1.5675059808498343e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 2",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "rectangular area",
+            "absolute_residual": 5.551115123125783e-17,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "window aspect ratio",
+            "absolute_residual": 0.0,
+            "tolerance": 2e-09,
+            "passed": true
+          },
+          {
+            "name": "volume flow",
+            "absolute_residual": 0.0,
+            "tolerance": 5.5830910064554965e-09,
+            "passed": true
+          },
+          {
+            "name": "bulk density/mass",
+            "absolute_residual": 0.0,
+            "tolerance": 1.084567145041835e-08,
+            "passed": true
+          },
+          {
+            "name": "outgoing kinetic energy",
+            "absolute_residual": 0.0,
+            "tolerance": 1.7765752119357781e-06,
+            "passed": true
+          },
+          {
+            "name": "advective momentum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.9630665325257215e-07,
+            "passed": true
+          },
+          {
+            "name": "specific thermal enthalpy",
+            "absolute_residual": 0.0,
+            "tolerance": 1.7868344909889826e-05,
+            "passed": true
+          },
+          {
+            "name": "total energy flux",
+            "absolute_residual": 0.0,
+            "tolerance": 0.00019201762304348432,
+            "passed": true
+          },
+          {
+            "name": "adiabatic heat assumption",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "kinetic energy source ledger",
+            "absolute_residual": 0.0,
+            "tolerance": 1.7765752119357781e-06,
+            "passed": true
+          },
+          {
+            "name": "source target definition",
+            "absolute_residual": 0.0,
+            "tolerance": 0.00019379419825587196,
+            "passed": true
+          },
+          {
+            "name": "source thermal target",
+            "absolute_residual": 4.518660716712475e-07,
+            "tolerance": 0.00019379419825587196,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "source": {
+        "schema_version": 2,
+        "id": "EEC550-H01-HANDOFF-v2",
+        "status": "conditional_candidate_not_solver_input",
+        "generated_utc": "2026-11-08T12:54:25.102257+00:00",
+        "CFD_run_authorized": false,
+        "CFD_runs_completed": 0,
+        "run_ready": false,
+        "is_historical_source_reconstruction": false,
+        "units": {
+          "mass_flow": "kg/s",
+          "molar_mass": "kg/mol",
+          "pressure": "Pa_absolute",
+          "temperature": "K",
+          "enthalpy": "J/kg",
+          "energy_flux": "W",
+          "volume_flow": "m3/s",
+          "density": "kg/m3",
+          "length": "m",
+          "area": "m2",
+          "speed": "m/s",
+          "momentum_flux": "N",
+          "gas_fractions": "dimensionless_gas_phase",
+          "phase_fractions": "dimensionless_total_mass"
+        },
+        "molar_masses_kg_mol": {
+          "C3": 0.044097000000000004,
+          "N2": 0.028013000000000003,
+          "O2": 0.031999,
+          "AR": 0.039948000000000004,
+          "H2O": 0.018015
+        },
+        "source_case": {
+          "case_id": "H01",
+          "mode": "PH",
+          "energy_target_enforced": true,
+          "assumption": {
+            "concentration_feed_basis": "dry",
+            "counterfactual_dry": false,
+            "feed_pressure_Pa": 1013250.0,
+            "feed_temperature_K": 286.45,
+            "outlet_speed_prescribed_m_s": 18.1
+          }
+        },
+        "source_energy": {
+          "thermal_in_W": -202698.65085031372,
+          "ambient_incoming_kinetic_W": 29.584771217125898,
+          "propane_feed_kinetic_W_assumed": 0.0,
+          "outgoing_kinetic_W": 1791.8841996997974,
+          "external_heat_W_assumed": 0.0,
+          "work_W_assumed": 0.0,
+          "potential_change_W_assumed": 0.0,
+          "target_outgoing_thermal_W": -204460.95027879637
+        },
+        "provenance": {
+          "executed_utc": "2026-11-08T12:54:25.085468+00:00",
+          "python": "3.13.6",
+          "platform": "Windows-11-10.0.26300-SP0",
+          "thermopack_native_sha256": {
+            "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+          },
+          "packages": {
+            "thermopack": "2.2.3",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+          "source_sha256": {
+            "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+            "__main__.py": "7b8759301b281dc8c0f93c7155d3fe4583e80bb1a489cf8a3b162b408c101ab7",
+            "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
+            "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+            "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+            "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+            "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
+            "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+            "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
+            "study.py": "684b4bc3105710774eadd493d3bb4482d1ba44a18d8512aaa8ab72b2cb1b2bd1",
+            "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+          }
+        },
+        "evidence_status": {
+          "source": "conditional reduced-model calculation",
+          "geometry": "assumed uniform rectangular inlet",
+          "pressure": "assumed downstream absolute pressure",
+          "enthalpy": "same reference as source calculation; not an absolute energy zero"
+        },
+        "boundary": {
+          "pressure_Pa": 102500.0,
+          "ambient_static_pressure_Pa": 102500.0,
+          "excess_pressure_Pa": 0.0,
+          "temperature_K": 205.05009267552944,
+          "total_component_mass_kg_s": {
+            "C3": 3.0,
+            "N2": 5.954567869210111,
+            "O2": 1.8245933227437487,
+            "AR": 0.10157117886338667,
+            "H2O": 0.05839769053495341
+          },
+          "total_mass_kg_s": 10.939130061352198,
+          "gas_mass_kg_s": 10.880753076871704,
+          "ice_mass_kg_s": 0.058376984480495234,
+          "liquid_propane_mass_kg_s": 0.0,
+          "liquid_water_mass_kg_s": 0.0,
+          "gas_mole_fractions": {
+            "C3": 0.1999993242136751,
+            "N2": 0.6248948514225363,
+            "O2": 0.16762777979991353,
+            "AR": 0.007474665632250512,
+            "H2O": 3.3789316244782394e-06
+          },
+          "gas_mass_fractions": {
+            "C3": 0.2757162099723452,
+            "N2": 0.5472569616405717,
+            "O2": 0.1676899852292515,
+            "AR": 0.009334940159545384,
+            "H2O": 1.9029982862298485e-06
+          },
+          "phase_mass_fractions": {
+            "gas": 0.9946634710298637,
+            "ice": 0.005336528970136332,
+            "liquid_propane": 0.0,
+            "liquid_water": 0.0
+          },
+          "bulk_density_kg_m3": 1.9334100562123675,
+          "bulk_volume_flow_m3_s": 5.657946190050557,
+          "thermal_enthalpy_flux_W": -204460.9502784668,
+          "thermal_enthalpy_J_kg": -18690.787030755273,
+          "enthalpy_reference": "Reduced ThermoPack/reference-saturation closure; map species and phase offsets before any different property package.",
+          "kinetic_energy_flux_W": 1791.8841996997974,
+          "total_enthalpy_plus_kinetic_flux_W": -202669.066078767,
+          "speed_m_s": 18.1,
+          "velocity_xyz_m_s": [
+            9.049999999999999,
+            15.675059808498341,
+            0.0
+          ],
+          "advective_momentum_flux_magnitude_N": 197.99825411047482,
+          "pressure_thrust_assumption": "Zero excess-pressure thrust; advective momentum only.",
+          "normal_azimuth_deg": 30.0,
+          "window_area_m2": 0.3125937121574893,
+          "window_width_m": 0.7906879437015457,
+          "window_height_m": 0.39534397185077286,
+          "aspect_ratio_width_to_height": 2.0,
+          "window_centre_xyz_m": [
+            2.5,
+            4.330127018922193,
+            0.5
+          ],
+          "coordinates": "X east; Y magnetic north; Z up; origin original nozzle",
+          "source_profile": "Assumed uniform top hat; common phase velocity and temperature"
+        }
+      },
+      "audit": {
+        "schema_version": 1,
+        "passed": true,
+        "handoff_id": "EEC550-H01-HANDOFF-v2",
+        "scope": "Arithmetic contract checks only; not transport or physical validation",
+        "checks": [
+          {
+            "name": "ambient static pressure",
+            "absolute_residual": 0.0,
+            "tolerance": 0.00010250000000000001,
+            "passed": true
+          },
+          {
+            "name": "excess pressure",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "phase mass sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.0939130061352199e-08,
+            "passed": true
+          },
+          {
+            "name": "gas mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 9.946634710298638e-10,
+            "passed": true
+          },
+          {
+            "name": "ice mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 5.336528970136332e-12,
+            "passed": true
+          },
+          {
+            "name": "liquid_propane mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "liquid_water mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "phase fraction sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "gas mole fraction sum",
+            "absolute_residual": 1.1102230246251565e-16,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "gas mass fraction sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "C3 gas mole/mass basis",
+            "absolute_residual": 5.551115123125783e-17,
+            "tolerance": 2.7571620997234526e-10,
+            "passed": true
+          },
+          {
+            "name": "C3 total component",
+            "absolute_residual": 4.440892098500626e-16,
+            "tolerance": 3.0000000000000004e-09,
+            "passed": true
+          },
+          {
+            "name": "N2 gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 5.472569616405717e-10,
+            "passed": true
+          },
+          {
+            "name": "N2 total component",
+            "absolute_residual": 0.0,
+            "tolerance": 5.9545678692101114e-09,
+            "passed": true
+          },
+          {
+            "name": "O2 gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 1.676899852292515e-10,
+            "passed": true
+          },
+          {
+            "name": "O2 total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1.8245933227437489e-09,
+            "passed": true
+          },
+          {
+            "name": "AR gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 9.334940159545385e-12,
+            "passed": true
+          },
+          {
+            "name": "AR total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "H2O gas mole/mass basis",
+            "absolute_residual": 2.117582368135751e-22,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "H2O total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "component mass sum",
+            "absolute_residual": 1.7763568394002505e-15,
+            "tolerance": 1.09391300613522e-08,
+            "passed": true
+          },
+          {
+            "name": "nominal propane feed",
+            "absolute_residual": 0.0,
+            "tolerance": 3.0000000000000004e-09,
+            "passed": true
+          },
+          {
+            "name": "source solved speed",
+            "absolute_residual": 0.0,
+            "tolerance": 1.8100000000000003e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity magnitude",
+            "absolute_residual": 0.0,
+            "tolerance": 1.8100000000000003e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 0",
+            "absolute_residual": 0.0,
+            "tolerance": 9.05e-09,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 1",
+            "absolute_residual": 0.0,
+            "tolerance": 1.5675059808498343e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 2",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "rectangular area",
+            "absolute_residual": 5.551115123125783e-17,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "window aspect ratio",
+            "absolute_residual": 0.0,
+            "tolerance": 2e-09,
+            "passed": true
+          },
+          {
+            "name": "volume flow",
+            "absolute_residual": 0.0,
+            "tolerance": 5.657946190050558e-09,
+            "passed": true
+          },
+          {
+            "name": "bulk density/mass",
+            "absolute_residual": 0.0,
+            "tolerance": 1.0939130061352199e-08,
+            "passed": true
+          },
+          {
+            "name": "outgoing kinetic energy",
+            "absolute_residual": 0.0,
+            "tolerance": 1.7918841996997976e-06,
+            "passed": true
+          },
+          {
+            "name": "advective momentum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.9799825411047482e-07,
+            "passed": true
+          },
+          {
+            "name": "specific thermal enthalpy",
+            "absolute_residual": 0.0,
+            "tolerance": 1.8690787030755273e-05,
+            "passed": true
+          },
+          {
+            "name": "total energy flux",
+            "absolute_residual": 0.0,
+            "tolerance": 0.00020266906607876702,
+            "passed": true
+          },
+          {
+            "name": "adiabatic heat assumption",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "kinetic energy source ledger",
+            "absolute_residual": 0.0,
+            "tolerance": 1.7918841996997976e-06,
+            "passed": true
+          },
+          {
+            "name": "source target definition",
+            "absolute_residual": 0.0,
+            "tolerance": 0.00020446095027879638,
+            "passed": true
+          },
+          {
+            "name": "source thermal target",
+            "absolute_residual": 3.2957177609205246e-07,
+            "tolerance": 0.00020446095027879638,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "source": {
+        "schema_version": 2,
+        "id": "EEC550-H02-HANDOFF-v2",
+        "status": "conditional_candidate_not_solver_input",
+        "generated_utc": "2026-11-08T12:54:25.102416+00:00",
+        "CFD_run_authorized": false,
+        "CFD_runs_completed": 0,
+        "run_ready": false,
+        "is_historical_source_reconstruction": false,
+        "units": {
+          "mass_flow": "kg/s",
+          "molar_mass": "kg/mol",
+          "pressure": "Pa_absolute",
+          "temperature": "K",
+          "enthalpy": "J/kg",
+          "energy_flux": "W",
+          "volume_flow": "m3/s",
+          "density": "kg/m3",
+          "length": "m",
+          "area": "m2",
+          "speed": "m/s",
+          "momentum_flux": "N",
+          "gas_fractions": "dimensionless_gas_phase",
+          "phase_fractions": "dimensionless_total_mass"
+        },
+        "molar_masses_kg_mol": {
+          "C3": 0.044097000000000004,
+          "N2": 0.028013000000000003,
+          "O2": 0.031999,
+          "AR": 0.039948000000000004,
+          "H2O": 0.018015
+        },
+        "source_case": {
+          "case_id": "H02",
+          "mode": "PH",
+          "energy_target_enforced": true,
+          "assumption": {
+            "concentration_feed_basis": "wet",
+            "counterfactual_dry": true,
+            "feed_pressure_Pa": 1013250.0,
+            "feed_temperature_K": 286.45,
+            "outlet_speed_prescribed_m_s": 18.1
+          }
+        },
+        "source_energy": {
+          "thermal_in_W": 584255.7883525693,
+          "ambient_incoming_kinetic_W": 29.021448056239336,
+          "propane_feed_kinetic_W_assumed": 0.0,
+          "outgoing_kinetic_W": 1767.1219862341602,
+          "external_heat_W_assumed": 0.0,
+          "work_W_assumed": 0.0,
+          "potential_change_W_assumed": 0.0,
+          "target_outgoing_thermal_W": 582517.6878143913
+        },
+        "provenance": {
+          "executed_utc": "2026-11-08T12:54:25.085468+00:00",
+          "python": "3.13.6",
+          "platform": "Windows-11-10.0.26300-SP0",
+          "thermopack_native_sha256": {
+            "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+          },
+          "packages": {
+            "thermopack": "2.2.3",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+          "source_sha256": {
+            "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+            "__main__.py": "7b8759301b281dc8c0f93c7155d3fe4583e80bb1a489cf8a3b162b408c101ab7",
+            "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
+            "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+            "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+            "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+            "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
+            "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+            "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
+            "study.py": "684b4bc3105710774eadd493d3bb4482d1ba44a18d8512aaa8ab72b2cb1b2bd1",
+            "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+          }
+        },
+        "evidence_status": {
+          "source": "conditional reduced-model calculation",
+          "geometry": "assumed uniform rectangular inlet",
+          "pressure": "assumed downstream absolute pressure",
+          "enthalpy": "same reference as source calculation; not an absolute energy zero"
+        },
+        "boundary": {
+          "pressure_Pa": 102500.0,
+          "ambient_static_pressure_Pa": 102500.0,
+          "excess_pressure_Pa": 0.0,
+          "temperature_K": 199.37689172294387,
+          "total_component_mass_kg_s": {
+            "C3": 3.0,
+            "N2": 5.8844713173880425,
+            "O2": 1.803114400475814,
+            "AR": 0.1003754935409234,
+            "H2O": 0.0
+          },
+          "total_mass_kg_s": 10.78796121140478,
+          "gas_mass_kg_s": 10.53649643503988,
+          "ice_mass_kg_s": 0.0,
+          "liquid_propane_mass_kg_s": 0.25146477636490044,
+          "liquid_water_mass_kg_s": 0.0,
+          "gas_mole_fractions": {
+            "C3": 0.18816211091203325,
+            "N2": 0.6341437890795165,
+            "O2": 0.17010880341759585,
+            "AR": 0.007585296590854317,
+            "H2O": 0.0
+          },
+          "gas_mass_fractions": {
+            "C3": 0.2608585539396803,
+            "N2": 0.5584846304146043,
+            "O2": 0.17113035738136131,
+            "AR": 0.009526458264354122,
+            "H2O": 0.0
+          },
+          "phase_mass_fractions": {
+            "gas": 0.9766902409605388,
+            "ice": 0.0,
+            "liquid_propane": 0.0233097590394613,
+            "liquid_water": 0.0
+          },
+          "bulk_density_kg_m3": 2.013543737393342,
+          "bulk_volume_flow_m3_s": 5.3576989717494135,
+          "thermal_enthalpy_flux_W": 582517.6878061446,
+          "thermal_enthalpy_J_kg": 53997.0135589958,
+          "enthalpy_reference": "Reduced ThermoPack/reference-saturation closure; map species and phase offsets before any different property package.",
+          "kinetic_energy_flux_W": 1767.1219862341602,
+          "total_enthalpy_plus_kinetic_flux_W": 584284.8097923788,
+          "speed_m_s": 18.1,
+          "velocity_xyz_m_s": [
+            9.049999999999999,
+            15.675059808498341,
+            0.0
+          ],
+          "advective_momentum_flux_magnitude_N": 195.26209792642652,
+          "pressure_thrust_assumption": "Zero excess-pressure thrust; advective momentum only.",
+          "normal_azimuth_deg": 30.0,
+          "window_area_m2": 0.29600546805245376,
+          "window_width_m": 0.7694224691968045,
+          "window_height_m": 0.38471123459840223,
+          "aspect_ratio_width_to_height": 2.0,
+          "window_centre_xyz_m": [
+            2.5,
+            4.330127018922193,
+            0.5
+          ],
+          "coordinates": "X east; Y magnetic north; Z up; origin original nozzle",
+          "source_profile": "Assumed uniform top hat; common phase velocity and temperature"
+        }
+      },
+      "audit": {
+        "schema_version": 1,
+        "passed": true,
+        "handoff_id": "EEC550-H02-HANDOFF-v2",
+        "scope": "Arithmetic contract checks only; not transport or physical validation",
+        "checks": [
+          {
+            "name": "ambient static pressure",
+            "absolute_residual": 0.0,
+            "tolerance": 0.00010250000000000001,
+            "passed": true
+          },
+          {
+            "name": "excess pressure",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "phase mass sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.078796121140478e-08,
+            "passed": true
+          },
+          {
+            "name": "gas mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 9.766902409605388e-10,
+            "passed": true
+          },
+          {
+            "name": "ice mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "liquid_propane mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 2.3309759039461302e-11,
+            "passed": true
+          },
+          {
+            "name": "liquid_water mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "phase fraction sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "gas mole fraction sum",
+            "absolute_residual": 1.1102230246251565e-16,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "gas mass fraction sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "C3 gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 2.6085855393968033e-10,
+            "passed": true
+          },
+          {
+            "name": "C3 total component",
+            "absolute_residual": 0.0,
+            "tolerance": 3.0000000000000004e-09,
+            "passed": true
+          },
+          {
+            "name": "N2 gas mole/mass basis",
+            "absolute_residual": 1.1102230246251565e-16,
+            "tolerance": 5.584846304146044e-10,
+            "passed": true
+          },
+          {
+            "name": "N2 total component",
+            "absolute_residual": 0.0,
+            "tolerance": 5.8844713173880425e-09,
+            "passed": true
+          },
+          {
+            "name": "O2 gas mole/mass basis",
+            "absolute_residual": 2.7755575615628914e-17,
+            "tolerance": 1.7113035738136133e-10,
+            "passed": true
+          },
+          {
+            "name": "O2 total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1.803114400475814e-09,
+            "passed": true
+          },
+          {
+            "name": "AR gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 9.526458264354123e-12,
+            "passed": true
+          },
+          {
+            "name": "AR total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "H2O gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "H2O total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "component mass sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.078796121140478e-08,
+            "passed": true
+          },
+          {
+            "name": "nominal propane feed",
+            "absolute_residual": 0.0,
+            "tolerance": 3.0000000000000004e-09,
+            "passed": true
+          },
+          {
+            "name": "source solved speed",
+            "absolute_residual": 0.0,
+            "tolerance": 1.8100000000000003e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity magnitude",
+            "absolute_residual": 0.0,
+            "tolerance": 1.8100000000000003e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 0",
+            "absolute_residual": 0.0,
+            "tolerance": 9.05e-09,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 1",
+            "absolute_residual": 0.0,
+            "tolerance": 1.5675059808498343e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 2",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "rectangular area",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "window aspect ratio",
+            "absolute_residual": 0.0,
+            "tolerance": 2e-09,
+            "passed": true
+          },
+          {
+            "name": "volume flow",
+            "absolute_residual": 0.0,
+            "tolerance": 5.357698971749414e-09,
+            "passed": true
+          },
+          {
+            "name": "bulk density/mass",
+            "absolute_residual": 0.0,
+            "tolerance": 1.078796121140478e-08,
+            "passed": true
+          },
+          {
+            "name": "outgoing kinetic energy",
+            "absolute_residual": 0.0,
+            "tolerance": 1.7671219862341603e-06,
+            "passed": true
+          },
+          {
+            "name": "advective momentum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.9526209792642654e-07,
+            "passed": true
+          },
+          {
+            "name": "specific thermal enthalpy",
+            "absolute_residual": 0.0,
+            "tolerance": 5.39970135589958e-05,
+            "passed": true
+          },
+          {
+            "name": "total energy flux",
+            "absolute_residual": 0.0,
+            "tolerance": 0.0005842848097923788,
+            "passed": true
+          },
+          {
+            "name": "adiabatic heat assumption",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "kinetic energy source ledger",
+            "absolute_residual": 0.0,
+            "tolerance": 1.7671219862341603e-06,
+            "passed": true
+          },
+          {
+            "name": "source target definition",
+            "absolute_residual": 0.0,
+            "tolerance": 0.0005825176878143913,
+            "passed": true
+          },
+          {
+            "name": "source thermal target",
+            "absolute_residual": 8.246744982898235e-06,
+            "tolerance": 0.0005825176878143913,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "source": {
+        "schema_version": 2,
+        "id": "EEC550-H03-HANDOFF-v2",
+        "status": "conditional_candidate_not_solver_input",
+        "generated_utc": "2026-11-08T12:54:25.102578+00:00",
+        "CFD_run_authorized": false,
+        "CFD_runs_completed": 0,
+        "run_ready": false,
+        "is_historical_source_reconstruction": false,
+        "units": {
+          "mass_flow": "kg/s",
+          "molar_mass": "kg/mol",
+          "pressure": "Pa_absolute",
+          "temperature": "K",
+          "enthalpy": "J/kg",
+          "energy_flux": "W",
+          "volume_flow": "m3/s",
+          "density": "kg/m3",
+          "length": "m",
+          "area": "m2",
+          "speed": "m/s",
+          "momentum_flux": "N",
+          "gas_fractions": "dimensionless_gas_phase",
+          "phase_fractions": "dimensionless_total_mass"
+        },
+        "molar_masses_kg_mol": {
+          "C3": 0.044097000000000004,
+          "N2": 0.028013000000000003,
+          "O2": 0.031999,
+          "AR": 0.039948000000000004,
+          "H2O": 0.018015
+        },
+        "source_case": {
+          "case_id": "H03",
+          "mode": "PH",
+          "energy_target_enforced": true,
+          "assumption": {
+            "concentration_feed_basis": "wet",
+            "counterfactual_dry": false,
+            "feed_pressure_Pa": 1115750.0,
+            "feed_temperature_K": 286.45,
+            "outlet_speed_prescribed_m_s": 18.1
+          }
+        },
+        "source_energy": {
+          "thermal_in_W": -191945.4923830654,
+          "ambient_incoming_kinetic_W": 29.236502376411455,
+          "propane_feed_kinetic_W_assumed": 0.0,
+          "outgoing_kinetic_W": 1776.575211935778,
+          "external_heat_W_assumed": 0.0,
+          "work_W_assumed": 0.0,
+          "potential_change_W_assumed": 0.0,
+          "target_outgoing_thermal_W": -193692.83109262475
+        },
+        "provenance": {
+          "executed_utc": "2026-11-08T12:54:25.085468+00:00",
+          "python": "3.13.6",
+          "platform": "Windows-11-10.0.26300-SP0",
+          "thermopack_native_sha256": {
+            "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+          },
+          "packages": {
+            "thermopack": "2.2.3",
+            "numpy": "2.5.4",
+            "scipy": "1.18.1"
+          },
+          "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+          "source_sha256": {
+            "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+            "__main__.py": "7b8759301b281dc8c0f93c7155d3fe4583e80bb1a489cf8a3b162b408c101ab7",
+            "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
+            "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+            "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+            "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+            "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
+            "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+            "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
+            "study.py": "684b4bc3105710774eadd493d3bb4482d1ba44a18d8512aaa8ab72b2cb1b2bd1",
+            "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+          }
+        },
+        "evidence_status": {
+          "source": "conditional reduced-model calculation",
+          "geometry": "assumed uniform rectangular inlet",
+          "pressure": "assumed downstream absolute pressure",
+          "enthalpy": "same reference as source calculation; not an absolute energy zero"
+        },
+        "boundary": {
+          "pressure_Pa": 102500.0,
+          "ambient_static_pressure_Pa": 102500.0,
+          "excess_pressure_Pa": 0.0,
+          "temperature_K": 204.26959077834132,
+          "total_component_mass_kg_s": {
+            "C3": 3.0,
+            "N2": 5.8844713173880425,
+            "O2": 1.803114400475814,
+            "AR": 0.1003754935409234,
+            "H2O": 0.05771023901356947
+          },
+          "total_mass_kg_s": 10.84567145041835,
+          "gas_mass_kg_s": 10.787979504543266,
+          "ice_mass_kg_s": 0.05769194587508411,
+          "liquid_propane_mass_kg_s": 0.0,
+          "liquid_water_mass_kg_s": 0.0,
+          "gas_mole_fractions": {
+            "C3": 0.20190080142701558,
+            "N2": 0.6234098526527878,
+            "O2": 0.16722942950752132,
+            "AR": 0.00745690285305189,
+            "H2O": 3.0135596234566677e-06
+          },
+          "gas_mass_fractions": {
+            "C3": 0.27808729139099453,
+            "N2": 0.5454655633068127,
+            "O2": 0.16714106656547204,
+            "AR": 0.009304383040276552,
+            "H2O": 1.6956964441444593e-06
+          },
+          "phase_mass_fractions": {
+            "gas": 0.9946806478382804,
+            "ice": 0.005319352161719666,
+            "liquid_propane": 0.0,
+            "liquid_water": 0.0
+          },
+          "bulk_density_kg_m3": 1.9425105687381738,
+          "bulk_volume_flow_m3_s": 5.583326868313276,
+          "thermal_enthalpy_flux_W": -193692.83109217486,
+          "thermal_enthalpy_J_kg": -17858.99858553281,
+          "enthalpy_reference": "Reduced ThermoPack/reference-saturation closure; map species and phase offsets before any different property package.",
+          "kinetic_energy_flux_W": 1776.575211935778,
+          "total_enthalpy_plus_kinetic_flux_W": -191916.2558802391,
+          "speed_m_s": 18.1,
+          "velocity_xyz_m_s": [
+            9.049999999999999,
+            15.675059808498341,
+            0.0
+          ],
+          "advective_momentum_flux_magnitude_N": 196.30665325257215,
+          "pressure_thrust_assumption": "Zero excess-pressure thrust; advective momentum only.",
+          "normal_azimuth_deg": 30.0,
+          "window_area_m2": 0.30847109769686604,
+          "window_width_m": 0.7854566795143652,
+          "window_height_m": 0.3927283397571826,
+          "aspect_ratio_width_to_height": 2.0,
+          "window_centre_xyz_m": [
+            2.5,
+            4.330127018922193,
+            0.5
+          ],
+          "coordinates": "X east; Y magnetic north; Z up; origin original nozzle",
+          "source_profile": "Assumed uniform top hat; common phase velocity and temperature"
+        }
+      },
+      "audit": {
+        "schema_version": 1,
+        "passed": true,
+        "handoff_id": "EEC550-H03-HANDOFF-v2",
+        "scope": "Arithmetic contract checks only; not transport or physical validation",
+        "checks": [
+          {
+            "name": "ambient static pressure",
+            "absolute_residual": 0.0,
+            "tolerance": 0.00010250000000000001,
+            "passed": true
+          },
+          {
+            "name": "excess pressure",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "phase mass sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.084567145041835e-08,
+            "passed": true
+          },
+          {
+            "name": "gas mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 9.946806478382804e-10,
+            "passed": true
+          },
+          {
+            "name": "ice mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 5.319352161719666e-12,
+            "passed": true
+          },
+          {
+            "name": "liquid_propane mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "liquid_water mass fraction",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "phase fraction sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "gas mole fraction sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "gas mass fraction sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "C3 gas mole/mass basis",
+            "absolute_residual": 5.551115123125783e-17,
+            "tolerance": 2.780872913909946e-10,
+            "passed": true
+          },
+          {
+            "name": "C3 total component",
+            "absolute_residual": 0.0,
+            "tolerance": 3.0000000000000004e-09,
+            "passed": true
+          },
+          {
+            "name": "N2 gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 5.454655633068127e-10,
+            "passed": true
+          },
+          {
+            "name": "N2 total component",
+            "absolute_residual": 8.881784197001252e-16,
+            "tolerance": 5.884471317388044e-09,
+            "passed": true
+          },
+          {
+            "name": "O2 gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 1.6714106656547205e-10,
+            "passed": true
+          },
+          {
+            "name": "O2 total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1.803114400475814e-09,
+            "passed": true
+          },
+          {
+            "name": "AR gas mole/mass basis",
+            "absolute_residual": 0.0,
+            "tolerance": 9.304383040276553e-12,
+            "passed": true
+          },
+          {
+            "name": "AR total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "H2O gas mole/mass basis",
+            "absolute_residual": 2.117582368135751e-22,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "H2O total component",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "component mass sum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.084567145041835e-08,
+            "passed": true
+          },
+          {
+            "name": "nominal propane feed",
+            "absolute_residual": 0.0,
+            "tolerance": 3.0000000000000004e-09,
+            "passed": true
+          },
+          {
+            "name": "source solved speed",
+            "absolute_residual": 0.0,
+            "tolerance": 1.8100000000000003e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity magnitude",
+            "absolute_residual": 0.0,
+            "tolerance": 1.8100000000000003e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 0",
+            "absolute_residual": 0.0,
+            "tolerance": 9.05e-09,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 1",
+            "absolute_residual": 0.0,
+            "tolerance": 1.5675059808498343e-08,
+            "passed": true
+          },
+          {
+            "name": "velocity direction 2",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "rectangular area",
+            "absolute_residual": 5.551115123125783e-17,
+            "tolerance": 1e-09,
+            "passed": true
+          },
+          {
+            "name": "window aspect ratio",
+            "absolute_residual": 0.0,
+            "tolerance": 2e-09,
+            "passed": true
+          },
+          {
+            "name": "volume flow",
+            "absolute_residual": 0.0,
+            "tolerance": 5.583326868313276e-09,
+            "passed": true
+          },
+          {
+            "name": "bulk density/mass",
+            "absolute_residual": 0.0,
+            "tolerance": 1.084567145041835e-08,
+            "passed": true
+          },
+          {
+            "name": "outgoing kinetic energy",
+            "absolute_residual": 0.0,
+            "tolerance": 1.7765752119357781e-06,
+            "passed": true
+          },
+          {
+            "name": "advective momentum",
+            "absolute_residual": 0.0,
+            "tolerance": 1.9630665325257215e-07,
+            "passed": true
+          },
+          {
+            "name": "specific thermal enthalpy",
+            "absolute_residual": 0.0,
+            "tolerance": 1.785899858553281e-05,
+            "passed": true
+          },
+          {
+            "name": "total energy flux",
+            "absolute_residual": 0.0,
+            "tolerance": 0.0001919162558802391,
+            "passed": true
+          },
+          {
+            "name": "adiabatic heat assumption",
+            "absolute_residual": 0.0,
+            "tolerance": 1e-12,
+            "passed": true
+          },
+          {
+            "name": "kinetic energy source ledger",
+            "absolute_residual": 0.0,
+            "tolerance": 1.7765752119357781e-06,
+            "passed": true
+          },
+          {
+            "name": "source target definition",
+            "absolute_residual": 0.0,
+            "tolerance": 0.00019369283109262476,
+            "passed": true
+          },
+          {
+            "name": "source thermal target",
+            "absolute_residual": 4.498870112001896e-07,
+            "tolerance": 0.00019369283109262476,
+            "passed": true
+          }
+        ]
+      }
+    }
+  ],
+  "excluded": {
+    "H04": "Nonadiabatic imposed-temperature audit; not a PH source."
+  },
+  "provenance": {
+    "executed_utc": "2026-11-08T12:54:25.085468+00:00",
+    "python": "3.13.6",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "thermopack_native_sha256": {
+      "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+    },
+    "packages": {
+      "thermopack": "2.2.3",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1"
+    },
+    "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+    "source_sha256": {
+      "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+      "__main__.py": "7b8759301b281dc8c0f93c7155d3fe4583e80bb1a489cf8a3b162b408c101ab7",
+      "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
+      "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+      "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+      "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+      "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
+      "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+      "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
+      "study.py": "684b4bc3105710774eadd493d3bb4482d1ba44a18d8512aaa8ab72b2cb1b2bd1",
+      "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+    }
+  }
+}

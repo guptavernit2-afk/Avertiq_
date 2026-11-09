@@ -124,3 +124,13 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Humidity initially increases ice flow; between sampled ratios 2 and 5 ice disappears and liquid water remains. Liquid water persists at ratio 100. No spatial, temporal or phase-rate inference.
 - Expanded suite passed 51 tests. All 16 arithmetic source handoff checks passed; independent review found no material inconsistency. Preserve original source/run records.
 - Close this research milestone with results and reproducible commands. Next: bounded phase-bearing dispersion implementation feasibility, rather than another general setup cycle. Nine-case CFD matrix remains held.
+
+## 2026-11-09 - Research workbench v1 implementation batch
+
+- User explicitly requested a substantial parallel implementation chunk, followed by commit/push; retain no app/CFD boundary.
+- Deliver reusable study, strict source-contract exports, offline report, verification-gated bundle CLI and Windows/Python 3.13 CI workflow.
+- Execute 4 source alternatives x 3 downstream RH settings x 11 ratios (132 states). Downstream RH is an assumed sensitivity, not source-feed or historical weather replacement.
+- Adopt normalized closure saturation for the new ambient RH builder. Preserve older raw-fit mixing results and document the reference distinction.
+- Export only adiabatic PH sources H00-H03, with 39 passed checks each; reject H04. Keep mixture component/phase/enthalpy/geometry consistency and explicit not-ready-for-CFD status.
+- Full local suite: 136 passed; generated bundle/property gate and report-script smoke check passed; dependency check passed. Browser visual QA timed out awaiting app approval.
+- Store curated first-party results and exact-byte manifest under data/public/eec550-research-bundle-v1. Next stage is conservative phase-bearing transport, not another source-setup loop.

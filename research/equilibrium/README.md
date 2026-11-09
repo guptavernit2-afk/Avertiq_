@@ -63,3 +63,22 @@ The verification-gated mixing command adds humid ambient air to H00 at 11 prescr
 ~~~
 
 Use a fresh output path. [Executed milestone and limitations](../../docs/research/EEC550_MIXING_MILESTONE.md). The expanded research suite has 51 passing tests. Earlier case outputs retain their original source hashes; new mixing output includes the extended CLI/module snapshot.
+
+## Reusable study and report bundle
+
+~~~powershell
+.\.venv\Scripts\python.exe -m avertiq_equilibrium bundle --output outputs/my-new-research-bundle
+.\.venv\Scripts\python.exe -m avertiq_equilibrium study --sources H00 H02 --relative-humidities 0 0.99 --ratios 0 0.1 1 10 --output outputs/my-study.json
+~~~
+
+The bundle verifies properties, executes the default 132-state study, validates four reference-source exports and writes study.json, handoffs.json, verification.json, report.html and a SHA-256 manifest. Existing directories are refused. Open report.html locally; it needs no server or network.
+
+Public research APIs:
+- study.build_source / ambient_stream / solve_path / run_study: configurable isobaric thermal-enthalpy equilibrium paths.
+- handoff.export_handoff / validate_handoff: strict v2 source contracts; H04 is rejected.
+- report.render_report / write_report: offline HTML with embedded data.
+- bundle.create_bundle: verification-gated reproducible artifact generation.
+
+The complete suite now has 136 passing tests. Earlier run records keep their historical source hashes. New downstream RH uses the adopted normalized saturation curve; old mixing results are preserved. Bundle source exports are the four fixed 102500 Pa reference cases, independent of study subsets; use study for custom pressures.
+
+[Full workbench milestone](../../docs/research/WORKBENCH_V1.md). A GitHub workflow checks the standalone package on Windows/Python 3.13 and generates a research artifact; no deployment or CFD is configured.

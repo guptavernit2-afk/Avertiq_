@@ -79,3 +79,7 @@ The [handoff plan](research/EEC550_DISPERSION_HANDOFF.md) defines a conditional 
 ## Mixing research checkpoint
 
 The [executed 11-point mixing path](research/EEC550_MIXING_MILESTONE.md) conserves total component flow and thermal enthalpy as declared humid air is added to H00. It tests the reduced closure beyond the initial source and reveals changing ice/liquid-water phases. It does not validate relaxation times, transport, distance or dilution rates. The suite now has 51 passing tests; 16 additional handoff arithmetic checks passed. No dispersion or Adoshi validation claim follows.
+
+## Research workbench v1
+
+The [implemented workbench](research/WORKBENCH_V1.md) extends the verified source calculation to 132 conditional equilibrium states with fixed source interpretations and declared downstream RH sensitivities. The complete local suite passes 136 tests; each of four exported reference-source contracts passes 39 checks. This establishes repeatable numerical source/mixing accounting and a strict interface, not a validated transport closure. The offline report is tested for data safety, structure and filtering; browser layout inspection remains unverified. Original measurement records are unchanged.

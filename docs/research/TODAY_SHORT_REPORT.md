@@ -1,17 +1,19 @@
-# Today's checkpoint report
+# Latest completed batch
 
-8 November 2026.
+9 November 2026, continuing the 8 November session.
 
-**Goal:** a tanker incident scenario-to-map-to-handover demo. We are finishing its first physics research milestone; no app or dispersion model exists yet.
+**Built:** a reusable local equilibrium research workbench.
 
-**Completed together:**
-- Clear demo scope and checkpoint board.
-- Warm-air mixing calculation: 11 states, conserving mass and thermal enthalpy.
-- 16 source handoff checks and independent review.
-- Expanded research suite: 51 tests passed.
+- One-command study, source export and offline report.
+- 132 calculated states across 12 source/humidity paths.
+- Four source contracts, each passing 39 checks.
+- 136 passing Python tests; report-filter smoke check passed.
+- Versioned results, provenance, checksums and CI workflow saved.
 
-**Useful finding:** humid mixing initially creates more ice; later it melts, while liquid water remains. A gas-only inlet still needs justification.
+**Useful result:** humid mixing can produce more ice before melting; liquid water can remain afterwards.
 
-**Next session:** decide one practical phase-bearing dispersion implementation route. No more general setup for this milestone. No app or CFD runs today.
+**Next:** phase-bearing transport implementation. There is no dispersion model or tanker app yet.
 
-[Checkpoint board](../PROJECT_CHECKPOINTS.md) | [Detailed results](EEC550_MIXING_MILESTONE.md)
+Browser visual inspection timed out; report structure and filtering checks passed.
+
+[Open report](../../data/public/eec550-research-bundle-v1/report.html) | [Full milestone](WORKBENCH_V1.md) | [Checkpoints](../PROJECT_CHECKPOINTS.md)

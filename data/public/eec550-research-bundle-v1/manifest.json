@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "kind": "Avertiq standalone equilibrium research bundle",
+  "scope": "0D research only; no CFD, spatial plume, app or safety validation.",
+  "verification_passed": true,
+  "source_contracts_passed": 4,
+  "study_options_requested": {},
+  "hash_basis": "SHA-256 of exact artifact bytes; manifest excludes itself.",
+  "files": {
+    "handoffs.json": {
+      "sha256": "4012cb704296d212f703dab51fd17a2d4800a90d1da79db01a33d695bd53ee2f",
+      "bytes": 56683
+    },
+    "report.html": {
+      "sha256": "cb029d68c7e52fb43d6c1c4c34df13b964d267506b66516543e84408a5813cf1",
+      "bytes": 371702
+    },
+    "study.json": {
+      "sha256": "beb35cae79310fc81a6edc2d117e84f772d140af78206031c5555eb950487c6e",
+      "bytes": 339235
+    },
+    "verification.json": {
+      "sha256": "37f5e4a78d3e9cd046b67776c7967abd86d49ba1af1268de8e5a136909f4f999",
+      "bytes": 8748
+    }
+  },
+  "provenance": {
+    "executed_utc": "2026-11-08T12:54:25.059331+00:00",
+    "python": "3.13.6",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "thermopack_native_sha256": {
+      "thermopack/thermopack.dll": "1868ea5d92230d38523f436923e7845d5495a3b5b101b076ac3a2ff27b539b76"
+    },
+    "packages": {
+      "thermopack": "2.2.3",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1"
+    },
+    "source_hash_basis": "UTF-8 text normalized to LF for Git/platform reproducibility",
+    "source_sha256": {
+      "__init__.py": "f962cfcfafa426c7b6071f8b44bc478eafa2cef925d65d4b555175da94a6cfe4",
+      "__main__.py": "7b8759301b281dc8c0f93c7155d3fe4583e80bb1a489cf8a3b162b408c101ab7",
+      "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
+      "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
+      "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
+      "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+      "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
+      "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
+      "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
+      "study.py": "684b4bc3105710774eadd493d3bb4482d1ba44a18d8512aaa8ab72b2cb1b2bd1",
+      "verification.py": "8091ec0ff18ec3a40ee6f95a67c29e4250f941ff71d031cf06b63574834a357b"
+    }
+  }
+}

@@ -53,3 +53,9 @@ The [short handoff decision](docs/research/EEC550_DISPERSION_SUMMARY.md) selects
 [Scope and checkpoint board](docs/PROJECT_CHECKPOINTS.md) | [Today's short report](docs/research/TODAY_SHORT_REPORT.md)
 
 Completed the standalone mixing milestone: 11 conditional states, 16 source handoff checks and 51 passing research tests. Mixing retains changing water phases; no spatial dispersion or app exists yet. Next is one bounded dispersion implementation feasibility decision.
+
+## Working research workbench
+
+[Open the offline results report](data/public/eec550-research-bundle-v1/report.html) | [Latest short report](docs/research/TODAY_SHORT_REPORT.md)
+
+The reusable study/bundle commands now run 132 conditional states, export four checked source contracts and produce an offline report with provenance and checksums. The complete research suite passes 136 tests. See [workbench v1](docs/research/WORKBENCH_V1.md) for commands and limits. No dispersion solver or product application exists yet.

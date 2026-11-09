@@ -63,3 +63,7 @@ The structured input record is now schema version 2. It retains original values 
 ## Executed mixing milestone and handoff checks
 
 [eec550-mixing-results.json](eec550-mixing-results.json) contains 11 executed conditional 0D H00/ambient thermal-enthalpy equilibrium states, with provenance. It is not CFD or a plume prediction. [eec550-handoff-checks.json](eec550-handoff-checks.json) records 16 passed arithmetic boundary checks; these are not physical validation. [Milestone report](../../docs/research/EEC550_MIXING_MILESTONE.md).
+
+## Research workbench bundle v1
+
+[eec550-research-bundle-v1](eec550-research-bundle-v1/report.html) contains the executed 132-state study, four v2 source contracts with audits, property verification, offline HTML and exact-byte checksums. These are first-party research outputs, not external measurement data or CFD predictions. LF rules preserve manifest hashes across Git checkouts. [Milestone and interpretation](../../docs/research/WORKBENCH_V1.md).

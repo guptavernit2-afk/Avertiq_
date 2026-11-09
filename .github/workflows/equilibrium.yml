@@ -1,0 +1,43 @@
+name: Standalone equilibrium research
+
+on:
+  push:
+    paths:
+      - 'research/equilibrium/**'
+      - '.github/workflows/equilibrium.yml'
+  pull_request:
+    paths:
+      - 'research/equilibrium/**'
+      - '.github/workflows/equilibrium.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-research:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: research/equilibrium/requirements.lock.txt
+      - name: Install pinned research dependencies
+        run: |
+          python -m pip install -r research/equilibrium/requirements.lock.txt
+          python -m pip install --no-deps -e research/equilibrium
+          python -m pip check
+      - name: Test equilibrium, source contracts and reports
+        run: python -m pytest research/equilibrium -q --junitxml=outputs/ci-tests.xml
+      - name: Build verified research bundle
+        run: python -m avertiq_equilibrium bundle --output outputs/ci-research
+      - name: Save research artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: standalone-research
+          path: outputs/
+          retention-days: 7
+          if-no-files-found: error
