@@ -3,7 +3,7 @@
   "passed": true,
   "model": "ThermoPack C3 NIST_MEOS / ideal carrier gas; IAPWS-ice and NIST-water saturation Gibbs closure",
   "provenance": {
-    "executed_utc": "2026-11-08T12:54:24.806294+00:00",
+    "executed_utc": "2026-11-09T02:43:55.271703+00:00",
     "python": "3.13.6",
     "platform": "Windows-11-10.0.26300-SP0",
     "thermopack_native_sha256": {
@@ -21,7 +21,7 @@
       "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
       "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
       "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
-      "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+      "handoff.py": "816225917d2baf35b8fb0c43034f6d38cfbe043528eaf3096b0e66280350e3eb",
       "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
       "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
       "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",

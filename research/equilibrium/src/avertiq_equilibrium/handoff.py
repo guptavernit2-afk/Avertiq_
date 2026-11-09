@@ -275,4 +275,3 @@ def validate_handoff(record):
     return {"schema_version": 1, "passed": True, "handoff_id": record.get("id"),
             "scope": "Arithmetic contract checks only; not transport or physical validation",
             "checks": checks}
-

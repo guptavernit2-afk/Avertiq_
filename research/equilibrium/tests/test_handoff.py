@@ -148,4 +148,3 @@ def test_valid_geometric_alternative_preserves_solved_energy(cases):
 def test_invalid_export_geometry_rejected(cases, kwargs):
     with pytest.raises(ValueError):
         export_handoff(cases["cases"][0], cases["molar_masses_kg_mol"], **kwargs)
-

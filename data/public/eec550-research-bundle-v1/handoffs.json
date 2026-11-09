@@ -7,7 +7,7 @@
         "schema_version": 2,
         "id": "EEC550-H00-HANDOFF-v2",
         "status": "conditional_candidate_not_solver_input",
-        "generated_utc": "2026-11-08T12:54:25.102042+00:00",
+        "generated_utc": "2026-11-09T02:43:55.545800+00:00",
         "CFD_run_authorized": false,
         "CFD_runs_completed": 0,
         "run_ready": false,
@@ -58,7 +58,7 @@
           "target_outgoing_thermal_W": -193794.19825587195
         },
         "provenance": {
-          "executed_utc": "2026-11-08T12:54:25.085468+00:00",
+          "executed_utc": "2026-11-09T02:43:55.531010+00:00",
           "python": "3.13.6",
           "platform": "Windows-11-10.0.26300-SP0",
           "thermopack_native_sha256": {
@@ -76,7 +76,7 @@
             "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
             "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
             "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
-            "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+            "handoff.py": "816225917d2baf35b8fb0c43034f6d38cfbe043528eaf3096b0e66280350e3eb",
             "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
             "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
             "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
@@ -404,7 +404,7 @@
         "schema_version": 2,
         "id": "EEC550-H01-HANDOFF-v2",
         "status": "conditional_candidate_not_solver_input",
-        "generated_utc": "2026-11-08T12:54:25.102257+00:00",
+        "generated_utc": "2026-11-09T02:43:55.546016+00:00",
         "CFD_run_authorized": false,
         "CFD_runs_completed": 0,
         "run_ready": false,
@@ -455,7 +455,7 @@
           "target_outgoing_thermal_W": -204460.95027879637
         },
         "provenance": {
-          "executed_utc": "2026-11-08T12:54:25.085468+00:00",
+          "executed_utc": "2026-11-09T02:43:55.531010+00:00",
           "python": "3.13.6",
           "platform": "Windows-11-10.0.26300-SP0",
           "thermopack_native_sha256": {
@@ -473,7 +473,7 @@
             "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
             "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
             "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
-            "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+            "handoff.py": "816225917d2baf35b8fb0c43034f6d38cfbe043528eaf3096b0e66280350e3eb",
             "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
             "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
             "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
@@ -801,7 +801,7 @@
         "schema_version": 2,
         "id": "EEC550-H02-HANDOFF-v2",
         "status": "conditional_candidate_not_solver_input",
-        "generated_utc": "2026-11-08T12:54:25.102416+00:00",
+        "generated_utc": "2026-11-09T02:43:55.546186+00:00",
         "CFD_run_authorized": false,
         "CFD_runs_completed": 0,
         "run_ready": false,
@@ -852,7 +852,7 @@
           "target_outgoing_thermal_W": 582517.6878143913
         },
         "provenance": {
-          "executed_utc": "2026-11-08T12:54:25.085468+00:00",
+          "executed_utc": "2026-11-09T02:43:55.531010+00:00",
           "python": "3.13.6",
           "platform": "Windows-11-10.0.26300-SP0",
           "thermopack_native_sha256": {
@@ -870,7 +870,7 @@
             "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
             "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
             "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
-            "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+            "handoff.py": "816225917d2baf35b8fb0c43034f6d38cfbe043528eaf3096b0e66280350e3eb",
             "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
             "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
             "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
@@ -1198,7 +1198,7 @@
         "schema_version": 2,
         "id": "EEC550-H03-HANDOFF-v2",
         "status": "conditional_candidate_not_solver_input",
-        "generated_utc": "2026-11-08T12:54:25.102578+00:00",
+        "generated_utc": "2026-11-09T02:43:55.546347+00:00",
         "CFD_run_authorized": false,
         "CFD_runs_completed": 0,
         "run_ready": false,
@@ -1249,7 +1249,7 @@
           "target_outgoing_thermal_W": -193692.83109262475
         },
         "provenance": {
-          "executed_utc": "2026-11-08T12:54:25.085468+00:00",
+          "executed_utc": "2026-11-09T02:43:55.531010+00:00",
           "python": "3.13.6",
           "platform": "Windows-11-10.0.26300-SP0",
           "thermopack_native_sha256": {
@@ -1267,7 +1267,7 @@
             "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
             "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
             "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
-            "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+            "handoff.py": "816225917d2baf35b8fb0c43034f6d38cfbe043528eaf3096b0e66280350e3eb",
             "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
             "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
             "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
@@ -1595,7 +1595,7 @@
     "H04": "Nonadiabatic imposed-temperature audit; not a PH source."
   },
   "provenance": {
-    "executed_utc": "2026-11-08T12:54:25.085468+00:00",
+    "executed_utc": "2026-11-09T02:43:55.531010+00:00",
     "python": "3.13.6",
     "platform": "Windows-11-10.0.26300-SP0",
     "thermopack_native_sha256": {
@@ -1613,7 +1613,7 @@
       "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
       "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
       "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
-      "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+      "handoff.py": "816225917d2baf35b8fb0c43034f6d38cfbe043528eaf3096b0e66280350e3eb",
       "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
       "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
       "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",

@@ -2,7 +2,7 @@
 
 ## Current authorization
 
-The user has authorized implementation and verification of the standalone ThermoPack-based equilibrium calculation under research/equilibrium, including water ice and mass/energy checks. This authorization excludes app and CFD implementation. Keep new work within that research scope unless the user expands it.
+The user has authorized implementation and verification of the standalone ThermoPack-based equilibrium calculation under research/equilibrium, including water ice and mass/energy checks. The completed workbench also includes configurable studies, strict source exports, offline research reports and automated research checks. This authorization excludes product-app and CFD implementation. Keep new work within that research scope unless the user expands it.
 
 ## Repository boundary
 

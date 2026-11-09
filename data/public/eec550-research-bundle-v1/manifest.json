@@ -8,24 +8,24 @@
   "hash_basis": "SHA-256 of exact artifact bytes; manifest excludes itself.",
   "files": {
     "handoffs.json": {
-      "sha256": "4012cb704296d212f703dab51fd17a2d4800a90d1da79db01a33d695bd53ee2f",
+      "sha256": "21c5d33330c0240707f8024a3a2028dc4157fd7ed61222a03deb0a948bb4bf15",
       "bytes": 56683
     },
     "report.html": {
-      "sha256": "cb029d68c7e52fb43d6c1c4c34df13b964d267506b66516543e84408a5813cf1",
+      "sha256": "ddec3307f7840c34f9154cd2170e1a266bcc1b5aaf5e7a72803461561e0d754f",
       "bytes": 371702
     },
     "study.json": {
-      "sha256": "beb35cae79310fc81a6edc2d117e84f772d140af78206031c5555eb950487c6e",
+      "sha256": "dcedb06960581c2dd7622a716018c54bbb368dc32d733ab599031853ceac60ee",
       "bytes": 339235
     },
     "verification.json": {
-      "sha256": "37f5e4a78d3e9cd046b67776c7967abd86d49ba1af1268de8e5a136909f4f999",
+      "sha256": "6d71956b6c93bdd2644d16feff0c9daa6deca660771ce4c4f3480eb505f08ed1",
       "bytes": 8748
     }
   },
   "provenance": {
-    "executed_utc": "2026-11-08T12:54:25.059331+00:00",
+    "executed_utc": "2026-11-09T02:43:55.505830+00:00",
     "python": "3.13.6",
     "platform": "Windows-11-10.0.26300-SP0",
     "thermopack_native_sha256": {
@@ -43,7 +43,7 @@
       "bundle.py": "e26c29d5bf61a942fe9fede6ca2aeaa02f1436e7e86ac5361e63fbfbad50c275",
       "cases.py": "35e7d7b20e6c5631dd72956e11879c04ccb0b94888a721cdbc20653f86027096",
       "equilibrium.py": "613be4c460d056b30646d04a00339a6c814f1763f3ff5bd75a89e78f4d3f0d53",
-      "handoff.py": "2baf05273825c1536f7bc6db8297a5c13800077068d8090e88ebba6917c3a6db",
+      "handoff.py": "816225917d2baf35b8fb0c43034f6d38cfbe043528eaf3096b0e66280350e3eb",
       "mixing.py": "2ef450b6089142baab05d46a71754e559bb4845b6a79e7776affde9a123fd565",
       "properties.py": "cb45e68f7e0e8f324d42b3ccf04523dfc37b8c58e22fdb5d7831c377119808fe",
       "report.py": "a49ee244728c1145651b69914324b66306b7445653522cff8d70daadd75aa41d",
