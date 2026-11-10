@@ -1,0 +1,10 @@
+import { mkdirSync, copyFileSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+const root = process.cwd();
+const pkg = JSON.parse(readFileSync(resolve(root, 'node_modules/maplibre-gl/package.json'), 'utf8'));
+if (pkg.version !== '6.17.0') throw new Error('Review the map worker integration before changing the pinned MapLibre version.');
+const destination = resolve(root, 'public/vendor/maplibre');
+mkdirSync(destination, { recursive: true });
+for (const name of ['maplibre-gl-worker.mjs', 'maplibre-gl-shared.mjs']) copyFileSync(resolve(root, 'node_modules/maplibre-gl/dist', name), resolve(destination, name));
+copyFileSync(resolve(root, 'node_modules/maplibre-gl/LICENSE.txt'), resolve(destination, 'LICENSE.txt'));
+console.log(`Prepared unchanged MapLibre ${pkg.version} worker and BSD licence.`);

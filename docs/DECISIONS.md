@@ -207,3 +207,19 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Identify Sandia HyRAM+ as a candidate methane/propane release/flame/selected-overpressure engine; public Python API and GPLv3 identity were reviewed. No installation, pin, execution, complete validation-report review, LPG-mixture/propylene acceptance or terrain capability established.
 - Prepare an assessment interface, chemical/storage matrix, source/threshold handling and validation ladder. Reference defaults are not adopted operating thresholds, incident probabilities or Indian regulatory compliance.
 - Close bounded literature/design collection for the first fixture-based website. Continue model development/validation through explicit work packages, not another unlimited background-research loop. Commit/push success is verified separately.
+
+## 2026-11-10 - First website dashboard implementation
+
+- User explicitly authorized building the preview dashboard and 3D map while retaining clear demo labels. Update the research-only authorization boundary for D-001; leave solver/prototype code unchanged.
+- Use the Sites Vinext starter with a client dashboard, pinned MapLibre 6.17.0, attributed OSM raster roads and Mapterhorn terrain. Retain the previously collected approximate tunnel midpoint; do not claim surveyed accident coordinates.
+- Use prepared A/B polygons and fictional place markers, with per-input fixture invalidation and no calculated threshold/distance. LPG/CNG are input options only; no fixture or model support is invented for them.
+- Add browser-local state, immutable revision snapshots, synthetic observations, demo reviews and labelled HTML/JSON handover. Public view remains an unpublished visual preview, not access control or an agency notification.
+- Seven domain tests, TypeScript and production build passed; browser walkthrough verified terrain, controls, invalidation, revision preservation, observation/export and reload persistence. More specific map-container CSS and a separately served worker repair observed map integration failures.
+- Keep Site publishing source isolated under ignored outputs; never repoint the Avertiq GitHub origin or include research raw/private data. Record deployment success separately from creation. See [milestone](WEBSITE_MILESTONE.md).
+
+## 2026-11-10 - Local-first handoff and backend clarification
+
+- User requested localhost rather than the hosted version. Future development/previews are local-only unless publication is explicitly requested; retain the existing Site identity without redeploying it.
+- User requested commit/push of the first dashboard and reported that the raw interface does not explain the incident or intended assessment clearly enough.
+- Document the current disconnected browser-fixture/Python-research architecture and the proposed incident-to-assessment backend chain in [backend workflow](BACKEND_WORKFLOW.md). No new backend or physics implementation is claimed.
+- Recommend one persistent D-001 software slice with an honestly illustrative result adapter, then a separately qualified calculation adapter. Improve the interface explanation alongside that chain rather than adding unexplained map layers.

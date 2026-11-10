@@ -2,7 +2,9 @@
 
 Chemical transport incident assessment.
 
-**Current stage, 10 November 2026:** evidence-and-design handoff for the first website. Confirmed research scope is **LPG, CNG and reported propylene**, including transport/storage and light/heavy release behaviour. Existing open-boundary 2D research is propane-based; spatial convergence and field accuracy remain unestablished. No product app exists.
+**Website implementation, 10 November:** the first D-001 dashboard now lives in [website/](website/README.md), including a geographic 3D map and clearly labelled illustrative assessments. See [implemented behaviour and verification](docs/WEBSITE_MILESTONE.md). No physics engine or operational response system is connected. The research handoff below describes the earlier collection milestone and the remaining calculation limits.
+
+**Research baseline, 10 November 2026:** evidence-and-design handoff for the first website. Confirmed research scope is **LPG, CNG and reported propylene**, including transport/storage and light/heavy release behaviour. Existing open-boundary 2D research is propane-based; spatial convergence and field accuracy remain unestablished. The first website implementation is described above.
 
 Start with the [research handoff](docs/research/RESEARCH_HANDOFF_2026-11-10.md), [chemical/storage scope](docs/research/CHEMICAL_AND_STORAGE_SCOPE.md), [physics requirements](docs/research/PHYSICS_REQUIREMENTS.md), [terrain/validation plan](docs/research/TERRAIN_AND_VALIDATION.md) and [assessment interface](docs/ASSESSMENT_CONTRACT.md). The source register adds 33 targeted records with review/access limits. This completes a bounded literature/design review, not all physics development. The next product milestone is the D-001 fixture-based workflow; calculated hazard layers have separate readiness gates.
 

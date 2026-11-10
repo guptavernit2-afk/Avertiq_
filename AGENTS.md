@@ -2,7 +2,11 @@
 
 ## Current authorization
 
-The user has authorized research implementation of equilibrium thermodynamics, conservative thermal flow and integration of heat/phase feedback with 2D buoyancy, and open atmospheric boundaries, EEC550 source/weather setup and grid/time-step studies, with parallel checkpoints, mathematical tests, commits and push. A new conservative compressible 2D formulation may replace the frozen-endpoint incompressible approximation for this stage; keep the old solver as a regression baseline. Distinguish bounded synthetic verification from EEC550 field validation. No product application is authorized.
+On 10 November 2026 the user explicitly authorized building the website dashboard and 3D map from the preview, with demo assessments clearly labelled until the physics is ready. This supersedes the earlier no-product-application boundary for the D-001 website only. Keep the research code and original SurakshaMitra prototype unchanged. Build incident inputs, geographic context, illustrative A/B revisions, synthetic observations and handover; do not enable unqualified hazard calculations or live dispatch. Site source synchronization/private preview publication is part of the website workflow. Preserve this repository's Git origin; any Sites source checkout must be isolated under outputs, not repoint this repository.
+
+The user subsequently requested localhost instead of the hosted preview. Future development and previews are local-only unless the user explicitly requests publication. The user requested committing and pushing this first dashboard to the existing Avertiq repository, and asked to clarify the backend/workflow before extending the raw interface. The existing hosted copy is not authorization for further deployments.
+
+Earlier research authorization covers equilibrium thermodynamics, conservative thermal flow and integration of heat/phase feedback with 2D buoyancy, and open atmospheric boundaries, EEC550 source/weather setup and grid/time-step studies, with parallel checkpoints, mathematical tests, commits and push. A new conservative compressible 2D formulation may replace the frozen-endpoint incompressible approximation for this stage; keep the old solver as a regression baseline. Distinguish bounded synthetic verification from EEC550 field validation. The newer D-001 website authorization above supersedes the earlier research-only boundary.
 
 ## Repository boundary
 
@@ -25,4 +29,4 @@ Update the relevant planning record with substantive decisions. Keep the roadmap
 
 ## Verification
 
-For documentation changes, check links, paths, CSV structure, scope consistency, and Git status. For the equilibrium research package, run its property checks and meaningful conservation/phase-limit tests. Numerical verification is not experimental validation. For flow changes, verify projection/divergence, hydrostatic balance, buoyancy controls, scalar/density conservation and timestep stability. No product application is authorized.
+For documentation changes, check links, paths, CSV structure, scope consistency, and Git status. For the equilibrium research package, run its property checks and meaningful conservation/phase-limit tests. Numerical verification is not experimental validation. For flow changes, verify projection/divergence, hydrostatic balance, buoyancy controls, scalar/density conservation and timestep stability. For the website, verify fixture invalidation, immutable revisions, labelled exports, persistence and the core browser walkthrough; report map/network limitations honestly.

@@ -12,7 +12,7 @@ Confirmed target: **LPG, CNG and reported propylene**, transport/storage, light/
 | EEC550 field comparison | Not executed | Matched all-receptor concentration comparison after numerical/model gates |
 | CNG / LPG model route | Candidate identified | [HyRAM+ audit](research/CHEMICAL_AND_STORAGE_SCOPE.md#engine-candidate-hyram); full version-specific validity review and reproduced runs remain |
 | Fire / blast / terrain | Requirements reviewed; no Avertiq assessment implementation | Scenario-specific methods, applicable benchmarks and limitations |
-| First website | Ready for bounded implementation as next work package | D-001 incident-to-map-to-revision-to-handover using labelled fixtures; no app code in this review |
+| First website | Implemented and privately published after the research review | [D-001 milestone](WEBSITE_MILESTONE.md): 3D geographic context, labelled fixtures, revision/observation workflow and handover; physics remains unconnected |
 
 No further general literature collection blocks the first fixture-based website. Real source sheets, mentor model/version decisions and validation remain necessary for calculated layers. Details: [chemical scope](research/CHEMICAL_AND_STORAGE_SCOPE.md), [physics](research/PHYSICS_REQUIREMENTS.md), [terrain](research/TERRAIN_AND_VALIDATION.md), [assessment interface](ASSESSMENT_CONTRACT.md).
 
