@@ -1,5 +1,7 @@
 # Initial scenario definitions
 
+These are the historical propylene/Adoshi-inspired cases. The confirmed 10 November 2026 scope adds LPG/CNG and storage, as defined in the [chemical/storage matrix](research/CHEMICAL_AND_STORAGE_SCOPE.md). No numerical LPG-mixture or CNG input sheet is accepted yet; do not reuse a propane EEC550 source or the D-001 illustration as one.
+
 All three cases are hypothetical training cases inspired by Adoshi. Numeric values remain unset until source-model selection and review.
 
 | ID | Intent | Controlled comparison |

@@ -196,3 +196,14 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Carry simulation labels through maps, observations and exports; unsupported edits mark a fixture outdated.
 - Track product walkthrough acceptance separately from the calculation-validation milestone so both workstreams can progress.
 - Update planning documents only. Application implementation remains pending.
+
+## 2026-11-10 - Relevant research collection and website handoff
+
+- User requested remaining relevant research to be collected honestly, committed and pushed before moving to the build. No product implementation is included in this work package.
+- User clarified the mentor's focus as LPG, CNG and the Mumbai-Pune incident chemical (reported propylene), including storage and lighter/heavier gas behaviour. Do not invent a fourth selected chemical; preserve the first propylene D-001 walkthrough.
+- Add targeted primary-source records SRC-062 through SRC-094 with review/access status. Distinguish full targeted reads, indexed excerpts, discovered-but-unretrieved reports and chemical-specific current values not obtained.
+- Specify separate source/dispersion, thermal-radiation, VCE and mechanical-failure branches. Treat terrain rendering separately from terrain-dependent flow. Existing heat/phase code is not a fire-radiation model.
+- Preserve conditional propane results and unresolved grid/time/domain/atmospheric/finite-width gates. No EEC550 scores, new hazard distances, new solver runs or newly passed tests are claimed.
+- Identify Sandia HyRAM+ as a candidate methane/propane release/flame/selected-overpressure engine; public Python API and GPLv3 identity were reviewed. No installation, pin, execution, complete validation-report review, LPG-mixture/propylene acceptance or terrain capability established.
+- Prepare an assessment interface, chemical/storage matrix, source/threshold handling and validation ladder. Reference defaults are not adopted operating thresholds, incident probabilities or Indian regulatory compliance.
+- Close bounded literature/design collection for the first fixture-based website. Continue model development/validation through explicit work packages, not another unlimited background-research loop. Commit/push success is verified separately.

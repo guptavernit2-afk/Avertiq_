@@ -1,5 +1,23 @@
 # Avertiq: scope and checkpoints
 
+## Current checkpoint: 10 November 2026
+
+Confirmed target: **LPG, CNG and reported propylene**, transport/storage, light/heavy release behaviour, and applicable dispersion, fire-radiation and blast assessments. Terrain-dependent calculations are a separate model milestone, not provided by 3D rendering.
+
+| Checkpoint | Current status | Exit / next evidence |
+|---|---|---|
+| Evidence and first product design | Bounded review complete | [Handoff](research/RESEARCH_HANDOFF_2026-11-10.md), 33 additional source records with access limits and defined first-build acceptance |
+| Propane source and flow research | Implemented and numerically checked within reduced scope | Existing 295-test milestone and 283 saved atmospheric checks; not a reviewed propylene/CNG/LPG-mixture engine |
+| Developed flat-ground plume | Incomplete | Source/grid/domain/runtime, atmospheric transport and finite-width/crosswind resolution |
+| EEC550 field comparison | Not executed | Matched all-receptor concentration comparison after numerical/model gates |
+| CNG / LPG model route | Candidate identified | [HyRAM+ audit](research/CHEMICAL_AND_STORAGE_SCOPE.md#engine-candidate-hyram); full version-specific validity review and reproduced runs remain |
+| Fire / blast / terrain | Requirements reviewed; no Avertiq assessment implementation | Scenario-specific methods, applicable benchmarks and limitations |
+| First website | Ready for bounded implementation as next work package | D-001 incident-to-map-to-revision-to-handover using labelled fixtures; no app code in this review |
+
+No further general literature collection blocks the first fixture-based website. Real source sheets, mentor model/version decisions and validation remain necessary for calculated layers. Details: [chemical scope](research/CHEMICAL_AND_STORAGE_SCOPE.md), [physics](research/PHYSICS_REQUIREMENTS.md), [terrain](research/TERRAIN_AND_VALIDATION.md), [assessment interface](ASSESSMENT_CONTRACT.md).
+
+## Historical checkpoint records
+
 8 November 2026. This is the working finish line, not a promise of production readiness.
 
 ## What we are building

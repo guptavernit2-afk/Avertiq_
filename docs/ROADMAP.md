@@ -1,25 +1,30 @@
 # Short roadmap
 
-| Order | Work | Evidence of completion |
+Updated 10 November 2026. First interface and physical-model readiness have separate finish lines.
+
+## Confirmed direction
+
+Chemical transport and storage incident assessment for **LPG, CNG and reported propylene**, including light/heavy release behaviour. The wider physics target includes applicable gas dispersion, fire radiation, blast overpressure and terrain-dependent dispersion. No fourth chemical is selected. The first product case remains one stationary propylene-tanker training walkthrough, D-001.
+
+## Work packages
+
+| Order / stream | Work | Evidence of completion |
 |---|---|---|
-| 1 | Establish repository and scope | Planning baseline committed; no application code |
-| 2 | Collect public evidence | Source register updated; incident facts cross-checked; approximate location documented |
-| 3 | Prepare geographic and weather context | Corridor map, elevation coverage, historical weather source, time zone and resolution recorded |
-| 4 | Define hypothetical scenarios | Three internally consistent input sheets reviewed; unknowns and synthetic data identified |
-| 5 | Establish calculation and comparison method | Applicable research model and experimental inputs reviewed; PHAST benchmark separately agreed if available |
-| 6 | Implement after user instruction | Small, reviewable milestones: incident form, map/context, assessment workflow, observations, handover |
-| 7 | Evaluate | Reproducible results, discrepancy report, and tabletop feedback |
+| Research handoff | Completed bounded evidence/design review | [Handoff](research/RESEARCH_HANDOFF_2026-11-10.md), chemical/storage matrix, physics requirements, result contract and 33 additional source records with access limits |
+| First website - next | Build D-001 incident, inputs, map/context, observation/revision and handover | Five-screen acceptance; illustration and evidence labels; preserved revisions; unsupported edits invalidate fixtures |
+| Chemical model selection | Audit a supported methane CNG-reference and propane LPG-surrogate workflow; review propylene property/source route separately | Version-specific validity, input sheet, reference reproduction, licence/dependencies and measured runtime; no assumed mixture support |
+| Dispersion qualification | Resolve existing numerical/model limitations or select a demonstrably applicable alternative | Source/grid/domain/time/boundary evidence; developed plume; suitable atmosphere and finite-width/crosswind treatment |
+| Experimental comparison | Compare EEC550 with frozen source/sampling rules | All declared receptors, matched gas basis/units/heights/averaging, discrepancy report and explicit unresolved assumptions |
+| Fire / explosion | Complete one bounded applicable scenario at a time | Reviewed source/ignition/failure assumptions, model/version and matched reference evidence before enabling each layer |
+| Terrain physics | Qualify a 3D wind/dispersion route | Measured terrain-wind test and relevant dense-gas terrain comparison, plus site-data and runtime assessment |
+| User / agency evaluation | Tabletop review, then requirements for operational deployment | Workflow feedback, verified partner data, reviewed responsibilities/access and acceptance; no automatic evacuation or safe-route claim |
 
-## Current status
+## Current calculation limits
 
-Open boundaries and a [conditional EEC550 source/weather setup](research/OPEN_ATMOSPHERE_SUMMARY.md) run on the coupled 2D solver. The package passes 295 tests and 283 independent atmospheric checks. Actual grid/time studies are saved; spatial convergence is explicitly not established. Earlier baselines and public evidence remain preserved. No product app or EEC550 field validation exists.
+Existing research implements conditional propane equilibrium and coupled 2D thermal/phase/buoyancy flow with open boundaries. The saved checkpoint reports 295 tests and 283 atmospheric checks; no rerun is claimed for this documentation update. Main grid/time studies cover 0.001 s and do not establish spatial convergence. The slice omits lateral spread and projected crosswind. No EEC550 field comparison, terrain prediction, fire-radiation assessment or blast calculation has been accepted.
 
-## Next milestone
+A 3D landscape is geographic context initially. The first website uses labelled fixtures; it must not present the research solver as a validated real-time three-fuel engine. Unavailable calculations stay unavailable with reasons.
 
-Resolve the source vertically and study inlet compatibility/reflection, domain size and runtime scaling. Grid/time smoke studies show conservation but strongly mesh-dependent peak fields. The 2D slab omits crosswind/finite-width dispersion; longer atmospheric runs and appropriate dimensionality are required before receptor scoring.
+## Immediate handoff
 
-Do not promise schedules until data access and modelling dependencies are understood.
-
-## Transport milestone completed
-
-The [first 1D transport diagnostic](research/TRANSPORT_PROTOTYPE_SUMMARY.md) is implemented and tested. Next physical milestone: compatible variable-density momentum and buoyancy, then open-domain atmosphere/source checks before receptor comparison.
+Use the [product brief](PRODUCT_BRIEF.md), [assessment contract](ASSESSMENT_CONTRACT.md), [chemical/storage scope](research/CHEMICAL_AND_STORAGE_SCOPE.md), [physics requirements](research/PHYSICS_REQUIREMENTS.md) and [terrain/validation plan](research/TERRAIN_AND_VALIDATION.md). No further generic literature collection blocks the fixture-based build. Actual source sheets, mentor module/version choices and appropriate validation still gate calculated results. No completion date for all physics is established.

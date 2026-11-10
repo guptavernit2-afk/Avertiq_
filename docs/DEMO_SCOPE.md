@@ -1,5 +1,7 @@
 # Adoshi demo scope
 
+This document defines the **first walkthrough**, not the whole project. The 10 November 2026 [research scope](research/CHEMICAL_AND_STORAGE_SCOPE.md) additionally covers LPG/CNG, storage and light/heavy release behaviour, with separately qualified dispersion/fire/blast/terrain calculations. These remain later calculation milestones; they are not implemented by the initial map demo.
+
 ## Purpose
 
 Demonstrate how an emergency coordinator and a hazmat specialist can assemble incomplete information, compare documented release scenarios, inspect geographic context, and maintain a shared incident record.

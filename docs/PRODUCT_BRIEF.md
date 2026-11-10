@@ -1,5 +1,7 @@
 # Avertiq product brief
 
+Scope clarification, 10 November 2026: this is the first D-001 walkthrough. The confirmed wider research target includes LPG, CNG and reported propylene, transport/storage and light/heavy release behaviour. Use the [research handoff](research/RESEARCH_HANDOFF_2026-11-10.md) and [assessment interface](ASSESSMENT_CONTRACT.md) to preserve separate gas, fire-radiation and blast layers and their readiness limits. No new product code was written in this research review.
+
 ## Product goal
 
 Help a chemical-tanker incident coordinator and hazmat specialist assemble incomplete information, compare release scenarios, inspect potential affected areas on a map and prepare a traceable handover.

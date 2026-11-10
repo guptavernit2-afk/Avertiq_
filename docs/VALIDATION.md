@@ -1,5 +1,11 @@
 # Mathematics and validation plan
 
+## Current interpretation: 10 November 2026
+
+The dated milestone sections below preserve research history. Current scope is LPG, CNG and reported propylene across transport/storage. Implemented source/flow work is a reduced **propane** research model; it has no accepted CNG, LPG-mixture, propylene, blast, fire-radiation or terrain-prediction qualification. The latest saved numerical checkpoint reports 295 tests and 283 atmospheric checks; spatial convergence is not established and no EEC550 field comparison exists. No suite was rerun for the documentation-only handoff.
+
+Use the [physics requirements](research/PHYSICS_REQUIREMENTS.md), [chemical/storage scope](research/CHEMICAL_AND_STORAGE_SCOPE.md) and [terrain validation ladder](research/TERRAIN_AND_VALIDATION.md) for current model-selection and result-enabling gates. The first fixture-based website can proceed independently; no operational prediction accuracy follows from it.
+
 ## Calculation chain
 
 Tank/release conditions -> source term -> atmospheric dispersion -> threshold envelope -> geographic intersections.

@@ -2,7 +2,9 @@
 
 Chemical transport incident assessment.
 
-**Current stage:** open-boundary 2D thermal/phase/buoyancy research with conditional EEC550 inputs and executed grid/time studies. Spatial convergence is not established; no product app or EEC550 field validation.
+**Current stage, 10 November 2026:** evidence-and-design handoff for the first website. Confirmed research scope is **LPG, CNG and reported propylene**, including transport/storage and light/heavy release behaviour. Existing open-boundary 2D research is propane-based; spatial convergence and field accuracy remain unestablished. No product app exists.
+
+Start with the [research handoff](docs/research/RESEARCH_HANDOFF_2026-11-10.md), [chemical/storage scope](docs/research/CHEMICAL_AND_STORAGE_SCOPE.md), [physics requirements](docs/research/PHYSICS_REQUIREMENTS.md), [terrain/validation plan](docs/research/TERRAIN_AND_VALIDATION.md) and [assessment interface](docs/ASSESSMENT_CONTRACT.md). The source register adds 33 targeted records with review/access limits. This completes a bounded literature/design review, not all physics development. The next product milestone is the D-001 fixture-based workflow; calculated hazard layers have separate readiness gates.
 
 Avertiq starts with an **Adoshi-inspired training demo**: one stationary propylene tanker, real geographic context, and explicitly hypothetical release conditions. It does not reconstruct the historical gas cloud or provide operational clearance decisions.
 
@@ -16,7 +18,11 @@ Avertiq starts with an **Adoshi-inspired training demo**: one stationary propyle
 - [Decision history](docs/DECISIONS.md)
 - [Source register](data/source-register.csv)
 
-## Research collected
+## Research milestone history: 8-9 November 2026
+
+The entries below preserve the sequence of earlier milestones. Statements such as "no solver yet" describe that earlier stage; use the current handoff above for present status.
+
+### Initial research collection
 
 Start with the [short collection report](docs/research/2026-11-08-summary.md). Public weather data is tracked; larger raw terrain/map/experimental assets remain local with source URLs and checksums. Conditional thermodynamic results are available below; no field-dispersion comparison results exist.
 

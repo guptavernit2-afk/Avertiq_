@@ -36,6 +36,10 @@ Commit small redistributable fixtures only after review. Never commit proprietar
 
 ## Collection status
 
-First collection completed on 8 November 2026: 72 hourly ERA5 records; current OSM tunnel feature; one GLO-30 terrain tile; and one SMEDIS experimental archive (subsequently expanded and reviewed). The source register and data/public manifests record status and provenance. No verified accident coordinates, full road-network extract, real tanker record, field gas measurements, or physics results are available. See [research summary](research/2026-11-08-summary.md).
+First collection completed on 8 November 2026: 72 hourly ERA5 records; current OSM tunnel feature; one GLO-30 terrain tile; and one SMEDIS experimental archive (subsequently expanded and reviewed). The source register and data/public manifests record status and provenance. No verified accident coordinates, full road-network extract, real tanker record or Adoshi field gas measurements are available. Later conditional numerical research results exist; they are not measured accident data. See [initial research summary](research/2026-11-08-summary.md) and [current handoff](research/RESEARCH_HANDOFF_2026-11-10.md).
 
 SMEDIS follow-up: all three batches are now collected and header-screened; see [shortlist](research/SMEDIS_SHORTLIST.md). Case suitability and data issues were reviewed, but no predictions or experimental validation scores were computed.
+
+## Chemical and storage expansion: 10 November 2026
+
+Confirmed scope is LPG, CNG and reported propylene. Acquire supplier composition/SDS and asset-specific tank/cascade information rather than assigning one pure-fluid identity to a commercial mixture. No such partner records have been obtained. [Chemical/storage requirements](research/CHEMICAL_AND_STORAGE_SCOPE.md) define the missing fields and model-audit proposal. The current review adds references and specifications, not new raw experiment/terrain files or generated model outputs. A chemical-specific current DOE PAC record and several Sandia validation full texts remain unobtained; preserve that access status.
