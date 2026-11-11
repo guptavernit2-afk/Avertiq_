@@ -223,3 +223,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - User requested commit/push of the first dashboard and reported that the raw interface does not explain the incident or intended assessment clearly enough.
 - Document the current disconnected browser-fixture/Python-research architecture and the proposed incident-to-assessment backend chain in [backend workflow](BACKEND_WORKFLOW.md). No new backend or physics implementation is claimed.
 - Recommend one persistent D-001 software slice with an honestly illustrative result adapter, then a separately qualified calculation adapter. Improve the interface explanation alongside that chain rather than adding unexplained map layers.
+
+## 2026-11-11 - Mentor workflow diagrams
+
+- Save the simplified seven-step incident workflow and separate physics diagram in the user's Eraser account. Keep technical backend detail in the existing backend document so the presentation remains readable.
+- User requested committing and pushing the workflow to the existing Avertiq GitHub repository. Add versioned Eraser DSL sources, GitHub-rendered Mermaid diagrams, a workflow preview and a short glossary in the [workflow explainer](WORKFLOW_EXPLAINER.md); link it from the README.
+- Preserve the distinction between implemented browser-local demo, independent research and planned backend/qualified calculations. No application, solver, dispatch or deployment changes are included.

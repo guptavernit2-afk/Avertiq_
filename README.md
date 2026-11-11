@@ -12,6 +12,7 @@ Avertiq starts with an **Adoshi-inspired training demo**: one stationary propyle
 
 ## Read first
 
+- [Project workflow and physics diagrams for the mentor walkthrough](docs/WORKFLOW_EXPLAINER.md)
 - [One-page roadmap](docs/ROADMAP.md)
 - [Demo scope](docs/DEMO_SCOPE.md)
 - [Data collection plan](docs/DATA_PLAN.md)

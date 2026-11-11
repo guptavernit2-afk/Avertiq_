@@ -1,0 +1,29 @@
+// Mentor overview: target workflow, not an implemented emergency service.
+title Avertiq - the simple plan
+direction right
+colorMode pastel
+styleMode plain
+typeface clean
+textSize medium
+
+Report [label: "1. REPORT\nTruck or storage\nincident", color: orange]
+Inputs [label: "2. COLLECT\nChemical + tank + weather\nSave input revision", color: blue]
+Check [shape: diamond, label: "3. CHECK\nEnough evidence?\nMethod supported?", color: orange]
+Missing [label: "EXPLAIN THE GAP\nAsk for missing facts\nDo not invent a result", color: red]
+Assess [label: "4. ASSESS\nIllustrative demo today\nQualified physics later", color: purple]
+Map [label: "5. EXPLAIN ON MAP\nShow zone + meaning\nFlag nearby places", color: green]
+Review [label: "6. AUTHORITY REVIEW\nVerify evidence\nDecide response", color: green]
+Share [label: "7. HANDOVER\nRecord decisions\nOnly approved public notices", color: green]
+
+Report > Inputs
+Inputs > Check
+Check > Missing: No
+Check > Assess: Yes
+Assess > Map
+Map > Review
+Review > Share
+
+// Steps 2-7 describe the target process. Current incident state is browser-local.
+// New evidence restarts at step 2 with a new revision; the old result becomes stale.
+// Demo zones are illustrative, not calculated. A failed run produces a reason, not a zone.
+// No automatic evacuation or safe-route judgement. 3D terrain is visual context only.

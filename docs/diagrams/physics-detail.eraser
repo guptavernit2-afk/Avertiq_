@@ -1,0 +1,31 @@
+// Only justified branches with supported methods may run. Future integration.
+title Where physics fits - future calculations
+direction down
+colorMode pastel
+styleMode plain
+typeface clean
+textSize medium
+
+Cargo [label: "CHEMICAL + CONDITIONS\nLPG / CNG / propylene\nTransport or storage", color: blue]
+Source [label: "SOURCE TERM\nWhat escapes?\nHow fast and for how long?", color: blue]
+Select [shape: diamond, label: "SELECT A JUSTIFIED EVENT\nOnly supported methods\nNot every branch applies", color: orange]
+Gas [label: "GAS DISPERSION\nWhere gas spreads\nValley physics: later work", color: purple]
+Fire [label: "FIRE RADIATION\nHeat reaching\nnearby locations", color: purple]
+Blast [label: "EXPLOSION OVERPRESSURE\nPressure above ambient\nEligible explosion only", color: purple]
+Burst [label: "VESSEL FAILURE\nRupture + fragments\nSeparate model needed", color: purple]
+Output [label: "EXPLAIN RESULTS\nUnits + time + limitations\nMap and authority review", color: green]
+
+Cargo > Source
+Source > Select
+Select > Gas: Unignited release
+Select > Fire: Applicable fire
+Select > Blast: Applicable explosion
+Select > Burst: Applicable rupture
+Gas > Output
+Fire > Output
+Blast > Output
+Burst > Output
+
+// Missing inputs or unsupported conditions block a prediction; explain why.
+// Gas buoyancy depends on release conditions, not only chemical identity.
+// A 3D map is not a valley-flow model. Independent research is not field validated.
