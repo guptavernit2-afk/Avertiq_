@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { MapPin, Layers3, LocateFixed, Mountain, Info, RefreshCw } from 'lucide-react';
 import type { Map as MapLibreMap, GeoJSONSource, Marker } from 'maplibre-gl';
-import { DEMO_LOCATION, FIXTURES, PLACES, type PresetId } from '@/lib/demo';
+import { DEMO_LOCATION, FIXTURES, PLACES, type Inputs, type PresetId } from '@/lib/demo';
 
-type Props = { revision: PresetId; current: boolean; selected: string; onSelect: (id: string) => void; captureRef: { current: (() => string | undefined) | null }; focused: boolean; onFocus: () => void };
-export default function IncidentMap({ revision, current, selected, onSelect, captureRef, focused, onFocus }: Props) {
+type Props = { revision: PresetId; current: boolean; inputs: Inputs; assessmentStatus: string; selected: string; onSelect: (id: string) => void; captureRef: { current: (() => string | undefined) | null }; focused: boolean; onFocus: () => void };
+export default function IncidentMap({ revision, current, inputs, assessmentStatus, selected, onSelect, captureRef, focused, onFocus }: Props) {
   const container = useRef<HTMLDivElement>(null);
   const map = useRef<MapLibreMap | null>(null);
   const onSelectRef = useRef(onSelect);
@@ -85,11 +85,11 @@ export default function IncidentMap({ revision, current, selected, onSelect, cap
     <div className="map-toolbar"><div><span className="section-kicker">GEOGRAPHIC CONTEXT</span><h2>Incident map <span className="map-status">{ready ? 'Map connected' : 'Loading map'}</span></h2></div><div className="map-actions"><div className="segmented"><button aria-pressed={!tilted} onClick={() => setTilted(false)}>2D</button><button aria-pressed={tilted} onClick={() => setTilted(true)}><Layers3 size={13}/>3D</button></div><button className="icon-button expand-button" onClick={onFocus} aria-label={focused ? 'Restore dashboard layout' : 'Expand map'}><MapPin size={16}/></button></div></div>
     <div className="map-viewport"><div ref={container} className="map-canvas"/>
       <div className="map-location"><MapPin size={14}/><span>Adoshi corridor <small>Approximate demo pin</small></span></div>
-      <div className="wind-badge"><span className={`wind-arrow ${revision === 'B' ? 'southwest' : ''}`}>↑</span><div>2 m/s <small>From {revision === 'A' ? 'west' : 'southwest'} · preset {revision}</small></div></div>
+      <div className="wind-badge"><div>{inputs.windSpeed || '—'} m/s <small>From {inputs.windFrom.toLowerCase()} · simulated inputs</small></div></div>
       {loading && <div className="map-loading"><Mountain size={28}/><strong>Loading the corridor</strong><span>Geographic layers require internet access.</span></div>}
       {error && <div className="map-error" role="status"><Info size={20}/><p>{error}</p><button onClick={retry}><RefreshCw size={14}/>Retry map</button></div>}
       <button className="recenter" onClick={() => map.current?.easeTo({ center: [DEMO_LOCATION.lng, DEMO_LOCATION.lat], zoom: 13.5, bearing: -23 })}><LocateFixed size={15}/>Recenter</button>
-      <div className={`map-legend ${!current ? 'outdated' : ''}`}><span className="legend-mark"/><div><strong>{current ? `Illustrative assessment ${revision}` : 'Assessment outdated · area hidden'}</strong><small>{current ? 'Prepared demo area · no calculated hazard distance' : 'Restore a documented preset to view its illustration'}</small></div><span className="label-tag">SIMULATED</span></div>
+      <div className={`map-legend ${!current ? 'outdated' : ''}`}><span className="legend-mark"/><div><strong>{current ? `Illustrative assessment ${revision}` : `${assessmentStatus} · area hidden`}</strong><small>{current ? 'Prepared demo area · no calculated hazard distance' : 'Save inputs and run a supported demo preset; see assessment status above'}</small></div><span className="label-tag">SIMULATED</span></div>
     </div>
     <div className="map-bottom"><div className="map-toggles"><label><input type="checkbox" checked={showArea} onChange={e => setShowArea(e.target.checked)} disabled={!current}/>Demo area</label><label><input type="checkbox" checked={terrain} onChange={e => setTerrain(e.target.checked)}/>Terrain</label><label><input type="checkbox" checked={showPlaces} onChange={e => setShowPlaces(e.target.checked)}/>Demo places</label></div><span><Info size={12}/>Terrain does not affect the assessment.</span></div>
   </section>;

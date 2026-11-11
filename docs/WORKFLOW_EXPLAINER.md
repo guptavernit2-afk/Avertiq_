@@ -1,5 +1,7 @@
 # Avertiq workflow for a mentor walkthrough
 
+**11 November implementation update:** the first local incident backend now exists. The diagrams remain the intended full workflow; see the [backend milestone](BACKEND_MILESTONE.md) for saved inputs, jobs/history and current limits. References below to planned backend/browser-only storage describe the earlier mentor planning baseline.
+
 10 November 2026. This is the planned workflow, with the implemented demo clearly separated from future backend and qualified physics. It does not authorise operational emergency use.
 
 Saved in Eraser and added to GitHub on 11 November 2026: [Avertiq - Incident Workflow and Physics Plan](https://app.eraser.io/workspace/Q7ganj2xg2MLvDhdt4tt). The current Eraser link permits editing with an Eraser account. This GitHub document provides a versioned copy to read and discuss.

@@ -229,3 +229,11 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Save the simplified seven-step incident workflow and separate physics diagram in the user's Eraser account. Keep technical backend detail in the existing backend document so the presentation remains readable.
 - User requested committing and pushing the workflow to the existing Avertiq GitHub repository. Add versioned Eraser DSL sources, GitHub-rendered Mermaid diagrams, a workflow preview and a short glossary in the [workflow explainer](WORKFLOW_EXPLAINER.md); link it from the README.
 - Preserve the distinction between implemented browser-local demo, independent research and planned backend/qualified calculations. No application, solver, dispatch or deployment changes are included.
+
+## 2026-11-11 - First local D-001 backend
+
+- User authorized saved inputs, assessment status and history for one incident while keeping results explicitly demo-labelled.
+- Implement local SQLite-backed D1 persistence with a schema migration, server-owned bounded incident aggregate, immutable input snapshots and optimistic version checks. Retain local-only operation; no publication or agency authentication is implied.
+- Run the illustrative A/B adapter synchronously with durable queued/running/terminal events. Unsupported inputs return reasons, and interrupted jobs recover to failed after a bounded lease. Keep all physical quantities uncalculated.
+- Connect explicit dashboard save/assessment controls, saved revision/job/event history and backend-aware exports. Hide result geometry for unsaved input edits and unavailable/stale/failed/unsupported results. Preserve earlier browser storage without silently importing it.
+- See [backend milestone](BACKEND_MILESTONE.md) for verification and limits. Research solvers and the original SurakshaMitra prototype remain unchanged.

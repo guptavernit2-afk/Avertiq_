@@ -1,6 +1,6 @@
 # Avertiq incident workspace
 
-D-001 training dashboard: approximate Adoshi map anchor, real geographic terrain/roads, fictional nearby places and prepared A/B assessment illustrations. No physics engine, live tracking, agency login, dispatch or public notification is connected. Records are stored only in the current browser. Do not enter private operational information.
+D-001 training dashboard: approximate Adoshi map anchor, real geographic terrain/roads, fictional nearby places and prepared A/B assessment illustrations. Saved inputs, immutable input revisions, assessment jobs and event history now persist in a **local SQLite-backed D1 database**, rather than browser storage. Unsaved edits remain browser drafts. No physics engine, live tracking, agency login, dispatch or public notification is connected. Do not enter private operational information.
 
 ## Run locally
 
@@ -8,6 +8,7 @@ Requires Node 24+ and npm. From this directory:
 
 ```powershell
 npm ci
+npm run db:migrate:local
 npm run dev
 ```
 
@@ -15,6 +16,7 @@ Open the URL printed by the server. For a built production preview:
 
 ```powershell
 npm run build
+npm run db:migrate:local
 npm run start -- --port 5174
 ```
 
@@ -28,16 +30,19 @@ npm run typecheck
 npm run build
 ```
 
-Tests cover invalidation on unsupported edits, preserved A/B snapshots, round-trip persistence, rejection of forged records, explicit non-calculated output, safe report text and removal of stale map images. Browser checks must also cover actual WebGL terrain rendering, mobile reflow and the observation/handover walkthrough; passing TypeScript alone does not establish those behaviours.
+Tests cover fixture invalidation, real SQLite reopen persistence, concurrent version conflicts, immutable input revisions, job transitions, unsupported/missing inputs, interrupted-job recovery, malformed/cross-origin requests, demo labels and export geometry suppression. Browser checks cover the actual save/assess/history path; passing TypeScript alone does not establish those behaviours.
+
+The local-only migration command tracks applied migrations and can be rerun without replaying applied SQL. `wrangler.local.json` uses the same placeholder database ID as the framework preview. Local state is ignored under `.wrangler/state`; deleting that directory deletes the local database. It is not a cloud backup or an agency service. Browser storage from the earlier demo is not silently imported. See [backend milestone](../docs/BACKEND_MILESTONE.md) for the API, storage design and limits.
 
 ## Walkthrough
 
-1. Review the assumed release and simulated weather inputs in preset A.
-2. Explore 2D/3D terrain and fictional places; mark a demo review.
-3. Change cargo or another input. The prepared area disappears and the assessment becomes outdated.
-4. Restore a preset, then load B. A remains in revision history.
-5. Add a synthetic observation. It does not recalculate the assessment.
-6. Prepare a handover and download HTML or the labelled JSON record. Open the HTML in a browser to print/save as PDF.
+1. Load D-001 from the local database. The first load creates assumed preset A inputs, with assessment status `not-run` and no area.
+2. Choose **Run demo assessment**. Only exact supported presets produce a completed illustrative area; no physical calculation runs.
+3. Change cargo or another input. The old area disappears immediately. Choose **Save incident**, then run the demo assessment; unsupported inputs return their reason without geometry.
+4. Load preset B, save and assess. Open **Activity & revisions** to see saved input snapshots, jobs and queued/running/terminal events. Clicking a historical input snapshot loads a draft; it does not replace history.
+5. Add a synthetic observation or review, then **Save incident**. These do not recalculate the assessment or create a new input revision unless the inputs also changed.
+6. Export a labelled JSON/HTML handover including saved backend history. Unsaved drafts are identified; unavailable/stale/failed assessments have no map geometry.
+7. Reload the browser or restart the local server: saved inputs, jobs and history remain. **Restore initial draft** retains all database history.
 
 The public preview is a draft visual only. It provides neither a published incident notice nor a security boundary.
 

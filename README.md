@@ -2,6 +2,8 @@
 
 Chemical transport incident assessment.
 
+**Local backend, 11 November:** D-001 now saves input revisions, assessment jobs and history in a local server database. The dashboard supports explicit save/run controls and retains clearly labelled demo results. See the [backend milestone](docs/BACKEND_MILESTONE.md) and [local run instructions](website/README.md). No physical hazard calculation or live authority integration is enabled.
+
 **Website implementation, 10 November:** the first D-001 dashboard now lives in [website/](website/README.md), including a geographic 3D map and clearly labelled illustrative assessments. See [implemented behaviour and verification](docs/WEBSITE_MILESTONE.md). No physics engine or operational response system is connected. The research handoff below describes the earlier collection milestone and the remaining calculation limits.
 
 **Research baseline, 10 November 2026:** evidence-and-design handoff for the first website. Confirmed research scope is **LPG, CNG and reported propylene**, including transport/storage and light/heavy release behaviour. Existing open-boundary 2D research is propane-based; spatial convergence and field accuracy remain unestablished. The first website implementation is described above.

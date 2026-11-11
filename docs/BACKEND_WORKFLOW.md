@@ -1,5 +1,7 @@
 # Backend workflow before expanding the dashboard
 
+**11 November update:** the first local D-001 backend slice is implemented. See [implementation, API, tests and remaining limits](BACKEND_MILESTONE.md). The sections below retain the design baseline from before that work; browser-only storage statements describe the earlier version.
+
 10 November 2026. The user found the first dashboard too raw and the purpose/results difficult to understand. This is a proposed next work package, not an implemented backend or accepted physical model. Continue locally; no further hosting/deployment without an explicit request.
 
 ## What actually runs today

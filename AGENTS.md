@@ -10,6 +10,8 @@ Earlier research authorization covers equilibrium thermodynamics, conservative t
 
 ## Repository boundary
 
+On 11 November the user authorized the first local D-001 backend: saved inputs, assessment status and history, with results remaining clearly labelled demo. The local database, immutable revisions, tracked illustrative jobs and dashboard integration are within scope. Qualified physics and agency operation remain separate milestones; do not deploy this local API or silently import prior browser storage.
+
 Use C:/Users/Vernit/OneDrive/Documents/Desktop/Avertiq_ explicitly as the working directory for every repository command. Never fall back to the chat's inherited SurakshaMitra directory. Before mutations, verify the Git top-level resolves to this folder and origin is https://github.com/guptavernit2-afk/Avertiq_.git. Stop on a mismatch. Do not modify or delete the original prototype as part of Avertiq work.
 
 ## Evidence and modelling
