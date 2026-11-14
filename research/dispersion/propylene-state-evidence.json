@@ -1,0 +1,14 @@
+{
+  "id": "propylene-state-evidence-v1",
+  "chemical_CAS": "115-07-1",
+  "source_id": "SRC-098",
+  "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C115071&Mask=4",
+  "accessed_date": "2026-11-14",
+  "normal_pressure_Pa": 101325.0,
+  "normal_boiling_temperature_K": 225.6,
+  "reported_boiling_spread_K": 0.6,
+  "critical_temperature_K": 365.2,
+  "reported_critical_spread_K": 0.8,
+  "antoine_supported_temperature_K": [165.81, 225.98],
+  "interpretation": "Reported plus/minus values are used as conservative screening exclusion bands, not certified uncertainty bounds. No pressure correlation is extrapolated. Only the declared pure-species equilibrium state is screened; no release path or ALOHA internal state is inferred."
+}

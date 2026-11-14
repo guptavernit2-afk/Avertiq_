@@ -256,3 +256,8 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - User authorized input mapping, reproducible cases, result checks, tests and push, with model results pending.
 - Preserve frozen v1 and add four v2 unrun cases. Separate Direct Source mass-rate entries from unverified source/ground thermodynamic assumptions; retain the earlier observed location-minute precision.
 - Gate future record inspection on exact case/engine/input identity, units, output semantics, source consistency and hashed local evidence. Retain unavailable outputs and warnings; withhold mixed-method/basis comparisons. Checks never enable the dashboard or qualify physical accuracy. See [preparation](research/PROPYLENE_PREPARATION.md).
+
+## 2026-11-14 - Separate equilibrium plausibility from model applicability
+
+- Add an independent NIST-based screen for the declared pure propylene state without altering frozen inputs. Do not extrapolate the published low-temperature Antoine fit to ambient temperature.
+- Keep actual tanker discharge state and installed ALOHA source thermodynamics unresolved. Passing this screen never enables result acceptance or dashboard physics. See [state review](research/PROPYLENE_SOURCE_STATE.md).

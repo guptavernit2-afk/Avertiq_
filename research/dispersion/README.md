@@ -46,3 +46,7 @@ See the [model applicability decision](../../docs/research/FIRST_PHYSICS_QUALIFI
 ## Propylene v2 preparation
 
 The [preparation milestone](../../docs/research/PROPYLENE_PREPARATION.md) maps documented fields, separates unverified source assumptions, versions the observed site-minute precision and defines four unrun cases. `propylene.py` provides prepare-check, template, inspect-run and compare-runs commands; no model is executed. Eight additional synthetic validator tests bring this package to 14 tests. All observed templates remain null/unrun. Record consistency never enables physics or grants applicability/field validation.
+
+## Declared source-state review
+
+The [temperature/phase review](../../docs/research/PROPYLENE_SOURCE_STATE.md) independently supports the assumed equilibrium gas state, while retaining actual release and ALOHA internal-state gates. `source-state-check` adds a bounded property-based screen, with no extrapolated vapour pressure or model predictions. The package now has 18 passing tests. Frozen cases and observed templates are unchanged.

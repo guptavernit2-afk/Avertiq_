@@ -1,0 +1,21 @@
+{
+  "case_id": "D-001-PHYS-002-baseline",
+  "case_sha256": "7f98707eea7569b8b43e17f8dac90bcb1b92c688b06b351a4b4dadb062ed4d24",
+  "evidence_id": "propylene-state-evidence-v1",
+  "evidence_sha256": "935ee75a8985d367b446683359719a9d2eaa8a1aec2052e5a1106ee4eb3c120f",
+  "status": "declared_equilibrium_gas_consistent",
+  "reason": "Declared temperature is above the normal-boiling screening band and below the critical screening band; equilibrium gas is consistent.",
+  "declared_temperature_K": 298.15,
+  "declared_pressure_Pa": 101325.0,
+  "declared_equilibrium_gas_consistent": true,
+  "antoine_temperature_in_published_range": false,
+  "vapor_pressure_calculated": false,
+  "actual_release_phase_known": false,
+  "actual_release_temperature_known": false,
+  "aloha_internal_source_state_verified": false,
+  "model_calculation_performed": false,
+  "propylene_qualified": false,
+  "field_validated": false,
+  "dashboard_adapter_enabled": false,
+  "label": "Declared equilibrium-state screen only; no source-path or model-execution result"
+}

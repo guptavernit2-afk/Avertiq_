@@ -63,3 +63,7 @@ Comparison requires `baseline.json`, `rate-half.json`, `rate-double.json`, and `
 Record checks reject wrong case/chemical/engine, mismatched entered inputs, wrong units, missing semantics, changed evidence, outside-directory evidence paths, duplicate/missing receptors or contours, and invalid numeric values. Source mass/duration consistency uses the preregistered tolerance of max(1%, 0.01 in the named SI unit); this is a rounding sanity check, not physical validation. Contour distances are optional only with an observed unavailability reason; no polygons are synthesized.
 
 The resulting status is `record_consistent_applicability_review_pending`. Hashes prove file consistency, not authenticity or model suitability; manual transcription and free-text semantics require human review against raw output. Warnings and review notes are retained. Actual results, physical acceptance and the dashboard adapter are still pending. No ALOHA command-line/API route is claimed.
+
+## Follow-up state review
+
+The [independent source-state screen](PROPYLENE_SOURCE_STATE.md) supports the declared 25 C / one-atmosphere equilibrium gas assumption. It does not close ALOHA source-state applicability or identify the real release phase/temperature. Observed results and all model-acceptance gates remain pending.
