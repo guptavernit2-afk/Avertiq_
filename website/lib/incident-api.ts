@@ -30,6 +30,23 @@ async function readMutation(request: Request): Promise<{ expectedVersion: number
   return { expectedVersion: fields.expectedVersion, workspace: fields.workspace };
 }
 
+const LEASE_MS = 60000;
+const activeJob = (state: Incident, id: string) => state.jobs.find(job => job.id === id && (job.status === 'queued' || job.status === 'running'));
+async function failActiveJob(store: IncidentStore, state: Incident, id: string, clock: () => string, reason: string, expiredOnly = false): Promise<Incident> {
+  // A competing recovery/completion may win. Re-read instead of overwriting it.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const job = activeJob(state, id);
+    if (!job || (expiredOnly && Date.parse(clock()) - Date.parse(job.updatedAt) < LEASE_MS)) return state;
+    try { return await store.write(transitionJob(state, id, 'failed', clock(), reason), state.version); }
+    catch (error) {
+      if (!(error instanceof IncidentError && error.status === 409)) throw error;
+      state = await store.read();
+    }
+  }
+  if (!activeJob(state, id)) return state;
+  throw new IncidentError('Incident changed during recovery. Reload to read the saved status.', 409);
+}
+
 const response = (state: Incident, requestJobId?: string) => Response.json({ incident: state, assessment: assessmentView(state), ...(requestJobId ? { requestJobId } : {}) }, { headers: { 'Cache-Control': 'no-store' } });
 export function incidentApi(store: IncidentStore, clock = () => new Date().toISOString(), uuid = () => crypto.randomUUID()) {
   return async (request: Request): Promise<Response> => {
@@ -41,8 +58,8 @@ export function incidentApi(store: IncidentStore, clock = () => new Date().toISO
       const body = request.method === 'GET' ? null : await readMutation(request);
       let state = await store.initialize(clock());
       const active = state.jobs.find(j => j.status === 'queued' || j.status === 'running');
-      if (active && Date.now() - Date.parse(active.updatedAt) > 60000) {
-        state = await store.write(transitionJob(state, active.id, 'failed', clock(), 'The demo request was interrupted or timed out. No result was retained. Run a new assessment.'), state.version);
+      if (active && Date.parse(clock()) - Date.parse(active.updatedAt) >= LEASE_MS) {
+        state = await failActiveJob(store, state, active.id, clock, 'The demo request was interrupted or timed out. No result was retained. Run a new assessment.', true);
       }
       if (request.method === 'GET') return response(state);
       if (!body) throw new IncidentError('Missing mutation body.');
@@ -72,11 +89,13 @@ export function incidentApi(store: IncidentStore, clock = () => new Date().toISO
         const status = demoEligibility(revision.inputs).fixture ? 'completed' : 'unsupported';
         state = await store.write(transitionJob(state, id, status, clock()), state.version);
       } catch (error) {
-        // A server error never becomes a completed illustration. A crashed process
-        // is recovered to failed on the next request after the 60-second lease.
-        if (!(error instanceof IncidentError && error.status === 409)) {
-          state = await store.write(transitionJob(state, id, 'failed', clock()), state.version);
-        } else throw error;
+        // A write can commit even when its acknowledgement is lost. Reconcile
+        // persisted state before deciding whether the job still needs failure.
+        state = await store.read();
+        if (activeJob(state, id)) {
+          if (error instanceof IncidentError && error.status === 409) throw error;
+          state = await failActiveJob(store, state, id, clock, 'Assessment storage was interrupted. No result was retained. Start a new assessment.');
+        }
       }
       return response(state, id);
     } catch (error) {

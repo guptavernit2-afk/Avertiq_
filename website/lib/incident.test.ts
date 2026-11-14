@@ -9,13 +9,13 @@ import { incidentApi } from './incident-api.ts';
 import { assessmentView, queueAssessment, transitionJob, type Incident } from './incident.ts';
 import { PRESETS, exportRecord, handoverHtml, loadPreset } from './demo.ts';
 
-function connection(path = ':memory:') {
+function connection(path = ':memory:', fault?: (sql: string, phase: 'before' | 'after') => void) {
   const sqlite = new DatabaseSync(path);
   // Exercise the real generated schema, not a second test-only schema.
   for (const file of readdirSync(new URL('../drizzle/', import.meta.url)).filter(f => f.endsWith('.sql')).sort()) sqlite.exec(readFileSync(new URL(`../drizzle/${file}`, import.meta.url), 'utf8'));
   const db: IncidentDatabase = { prepare(sql: string): Statement {
     let values: (string | number)[] = [];
-    return { bind(...args) { values = args; return this; }, async first<T>() { return (sqlite.prepare(sql).get(...values) ?? null) as T | null; }, async run() { return { meta: { changes: Number(sqlite.prepare(sql).run(...values).changes) } }; } };
+    return { bind(...args) { values = args; return this; }, async first<T>() { return (sqlite.prepare(sql).get(...values) ?? null) as T | null; }, async run() { fault?.(sql,'before'); const changes=Number(sqlite.prepare(sql).run(...values).changes); fault?.(sql,'after'); return { meta: { changes } }; } };
   } };
   return { sqlite, store: new IncidentStore(db) };
 }
@@ -223,5 +223,149 @@ test('legacy jobs without request versions retain conflict protection', async ()
     await store.write(legacy,legacy.version);
     assert.equal((await send(api,'POST',{expectedVersion:initial.version})).code,409);
     assert.equal((await store.read()).jobs.length,1);
+  } finally { sqlite.close(); }
+});
+
+
+test('lease boundary uses the supplied clock and concurrent recovery records one failure', async () => {
+  for (const status of ['queued','running'] as const) {
+    const {sqlite,store}=connection();
+    try {
+      const start='2026-11-14T00:00:00.000Z';
+      let state=await store.initialize(start);
+      state=await store.write(queueAssessment(state,'expired',start),state.version);
+      if (status==='running') state=await store.write(transitionJob(state,'expired','running',start),state.version);
+      const fresh=await send(incidentApi(store,()=> '2026-11-14T00:00:59.999Z'));
+      assert.equal(fresh.data.assessment.status,status);
+      const results=await Promise.all(Array.from({length:6},()=>send(incidentApi(store,()=> '2026-11-14T00:01:00.000Z'))));
+      assert.ok(results.every(r=>r.code===200 && r.data.assessment.status==='failed'));
+      const saved=await store.read();
+      assert.equal(saved.events.filter(e=>e.type==='assessment-failed').length,1);
+      assert.equal(saved.version,state.version+1);
+      assert.equal(assessmentView(saved).geometry,null);
+    } finally { sqlite.close(); }
+  }
+});
+
+test('write failures before or after commit preserve truthful job state and retry identity', async () => {
+  for (const writeNumber of [1,2,3]) for (const phase of ['before','after'] as const) {
+    let writes=0; let injected=false;
+    const {sqlite,store}=connection(':memory:',(sql,at)=>{
+      if (!sql.startsWith('UPDATE')) return;
+      if (at==='before') writes++;
+      if (!injected && writes===writeNumber && at===phase) { injected=true; throw new Error('Injected storage failure'); }
+    });
+    try {
+      const api=incidentApi(store);
+      const initial=(await send(api)).data.incident;
+      const result=await send(api,'POST',{expectedVersion:initial.version});
+      assert.ok(injected);
+      if (writeNumber===1) assert.equal(result.code,503);
+      else assert.equal(result.code,200);
+      const persisted=await store.read();
+      if (writeNumber===1 && phase==='before') assert.equal(persisted.jobs.length,0);
+      else {
+        assert.equal(persisted.jobs.length,1);
+        const expected=writeNumber===1 ? 'queued' : writeNumber===3 && phase==='after' ? 'completed' : 'failed';
+        assert.equal(persisted.jobs[0].status,expected);
+        assert.equal(persisted.events.filter(e=>e.type==='assessment-failed').length,expected==='failed'?1:0);
+        const retry=await send(api,'POST',{expectedVersion:initial.version});
+        assert.equal(retry.code,200);
+        assert.equal(retry.data.incident.jobs.length,1);
+        assert.equal(retry.data.assessment.status,expected);
+        if (expected!=='completed') assert.equal(retry.data.assessment.geometry,null);
+      }
+    } finally { sqlite.close(); }
+  }
+});
+
+test('persistent write outage returns unavailable and later recovery retains one job', async () => {
+  let outage=false;
+  const {sqlite,store}=connection(':memory:',(sql,phase)=>{if(outage && sql.startsWith('UPDATE') && phase==='before') throw new Error('Database offline');});
+  try {
+    const old='2026-11-14T00:00:00.000Z';
+    let state=await store.initialize(old);
+    state=await store.write(queueAssessment(state,'outage',old),state.version);
+    state=await store.write(transitionJob(state,'outage','running',old),state.version);
+    outage=true;
+    const api=incidentApi(store,()=> '2026-11-14T00:02:00.000Z');
+    const unavailable=await send(api);
+    assert.equal(unavailable.code,503); assert.equal(unavailable.data.incident,undefined);
+    assert.deepEqual(await store.read(),state);
+    outage=false;
+    const recovered=await send(api);
+    assert.equal(recovered.code,200);
+    assert.equal(recovered.data.assessment.status,'failed');
+    assert.equal(recovered.data.assessment.geometry,null);
+    assert.equal(recovered.data.incident.jobs.length,1);
+    assert.equal(recovered.data.incident.events.filter(e=>e.type==='assessment-failed').length,1);
+  } finally { sqlite.close(); }
+});
+
+test('outage during assessment and failed cleanup remains unavailable until later recovery', async () => {
+  let updates=0; let outage=true;
+  const {sqlite,store}=connection(':memory:',(sql,phase)=>{
+    if (sql.startsWith('UPDATE') && phase==='before' && ++updates>=3 && outage) throw new Error('Write outage');
+  });
+  try {
+    const start='2026-11-14T00:00:00.000Z';
+    const api=incidentApi(store,()=>start);
+    const initial=(await send(api)).data.incident;
+    const failed=await send(api,'POST',{expectedVersion:initial.version});
+    assert.equal(failed.code,503);
+    assert.equal(failed.data.incident,undefined);
+    const pending=await store.read();
+    assert.equal(pending.jobs[0].status,'running');
+    assert.equal(pending.events.some(e=>e.type==='assessment-completed'),false);
+    outage=false;
+    const recovered=await send(incidentApi(store,()=> '2026-11-14T00:02:00.000Z'),'POST',{expectedVersion:initial.version});
+    assert.equal(recovered.code,200);
+    assert.equal(recovered.data.assessment.status,'failed');
+    assert.equal(recovered.data.assessment.geometry,null);
+    assert.equal(recovered.data.incident.jobs.length,1);
+  } finally { sqlite.close(); }
+});
+
+test('recovery conflict preserves a completion that won the database write', async () => {
+  const {sqlite,store}=connection();
+  try {
+    const old='2026-11-14T00:00:00.000Z';
+    let state=await store.initialize(old);
+    state=await store.write(queueAssessment(state,'completion-race',old),state.version);
+    state=await store.write(transitionJob(state,'completion-race','running',old),state.version);
+    const write=store.write.bind(store); let raced=false;
+    store.write=async(next,expected)=>{
+      if (!raced && next.jobs[0].status==='failed') {
+        raced=true;
+        await write(transitionJob(state,'completion-race','completed',old),expected);
+      }
+      return write(next,expected);
+    };
+    const result=await send(incidentApi(store,()=> '2026-11-14T00:02:00.000Z'));
+    assert.equal(result.code,200);
+    assert.equal(result.data.assessment.status,'completed');
+    assert.equal(result.data.incident.events.some(e=>e.type==='assessment-failed'),false);
+    assert.equal(result.data.incident.jobs.length,1);
+  } finally { sqlite.close(); }
+});
+
+test('recovery rechecks the lease when a competing worker starts the queued job', async () => {
+  const {sqlite,store}=connection();
+  try {
+    const old='2026-11-14T00:00:00.000Z'; const now='2026-11-14T00:02:00.000Z';
+    let state=await store.initialize(old);
+    state=await store.write(queueAssessment(state,'renewed',old),state.version);
+    const write=store.write.bind(store); let raced=false;
+    store.write=async(next,expected)=>{
+      if (!raced && next.jobs[0].status==='failed') {
+        raced=true; await write(transitionJob(state,'renewed','running',now),expected);
+      }
+      return write(next,expected);
+    };
+    const result=await send(incidentApi(store,()=>now));
+    assert.equal(result.code,200);
+    assert.equal(result.data.assessment.status,'running');
+    assert.equal(result.data.assessment.geometry,null);
+    assert.equal(result.data.incident.events.some(e=>e.type==='assessment-failed'),false);
   } finally { sqlite.close(); }
 });

@@ -50,3 +50,11 @@ POST remains compatible with `{ expectedVersion }`: for this single-incident end
 A deliberate new assessment uses the latest incident version. Failed and unsupported jobs replay their saved status; retrying the calculation requires a new version-based intent. Old stored jobs without requestedVersion remain readable but cannot be retroactively deduplicated: stale requests still receive 409. No schema migration or in-memory retry cache is needed. Keys remain bounded by the existing 400-job history cap. This contract applies only to the current POST whose inputs come entirely from the saved revision; future configurable assessment payloads must extend the intent identity.
 
 CLI regression tests cover lost responses, concurrent duplicates, newer revisions, terminal failures/unsupported results and legacy jobs. Browser verification remains excluded by the user's no-computer-control instruction.
+
+## Interrupted jobs and storage failures
+
+The 60-second recovery lease uses the same injected clock as job timestamps and expires at the boundary. Recovery uses bounded compare-and-swap attempts; a competing recovery or terminal completion is re-read and preserved, so concurrent readers append only one failure event. Recovery remains request-driven, with no background worker.
+
+After a running/terminal write error, the API reads persisted state before marking the job failed. A completed write with a lost acknowledgement keeps its committed completion. A still-active job receives a failure only if that transition can be persisted. Continued storage/read failure returns 503 without an incident/result payload; the active job remains recoverable after the database returns and its lease expires. An ambiguous queue write returns 503; retrying the same starting version finds any committed job instead of creating another. No in-memory result substitutes for saved evidence.
+
+Fault-injection tests exercise before/after-commit failures at queue, running and completion writes, persistent recovery outages, failed cleanup, concurrent recoveries, lease boundaries and a completion winning against recovery. These use disposable SQLite databases, not the user's local incident database.
