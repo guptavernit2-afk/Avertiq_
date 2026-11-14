@@ -1,0 +1,40 @@
+{
+  "id": "aloha547-output-semantics-review-v1",
+  "review_date": "2026-11-14",
+  "software_version": "5.4.7",
+  "review_method": "Read installed help from disk and official NOAA output article; no ALOHA execution",
+  "files": [
+    {
+      "installed_relative_path": "AlohaHelp/Results/ThreatPoint/Interpreting_a_Threat_Graph.htm",
+      "sha256": "ec4c7d1bc9450440ee9bdc9e765f074d2e81a301bf293834682b0ea33e90d605"
+    },
+    {
+      "installed_relative_path": "AlohaHelp/Results/ThreatPoint/Specifying_Coordinates.htm",
+      "sha256": "849467b4b5295c3baec6f45bd39d78dd96277b3015b140d31c73ef9aaf5c61fa"
+    },
+    {
+      "installed_relative_path": "AlohaHelp/Results/ThreatZone/Interpreting_a_Threat_Zone.htm",
+      "sha256": "6d3932020dd0e45164b9f8b2d7830d58ecb23f8e5ef99791de622b15f508fdf3"
+    }
+  ],
+  "source_ids": [
+    "SRC-097",
+    "SRC-101"
+  ],
+  "official_url": "https://response.restoration.noaa.gov/oil-and-chemical-spills/chemical-spills/resources/ask-dr-aloha-working-concentration-graph.html",
+  "findings": {
+    "point_graph": "Installed help describes ground-level indoor and outdoor averaged concentrations during the first hour after release starts.",
+    "averaging": "Toxic display described as a few minutes; flammable display as ten seconds. No single exact toxic averaging interval is established here.",
+    "maximum": "Official NOAA example distinguishes maximum outdoor and indoor concentrations in the Text Summary; these are not instantaneous peaks.",
+    "coordinates": "Relative downwind/crosswind points follow the wind direction; fixed east/north points identify geographic offsets.",
+    "zone": "Toxic zone indicates threshold exceedance at some time after release, not a simultaneous cloud snapshot."
+  },
+  "project_policy": "For this scalar suite capture reported outdoor maximum of averaged concentration over the first hour at the requested relative ground-level receptors. Diagnostic thresholds carry no health authority.",
+  "unresolved": [
+    "actual observed output basis and evidence",
+    "exact toxic averaging interval by selected method",
+    "source thermodynamic applicability and remaining case mapping gates"
+  ],
+  "actual_propylene_results": "pending",
+  "dashboard_adapter_enabled": false
+}

@@ -58,7 +58,7 @@ python research/dispersion/propylene.py inspect-run --case baseline --observed o
 python research/dispersion/propylene.py compare-runs --runs-dir outputs/propylene --output outputs/propylene/comparison.json
 ```
 
-Comparison requires `baseline.json`, `rate-half.json`, `rate-double.json`, and `wind-higher.json`, and rechecks every source record. It withholds numeric comparisons when the selected method or recorded output basis differs. Missing receptor values require the actual unavailability reason and remain null; zero is never a missing-data placeholder. Ratios with a zero baseline remain null. No monotonic trend is asserted.
+Comparison requires `baseline.json`, `rate-half.json`, `rate-double.json`, and `wind-higher.json`, and rechecks every source record. It withholds numeric comparisons when the selected method or recorded output basis differs, or when either record lacks the [structured output-meaning supplement](PROPYLENE_OUTPUT_SEMANTICS.md). Missing receptor values require the actual unavailability reason and remain null; zero is never a missing-data placeholder. Ratios with a zero baseline remain null. No monotonic trend is asserted.
 
 Record checks reject wrong case/chemical/engine, mismatched entered inputs, wrong units, missing semantics, changed evidence, outside-directory evidence paths, duplicate/missing receptors or contours, and invalid numeric values. Source mass/duration consistency uses the preregistered tolerance of max(1%, 0.01 in the named SI unit); this is a rounding sanity check, not physical validation. Contour distances are optional only with an observed unavailability reason; no polygons are synthesized.
 

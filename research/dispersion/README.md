@@ -58,3 +58,7 @@ The [source-treatment review](../../docs/research/ALOHA_DIRECT_SOURCE_REVIEW.md)
 ## Local run evidence archives
 
 `archive.py archive-run` preserves a future completed observation and its raw evidence with frozen inputs and checking provenance. `verify-archive` checks integrity and reinspects when current provenance matches; changed tooling/configuration leaves reinspection pending. Use an independently retained archive SHA-256 for whole-file identity. See the [archive workflow](../../docs/research/PROPYLENE_EVIDENCE_ARCHIVE.md). Raw archives stay local and Git-ignored. Thirteen additional disposable synthetic tests bring the package to 39 passing tests; actual propylene results remain pending.
+
+## Structured output meaning
+
+The [output interpretation milestone](../../docs/research/PROPYLENE_OUTPUT_SEMANTICS.md) adds `output-semantics-template` and evidence-linked metadata for outdoor averaged maxima, the first-hour observation window, relative receptors and diagnostic contour meaning. Legacy observations remain inspectable, but numerical comparisons require consistent structured metadata; actual outputs and exact averaging remain pending. Archive provenance includes the new dependencies. Eight additional synthetic tests bring the package to 47 passing tests.

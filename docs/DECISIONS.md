@@ -273,3 +273,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Add a private archive/verification CLI for the qualification plan's evidence-retention step. Preserve original observations and raw bytes with frozen inputs, inspection and review provenance; reject incomplete records and existing output paths.
 - Reinspect only when current case/configuration/checking-code provenance matches. Otherwise distinguish byte integrity from pending reinspection. All physics acceptance and dashboard gates remain closed.
 - Test only with disposable synthetic archives, including interrupted writes and changed evidence. Raw archives use an ignored suffix and remain local. See [workflow and limitations](research/PROPYLENE_EVIDENCE_ARCHIVE.md).
+
+## 2026-11-14 - Define and guard propylene output meaning
+
+- Review installed 5.4.7 output help and NOAA's concentration graph explanation. Adopt reported outdoor maxima of averaged concentrations over the first hour for this scalar receptor suite; keep exact averaging unresolved.
+- Add an unconfirmed structured supplement without modifying frozen case inputs or existing unrun observations. Withhold comparisons for legacy records without the supplement; reject incompatible or contradictory declared meanings.
+- Retain raw-evidence references and include semantics dependencies in archive provenance. No metadata check closes physical qualification or enables the dashboard. See [output interpretation and capture policy](research/PROPYLENE_OUTPUT_SEMANTICS.md).

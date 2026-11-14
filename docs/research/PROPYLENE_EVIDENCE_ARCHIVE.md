@@ -54,6 +54,8 @@ Archives use uncompressed ZIP storage, at most 64 raw evidence files, at most 64
 
 All successful receipts retain `propylene_qualified`, `field_validated` and `dashboard_adapter_enabled` as false. Source-state equivalence and other open mapping gates remain in the saved inspection. The archive is an evidence-preservation step, not a public/operational export or an adapter activation.
 
+The [output-meaning supplement](PROPYLENE_OUTPUT_SEMANTICS.md) is retained with the observation, and its module/documentation are included in current provenance. Legacy records without it can still be archived; numeric comparisons remain withheld. Archives from earlier checking revisions are not silently upgraded.
+
 ## Verification performed
 
 ```powershell

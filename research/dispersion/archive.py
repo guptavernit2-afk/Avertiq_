@@ -18,8 +18,8 @@ MAX_FILE_BYTES = 64 * 1024 * 1024
 MAX_ARCHIVE_BYTES = 256 * 1024 * 1024
 MAX_EVIDENCE_FILES = 64
 FIXED_MEMBERS = {'observed-original.json', 'observed.json', 'case.json', 'inspection.json', 'provenance.json'}
-CONFIGS = ('engine-manifest.json', 'mapping-evidence.json', 'propylene-state-evidence.json', 'source-treatment-evidence.json')
-TOOLS = ('archive.py', 'propylene.py', 'qualify.py', 'source_state.py', 'source_treatment.py')
+CONFIGS = ('engine-manifest.json', 'mapping-evidence.json', 'propylene-state-evidence.json', 'source-treatment-evidence.json', 'output-semantics-evidence.json')
+TOOLS = ('archive.py', 'propylene.py', 'qualify.py', 'source_state.py', 'source_treatment.py', 'output_semantics.py')
 FLAGS = {'propylene_qualified': False, 'field_validated': False, 'dashboard_adapter_enabled': False}
 
 

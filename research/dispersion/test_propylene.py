@@ -9,6 +9,7 @@ import unittest
 from pathlib import Path
 from propylene import NAMES, ROOT, registered_case, preparation_report, template, inspect_run, compare_runs
 from qualify import read_json, case_hash
+from output_semantics import EXPECTED, BASIS_DESCRIPTIONS
 
 class PropyleneTests(unittest.TestCase):
     def observed(self, folder, name='baseline'):
@@ -23,6 +24,10 @@ class PropyleneTests(unittest.TestCase):
         record['engine']['executable_sha256'] = read_json(ROOT/'engine-manifest.json')['runtime_files']['ALOHA.EXE']
         record['source_summary'] = {'duration_s':600, 'airborne_mass_kg':case['source']['rate_kg_s']*600}
         record['basis'].update(receptor_height_m=0, statistic='synthetic test statistic', averaging_description='synthetic test average', time_window_description='synthetic test window', display_mode=case['model_inputs']['display_mode'])
+        record['basis'].update(BASIS_DESCRIPTIONS)
+        record['output_semantics'] = {'schema_version': 1, 'status': 'recorded_from_output', **EXPECTED,
+                                     'evidence_sha256': [record['evidence_files'][0]['sha256']],
+                                     'capture_notes': 'SYNTHETIC metadata fixture only; no ALOHA output observed'}
         for row in record['receptors']: row['value_ppm']=1
         for row in record['contours']: row['unavailable_reason']='Synthetic test: no numeric contour'
         return record
@@ -97,7 +102,9 @@ class PropyleneTests(unittest.TestCase):
                 r=self.observed(folder,name)
                 r['receptors'][0]['value_ppm']=0
                 if name=='rate-half':r['dispersion_method']='Heavy Gas'
-                if name=='rate-double':r['basis']['averaging_description']='Different synthetic basis'
+                if name=='rate-double':
+                    r.pop('output_semantics')  # Legacy record can be inspected but not compared.
+                    r['basis']['averaging_description']='Different synthetic basis'
                 (Path(folder)/f'{name}.json').write_text(json.dumps(r),encoding='utf-8')
             result=compare_runs(Path(folder))
             self.assertEqual([c['comparable_basis'] for c in result['comparisons']],[False,False,True])

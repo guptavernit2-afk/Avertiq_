@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "status": "unconfirmed",
+  "receptor_statistic": null,
+  "receptor_environment": null,
+  "receptor_coordinates": null,
+  "receptor_height_m": null,
+  "window_start_s": null,
+  "window_end_s": null,
+  "averaging_basis": null,
+  "averaging_seconds": null,
+  "contour_statistic": null,
+  "threshold_use": null,
+  "evidence_sha256": [],
+  "capture_notes": null
+}
