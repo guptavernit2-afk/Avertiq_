@@ -104,3 +104,7 @@ After actual four-case observations exist, `review_handoff.py --runs-dir outputs
 ## Explicit reinspection after tooling changes
 
 `archive.py reinspect-archive` verifies an archive and writes a separate current-inspection receipt without rewriting its historical evidence or provenance. It rejects a changed registered case or a record that fails current checks. See the [plan, receipt semantics and workflow](../../docs/research/PROPYLENE_ARCHIVE_REINSPECTION.md). All 90 qualification-tool tests pass, including eight new synthetic reinspection tests. This is record consistency only; actual ALOHA results and all physical-acceptance gates remain pending.
+
+## Prepare a blank four-case capture folder
+
+`python research/dispersion/prepare_capture.py --output outputs/propylene/session-01` creates a fresh local folder containing all four unrun capture records with unconfirmed output-semantics and transcription supplements, separate frozen input snapshots, empty evidence directories and a workflow guide. It does not fill observations or execute ALOHA. Existing destinations are refused; incomplete setup must be retried to a new folder. See the [plan and setup-manifest limits](../../docs/research/PROPYLENE_CAPTURE_FOLDER.md). All 98 tests pass, including eight disposable setup tests. Actual physics results remain pending.

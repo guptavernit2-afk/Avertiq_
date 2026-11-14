@@ -18,7 +18,7 @@ Plan commit first on `codex/archive-reinspection`, then implement, test, open a 
 
 Implemented on the planned feature branch. All 90 qualification-tool tests pass locally, including eight new reinspection tests. Synthetic tests cover all registered variants, code/configuration drift, changed historical report wording, failed current record rules, changed frozen cases, corrupt evidence, wrong external hashes, existing receipts, provenance changing during a check, CLI operation and unchanged archive bytes.
 
-Only disposable synthetic archives/receipts were used. Submit the branch as a PR and merge after diff review and successful Windows/Linux CI. Actual ALOHA runs and physical qualification remain pending.
+Only disposable synthetic archives/receipts were used. Completed through [PR #3](https://github.com/guptavernit2-afk/Avertiq_/pull/3), merged as e499323 after diff review and successful Windows/Linux CI. Actual ALOHA runs and physical qualification remain pending.
 
 
 ## Future local workflow

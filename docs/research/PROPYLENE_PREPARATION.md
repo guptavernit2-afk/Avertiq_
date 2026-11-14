@@ -71,3 +71,7 @@ For displayed units and reporting limits, use the [unit-transcription workflow](
 ## Follow-up state review
 
 The [independent source-state screen](PROPYLENE_SOURCE_STATE.md) supports the declared 25 C / one-atmosphere equilibrium gas assumption. It does not close ALOHA source-state applicability or identify the real release phase/temperature. Observed results and all model-acceptance gates remain pending.
+
+## Single-command capture setup
+
+The [capture-folder workflow](PROPYLENE_CAPTURE_FOLDER.md) can assemble all four blank records and their unconfirmed supplements in a fresh local directory. Intended input snapshots remain separate from observed fields; all run/evidence requirements above still apply.
