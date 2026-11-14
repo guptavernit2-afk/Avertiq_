@@ -1,0 +1,135 @@
+{
+  "id": "D-001-PHYS-002-rate-double",
+  "schema_version": 2,
+  "status": "prepared_unrun_applicability_pending",
+  "chemical": {
+    "name": "Propylene",
+    "CAS": "115-07-1",
+    "composition_mole_fraction": 1.0,
+    "evidence": "assumed pure-species research case; actual cargo purity unknown"
+  },
+  "scenario": "unignited_direct_airborne_gas_release_flat_ground",
+  "source": {
+    "type": "prescribed_airborne_mass_rate_not_tank_discharge",
+    "rate_kg_s": 0.2,
+    "duration_s": 600.0,
+    "height_m": 0.0,
+    "temperature_K": 298.15,
+    "pressure_Pa": 101325.0,
+    "phase": "gas_only",
+    "droplets": false,
+    "momentum": "neglected; no pressurized jet or hole calculation",
+    "evidence": "all assumed; does not describe a measured accident release"
+  },
+  "weather": {
+    "wind_speed_m_s": 2.0,
+    "measurement_height_m": 10.0,
+    "wind_from_degrees_true": 270.0,
+    "air_temperature_K": 298.15,
+    "relative_humidity_percent": 50.0,
+    "stability_class": "D",
+    "cloud_cover_tenths": 10,
+    "inversion": "none",
+    "evidence": "all synthetic assumptions; constant wind"
+  },
+  "surface": {
+    "terrain": "flat open country; no buildings, tunnel or valley",
+    "roughness_setting": "open country; numeric value must be checked in installed model",
+    "ground_temperature_K": 298.15,
+    "evidence": "idealized; not actual Adoshi topography"
+  },
+  "site": {
+    "name": "AVERTIQ FLAT TEST",
+    "latitude_deg": 18.763333333333332,
+    "longitude_deg": 73.345,
+    "elevation_m": 0.0,
+    "time_local": "2026-11-11T12:00:00+05:30",
+    "evidence": "approximate demo anchor only; zero elevation is a numerical assumption, not a survey",
+    "entry_dms": {
+      "latitude": "18 deg 45.8 min N",
+      "longitude": "73 deg 20.7 min E"
+    }
+  },
+  "requested_outputs": {
+    "type": "gas_phase_volume_concentration",
+    "units": "ppm",
+    "height_m": 0.0,
+    "centerline_downwind_m": [
+      50,
+      100,
+      200,
+      500
+    ],
+    "time_basis": "retain exact model instantaneous/averaged/envelope definition; do not invent time-resolved output",
+    "diagnostic_contours_ppm": [
+      1000,
+      100,
+      10
+    ],
+    "threshold_authority": "none; numerical diagnostic levels only, not health/evacuation or flammability limits"
+  },
+  "omitted": [
+    "tank discharge",
+    "flash boiling",
+    "aerosol/dropout",
+    "source momentum",
+    "fire",
+    "explosion",
+    "fragments",
+    "terrain steering",
+    "indoor exposure",
+    "field validation"
+  ],
+  "gates": {
+    "installed_chemical_CAS_checked": false,
+    "source_temperature_and_phase_mapping_checked": false,
+    "reference_reproduction_passed": true,
+    "dashboard_adapter_enabled": false
+  },
+  "variation_rules": "Check diagnostic sensitivity with matched settings; do not claim monotonicity for unsupported model branches. Wind changes are independent runs, not continuation of a prior cloud.",
+  "label": "UNRUN assumed research case; applicability pending; no physical result",
+  "parent_case_sha256": "208705e6d97353e17a00366afaf7d8efadc9188e74bcb261ca47669dcbfc1363",
+  "variant": "rate-double",
+  "reference_control_sha256": "f62a84073cb3486b5fa6a13fada0dc6256c0034d0216972db9ca1b30efb19ac3",
+  "revision_reason": "Preserve v1; use the minute precision observed in earlier unsaved desktop setup. Model-entry fields are separated from unverified source/ground assumptions. No outputs informed this revision.",
+  "model_inputs": {
+    "chemical_CAS": "115-07-1",
+    "source_option": "Direct",
+    "release_type": "continuous",
+    "rate_kg_s": 0.2,
+    "duration_min": 10.0,
+    "source_height_m": 0.0,
+    "wind_m_s": 2.0,
+    "wind_height_m": 10.0,
+    "wind_from_deg_true": 270.0,
+    "air_temperature_C": 25.0,
+    "humidity_percent": 50.0,
+    "stability_class": "D",
+    "cloud_tenths": 10,
+    "inversion": "none",
+    "roughness_choice": "Open Country",
+    "calculation_option": "Let ALOHA decide",
+    "latitude_deg": 18.763333333333332,
+    "longitude_deg": 73.345,
+    "elevation_m": 0.0,
+    "time_local": "2026-11-11T12:00:00+05:30",
+    "display_mode": "toxic-concentration diagnostic only",
+    "diagnostic_levels_ppm": [
+      1000,
+      100,
+      10
+    ]
+  },
+  "mapping_pending": [
+    "source_temperature_pressure_phase",
+    "ground_temperature",
+    "installed_roughness_value",
+    "installed_chemical_identity_and_properties",
+    "output_height_and_time_basis"
+  ],
+  "source_summary_tolerance": {
+    "relative": 0.01,
+    "absolute_mass_kg": 0.01,
+    "absolute_duration_s": 0.01
+  }
+}

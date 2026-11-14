@@ -2,7 +2,7 @@
 
 Updated 14 November 2026. First interface and physical-model readiness have separate finish lines. The first D-001 dashboard and local incident backend are implemented; see the [backend milestone](BACKEND_MILESTONE.md). The six-item local backend hardening plan is complete with 34 passing application/backup tests; see the [final backend handoff](BACKEND_HANDOFF_2026-11-14.md). Physical model qualification remains open.
 
-The first [physics qualification package](research/FIRST_PHYSICS_QUALIFICATION.md) now contains frozen propylene/reference input sheets, an installed-model hash manifest and six passing qualification-tool tests. The propane software reference matches all four preregistered values; propylene calculations remain pending; no calculated dashboard layer is enabled.
+The first [physics qualification package](research/FIRST_PHYSICS_QUALIFICATION.md) now contains frozen propylene/reference input sheets, an installed-model hash manifest and 14 passing qualification-tool tests. The [propylene preparation milestone](research/PROPYLENE_PREPARATION.md) adds four unrun v2 cases and guarded observed-record checks. The propane software reference matches all four preregistered values; propylene calculations remain pending; no calculated dashboard layer is enabled.
 
 ## Confirmed direction
 

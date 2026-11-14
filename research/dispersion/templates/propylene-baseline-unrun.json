@@ -1,0 +1,75 @@
+{
+  "case_id": "D-001-PHYS-002-baseline",
+  "case_sha256": "7f98707eea7569b8b43e17f8dac90bcb1b92c688b06b351a4b4dadb062ed4d24",
+  "run_completed": false,
+  "synthetic_test_data": false,
+  "run_at_utc": null,
+  "engine": {
+    "name": "ALOHA",
+    "version": "5.4.7",
+    "executable_sha256": null
+  },
+  "observed_inputs": null,
+  "dispersion_method": null,
+  "basis": {
+    "concentration_unit": "ppm",
+    "concentration_basis": "gas_volume_fraction",
+    "receptor_height_m": null,
+    "statistic": null,
+    "averaging_description": null,
+    "time_window_description": null,
+    "display_mode": null
+  },
+  "source_summary": {
+    "airborne_mass_kg": null,
+    "duration_s": null
+  },
+  "receptors": [
+    {
+      "downwind_m": 50,
+      "crosswind_m": 0,
+      "value_ppm": null,
+      "unavailable_reason": null
+    },
+    {
+      "downwind_m": 100,
+      "crosswind_m": 0,
+      "value_ppm": null,
+      "unavailable_reason": null
+    },
+    {
+      "downwind_m": 200,
+      "crosswind_m": 0,
+      "value_ppm": null,
+      "unavailable_reason": null
+    },
+    {
+      "downwind_m": 500,
+      "crosswind_m": 0,
+      "value_ppm": null,
+      "unavailable_reason": null
+    }
+  ],
+  "contours": [
+    {
+      "level_ppm": 1000,
+      "downwind_m": null,
+      "unavailable_reason": null
+    },
+    {
+      "level_ppm": 100,
+      "downwind_m": null,
+      "unavailable_reason": null
+    },
+    {
+      "level_ppm": 10,
+      "downwind_m": null,
+      "unavailable_reason": null
+    }
+  ],
+  "warnings": null,
+  "operator_notes": null,
+  "mapping_review": null,
+  "evidence_files": [],
+  "label": "UNRUN TEMPLATE. Copy observed values only; unavailable values need the actual model reason. No expected concentrations supplied."
+}

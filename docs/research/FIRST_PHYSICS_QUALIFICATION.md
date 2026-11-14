@@ -34,3 +34,7 @@ The official installer and model files have been hashed in the [engine manifest]
 After user-authorized desktop launch, the propane reference reproduced all four preregistered values on 11 November 2026: 26 minutes, 5,730 lb/min, 166 yards red and 474 yards yellow. ALOHA selected Heavy Gas. The public reference-comparison.json records observed values and local evidence hashes. This is software reproduction only. Propylene setup was paused and not saved; no propylene result exists. Before restarting, record the location minute rounding and resolve direct-source temperature/phase mapping in a new case version. The existing local dashboard/backend is unchanged and continues to use illustrative A/B fixtures.
 
 The bundled ALOHA terms restrict duplication of DIPPR data and include third-party endpoint material. Do not commit/rehost the installer, chemical library or unreviewed full Text Summary exports. No headless execution API, hosted deployment entitlement, chemical-mixture validation or local terrain capability has been established.
+
+## CLI-only preparation milestone — 14 November 2026
+
+See [propylene preparation](PROPYLENE_PREPARATION.md) for the v2 baseline and three sensitivity cases, documented input mapping and future observed-record checks. Rate/duration/weather entry mapping is documented; source-temperature/pressure/phase behaviour remains an explicit applicability gate. No propylene model run or result is claimed. The v1 sheets are preserved.

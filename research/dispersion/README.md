@@ -42,3 +42,7 @@ ALOHA's bundled terms identify restrictions on duplicating DIPPR physical-proper
 - The supervised ALOHA 5.4.7 propane reference run succeeded on 11 November: 26 min, 5,730 lb/min, 166 yd red and 474 yd yellow, with Heavy Gas selected. All four match the preregistered reference. See ../../data/public/dispersion-qualification-v1/reference-comparison.json. Propylene has no calculated result; its manual setup was not saved.
 
 See the [model applicability decision](../../docs/research/FIRST_PHYSICS_QUALIFICATION.md) for the remaining gates. Keep the website's illustrative adapter and demo labels unchanged.
+
+## Propylene v2 preparation
+
+The [preparation milestone](../../docs/research/PROPYLENE_PREPARATION.md) maps documented fields, separates unverified source assumptions, versions the observed site-minute precision and defines four unrun cases. `propylene.py` provides prepare-check, template, inspect-run and compare-runs commands; no model is executed. Eight additional synthetic validator tests bring this package to 14 tests. All observed templates remain null/unrun. Record consistency never enables physics or grants applicability/field validation.

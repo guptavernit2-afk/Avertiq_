@@ -250,3 +250,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 
 - Completed the authorized validation, retry, recovery, export and local backup/restore work, followed by fresh CLI verification and a [mentor/developer handoff](BACKEND_HANDOFF_2026-11-14.md).
 - Preserve the single-incident illustrative scope. Browser acceptance and live restore promotion were not performed; physics qualification remains open. No computer-control tools or scheduled runs are authorized during this work.
+
+## 2026-11-14 - Propylene preparation without computer control
+
+- User authorized input mapping, reproducible cases, result checks, tests and push, with model results pending.
+- Preserve frozen v1 and add four v2 unrun cases. Separate Direct Source mass-rate entries from unverified source/ground thermodynamic assumptions; retain the earlier observed location-minute precision.
+- Gate future record inspection on exact case/engine/input identity, units, output semantics, source consistency and hashed local evidence. Retain unavailable outputs and warnings; withhold mixed-method/basis comparisons. Checks never enable the dashboard or qualify physical accuracy. See [preparation](research/PROPYLENE_PREPARATION.md).

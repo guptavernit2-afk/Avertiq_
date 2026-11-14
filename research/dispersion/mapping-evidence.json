@@ -1,0 +1,31 @@
+{
+  "review": "Installed help read from disk; no model execution",
+  "software_version": "5.4.7",
+  "technical_reference_version": "5.4.4 (2013)",
+  "technical_reference_url": "https://response.restoration.noaa.gov/sites/default/files/ALOHA_Tech_Doc.pdf",
+  "files": [
+    {
+      "installed_relative_path": "AlohaHelp/Source/DirectSource/Direct_Source.htm",
+      "sha256": "39365bb3cfc5c8452d975dd8dbd8c75c1a036d6dba13348da280bdd7814bee00"
+    },
+    {
+      "installed_relative_path": "AlohaHelp/Source/DirectSource/Direct_Source_Inputs.htm",
+      "sha256": "e9e630b1c989e23debf3237c1830e9fa566a600a24995fe36847e3d7a946d8af"
+    },
+    {
+      "installed_relative_path": "AlohaHelp/Atmospheric/User_Input/Ground_Roughness.htm",
+      "sha256": "a21ede8951a3478ed801ae517b17719b43e63d29e2245c4fbfc45dbff26cf5d9"
+    },
+    {
+      "installed_relative_path": "AlohaHelp/Reference/DispersionModeling/Heavy_Gas_Dispersion.htm",
+      "sha256": "807addc2457e610c398e93e0f21fd0f387a3b845d74cd94acef31c26d019458e"
+    }
+  ],
+  "unresolved": [
+    "source temperature/pressure and phase mapping",
+    "ground temperature mapping",
+    "numeric effective roughness",
+    "saved chemical identity/property evidence",
+    "actual output height/time/averaging semantics"
+  ]
+}

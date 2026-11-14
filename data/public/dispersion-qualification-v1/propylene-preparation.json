@@ -1,0 +1,72 @@
+{
+  "status": "prepared_unrun",
+  "cases": [
+    {
+      "variant": "baseline",
+      "case_id": "D-001-PHYS-002-baseline",
+      "sha256": "7f98707eea7569b8b43e17f8dac90bcb1b92c688b06b351a4b4dadb062ed4d24",
+      "arithmetic_only": {
+        "airborne_mass_kg": 60.0,
+        "wind_towards_degrees_true": 90.0
+      },
+      "open_mapping_gates": [
+        "source_temperature_pressure_phase",
+        "ground_temperature",
+        "installed_roughness_value",
+        "installed_chemical_identity_and_properties",
+        "output_height_and_time_basis"
+      ]
+    },
+    {
+      "variant": "rate-half",
+      "case_id": "D-001-PHYS-002-rate-half",
+      "sha256": "33c58d4139891f45d3d55ddd9e7bbf96d64af57cf1102b76048a8d8c4d4df711",
+      "arithmetic_only": {
+        "airborne_mass_kg": 30.0,
+        "wind_towards_degrees_true": 90.0
+      },
+      "open_mapping_gates": [
+        "source_temperature_pressure_phase",
+        "ground_temperature",
+        "installed_roughness_value",
+        "installed_chemical_identity_and_properties",
+        "output_height_and_time_basis"
+      ]
+    },
+    {
+      "variant": "rate-double",
+      "case_id": "D-001-PHYS-002-rate-double",
+      "sha256": "29b04f840b25cc6c9fdfdb996d9ca72a9e89ec44b0faff0a58867bfad2586022",
+      "arithmetic_only": {
+        "airborne_mass_kg": 120.0,
+        "wind_towards_degrees_true": 90.0
+      },
+      "open_mapping_gates": [
+        "source_temperature_pressure_phase",
+        "ground_temperature",
+        "installed_roughness_value",
+        "installed_chemical_identity_and_properties",
+        "output_height_and_time_basis"
+      ]
+    },
+    {
+      "variant": "wind-higher",
+      "case_id": "D-001-PHYS-002-wind-higher",
+      "sha256": "5521cb3fba1ad74fbed9b780f66c75bd84f06b9f9bd0a56d10a1a77f985a9b7a",
+      "arithmetic_only": {
+        "airborne_mass_kg": 60.0,
+        "wind_towards_degrees_true": 90.0
+      },
+      "open_mapping_gates": [
+        "source_temperature_pressure_phase",
+        "ground_temperature",
+        "installed_roughness_value",
+        "installed_chemical_identity_and_properties",
+        "output_height_and_time_basis"
+      ]
+    }
+  ],
+  "model_calculation_performed": false,
+  "propylene_qualified": false,
+  "dashboard_adapter_enabled": false
+}
