@@ -309,3 +309,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Commit the [handoff plan](research/PROPYLENE_REVIEW_HANDOFF.md) before implementation, extending the existing sensitivity-review workflow toward qualification gate 6.
 - Render only after rechecking original four-case observations and evidence. Retain case/engine/evidence identity, units, bounds, unavailable reasons, warnings and open gates; escape transcribed text and exclude raw evidence/active content.
 - All 82 local qualification-tool tests pass. Only disposable synthetic HTML was generated, with programmatic content/structure checks. Keep actual ALOHA results pending and submit the implementation through PR/CI review before merge.
+
+## 2026-11-15 - Explicit archived-record reinspection
+
+- Commit the [reinspection plan](research/PROPYLENE_ARCHIVE_REINSPECTION.md) before implementation. Reuse verified archive contents and the current inspector to create a separate receipt after checking-code/configuration drift.
+- Preserve original archive bytes, report and provenance. Require current frozen-case identity; reject failed current checks, corrupt evidence, wrong independent hashes and existing output paths. Current record consistency cannot grant physics approval.
+- All 90 local qualification-tool tests pass, including eight synthetic reinspection tests. No actual archive/model run or dashboard result was created. Submit through PR and successful CI before merge.

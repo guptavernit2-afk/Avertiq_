@@ -100,3 +100,7 @@ The [planned sensitivity-report task](../../docs/research/PROPYLENE_SENSITIVITY_
 ## Readable local review handoff
 
 After actual four-case observations exist, `review_handoff.py --runs-dir outputs/propylene --output outputs/propylene/review-handoff.html` rechecks them and exports a self-contained HTML handoff for local review. It preserves warnings, output units, comparison blockers, bound/missing values and unresolved qualification gates, with case/engine/evidence and checked-comparison hashes. It accepts no trusted prebuilt comparison file, embeds no raw evidence and refuses overwrites. See the [plan, workflow and limits](../../docs/research/PROPYLENE_REVIEW_HANDOFF.md). All 82 tests pass, including eight disposable synthetic handoff tests; actual physics results remain pending. No visual browser acceptance is claimed.
+
+## Explicit reinspection after tooling changes
+
+`archive.py reinspect-archive` verifies an archive and writes a separate current-inspection receipt without rewriting its historical evidence or provenance. It rejects a changed registered case or a record that fails current checks. See the [plan, receipt semantics and workflow](../../docs/research/PROPYLENE_ARCHIVE_REINSPECTION.md). All 90 qualification-tool tests pass, including eight new synthetic reinspection tests. This is record consistency only; actual ALOHA results and all physical-acceptance gates remain pending.

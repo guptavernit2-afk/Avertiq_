@@ -18,7 +18,7 @@ Plan commit first on codex/propylene-review-handoff, then implementation/tests, 
 
 Implemented on the planned branch. All 82 qualification-tool tests pass locally, including eight new handoff tests. Synthetic tests cover traceability, case/output units and labels, preserved warnings and gates, withheld comparisons, bounds/zero values, escaped markup, source preservation, refused overwrites and rejection of unrun/malformed/missing/tampered inputs. No actual handoff or model result was created. HTML content and structure were checked through Python's HTML parser; no visual browser acceptance is claimed.
 
-Submit this change as a PR and merge after diff review and successful Windows/Linux CI. The PR retains remote verification and merge evidence.
+Completed through [PR #2](https://github.com/guptavernit2-afk/Avertiq_/pull/2), merged as 70c1e35 after diff review and successful Windows/Linux CI. Actual propylene results remain pending.
 
 
 ## Future local workflow
