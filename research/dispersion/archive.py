@@ -129,7 +129,8 @@ def archive_run(variant, observed_path, output):
     return result
 
 
-def verify_bytes(data, expected_sha256=None):
+def _verified_contents(data, expected_sha256=None):
+    """Return checked archive data without extracting paths or altering history."""
     require(len(data) <= MAX_ARCHIVE_BYTES, 'Archive exceeds total size limit')
     archive_hash = digest(data)
     if expected_sha256 is not None:
@@ -170,7 +171,7 @@ def verify_bytes(data, expected_sha256=None):
     current = captured_provenance == provenance() and case_hash(case) == case_hash(registered_case(manifest['variant']))
     if current:
         require(inspect_captured(case, observed, payloads) == report, 'Archived inspection differs from current checks')
-    return {
+    receipt = {
         'status': 'archive_verified_applicability_pending' if current else 'archive_integrity_verified_reinspection_pending',
         'archive_sha256': archive_hash, 'external_hash_matched': expected_sha256 is not None,
         'case_id': case['id'], 'case_sha256': case_hash(case), 'evidence_file_count': len(payloads),
@@ -178,10 +179,52 @@ def verify_bytes(data, expected_sha256=None):
         'model_executed_by_archive_tool': False, **FLAGS,
         'label': 'File integrity and optional record reinspection only; not authenticity or physics validation',
     }
+    return receipt, {
+        'variant': manifest['variant'], 'case': case, 'observed': observed,
+        'inspection': report, 'provenance': captured_provenance, 'payloads': payloads,
+    }
+
+
+def verify_bytes(data, expected_sha256=None):
+    return _verified_contents(data, expected_sha256)[0]
 
 
 def verify_archive(path, expected_sha256=None):
     return verify_bytes(bounded_read(path, MAX_ARCHIVE_BYTES), expected_sha256)
+
+
+def reinspect_archive(path, output, expected_sha256=None):
+    output = Path(output)
+    require(output.suffix.lower() == '.json', 'Use a .json destination for the separate reinspection receipt')
+    require(not output.exists() and not output.is_symlink(), 'Choose a fresh receipt path; overwrite is refused')
+    verified, captured = _verified_contents(bounded_read(path, MAX_ARCHIVE_BYTES), expected_sha256)
+    case = registered_case(captured['variant'])
+    require(case_hash(case) == case_hash(captured['case']), 'Archived case differs from the current registered case; explicit case review required')
+    current_provenance = provenance()
+    current = inspect_captured(case, captured['observed'], captured['payloads'])
+    require(provenance() == current_provenance, 'Checking provenance changed during reinspection; retry with stable tooling')
+    receipt = {
+        'status': 'archive_reinspected_applicability_pending',
+        'reinspected_at_utc': datetime.now(timezone.utc).isoformat(),
+        'archive_sha256': verified['archive_sha256'],
+        'external_hash_matched': verified['external_hash_matched'],
+        'case_id': case['id'], 'case_sha256': case_hash(case),
+        'historical_inspection_sha256': case_hash(captured['inspection']),
+        'historical_provenance_sha256': case_hash(captured['provenance']),
+        'current_inspection_sha256': case_hash(current),
+        'current_provenance_sha256': case_hash(current_provenance),
+        'historical_provenance_matches_current': captured['provenance'] == current_provenance,
+        'inspection_changed': captured['inspection'] != current,
+        'current_inspection': current, 'current_provenance': current_provenance,
+        'integrity_checks_passed': True, 'record_reinspection_passed': True,
+        'historical_archive_modified': False, 'model_executed_by_archive_tool': False, **FLAGS,
+        'label': 'Explicit current record reinspection only; historical archive unchanged; authenticity and physics applicability remain unverified',
+    }
+    serialized = encode(receipt)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open('xb') as stream:
+        stream.write(serialized)
+    return receipt
 
 
 def main():
@@ -194,10 +237,18 @@ def main():
     verify = commands.add_parser('verify-archive')
     verify.add_argument('--archive', type=Path, required=True)
     verify.add_argument('--expected-sha256')
+    reinspect = commands.add_parser('reinspect-archive')
+    reinspect.add_argument('--archive', type=Path, required=True)
+    reinspect.add_argument('--expected-sha256')
+    reinspect.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     try:
-        result = (archive_run(args.case, args.observed, args.output) if args.command == 'archive-run'
-                  else verify_archive(args.archive, args.expected_sha256))
+        if args.command == 'archive-run':
+            result = archive_run(args.case, args.observed, args.output)
+        elif args.command == 'verify-archive':
+            result = verify_archive(args.archive, args.expected_sha256)
+        else:
+            result = reinspect_archive(args.archive, args.output, args.expected_sha256)
     except (ValueError, OSError, KeyError, TypeError, zipfile.BadZipFile) as error:
         parser.exit(1, f'Archive check failed: {error}\n')
     print(json.dumps(result, indent=2, allow_nan=False))

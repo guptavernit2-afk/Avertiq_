@@ -65,3 +65,7 @@ python -m unittest discover -s research/dispersion -p 'test_*.py' -v
 ```
 
 The package has 39 passing tests, including 13 new archive tests. Disposable synthetic cases cover all four variants, original-byte preservation, warnings/nulls, same-named evidence files, changed/missing data, path restrictions, overwritten reports, provenance drift, interrupted writes, existing-file protection, size/format limits and CLI success/failure. No actual propylene run or archive is claimed.
+
+## Explicit current reinspection
+
+To complete a record check after provenance drift, use the separate [archive-reinspection command](PROPYLENE_ARCHIVE_REINSPECTION.md). It creates a new receipt with historical/current hashes and a current inspection while leaving this archive unchanged. Ordinary verification retains its historical-provenance status. Reinspection never runs a model or closes physical qualification gates.
