@@ -285,3 +285,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Add explicit raw-unit transcription for source mass/duration, receptor ppm and contour distance; use attributed NIST conversion factors without guessing state-dependent concentration conversions.
 - Preserve reported bounds as bounds and null scalar values, with original tokens, reasons and evidence references. Require complete per-case transcription when supplied; retain a clearly labelled legacy path without raw-unit verification.
 - Normalize into a new file only after existing run checks pass. Preserve raw metadata in inspections and private archives; do not close physical qualification gates. See [capture workflow](research/PROPYLENE_UNIT_TRANSCRIPTION.md).
+
+## 2026-11-14 - Automate qualification-tool regression checks
+
+- Add a dedicated CI workflow for dispersion tools and their public input/reference records, using fresh Windows/Linux checkouts with Python 3.11/3.13 and no third-party Python dependencies.
+- Run the full synthetic test suite plus input/preparation CLI smoke checks; check versioned records for unintended changes. Do not install or invoke ALOHA, fetch private evidence, upload synthetic evidence, deploy, or change physics gates.
+- This extends verification of the existing qualification preparation work. Local and remote test outcomes are software evidence only; actual propylene calculations and human applicability review remain pending. See the [tool workflow](../research/dispersion/README.md#automated-qualification-tool-checks).

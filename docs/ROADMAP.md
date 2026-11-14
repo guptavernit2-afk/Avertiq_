@@ -40,3 +40,5 @@ The [local evidence archive milestone](research/PROPYLENE_EVIDENCE_ARCHIVE.md) a
 The [output-meaning milestone](research/PROPYLENE_OUTPUT_SEMANTICS.md) distinguishes outdoor averaged maxima, first-hour observation windows and diagnostic threshold envelopes. Comparisons now require evidence-linked structured metadata; exact averaging and actual propylene outputs remain pending.
 
 The [unit-transcription milestone](research/PROPYLENE_UNIT_TRANSCRIPTION.md) adds checked output-unit conversions while preserving reporting bounds and unavailable values. It prepares evidence capture only; no propylene results have been generated.
+
+The [qualification-tool CI workflow](../.github/workflows/dispersion.yml) now checks the synthetic regression suite and preparation commands from fresh Windows/Linux checkouts on Python 3.11/3.13. This guards the existing evidence workflow while ALOHA is pending; a passing CI job does not supply physics results or close qualification gates.

@@ -66,3 +66,19 @@ The [output interpretation milestone](../../docs/research/PROPYLENE_OUTPUT_SEMAN
 ## Raw units and reporting limits
 
 `transcription-template` prepares an unconfirmed supplement; `normalize-run` creates a separately checked observation from recorded units and evidence. Bounds remain null in scalar fields with their qualifier and limit retained; unsupported conversions are rejected. See the [unit-transcription workflow](../../docs/research/PROPYLENE_UNIT_TRANSCRIPTION.md). Inspection and archive provenance preserve the original tokens. Twelve additional synthetic tests bring the package to 59; actual propylene physics results remain pending.
+
+## Automated qualification-tool checks
+
+The [dispersion workflow](../../.github/workflows/dispersion.yml) runs this package's synthetic regression tests and input/preparation CLI checks on Windows and Linux with Python 3.11 and 3.13. It triggers when the tools, their public qualification records or the workflow change, and can also be started manually. Each job uses a fresh checkout and only Python's standard library; no installed ALOHA, local evidence archive or external dataset is required.
+
+The workflow checks that tests leave versioned research records unchanged. Temporary evidence remains disposable, and no CI artifacts are uploaded. A green job means the record-checking software passed its tests; it is not an ALOHA run, new reference reproduction, propylene result, applicability decision or field validation. The historical propane reference is read as a registered control record, not rerun. Actual physics results and dashboard integration remain pending.
+
+To repeat the regression suite locally:
+
+```powershell
+python -m unittest discover -s research/dispersion -p 'test_*.py' -v
+```
+
+The input/preparation smoke commands are documented above; use fresh output filenames because they refuse overwrites. GitHub Actions results establish the remote platform/version checks separately from a local test pass.
+
+Local verification for this CI addition: all 59 tests passed on Python 3.13.6, then passed again in a disposable snapshot containing only tracked dispersion code and public qualification records. Both workflow smoke commands passed there, their model-execution/dashboard flags stayed false, and source bytes remained unchanged. Workflow YAML and changed documentation paths were also checked. Remote matrix outcomes are available in the workflow run history.

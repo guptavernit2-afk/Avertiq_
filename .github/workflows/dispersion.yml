@@ -1,0 +1,47 @@
+name: Dispersion qualification tools (no model execution)
+
+on:
+  push:
+    paths:
+      - 'research/dispersion/**'
+      - 'data/public/dispersion-qualification-v1/**'
+      - '.github/workflows/dispersion.yml'
+  pull_request:
+    paths:
+      - 'research/dispersion/**'
+      - 'data/public/dispersion-qualification-v1/**'
+      - '.github/workflows/dispersion.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-tools:
+    name: Tools / ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.13']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      # Standard library only. Do not install ALOHA or retrieve private evidence.
+      - name: Run synthetic record, conversion and archive regression tests
+        run: python -m unittest discover -s research/dispersion -p "test_*.py" -v
+      - name: Check assumed inputs (arithmetic only)
+        run: python research/dispersion/qualify.py input-check --output "${{ runner.temp }}/dispersion-input-check.json"
+      - name: Check frozen unrun case preparation
+        run: python research/dispersion/propylene.py prepare-check --output "${{ runner.temp }}/dispersion-preparation-check.json"
+      - name: Confirm versioned research records were not changed
+        run: git diff --exit-code -- research/dispersion data/public/dispersion-qualification-v1
+      # No artifact upload: temporary synthetic evidence is never a public result.
