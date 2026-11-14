@@ -20,7 +20,7 @@ Work on `codex/propylene-sensitivity-report`. Record this plan first, then imple
 
 Implemented on the planned feature branch. All 74 qualification-tool tests pass locally, including eight new sensitivity-report tests. The CLI retains existing receptor comparison fields and adds changed-input details, explicit blockers, contour changes and per-side unavailability/bound metadata. Tests verify reordered rows, falling values, missing outputs, zero denominators, ratio overflow/underflow, unchanged source files, overwrite refusal and unrun-record rejection. No physics result is supplied by these tests.
 
-The branch will be submitted as a PR and merged only after diff review and successful CI. GitHub retains the PR and remote check evidence; this record does not claim a merge before it happens.
+Completed through [PR #1](https://github.com/guptavernit2-afk/Avertiq_/pull/1), merged as b4596d0 after diff review and successful Windows/Linux CI. Actual baseline/sensitivity model runs remain pending.
 
 ## Report contract
 

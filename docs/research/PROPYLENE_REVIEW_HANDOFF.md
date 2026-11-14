@@ -16,4 +16,23 @@ Plan commit first on codex/propylene-review-handoff, then implementation/tests, 
 
 ## Completion
 
-Pending implementation. No actual handoff or model result exists.
+Implemented on the planned branch. All 82 qualification-tool tests pass locally, including eight new handoff tests. Synthetic tests cover traceability, case/output units and labels, preserved warnings and gates, withheld comparisons, bounds/zero values, escaped markup, source preservation, refused overwrites and rejection of unrun/malformed/missing/tampered inputs. No actual handoff or model result was created. HTML content and structure were checked through Python's HTML parser; no visual browser acceptance is claimed.
+
+Submit this change as a PR and merge after diff review and successful Windows/Linux CI. The PR retains remote verification and merge evidence.
+
+
+## Future local workflow
+
+Only after actual observations and raw evidence exist for all four cases:
+
+```powershell
+python research/dispersion/review_handoff.py --runs-dir outputs/propylene --output outputs/propylene/review-handoff.html
+```
+
+The command accepts the original run directory, not a prebuilt comparison JSON. It reuses `compare_runs` and every underlying case/engine/evidence/semantics/transcription check. Missing and unrun records cannot generate a handoff. Method or basis mismatches produce a handoff with explicit withheld-comparison reasons and each run's separately labelled recorded values; incompatible outputs are never numerically compared.
+
+The self-contained HTML contains no scripts, external assets or clickable evidence paths. It includes evidence filenames/hashes, not raw files. Operator notes, warnings and other recorded free text are escaped but retained, so keep the report local until content and redistribution review; escaping is not a privacy or licensing review. The current output is for scientific review, not public communication or emergency guidance.
+
+Traceability includes the canonical checked-comparison SHA-256 (reproducible using the existing comparison command and canonical JSON hashing), case/engine/evidence hashes, recorded run times and the LF-normalized handoff-tool hash. Hashes do not establish authenticity or applicability. The export has no new run timestamp because creating a report is not executing a model.
+
+Use a fresh `.html` path. Validation and rendering finish before destination creation, and exclusive creation rejects an existing/racing file. A storage interruption can leave a partial HTML file: do not treat that as a complete handoff; preserve it for diagnosis and retry to a fresh path. No raw evidence, observations, frozen cases or public reference records are rewritten.

@@ -303,3 +303,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Adopt the user's plan-first, feature-branch, test, PR and merge workflow for future project work; record it in AGENTS.md. Commit the [bounded task plan](research/PROPYLENE_SENSITIVITY_REPORT.md) before implementing its reporting work.
 - Complete the comparison preparation for qualification gates 5/6: changed frozen inputs with units, contour and receptor changes matched by identifiers, explicit compatibility blockers and preserved unavailable/bounded readings. Never derive a point estimate from a bound or claim a monotonic physical trend.
 - Pass 74 local synthetic qualification-tool tests. No actual ALOHA execution, physics acceptance, dashboard integration or deployment. Merge is contingent on PR diff review and successful CI.
+
+## 2026-11-15 - Plan a readable local qualification handoff
+
+- Commit the [handoff plan](research/PROPYLENE_REVIEW_HANDOFF.md) before implementation, extending the existing sensitivity-review workflow toward qualification gate 6.
+- Render only after rechecking original four-case observations and evidence. Retain case/engine/evidence identity, units, bounds, unavailable reasons, warnings and open gates; escape transcribed text and exclude raw evidence/active content.
+- All 82 local qualification-tool tests pass. Only disposable synthetic HTML was generated, with programmatic content/structure checks. Keep actual ALOHA results pending and submit the implementation through PR/CI review before merge.
