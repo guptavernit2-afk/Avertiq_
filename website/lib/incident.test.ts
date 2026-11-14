@@ -369,3 +369,82 @@ test('recovery rechecks the lease when a competing worker starts the queued job'
     assert.equal(result.data.incident.events.some(e=>e.type==='assessment-failed'),false);
   } finally { sqlite.close(); }
 });
+import { incidentExport, incidentHandover, matchingMap } from './incident-export.ts';
+import { createIncident, saveWorkspace } from './incident.ts';
+
+const exportTime = '2026-11-14T12:00:00.000Z';
+function completedExportState() {
+  let state=createIncident(exportTime);
+  state=queueAssessment(state,'export-job',exportTime);
+  state=transitionJob(state,'export-job','running',exportTime);
+  return transitionJob(state,'export-job','completed',exportTime);
+}
+
+test('exports bind illustrative geometry to immutable revision, job and timestamps', () => {
+  const state=completedExportState();
+  const record=incidentExport(state.workspace,state,'',exportTime);
+  assert.equal(record.assessment.status,'completed');
+  assert.ok(record.assessment.geometry);
+  assert.equal(record.exportedAt,exportTime);
+  assert.equal(record.provenance.savedInputRevisionId,'R001');
+  assert.equal(record.provenance.assessmentRevisionId,'R001');
+  assert.equal(record.provenance.assessmentJobId,'export-job');
+  assert.equal(record.provenance.adapterVersion,'illustrative-fixture-v1');
+  assert.equal(record.provenance.jobCreatedAt,exportTime);
+  assert.equal(record.provenance.jobUpdatedAt,exportTime);
+  assert.equal(record.provenance.units.duration,'minutes');
+  assert.equal(record.assessment.calculated,false);
+  assert.equal(record.assessment.threshold,null);
+  assert.equal(record.assessment.hazardDistance,null);
+  record.backendHistory!.revisions[0].inputs.windSpeed='999';
+  record.inputs.chemical='CNG';
+  assert.equal(state.revisions[0].inputs.windSpeed,'2');
+  assert.equal(state.workspace.inputs.chemical,'Propylene');
+});
+
+test('JSON and HTML suppress geometry and captured images for every unavailable status', () => {
+  const fresh=createIncident(exportTime);
+  const queued=queueAssessment(fresh,'pending',exportTime);
+  const running=transitionJob(queued,'pending','running',exportTime);
+  const failed=transitionJob(running,'pending','failed',exportTime);
+  const completed=completedExportState();
+  const stale=saveWorkspace(completed,loadPreset(completed.workspace,'B'),exportTime);
+  const unsupportedBase=saveWorkspace(fresh,{...fresh.workspace,inputs:{...PRESETS.A,chemical:'CNG'}},exportTime);
+  const unsupported=transitionJob(transitionJob(queueAssessment(unsupportedBase,'unsupported',exportTime),'unsupported','running',exportTime),'unsupported','unsupported',exportTime);
+  const cases: [Incident|null, typeof fresh.workspace, string, string][] = [
+    [null,fresh.workspace,'','unavailable'],[fresh,fresh.workspace,'','not-run'],
+    [queued,queued.workspace,'','queued'],[running,running.workspace,'','running'],
+    [failed,failed.workspace,'','failed'],[stale,stale.workspace,'','stale'],
+    [unsupported,unsupported.workspace,'','unsupported'],
+    [completed,loadPreset(completed.workspace,'B'),'','unsaved-inputs'],
+    [completed,completed.workspace,'<script>connection failed</script>','unavailable'],
+  ];
+  for (const [state,workspace,error,status] of cases) {
+    const record=incidentExport(workspace,state,error,exportTime);
+    assert.equal(record.assessment.status,status);
+    assert.equal(record.assessment.geometry,null);
+    assert.equal(record.assessment.fixtureId,null);
+    const html=incidentHandover(workspace,state,error,{dataUrl:'data:image/png;base64,AAAA',jobId:'export-job',revisionId:'R001'},exportTime);
+    assert.ok(html.includes(`${status}:`));
+    assert.doesNotMatch(html,/<img|<script>|OUTDATED: inputs differ/);
+  }
+});
+
+test('unsaved notes are labelled and map captures cannot cross job or revision boundaries', () => {
+  const state=completedExportState();
+  const draft=structuredClone(state.workspace);
+  draft.observations.push({id:'note',kind:'Field report',time:'T+05',text:'<b>synthetic note</b>',synthetic:true});
+  const record=incidentExport(draft,state,'',exportTime);
+  assert.equal(record.saved,false);
+  assert.equal(record.provenance.inputsMatchSavedRevision,true);
+  assert.equal(record.assessment.status,'completed');
+  const capture={dataUrl:'data:image/png;base64,AAAA',jobId:'export-job',revisionId:'R001'};
+  assert.equal(matchingMap(record,capture),capture.dataUrl);
+  assert.equal(matchingMap(record,{...capture,jobId:'old-job'}),undefined);
+  assert.equal(matchingMap(record,{...capture,revisionId:'R002'}),undefined);
+  const html=incidentHandover(draft,state,'',capture,exportTime);
+  assert.match(html,/<img/); assert.match(html,/UNSAVED browser draft/);
+  assert.match(html,/&lt;b&gt;synthetic note/);
+  assert.match(html,/illustrative-fixture-v1/);
+  assert.doesNotMatch(incidentHandover(draft,state,'',{...capture,jobId:'old-job'}),/<img/);
+});

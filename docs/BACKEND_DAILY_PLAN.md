@@ -26,3 +26,5 @@ Keep D-001 single-incident scope. No agency authentication, multi-tenant deploym
 - Duplicate/retry task completed: persist the initiating version on each job; repeated POSTs reuse it and concurrent requests resolve to one job. Preserve current revision/stale geometry rules and legacy conflict handling. Added regression coverage; next bounded task is interrupted-job recovery and storage failures.
 
 - Recovery/storage task: consistent 60-second lease clock, bounded conflict reconciliation, and persisted-state checks after uncertain writes. Added SQLite fault-injection and recovery-race tests. Next task is export provenance and unavailable/stale-result consistency.
+
+- Export task completed: shared JSON/HTML builder, explicit revision/job/time/unit provenance, truthful unavailable and draft statuses, detached snapshots, and map capture identity checks. Regression suite now has 28 passing tests; typecheck and build pass. Next bounded task is local backup/restore with disposable-database verification.
