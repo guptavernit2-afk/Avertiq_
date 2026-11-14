@@ -1,0 +1,17 @@
+{
+  "engine": "ALOHA",
+  "requested_version": "5.4.7",
+  "installed_from": "https://www.epa.gov/sites/production/files/2016-09/aloha547installer.exe",
+  "installer_sha256": "2b7e597cd3708a9758bf55e0d069018f8a26bdc55b8d4e31fb2f93b0e30ca3d4",
+  "runtime_files": {
+    "ALOHA.EXE": "7c8601737df90a786cd5c2ec23f56c6ec2319be2f39924b07345787faaa19017",
+    "NOAA_32.DLL": "13b931d645bbefa06e041d11aa1c566a7e2418c47e95f55c4b617683d058598f",
+    "AlohaLib/ChemLib.lib": "0b4329e45a45615c491eb1c47857ecb4d708d4643808fe100c4a699df996f2a7",
+    "AlohaLib/ChemLib.dpr": "7111790ce0ca3e0e1bd69cd70e255bdc52573d7d889ba2e152456c5fe9485da9",
+    "AlohaLib/ChemLib.flm": "c299805c3a4e7997418c934771180d312a803ffd5bf2b84509d13cef85cb72b7",
+    "AlohaLib/ChemLib.frt": "a158727d03a71c5a4bcaa4f6266bf12c4f78decf20b369a375036c019418ba99"
+  },
+  "runtime_version_verified_in_UI": true,
+  "reference_run_completed": true,
+  "licence_note": "Bundled terms restrict duplication of DIPPR property data; binaries, libraries and raw model summaries stay local/ignored. Do not redistribute the property database."
+}

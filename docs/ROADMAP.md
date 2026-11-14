@@ -2,6 +2,8 @@
 
 Updated 11 November 2026. First interface and physical-model readiness have separate finish lines. The first D-001 dashboard and local incident backend are implemented; see the [backend milestone](BACKEND_MILESTONE.md). Physical model qualification remains open.
 
+The first [physics qualification package](research/FIRST_PHYSICS_QUALIFICATION.md) now contains frozen propylene/reference input sheets, an installed-model hash manifest and six passing qualification-tool tests. The propane software reference matches all four preregistered values; propylene calculations remain pending; no calculated dashboard layer is enabled.
+
 ## Confirmed direction
 
 Chemical transport and storage incident assessment for **LPG, CNG and reported propylene**, including light/heavy release behaviour. The wider physics target includes applicable gas dispersion, fire radiation, blast overpressure and terrain-dependent dispersion. No fourth chemical is selected. The first product case remains one stationary propylene-tanker training walkthrough, D-001.

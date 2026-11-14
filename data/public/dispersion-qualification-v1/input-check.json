@@ -1,0 +1,19 @@
+{
+  "case_id": "D-001-PHYS-001",
+  "case_sha256": "208705e6d97353e17a00366afaf7d8efadc9188e74bcb261ca47669dcbfc1363",
+  "input_checks_passed": true,
+  "arithmetic_only": {
+    "airborne_mass_kg": 60.0,
+    "wind_towards_degrees_true": 90.0
+  },
+  "model_calculation_performed": false,
+  "dashboard_adapter_enabled": false,
+  "open_gates": [
+    "installed_chemical_CAS_checked",
+    "source_temperature_and_phase_mapping_checked",
+    "reference_reproduction_passed",
+    "dashboard_adapter_enabled"
+  ],
+  "label": "Assumed inputs checked; arithmetic is not a dispersion prediction",
+  "report_created_at_utc": "2026-11-11T05:05:30.129689+00:00"
+}

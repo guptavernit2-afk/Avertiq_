@@ -237,3 +237,11 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Run the illustrative A/B adapter synchronously with durable queued/running/terminal events. Unsupported inputs return reasons, and interrupted jobs recover to failed after a bounded lease. Keep all physical quantities uncalculated.
 - Connect explicit dashboard save/assessment controls, saved revision/job/event history and backend-aware exports. Hide result geometry for unsaved input edits and unavailable/stale/failed/unsupported results. Preserve earlier browser storage without silently importing it.
 - See [backend milestone](BACKEND_MILESTONE.md) for verification and limits. Research solvers and the original SurakshaMitra prototype remain unchanged.
+
+## 2026-11-11 - First bounded physics qualification preparation
+
+- User authorized the proposed propylene direct-source input sheet, model applicability review and documented reference reproduction before dashboard integration.
+- Freeze an assumed gas-only, ground-level, flat-open-country propylene case and a separate published propane unignited-leak software control. Record comparison tolerances before observing any output. Neither case reconstructs the historical accident.
+- Download/install the official EPA ALOHA 5.4.7 reference tool locally and record installer/runtime hashes. Bundled terms restrict DIPPR duplication; keep libraries and raw summaries in ignored local outputs.
+- The installed process has no usable exposed window. Required Windows-action confirmation was requested under the computer-use skill; actual reference and propylene runs remain pending. Do not convert source-reference expected values into observed results.
+- Add six passing evidence-tool tests and input arithmetic checks in [standalone qualification](../research/dispersion/README.md). These do not validate dispersion. Leave the dashboard/backend's illustrative adapter unchanged; see [applicability gates](research/FIRST_PHYSICS_QUALIFICATION.md).

@@ -2,6 +2,8 @@
 
 ## Current authorization
 
+On 11 November the user authorized the bounded first physics qualification: freeze one assumed propylene direct-source flat-ground case, review a supported model and reproduce a documented reference before connecting it. New standalone work belongs under research/dispersion; preserve the existing equilibrium solver and original prototype. Installation is not successful model execution. Do not enable dashboard physics or claim benchmark/field success without actual run evidence. The separate propane reference is a software control, not a replacement for propylene or validation of LPG mixtures.
+
 On 10 November 2026 the user explicitly authorized building the website dashboard and 3D map from the preview, with demo assessments clearly labelled until the physics is ready. This supersedes the earlier no-product-application boundary for the D-001 website only. Keep the research code and original SurakshaMitra prototype unchanged. Build incident inputs, geographic context, illustrative A/B revisions, synthetic observations and handover; do not enable unqualified hazard calculations or live dispatch. Site source synchronization/private preview publication is part of the website workflow. Preserve this repository's Git origin; any Sites source checkout must be isolated under outputs, not repoint this repository.
 
 The user subsequently requested localhost instead of the hosted preview. Future development and previews are local-only unless the user explicitly requests publication. The user requested committing and pushing this first dashboard to the existing Avertiq repository, and asked to clarify the backend/workflow before extending the raw interface. The existing hosted copy is not authorization for further deployments.
@@ -32,3 +34,7 @@ Update the relevant planning record with substantive decisions. Keep the roadmap
 ## Verification
 
 For documentation changes, check links, paths, CSV structure, scope consistency, and Git status. For the equilibrium research package, run its property checks and meaningful conservation/phase-limit tests. Numerical verification is not experimental validation. For flow changes, verify projection/divergence, hydrostatic balance, buoyancy controls, scalar/density conservation and timestep stability. For the website, verify fixture invalidation, immutable revisions, labelled exports, persistence and the core browser walkthrough; report map/network limitations honestly.
+
+## Exam-period backend authorization (14 November 2026)
+
+User authorizes daily independent backend progress and scoped commits/pushes for six days. Follow docs/BACKEND_DAILY_PLAN.md. Use CLI only; no computer-use, native app control, browser automation or visible windows. Keep the existing physics qualification gates and demo labels. No deployments.

@@ -1,0 +1,62 @@
+{
+  "case_id": "REF-ALOHA-547-PROPANE-02",
+  "case_sha256": "3292833fc0be304f9d06c48c3ee405173f9d91e27f41daf19825f8a54f2115ed",
+  "status": "reference_reproduced",
+  "comparison_type": "published_software_reference_reproduction",
+  "engine": {
+    "name": "ALOHA",
+    "version": "5.4.7",
+    "executable_sha256": "7c8601737df90a786cd5c2ec23f56c6ec2319be2f39924b07345787faaa19017"
+  },
+  "run_at_utc": "2026-11-11T05:38:38.757Z",
+  "dispersion_method": "Heavy Gas",
+  "comparisons": {
+    "release_duration_min": {
+      "reference": 26,
+      "observed": 26.0,
+      "absolute_difference": 0.0,
+      "registered_tolerance": 1,
+      "passed": true
+    },
+    "maximum_average_sustained_rate_lb_min": {
+      "reference": 5730,
+      "observed": 5730.0,
+      "absolute_difference": 0.0,
+      "registered_tolerance": 57.300000000000004,
+      "passed": true
+    },
+    "red_downwind_yd": {
+      "reference": 166,
+      "observed": 166.0,
+      "absolute_difference": 0.0,
+      "registered_tolerance": 1.6600000000000001,
+      "passed": true
+    },
+    "yellow_downwind_yd": {
+      "reference": 474,
+      "observed": 474.0,
+      "absolute_difference": 0.0,
+      "registered_tolerance": 4.74,
+      "passed": true
+    }
+  },
+  "evidence_files": [
+    {
+      "name": "reference-ax.txt",
+      "sha256": "f0fd435536e0dc78e21e4d46d054983318212cb40ad16a0a81d032b6f9868d6e"
+    },
+    {
+      "name": "reference-window.png",
+      "sha256": "37e88ab0662a15667b9389f60ae569097796df616b41e1c583c126007e848610"
+    },
+    {
+      "name": "reference-propane.alo",
+      "sha256": "3ce803d480cefd838492a6f369bbeef715ca5025372367f1d94299fcad701a46"
+    }
+  ],
+  "propylene_qualified": false,
+  "field_validated": false,
+  "dashboard_adapter_enabled": false,
+  "label": "Software benchmark only; not validation of the propylene incident",
+  "report_created_at_utc": "2026-11-11T05:41:18.718089+00:00"
+}

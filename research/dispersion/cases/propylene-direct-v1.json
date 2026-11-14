@@ -1,0 +1,107 @@
+{
+  "id": "D-001-PHYS-001",
+  "schema_version": 1,
+  "status": "input_sheet_frozen_pending_engine_applicability",
+  "chemical": {
+    "name": "Propylene",
+    "CAS": "115-07-1",
+    "composition_mole_fraction": 1.0,
+    "evidence": "assumed pure-species research case; actual cargo purity unknown"
+  },
+  "scenario": "unignited_direct_airborne_gas_release_flat_ground",
+  "source": {
+    "type": "prescribed_airborne_mass_rate_not_tank_discharge",
+    "rate_kg_s": 0.1,
+    "duration_s": 600.0,
+    "height_m": 0.0,
+    "temperature_K": 298.15,
+    "pressure_Pa": 101325.0,
+    "phase": "gas_only",
+    "droplets": false,
+    "momentum": "neglected; no pressurized jet or hole calculation",
+    "evidence": "all assumed; does not describe a measured accident release"
+  },
+  "weather": {
+    "wind_speed_m_s": 2.0,
+    "measurement_height_m": 10.0,
+    "wind_from_degrees_true": 270.0,
+    "air_temperature_K": 298.15,
+    "relative_humidity_percent": 50.0,
+    "stability_class": "D",
+    "cloud_cover_tenths": 10,
+    "inversion": "none",
+    "evidence": "all synthetic assumptions; constant wind"
+  },
+  "surface": {
+    "terrain": "flat open country; no buildings, tunnel or valley",
+    "roughness_setting": "open country; numeric value must be checked in installed model",
+    "ground_temperature_K": 298.15,
+    "evidence": "idealized; not actual Adoshi topography"
+  },
+  "site": {
+    "name": "AVERTIQ FLAT TEST",
+    "latitude_deg": 18.76449685,
+    "longitude_deg": 73.3465372,
+    "elevation_m": 0.0,
+    "time_local": "2026-11-11T12:00:00+05:30",
+    "evidence": "approximate demo anchor only; zero elevation is a numerical assumption, not a survey"
+  },
+  "requested_outputs": {
+    "type": "gas_phase_volume_concentration",
+    "units": "ppm",
+    "height_m": 0.0,
+    "centerline_downwind_m": [
+      50,
+      100,
+      200,
+      500
+    ],
+    "time_basis": "retain exact model instantaneous/averaged/envelope definition; do not invent time-resolved output",
+    "diagnostic_contours_ppm": [
+      1000,
+      100,
+      10
+    ],
+    "threshold_authority": "none; numerical diagnostic levels only, not health/evacuation or flammability limits"
+  },
+  "omitted": [
+    "tank discharge",
+    "flash boiling",
+    "aerosol/dropout",
+    "source momentum",
+    "fire",
+    "explosion",
+    "fragments",
+    "terrain steering",
+    "indoor exposure",
+    "field validation"
+  ],
+  "gates": {
+    "installed_chemical_CAS_checked": false,
+    "source_temperature_and_phase_mapping_checked": false,
+    "reference_reproduction_passed": false,
+    "dashboard_adapter_enabled": false
+  },
+  "variations": [
+    {
+      "id": "rate-half",
+      "change": {
+        "rate_kg_s": 0.05
+      }
+    },
+    {
+      "id": "rate-double",
+      "change": {
+        "rate_kg_s": 0.2
+      }
+    },
+    {
+      "id": "wind-higher",
+      "change": {
+        "wind_speed_m_s": 4.0
+      }
+    }
+  ],
+  "variation_rules": "Check diagnostic sensitivity with matched settings; do not claim monotonicity for unsupported model branches. Wind changes are independent runs, not continuation of a prior cloud.",
+  "label": "Assumed research inputs; no calculation result yet; not field validated"
+}
