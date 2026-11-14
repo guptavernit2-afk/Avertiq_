@@ -30,7 +30,7 @@ async function readMutation(request: Request): Promise<{ expectedVersion: number
   return { expectedVersion: fields.expectedVersion, workspace: fields.workspace };
 }
 
-const response = (state: Incident) => Response.json({ incident: state, assessment: assessmentView(state) }, { headers: { 'Cache-Control': 'no-store' } });
+const response = (state: Incident, requestJobId?: string) => Response.json({ incident: state, assessment: assessmentView(state), ...(requestJobId ? { requestJobId } : {}) }, { headers: { 'Cache-Control': 'no-store' } });
 export function incidentApi(store: IncidentStore, clock = () => new Date().toISOString(), uuid = () => crypto.randomUUID()) {
   return async (request: Request): Promise<Response> => {
     try {
@@ -46,11 +46,26 @@ export function incidentApi(store: IncidentStore, clock = () => new Date().toISO
       }
       if (request.method === 'GET') return response(state);
       if (!body) throw new IncidentError('Missing mutation body.');
+      if (request.method === 'POST') {
+        const existing = state.jobs.find(job => job.requestedVersion === body.expectedVersion);
+        if (existing) return response(state, existing.id);
+      }
       if (body.expectedVersion !== state.version) throw new IncidentError('Another tab or request saved this incident. Reload before retrying; your draft remains visible.', 409);
       if (request.method === 'PUT') return response(await store.write(saveWorkspace(state, body.workspace, clock()), state.version));
       if (busy(state)) throw new IncidentError('An assessment is already in progress.', 409);
       const id = uuid();
-      state = await store.write(queueAssessment(state, id, clock()), state.version);
+      try {
+        state = await store.write(queueAssessment(state, id, clock()), state.version);
+      } catch (error) {
+        // Another process may have accepted this same version after our read.
+        // Only the CAS winner runs the adapter; the loser reads its persisted job.
+        if (error instanceof IncidentError && error.status === 409) {
+          const latest = await store.read();
+          const existing = latest.jobs.find(job => job.requestedVersion === body.expectedVersion);
+          if (existing) return response(latest, existing.id);
+        }
+        throw error;
+      }
       try {
         state = await store.write(transitionJob(state, id, 'running', clock()), state.version);
         const revision = state.revisions.find(r => r.id === state.currentRevisionId)!;
@@ -63,7 +78,7 @@ export function incidentApi(store: IncidentStore, clock = () => new Date().toISO
           state = await store.write(transitionJob(state, id, 'failed', clock()), state.version);
         } else throw error;
       }
-      return response(state);
+      return response(state, id);
     } catch (error) {
       const known = error instanceof IncidentError;
       return Response.json({ error: known ? error.message : 'Local incident database unavailable. Check that local migrations have been applied, then reload.' }, { status: known ? error.status : 503, headers: { 'Cache-Control': 'no-store' } });

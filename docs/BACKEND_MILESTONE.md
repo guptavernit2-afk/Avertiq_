@@ -42,3 +42,11 @@ The existing physics research is unchanged and disconnected. This milestone prov
 ## API boundary hardening — 14 November 2026
 
 Mutation bodies are streamed with a 256,000-byte UTF-8 limit before JSON parsing. Exact application/json media types (with optional parameters), JSON objects and positive safe-integer versions are required before database initialization or interrupted-job recovery. Invalid requests cannot trigger those writes. Invalid saved numeric drafts remain allowed but assessments return unsupported without geometry. Regression coverage now totals 15 passing tests; TypeScript also passes.
+
+## Assessment retries
+
+POST remains compatible with `{ expectedVersion }`: for this single-incident endpoint, one accepted assessment intent is identified by its starting incident version. Each new job persists `requestedVersion` atomically with queue creation. Repeating that version returns the original job ID in `requestJobId` and the latest incident/assessment view without executing the adapter again. A concurrent queue-write loser reads the winning job. Replays can observe queued/running status; callers can GET for completion. The current assessment view always describes current saved state, so a historical retry cannot restore stale geometry.
+
+A deliberate new assessment uses the latest incident version. Failed and unsupported jobs replay their saved status; retrying the calculation requires a new version-based intent. Old stored jobs without requestedVersion remain readable but cannot be retroactively deduplicated: stale requests still receive 409. No schema migration or in-memory retry cache is needed. Keys remain bounded by the existing 400-job history cap. This contract applies only to the current POST whose inputs come entirely from the saved revision; future configurable assessment payloads must extend the intent identity.
+
+CLI regression tests cover lost responses, concurrent duplicates, newer revisions, terminal failures/unsupported results and legacy jobs. Browser verification remains excluded by the user's no-computer-control instruction.

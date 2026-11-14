@@ -21,7 +21,7 @@ function connection(path = ':memory:') {
 }
 async function send(api: ReturnType<typeof incidentApi>, method = 'GET', body?: unknown) {
   const response = await api(new Request('http://127.0.0.1:5174/api/incident', { method, ...(body === undefined ? {} : { headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }) }));
-  return { code: response.status, data: await response.json() as { incident: Incident; assessment: ReturnType<typeof assessmentView>; error?: string } };
+  return { code: response.status, data: await response.json() as { incident: Incident; assessment: ReturnType<typeof assessmentView>; requestJobId?: string; error?: string } };
 }
 
 test('saved inputs and jobs survive a fresh database connection; A stays immutable after B', async () => {
@@ -148,5 +148,80 @@ test('request limit counts UTF-8 bytes and valid JSON parameters remain accepted
     assert.equal((await api(new Request('http://localhost/api/incident',{method:'POST',headers:{'Content-Type':'application/json'},body:oversized}))).status,413);
     assert.equal((sqlite.prepare('SELECT count(*) AS n FROM incidents').get() as {n:number}).n,0);
     assert.equal((await api(new Request('http://localhost/api/incident',{method:'POST',headers:{'Content-Type':'Application/JSON; charset=utf-8'},body:'{"expectedVersion":1}'}))).status,200);
+  } finally { sqlite.close(); }
+});
+
+
+test('lost-response retries reuse persisted jobs and preserve newer input revisions', async () => {
+  const {sqlite,store}=connection();
+  try {
+    let api=incidentApi(store);
+    const initial=(await send(api)).data.incident;
+    const first=await send(api,'POST',{expectedVersion:initial.version});
+    api=incidentApi(store); // fresh handler, no process-local retry cache
+    const retry=await send(api,'POST',{expectedVersion:initial.version});
+    assert.equal(retry.code,200);
+    assert.deepEqual(retry.data,first.data);
+    const saved=await send(api,'PUT',{expectedVersion:first.data.incident.version,workspace:loadPreset(first.data.incident.workspace,'B')});
+    const later=await send(api,'POST',{expectedVersion:initial.version});
+    assert.equal(later.code,200);
+    assert.equal(later.data.requestJobId,first.data.requestJobId);
+    assert.deepEqual(later.data.incident,saved.data.incident);
+    assert.equal(later.data.assessment.status,'stale');
+    assert.equal(later.data.assessment.geometry,null);
+    const newRun=await send(api,'POST',{expectedVersion:saved.data.incident.version});
+    assert.equal(newRun.data.incident.jobs.length,2);
+    assert.notEqual(newRun.data.requestJobId,first.data.requestJobId);
+  } finally { sqlite.close(); }
+});
+
+test('concurrent duplicate assessment requests run exactly one job', async () => {
+  const {sqlite,store}=connection();
+  try {
+    const api=incidentApi(store); const initial=(await send(api)).data.incident;
+    const results=await Promise.all(Array.from({length:8},()=>send(incidentApi(store),'POST',{expectedVersion:initial.version})));
+    assert.ok(results.every(r=>r.code===200));
+    assert.equal(new Set(results.map(r=>r.data.requestJobId)).size,1);
+    const state=await store.read();
+    assert.equal(state.jobs.length,1);
+    assert.equal(state.jobs[0].status,'completed');
+    assert.deepEqual(state.events.map(e=>e.type),['created','assessment-queued','assessment-running','assessment-completed']);
+    assert.equal(state.revisions.length,1);
+    assert.equal(state.version,4);
+  } finally { sqlite.close(); }
+});
+
+test('unsupported and failed assessment retries cannot start replacement jobs', async () => {
+  const {sqlite,store}=connection();
+  try {
+    const api=incidentApi(store); const initial=(await send(api)).data.incident;
+    const saved=await send(api,'PUT',{expectedVersion:initial.version,workspace:{...initial.workspace,inputs:{...PRESETS.A,chemical:'CNG'}}});
+    const unsupported=await send(api,'POST',{expectedVersion:saved.data.incident.version});
+    const retry=await send(api,'POST',{expectedVersion:saved.data.incident.version});
+    assert.deepEqual(retry.data,unsupported.data);
+    let state=await store.read(); const requestVersion=state.version;
+    const old=new Date(Date.now()-120000).toISOString();
+    state=await store.write(queueAssessment(state,'interrupted-retry',old),state.version);
+    const failed=await send(api,'POST',{expectedVersion:requestVersion});
+    assert.equal(failed.code,200);
+    assert.equal(failed.data.requestJobId,'interrupted-retry');
+    assert.equal(failed.data.assessment.status,'failed');
+    assert.equal(failed.data.assessment.geometry,null);
+    const again=await send(api,'POST',{expectedVersion:requestVersion});
+    assert.deepEqual(again.data,failed.data);
+    assert.equal(again.data.incident.jobs.length,2);
+  } finally { sqlite.close(); }
+});
+
+test('legacy jobs without request versions retain conflict protection', async () => {
+  const {sqlite,store}=connection();
+  try {
+    const api=incidentApi(store); const initial=(await send(api)).data.incident;
+    const first=await send(api,'POST',{expectedVersion:initial.version});
+    const legacy=structuredClone(first.data.incident);
+    delete legacy.jobs[0].requestedVersion;
+    await store.write(legacy,legacy.version);
+    assert.equal((await send(api,'POST',{expectedVersion:initial.version})).code,409);
+    assert.equal((await store.read()).jobs.length,1);
   } finally { sqlite.close(); }
 });

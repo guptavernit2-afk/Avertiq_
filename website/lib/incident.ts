@@ -4,6 +4,7 @@ export type SavedRevision = { id: string; inputs: Inputs; createdAt: string; evi
 export type Job = {
   id: string; revisionId: string; status: 'queued' | 'running' | 'completed' | 'unsupported' | 'failed';
   createdAt: string; updatedAt: string; reason: string; fixture: PresetId | null;
+  requestedVersion?: number; // Absent on historical jobs created before retry support.
   adapter: 'illustrative-fixture-v1'; calculated: false; evidence: 'illustrative';
 };
 export type IncidentEvent = { id: number; at: string; type: string; revisionId: string; jobId?: string; message: string };
@@ -67,7 +68,7 @@ export function queueAssessment(original: Incident, id: string, at: string): Inc
   if (busy(original)) throw new IncidentError('Assessment already in progress. Reload its status.', 409);
   if (original.jobs.length >= 400 || original.events.length >= 1800) throw new IncidentError('Demo assessment history is full. Export before continuing.', 409);
   const state = clone(original);
-  state.jobs.push({ id, revisionId: state.currentRevisionId, status: 'queued', createdAt: at, updatedAt: at, reason: 'Queued for the illustrative adapter; no physics engine connected.', fixture: null, adapter: 'illustrative-fixture-v1', calculated: false, evidence: 'illustrative' });
+  state.jobs.push({ id, requestedVersion: original.version, revisionId: state.currentRevisionId, status: 'queued', createdAt: at, updatedAt: at, reason: 'Queued for the illustrative adapter; no physics engine connected.', fixture: null, adapter: 'illustrative-fixture-v1', calculated: false, evidence: 'illustrative' });
   event(state, at, 'assessment-queued', 'Illustrative assessment queued.', id);
   return state;
 }
