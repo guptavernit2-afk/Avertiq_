@@ -2,6 +2,10 @@
 
 User authorized independent CLI-only backend work and daily scoped commits/pushes during exams. No computer control, browser automation, visible windows or ALOHA runs. Work stays in this chat. The user cancelled scheduling; no autonomous daily run is configured.
 
+## Completion status
+
+All six bounded tasks are complete as of 14 November 2026. Final verification: 34 application/backup tests, 6 qualification-tool tests, typecheck and build passed. See [handoff and remaining work](BACKEND_HANDOFF_2026-11-14.md). No daily schedule is active. Historical progress entries below describe each stage; their next-task notes are superseded by this completion status.
+
 ## Bounded order
 
 Aim for 3–4 bounded tasks per active workday, inspecting existing implementation first; prioritize tested completion over task counts. Skip already satisfied requirements; do not add features just to consume credits.
@@ -32,3 +36,5 @@ Keep D-001 single-incident scope. No agency authentication, multi-tenant deploym
 - Backup/restore milestone implemented: explicit inspect/backup/verify/restore CLI, read-only consistent incident snapshots, checksums/schema/domain checks, exclusive fresh restore destinations, Git exclusions and recovery guide. Disposable database tests cover round trip, WAL, API retry/continued work, interrupted recovery, corruption and CLI failures. No live database was used. Final verification and backend handoff are the remaining planned closeout.
 
 - Milestone verification: 34 tests passed, including six backup/restore test groups; TypeScript and production build passed. Git exclusions verified for backup files and restored SQLite files. No browser verification or live promotion performed.
+
+- Final closeout: repeated the agreed CLI checks, reviewed repository scope and corrected stale reference-run status. No computer control or live database use. Wider physics and later operational work remain explicitly open in the handoff.

@@ -64,3 +64,5 @@ Future calculation results must satisfy `../docs/ASSESSMENT_CONTRACT.md`; unsupp
 ## Local backup and restore
 
 Use the [backup/recovery guide](../docs/LOCAL_BACKUP_RESTORE.md) for `db:inspect`, `db:backup`, `db:verify` and `db:restore`. Restore creates a separately verified database and refuses existing/live destinations. Backups preserve the saved incident and history; dashboard handover JSON is not a restore file.
+
+Current completion and remaining work: [final backend handoff](../docs/BACKEND_HANDOFF_2026-11-14.md). The latest CLI suite has 34 tests; recent browser verification is pending the user's availability.

@@ -243,5 +243,10 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - User authorized the proposed propylene direct-source input sheet, model applicability review and documented reference reproduction before dashboard integration.
 - Freeze an assumed gas-only, ground-level, flat-open-country propylene case and a separate published propane unignited-leak software control. Record comparison tolerances before observing any output. Neither case reconstructs the historical accident.
 - Download/install the official EPA ALOHA 5.4.7 reference tool locally and record installer/runtime hashes. Bundled terms restrict DIPPR duplication; keep libraries and raw summaries in ignored local outputs.
-- The installed process has no usable exposed window. Required Windows-action confirmation was requested under the computer-use skill; actual reference and propylene runs remain pending. Do not convert source-reference expected values into observed results.
+- At the initial preparation checkpoint the process had no usable window. This was subsequently resolved with user-authorized launch on 11 November: the archived propane reference reproduced all four preregistered values. Propylene setup was unsaved and its calculation remains pending. See the qualification report; expected values must never substitute for observed results.
 - Add six passing evidence-tool tests and input arithmetic checks in [standalone qualification](../research/dispersion/README.md). These do not validate dispersion. Leave the dashboard/backend's illustrative adapter unchanged; see [applicability gates](research/FIRST_PHYSICS_QUALIFICATION.md).
+
+## 2026-11-14 - Local backend plan closeout
+
+- Completed the authorized validation, retry, recovery, export and local backup/restore work, followed by fresh CLI verification and a [mentor/developer handoff](BACKEND_HANDOFF_2026-11-14.md).
+- Preserve the single-incident illustrative scope. Browser acceptance and live restore promotion were not performed; physics qualification remains open. No computer-control tools or scheduled runs are authorized during this work.

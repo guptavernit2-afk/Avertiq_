@@ -1,6 +1,6 @@
 # Short roadmap
 
-Updated 11 November 2026. First interface and physical-model readiness have separate finish lines. The first D-001 dashboard and local incident backend are implemented; see the [backend milestone](BACKEND_MILESTONE.md). Physical model qualification remains open.
+Updated 14 November 2026. First interface and physical-model readiness have separate finish lines. The first D-001 dashboard and local incident backend are implemented; see the [backend milestone](BACKEND_MILESTONE.md). The six-item local backend hardening plan is complete with 34 passing application/backup tests; see the [final backend handoff](BACKEND_HANDOFF_2026-11-14.md). Physical model qualification remains open.
 
 The first [physics qualification package](research/FIRST_PHYSICS_QUALIFICATION.md) now contains frozen propylene/reference input sheets, an installed-model hash manifest and six passing qualification-tool tests. The propane software reference matches all four preregistered values; propylene calculations remain pending; no calculated dashboard layer is enabled.
 
@@ -13,7 +13,7 @@ Chemical transport and storage incident assessment for **LPG, CNG and reported p
 | Order / stream | Work | Evidence of completion |
 |---|---|---|
 | Research handoff | Completed bounded evidence/design review | [Handoff](research/RESEARCH_HANDOFF_2026-11-10.md), chemical/storage matrix, physics requirements, result contract and 33 additional source records with access limits |
-| First website and backend - implemented demo | D-001 inputs, map/context, observations, local database, revision/job/event history and handover | Labelled illustrative A/B assessments, saved immutable inputs, version conflict checks and unavailable-result suppression; no qualified physics |
+| First website and backend - implemented demo | D-001 inputs, map/context, observations, local database, revision/job/event history and handover | Labelled illustrative A/B assessments, saved immutable inputs, version conflict/retry checks, failure recovery, provenance exports and verified fresh-database restore; no qualified physics |
 | Chemical model selection | Audit a supported methane CNG-reference and propane LPG-surrogate workflow; review propylene property/source route separately | Version-specific validity, input sheet, reference reproduction, licence/dependencies and measured runtime; no assumed mixture support |
 | Dispersion qualification | Resolve existing numerical/model limitations or select a demonstrably applicable alternative | Source/grid/domain/time/boundary evidence; developed plume; suitable atmosphere and finite-width/crosswind treatment |
 | Experimental comparison | Compare EEC550 with frozen source/sampling rules | All declared receptors, matched gas basis/units/heights/averaging, discrepancy report and explicit unresolved assumptions |
