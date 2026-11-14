@@ -54,3 +54,7 @@ The [temperature/phase review](../../docs/research/PROPYLENE_SOURCE_STATE.md) in
 ## Direct Source treatment investigation
 
 The [source-treatment review](../../docs/research/ALOHA_DIRECT_SOURCE_REVIEW.md) distinguishes the documented prescribed-gas input subset from unresolved internal thermodynamics. `source-treatment-check` checks source semantics and normalized entries, retaining null effective state and false qualification flags. `inspect-run` includes this review separately from observed outputs. Eight new tests bring the package to 26; frozen cases and unrun templates are unchanged. Actual propylene results remain pending.
+
+## Local run evidence archives
+
+`archive.py archive-run` preserves a future completed observation and its raw evidence with frozen inputs and checking provenance. `verify-archive` checks integrity and reinspects when current provenance matches; changed tooling/configuration leaves reinspection pending. Use an independently retained archive SHA-256 for whole-file identity. See the [archive workflow](../../docs/research/PROPYLENE_EVIDENCE_ARCHIVE.md). Raw archives stay local and Git-ignored. Thirteen additional disposable synthetic tests bring the package to 39 passing tests; actual propylene results remain pending.

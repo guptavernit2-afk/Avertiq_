@@ -64,6 +64,8 @@ Record checks reject wrong case/chemical/engine, mismatched entered inputs, wron
 
 The resulting status is `record_consistent_applicability_review_pending`. Hashes prove file consistency, not authenticity or model suitability; manual transcription and free-text semantics require human review against raw output. Warnings and review notes are retained. Actual results, physical acceptance and the dashboard adapter are still pending. No ALOHA command-line/API route is claimed.
 
+After a future completed record passes inspection, the [local evidence archive workflow](PROPYLENE_EVIDENCE_ARCHIVE.md) can preserve the original record, raw files, frozen inputs and review provenance together. Archive verification does not close physical qualification gates.
+
 ## Follow-up state review
 
 The [independent source-state screen](PROPYLENE_SOURCE_STATE.md) supports the declared 25 C / one-atmosphere equilibrium gas assumption. It does not close ALOHA source-state applicability or identify the real release phase/temperature. Observed results and all model-acceptance gates remain pending.

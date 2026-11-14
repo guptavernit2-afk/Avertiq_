@@ -35,3 +35,6 @@ Thumbs.db
 *.sqlite-wal
 *.sqlite-shm
 *.sqlite-journal
+
+# Private model evidence archives (may contain licensed raw summaries)
+*.avertiq-evidence.zip

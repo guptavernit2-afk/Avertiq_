@@ -267,3 +267,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Record partial compatibility of the prescribed airborne-gas input contract; keep internal temperature, pressure, vapour fraction and enthalpy unknown. Do not infer these from storage conversion fields, warnings, mass totals or map polygons.
 - Reviewed the official mapping/weather and pass-file specifications without invoking ALOHA or its DLL. They do not establish a complete headless execution or source-state inspection route.
 - Add source-treatment checks and provenance to research reports, preserving frozen cases and all qualification gates. See [investigation and next evidence](research/ALOHA_DIRECT_SOURCE_REVIEW.md).
+
+## 2026-11-14 - Preserve future propylene run evidence locally
+
+- Add a private archive/verification CLI for the qualification plan's evidence-retention step. Preserve original observations and raw bytes with frozen inputs, inspection and review provenance; reject incomplete records and existing output paths.
+- Reinspect only when current case/configuration/checking-code provenance matches. Otherwise distinguish byte integrity from pending reinspection. All physics acceptance and dashboard gates remain closed.
+- Test only with disposable synthetic archives, including interrupted writes and changed evidence. Raw archives use an ignored suffix and remain local. See [workflow and limitations](research/PROPYLENE_EVIDENCE_ARCHIVE.md).
