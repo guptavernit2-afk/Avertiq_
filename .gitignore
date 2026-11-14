@@ -28,3 +28,10 @@ Thumbs.db
 
 # Python package/build metadata
 *.egg-info/
+
+# Local incident backups and disposable restored databases
+*.avertiq-backup.json
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal

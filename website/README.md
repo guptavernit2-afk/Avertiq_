@@ -60,3 +60,7 @@ External tiles require internet access and WebGL. Loading failures show an expli
 Authored application lives here in the Avertiq repository. `.openai/hosting.json` retains the private Site identity. Sites publication uses a separate sanitized release checkout under the parent repository's ignored `outputs/` directory, preserving the original GitHub origin. Never store source credentials in project files. Publish only an archive matching the exact synchronized source commit.
 
 Future calculation results must satisfy `../docs/ASSESSMENT_CONTRACT.md`; unsupported physics stays unavailable.
+
+## Local backup and restore
+
+Use the [backup/recovery guide](../docs/LOCAL_BACKUP_RESTORE.md) for `db:inspect`, `db:backup`, `db:verify` and `db:restore`. Restore creates a separately verified database and refuses existing/live destinations. Backups preserve the saved incident and history; dashboard handover JSON is not a restore file.

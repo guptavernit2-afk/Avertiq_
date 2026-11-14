@@ -28,3 +28,7 @@ Keep D-001 single-incident scope. No agency authentication, multi-tenant deploym
 - Recovery/storage task: consistent 60-second lease clock, bounded conflict reconciliation, and persisted-state checks after uncertain writes. Added SQLite fault-injection and recovery-race tests. Next task is export provenance and unavailable/stale-result consistency.
 
 - Export task completed: shared JSON/HTML builder, explicit revision/job/time/unit provenance, truthful unavailable and draft statuses, detached snapshots, and map capture identity checks. Regression suite now has 28 passing tests; typecheck and build pass. Next bounded task is local backup/restore with disposable-database verification.
+
+- Backup/restore milestone implemented: explicit inspect/backup/verify/restore CLI, read-only consistent incident snapshots, checksums/schema/domain checks, exclusive fresh restore destinations, Git exclusions and recovery guide. Disposable database tests cover round trip, WAL, API retry/continued work, interrupted recovery, corruption and CLI failures. No live database was used. Final verification and backend handoff are the remaining planned closeout.
+
+- Milestone verification: 34 tests passed, including six backup/restore test groups; TypeScript and production build passed. Git exclusions verified for backup files and restored SQLite files. No browser verification or live promotion performed.
