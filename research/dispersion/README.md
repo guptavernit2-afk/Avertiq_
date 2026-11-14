@@ -96,3 +96,7 @@ Seven new regression tests cover nested/escaped duplicates, numeric overflow/und
 ## Sensitivity comparison report
 
 The [planned sensitivity-report task](../../docs/research/PROPYLENE_SENSITIVITY_REPORT.md) extends `compare-runs` with frozen input differences, diagnostic contour-distance changes and explicit comparison blockers. Missing/bounded values preserve each side's reason and bound metadata; zero-baseline and unrepresentable ratios remain null with an explanation. All existing run/evidence/semantics checks still apply. Eight new synthetic tests bring the suite to 74 passing tests. Actual propylene runs and results remain pending.
+
+## Readable local review handoff
+
+After actual four-case observations exist, `review_handoff.py --runs-dir outputs/propylene --output outputs/propylene/review-handoff.html` rechecks them and exports a self-contained HTML handoff for local review. It preserves warnings, output units, comparison blockers, bound/missing values and unresolved qualification gates, with case/engine/evidence and checked-comparison hashes. It accepts no trusted prebuilt comparison file, embeds no raw evidence and refuses overwrites. See the [plan, workflow and limits](../../docs/research/PROPYLENE_REVIEW_HANDOFF.md). All 82 tests pass, including eight disposable synthetic handoff tests; actual physics results remain pending. No visual browser acceptance is claimed.
