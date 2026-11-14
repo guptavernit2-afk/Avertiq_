@@ -11,6 +11,7 @@ from qualify import ROOT, case_hash, check_input, read_json
 from source_state import screen_source_state
 from source_treatment import review_source_treatment
 from output_semantics import review_output_semantics, semantics_template
+from transcription import transcription_template, apply_transcription, review_transcription
 
 NAMES = ('baseline', 'rate-half', 'rate-double', 'wind-higher')
 SUITE = ROOT / 'cases/propylene-v2'
@@ -141,6 +142,8 @@ def inspect_run(case, observed, evidence_base):
         'declared_source_state_screen': screen_source_state(case),
         'source_treatment_review': review_source_treatment(case),
         'output_semantics_review': review_output_semantics(observed),
+        'unit_transcription_review': review_transcription(case, observed),
+        'raw_unit_transcription': observed.get('transcription'),
         'open_mapping_gates': case['mapping_pending'], 'propylene_qualified': False, 'field_validated': False,
         'dashboard_adapter_enabled': False, 'label': 'Observed record checked for consistency only; human applicability review still required',
     }
@@ -185,7 +188,7 @@ def compare_runs(runs_dir):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['prepare-check', 'template', 'inspect-run', 'compare-runs', 'source-state-check', 'source-treatment-check', 'output-semantics-template'])
+    parser.add_argument('command', choices=['prepare-check', 'template', 'inspect-run', 'compare-runs', 'source-state-check', 'source-treatment-check', 'output-semantics-template', 'transcription-template', 'normalize-run'])
     parser.add_argument('--case', choices=NAMES, default='baseline')
     parser.add_argument('--observed', type=Path)
     parser.add_argument('--runs-dir', type=Path)
@@ -193,6 +196,14 @@ def main():
     args = parser.parse_args()
     if args.command == 'prepare-check': result = preparation_report()
     elif args.command == 'output-semantics-template': result = semantics_template()
+    elif args.command == 'transcription-template': result = transcription_template(registered_case(args.case))
+    elif args.command == 'normalize-run':
+        if args.observed is None: parser.error('--observed is required')
+        case = registered_case(args.case)
+        result = apply_transcription(case, read_json(args.observed))
+        inspect_run(case, result, args.observed.parent)
+        # Relative evidence paths must still refer to the same raw files.
+        require(args.output.parent.resolve() == args.observed.parent.resolve(), 'Normalized run must stay beside the original observation and raw evidence')
     elif args.command == 'source-state-check': result = screen_source_state(registered_case(args.case))
     elif args.command == 'source-treatment-check': result = review_source_treatment(registered_case(args.case))
     elif args.command == 'compare-runs':
@@ -206,6 +217,7 @@ def main():
     with args.output.open('x', encoding='utf-8') as stream:
         json.dump(result, stream, indent=2, allow_nan=False)
         stream.write('\n')
-    print(f'Wrote {args.output}; {result.get("status", "unrun template")}')
+    status = 'normalized observation; applicability pending' if args.command == 'normalize-run' else result.get('status', 'unrun template')
+    print(f'Wrote {args.output}; {status}')
 
 if __name__ == '__main__': main()

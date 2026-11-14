@@ -56,6 +56,8 @@ All successful receipts retain `propylene_qualified`, `field_validated` and `das
 
 The [output-meaning supplement](PROPYLENE_OUTPUT_SEMANTICS.md) is retained with the observation, and its module/documentation are included in current provenance. Legacy records without it can still be archived; numeric comparisons remain withheld. Archives from earlier checking revisions are not silently upgraded.
 
+The optional [unit-transcription supplement](PROPYLENE_UNIT_TRANSCRIPTION.md) also survives archiving, including original numeric tokens, reporting qualifiers, evidence hashes and conversion details. Its conversion table and module are included in current provenance.
+
 ## Verification performed
 
 ```powershell

@@ -62,3 +62,7 @@ The [source-treatment review](../../docs/research/ALOHA_DIRECT_SOURCE_REVIEW.md)
 ## Structured output meaning
 
 The [output interpretation milestone](../../docs/research/PROPYLENE_OUTPUT_SEMANTICS.md) adds `output-semantics-template` and evidence-linked metadata for outdoor averaged maxima, the first-hour observation window, relative receptors and diagnostic contour meaning. Legacy observations remain inspectable, but numerical comparisons require consistent structured metadata; actual outputs and exact averaging remain pending. Archive provenance includes the new dependencies. Eight additional synthetic tests bring the package to 47 passing tests.
+
+## Raw units and reporting limits
+
+`transcription-template` prepares an unconfirmed supplement; `normalize-run` creates a separately checked observation from recorded units and evidence. Bounds remain null in scalar fields with their qualifier and limit retained; unsupported conversions are rejected. See the [unit-transcription workflow](../../docs/research/PROPYLENE_UNIT_TRANSCRIPTION.md). Inspection and archive provenance preserve the original tokens. Twelve additional synthetic tests bring the package to 59; actual propylene physics results remain pending.

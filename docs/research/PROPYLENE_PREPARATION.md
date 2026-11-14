@@ -66,6 +66,8 @@ The resulting status is `record_consistent_applicability_review_pending`. Hashes
 
 After a future completed record passes inspection, the [local evidence archive workflow](PROPYLENE_EVIDENCE_ARCHIVE.md) can preserve the original record, raw files, frozen inputs and review provenance together. Archive verification does not close physical qualification gates.
 
+For displayed units and reporting limits, use the [unit-transcription workflow](PROPYLENE_UNIT_TRANSCRIPTION.md). It preserves raw tokens and bounds while producing a separately checked normalized observation; it never converts a missing or bounded result into an exact scalar.
+
 ## Follow-up state review
 
 The [independent source-state screen](PROPYLENE_SOURCE_STATE.md) supports the declared 25 C / one-atmosphere equilibrium gas assumption. It does not close ALOHA source-state applicability or identify the real release phase/temperature. Observed results and all model-acceptance gates remain pending.

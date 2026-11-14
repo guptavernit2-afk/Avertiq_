@@ -1,0 +1,48 @@
+{
+  "id": "display-unit-conversions-v1",
+  "review_date": "2026-11-14",
+  "source_id": "SRC-102",
+  "url": "https://www.nist.gov/system/files/documents/2024/01/14/NIST%20HB%2044%202024%20Appendix%20C%20General%20Tables%20of%20Units%20of%20Measurement.pdf",
+  "scope": "Exact unit relationships for recorded scalar outputs; not physical model results or additional significant digits",
+  "quantities": {
+    "mass": {
+      "unit": "kg",
+      "factors": {
+        "kg": "1",
+        "g": "0.001",
+        "lb": "0.45359237"
+      }
+    },
+    "length": {
+      "unit": "m",
+      "factors": {
+        "m": "1",
+        "km": "1000",
+        "ft": "0.3048",
+        "yd": "0.9144",
+        "mi": "1609.344"
+      }
+    },
+    "time": {
+      "unit": "s",
+      "factors": {
+        "s": "1",
+        "min": "60",
+        "h": "3600"
+      }
+    },
+    "concentration": {
+      "unit": "ppm",
+      "factors": {
+        "ppm": "1"
+      }
+    }
+  },
+  "conventions": [
+    "International foot/yard/mile only; no US survey units",
+    "Avoirdupois pound only; no troy pound or unspecified tons",
+    "Gas-volume ppm identity only; no mass concentration, percent LEL or temperature/pressure-dependent conversion",
+    "reported means displayed scalar, not an exact physical measurement",
+    "Bounds and unavailable readings stay null in scalar comparison fields"
+  ]
+}

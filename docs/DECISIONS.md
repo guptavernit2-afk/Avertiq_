@@ -279,3 +279,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Review installed 5.4.7 output help and NOAA's concentration graph explanation. Adopt reported outdoor maxima of averaged concentrations over the first hour for this scalar receptor suite; keep exact averaging unresolved.
 - Add an unconfirmed structured supplement without modifying frozen case inputs or existing unrun observations. Withhold comparisons for legacy records without the supplement; reject incompatible or contradictory declared meanings.
 - Retain raw-evidence references and include semantics dependencies in archive provenance. No metadata check closes physical qualification or enables the dashboard. See [output interpretation and capture policy](research/PROPYLENE_OUTPUT_SEMANTICS.md).
+
+## 2026-11-14 - Preserve units and censoring in future output capture
+
+- Add explicit raw-unit transcription for source mass/duration, receptor ppm and contour distance; use attributed NIST conversion factors without guessing state-dependent concentration conversions.
+- Preserve reported bounds as bounds and null scalar values, with original tokens, reasons and evidence references. Require complete per-case transcription when supplied; retain a clearly labelled legacy path without raw-unit verification.
+- Normalize into a new file only after existing run checks pass. Preserve raw metadata in inspections and private archives; do not close physical qualification gates. See [capture workflow](research/PROPYLENE_UNIT_TRANSCRIPTION.md).

@@ -2,7 +2,7 @@
 
 Updated 14 November 2026. First interface and physical-model readiness have separate finish lines. The first D-001 dashboard and local incident backend are implemented; see the [backend milestone](BACKEND_MILESTONE.md). The six-item local backend hardening plan is complete with 34 passing application/backup tests; see the [final backend handoff](BACKEND_HANDOFF_2026-11-14.md). Physical model qualification remains open.
 
-The first [physics qualification package](research/FIRST_PHYSICS_QUALIFICATION.md) now contains frozen propylene/reference input sheets, an installed-model hash manifest and 47 passing qualification-tool tests. The [propylene preparation milestone](research/PROPYLENE_PREPARATION.md) adds four unrun v2 cases and guarded observed-record checks. The propane software reference matches all four preregistered values; propylene calculations remain pending; no calculated dashboard layer is enabled.
+The first [physics qualification package](research/FIRST_PHYSICS_QUALIFICATION.md) now contains frozen propylene/reference input sheets, an installed-model hash manifest and 59 passing qualification-tool tests. The [propylene preparation milestone](research/PROPYLENE_PREPARATION.md) adds four unrun v2 cases and guarded observed-record checks. The propane software reference matches all four preregistered values; propylene calculations remain pending; no calculated dashboard layer is enabled.
 
 ## Confirmed direction
 
@@ -38,3 +38,5 @@ The [ALOHA Direct Source investigation](research/ALOHA_DIRECT_SOURCE_REVIEW.md) 
 The [local evidence archive milestone](research/PROPYLENE_EVIDENCE_ARCHIVE.md) adds guarded capture and verification for future completed propylene records. Only disposable synthetic archives were tested; no actual propylene outputs or public physics adapter exist.
 
 The [output-meaning milestone](research/PROPYLENE_OUTPUT_SEMANTICS.md) distinguishes outdoor averaged maxima, first-hour observation windows and diagnostic threshold envelopes. Comparisons now require evidence-linked structured metadata; exact averaging and actual propylene outputs remain pending.
+
+The [unit-transcription milestone](research/PROPYLENE_UNIT_TRANSCRIPTION.md) adds checked output-unit conversions while preserving reporting bounds and unavailable values. It prepares evidence capture only; no propylene results have been generated.
