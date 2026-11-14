@@ -11,13 +11,39 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 
 
-def read_json(path: Path) -> dict:
+def parse_json(text: str) -> dict:
+    """Read an unambiguous object without silently replacing fields or numbers."""
     def bad_constant(value: str):
         raise ValueError(f"Non-finite JSON constant: {value}")
-    value = json.loads(path.read_text(encoding="utf-8"), parse_constant=bad_constant)
+
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"Duplicate JSON key: {key}")
+            result[key] = value
+        return result
+
+    def finite_float(token: str):
+        value = float(token)
+        if not math.isfinite(value):
+            raise ValueError(f"Non-finite JSON number: {token}")
+        # Examine the significand, not the exponent: literal zero is valid even
+        # with a large exponent, but a nonzero reading must never become zero.
+        significand = token.lower().split('e')[0]
+        if value == 0 and any(digit in '123456789' for digit in significand):
+            raise ValueError(f"JSON number underflow: {token}")
+        return value
+
+    value = json.loads(text, parse_constant=bad_constant,
+                       object_pairs_hook=unique_object, parse_float=finite_float)
     if not isinstance(value, dict):
         raise ValueError("Expected a JSON object")
     return value
+
+
+def read_json(path: Path) -> dict:
+    return parse_json(path.read_text(encoding="utf-8"))
 
 
 def case_hash(case: dict) -> str:

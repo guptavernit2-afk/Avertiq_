@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from propylene import NAMES, inspect_run, registered_case, require, utc
-from qualify import ROOT, case_hash, read_json
+from qualify import ROOT, case_hash, parse_json, read_json
 
 MAX_FILE_BYTES = 64 * 1024 * 1024
 MAX_ARCHIVE_BYTES = 256 * 1024 * 1024
@@ -32,17 +32,7 @@ def encode(value):
 
 
 def decode(data):
-    def invalid(value):
-        raise ValueError(f'Non-finite JSON: {value}')
-    def unique(pairs):
-        result = {}
-        for key, value in pairs:
-            require(key not in result, f'Duplicate JSON key: {key}')
-            result[key] = value
-        return result
-    value = json.loads(data.decode('utf-8'), parse_constant=invalid, object_pairs_hook=unique)
-    require(isinstance(value, dict), 'Expected a JSON object')
-    return value
+    return parse_json(data.decode('utf-8'))
 
 
 def bounded_read(path, limit=MAX_FILE_BYTES):

@@ -1,8 +1,8 @@
 # Short roadmap
 
-Updated 14 November 2026. First interface and physical-model readiness have separate finish lines. The first D-001 dashboard and local incident backend are implemented; see the [backend milestone](BACKEND_MILESTONE.md). The six-item local backend hardening plan is complete with 34 passing application/backup tests; see the [final backend handoff](BACKEND_HANDOFF_2026-11-14.md). Physical model qualification remains open.
+Updated 15 November 2026. First interface and physical-model readiness have separate finish lines. The first D-001 dashboard and local incident backend are implemented; see the [backend milestone](BACKEND_MILESTONE.md). The six-item local backend hardening plan is complete with 34 passing application/backup tests; see the [final backend handoff](BACKEND_HANDOFF_2026-11-14.md). Physical model qualification remains open.
 
-The first [physics qualification package](research/FIRST_PHYSICS_QUALIFICATION.md) now contains frozen propylene/reference input sheets, an installed-model hash manifest and 59 passing qualification-tool tests. The [propylene preparation milestone](research/PROPYLENE_PREPARATION.md) adds four unrun v2 cases and guarded observed-record checks. The propane software reference matches all four preregistered values; propylene calculations remain pending; no calculated dashboard layer is enabled.
+The first [physics qualification package](research/FIRST_PHYSICS_QUALIFICATION.md) now contains frozen propylene/reference input sheets, an installed-model hash manifest and 66 passing qualification-tool tests. The [propylene preparation milestone](research/PROPYLENE_PREPARATION.md) adds four unrun v2 cases and guarded observed-record checks. The propane software reference matches all four preregistered values; propylene calculations remain pending; no calculated dashboard layer is enabled.
 
 ## Confirmed direction
 
@@ -42,3 +42,5 @@ The [output-meaning milestone](research/PROPYLENE_OUTPUT_SEMANTICS.md) distingui
 The [unit-transcription milestone](research/PROPYLENE_UNIT_TRANSCRIPTION.md) adds checked output-unit conversions while preserving reporting bounds and unavailable values. It prepares evidence capture only; no propylene results have been generated.
 
 The [qualification-tool CI workflow](../.github/workflows/dispersion.yml) now checks the synthetic regression suite and preparation commands from fresh Windows/Linux checkouts on Python 3.11/3.13. This guards the existing evidence workflow while ALOHA is pending; a passing CI job does not supply physics results or close qualification gates.
+
+The [evidence JSON intake checks](../research/dispersion/README.md#unambiguous-evidence-json-intake) reject duplicate fields and numeric overflow/underflow before inspection, comparison or archiving. This closes demonstrated record-handling gaps while preserving all pending physics gates.

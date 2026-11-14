@@ -82,3 +82,13 @@ python -m unittest discover -s research/dispersion -p 'test_*.py' -v
 The input/preparation smoke commands are documented above; use fresh output filenames because they refuse overwrites. GitHub Actions results establish the remote platform/version checks separately from a local test pass.
 
 Local verification for this CI addition: all 59 tests passed on Python 3.13.6, then passed again in a disposable snapshot containing only tracked dispersion code and public qualification records. Both workflow smoke commands passed there, their model-execution/dashboard flags stayed false, and source bytes remained unchanged. Workflow YAML and changed documentation paths were also checked. Remote matrix outcomes are available in the workflow run history.
+
+## Unambiguous evidence JSON intake
+
+On 15 November 2026, file and archive readers were unified around one strict JSON-object parser. Duplicate keys are rejected at every nesting level, including equivalent escaped key names and repeated identical values. Previously the ordinary file reader silently kept the last occurrence, allowing an earlier synthetic-data flag or output value to be hidden. Archive decoding already rejected duplicates; both entry paths now apply the same policy.
+
+The parser also rejects non-finite numeric constants, exponent overflow (for example `1e309`) and nonzero numbers that would underflow to zero (for example `1e-999`). These are synthetic parser examples, not concentrations from ALOHA. Literal zero, null/unavailable values, finite representable numbers and ordinary free text remain supported. Normal floating-point rounding still applies; this is not arbitrary-precision measurement storage. Original displayed digits belong in the raw transcription supplement and evidence files.
+
+Rejected observations produce no inspection, normalization, comparison or new archive output. The input file is not repaired or modified automatically: resolve ambiguous fields against raw evidence and save a reviewed correction separately. Parsing only checks representation; it cannot authenticate an operator's claims or close scientific review gates.
+
+Seven new regression tests cover nested/escaped duplicates, numeric overflow/underflow, valid zero/null handling and the observation CLI entry points. The full suite passes 66 tests locally. Frozen cases, unrun templates and public preparation/reference records remain unchanged. Archive provenance already hashes the shared parser module; archives created with older tooling therefore retain the existing integrity-only/reinspection-pending behaviour when code provenance differs. Actual physics results remain pending.

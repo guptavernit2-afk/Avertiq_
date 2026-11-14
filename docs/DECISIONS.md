@@ -291,3 +291,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Add a dedicated CI workflow for dispersion tools and their public input/reference records, using fresh Windows/Linux checkouts with Python 3.11/3.13 and no third-party Python dependencies.
 - Run the full synthetic test suite plus input/preparation CLI smoke checks; check versioned records for unintended changes. Do not install or invoke ALOHA, fetch private evidence, upload synthetic evidence, deploy, or change physics gates.
 - This extends verification of the existing qualification preparation work. Local and remote test outcomes are software evidence only; actual propylene calculations and human applicability review remain pending. See the [tool workflow](../research/dispersion/README.md#automated-qualification-tool-checks).
+
+## 2026-11-15 - Reject ambiguous evidence records before inspection
+
+- Reproduce ordinary JSON intake accepting duplicate fields and rounding nonzero underflow to zero. Unify file/archive parsing and reject duplicates, non-finite values, overflow and underflow before a record can generate an inspection or comparison.
+- Keep source files, frozen inputs and historic public reports unchanged. Valid zero/null data remains supported; no automatic repair, physical inference or new qualification status is introduced.
+- Add seven synthetic regression tests, including CLI checks that rejected inputs create no output. All 66 qualification-tool tests pass locally. See [JSON intake policy](../research/dispersion/README.md#unambiguous-evidence-json-intake).
