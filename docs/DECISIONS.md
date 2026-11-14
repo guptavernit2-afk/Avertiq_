@@ -315,3 +315,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Commit the [reinspection plan](research/PROPYLENE_ARCHIVE_REINSPECTION.md) before implementation. Reuse verified archive contents and the current inspector to create a separate receipt after checking-code/configuration drift.
 - Preserve original archive bytes, report and provenance. Require current frozen-case identity; reject failed current checks, corrupt evidence, wrong independent hashes and existing output paths. Current record consistency cannot grant physics approval.
 - All 90 local qualification-tool tests pass, including eight synthetic reinspection tests. No actual archive/model run or dashboard result was created. Submit through PR and successful CI before merge.
+
+## 2026-11-15 - Prepare complete blank capture folders
+
+- Commit the [capture-folder plan](research/PROPYLENE_CAPTURE_FOLDER.md) before implementation. Assemble all four existing observation templates with unconfirmed semantics/transcription supplements, separate assumed case snapshots, empty evidence folders and a local capture guide.
+- Leave observed inputs, values, engine hash, method, run time, warnings and review fields unset; retain false run/qualification states. Validate before creating a new destination and write the initial setup manifest last. Never overwrite or merge into an existing or partial folder.
+- All 98 local qualification-tool tests pass, including eight disposable setup tests. No actual session, observations, ALOHA execution or physics results were created. Deliver through PR and successful CI before merge.

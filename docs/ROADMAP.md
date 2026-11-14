@@ -2,7 +2,7 @@
 
 Updated 15 November 2026. First interface and physical-model readiness have separate finish lines. The first D-001 dashboard and local incident backend are implemented; see the [backend milestone](BACKEND_MILESTONE.md). The six-item local backend hardening plan is complete with 34 passing application/backup tests; see the [final backend handoff](BACKEND_HANDOFF_2026-11-14.md). Physical model qualification remains open.
 
-The first [physics qualification package](research/FIRST_PHYSICS_QUALIFICATION.md) now contains frozen propylene/reference input sheets, an installed-model hash manifest and 90 passing qualification-tool tests. The [propylene preparation milestone](research/PROPYLENE_PREPARATION.md) adds four unrun v2 cases and guarded observed-record checks. The propane software reference matches all four preregistered values; propylene calculations remain pending; no calculated dashboard layer is enabled.
+The first [physics qualification package](research/FIRST_PHYSICS_QUALIFICATION.md) now contains frozen propylene/reference input sheets, an installed-model hash manifest and 98 passing qualification-tool tests. The [propylene preparation milestone](research/PROPYLENE_PREPARATION.md) adds four unrun v2 cases and guarded observed-record checks. The propane software reference matches all four preregistered values; propylene calculations remain pending; no calculated dashboard layer is enabled.
 
 ## Confirmed direction
 
@@ -50,3 +50,5 @@ The [sensitivity-report plan and contract](research/PROPYLENE_SENSITIVITY_REPORT
 The [local review-handoff plan and workflow](research/PROPYLENE_REVIEW_HANDOFF.md) adds a readable HTML export from rechecked four-case records, preserving warnings, withheld comparisons and pending gates. Only disposable synthetic exports have been tested; no actual propylene handoff or model results exist.
 
 The [explicit archive-reinspection workflow](research/PROPYLENE_ARCHIVE_REINSPECTION.md) can record current checks separately when archive provenance is older, preserving historical bytes and all physics gates. Only disposable synthetic archive/receipt tests have run.
+
+The [capture-folder plan and workflow](research/PROPYLENE_CAPTURE_FOLDER.md) assembles all four blank capture records with unconfirmed supplements, separate assumed-input snapshots and a local guide. Only disposable setup tests have run; actual model execution and observations remain pending.
