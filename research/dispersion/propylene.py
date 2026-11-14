@@ -155,33 +155,82 @@ def preparation_report():
         'arithmetic_only': check_input(case)['arithmetic_only'], 'open_mapping_gates': case['mapping_pending'],
     } for name, case in cases.items()], 'model_calculation_performed': False, 'propylene_qualified': False, 'dashboard_adapter_enabled': False}
 
+def comparison_blockers(baseline, variant):
+    blockers = []
+    if baseline['dispersion_method'] != variant['dispersion_method']:
+        blockers.append('dispersion_method_mismatch')
+    if case_hash(baseline['basis']) != case_hash(variant['basis']):
+        blockers.append('output_basis_mismatch')
+    first, second = (r['output_semantics_review'] for r in (baseline, variant))
+    for side, semantics in [('baseline', first), ('variant', second)]:
+        if not semantics['same_engine_comparison_eligible']:
+            blockers.append(f'{side}_output_semantics_missing')
+    if (first['same_engine_comparison_eligible'] and second['same_engine_comparison_eligible']
+            and first['comparison_signature'] != second['comparison_signature']):
+        blockers.append('output_semantics_mismatch')
+    return blockers
+
+
+def reporting_bound(report, target):
+    reading = report['unit_transcription_review'].get('conversions', {}).get(target)
+    if reading is None or reading['bound_value'] is None:
+        return None
+    return {key: reading[key] for key in ('relation', 'bound_value', 'unit')}
+
+
+def output_changes(baseline, variant, group, key, value_key, unit):
+    lookup = {row[key]: row for row in variant[group]}
+    changes = []
+    for point in baseline[group]:
+        other = lookup[point[key]]
+        a, b = point[value_key], other[value_key]
+        missing = ('baseline_and_variant_unavailable' if a is None and b is None else
+                   'baseline_unavailable' if a is None else 'variant_unavailable' if b is None else None)
+        difference = None if missing else b - a
+        difference_reason = missing
+        if difference is not None and not math.isfinite(difference):
+            difference, difference_reason = None, 'difference_outside_float_range'
+        ratio_reason = missing or ('zero_baseline' if a == 0 else None)
+        ratio = None if ratio_reason else b / a
+        if ratio is not None and (not math.isfinite(ratio) or ratio == 0 and b != 0):
+            ratio, ratio_reason = None, 'ratio_outside_float_range'
+        target = f"{'receptor' if group == 'receptors' else 'contour'}.{point[key]:g}.{value_key}"
+        changes.append({key: point[key], f'baseline_{unit}': a, f'variant_{unit}': b,
+                        f'difference_{unit}': difference, 'ratio': ratio,
+                        'difference_unavailable_reason': difference_reason,
+                        'ratio_unavailable_reason': ratio_reason,
+                        'baseline_unavailable_reason': point.get('unavailable_reason'),
+                        'variant_unavailable_reason': other.get('unavailable_reason'),
+                        'baseline_reporting_bound': reporting_bound(baseline, target),
+                        'variant_reporting_bound': reporting_bound(variant, target)})
+    return changes
+
+
 def compare_runs(runs_dir):
+    cases = {name: registered_case(name) for name in NAMES}
     reports = {}
     for name in NAMES:
         path = Path(runs_dir) / f'{name}.json'
-        reports[name] = inspect_run(registered_case(name), read_json(path), path.parent)
+        reports[name] = inspect_run(cases[name], read_json(path), path.parent)
     baseline = reports['baseline']
     comparisons = []
     for name in NAMES[1:]:
         report = reports[name]
-        base_semantics = baseline['output_semantics_review']
-        run_semantics = report['output_semantics_review']
-        comparable = (report['dispersion_method'] == baseline['dispersion_method']
-                      and case_hash(report['basis']) == case_hash(baseline['basis'])
-                      and base_semantics['same_engine_comparison_eligible']
-                      and run_semantics['same_engine_comparison_eligible']
-                      and base_semantics['comparison_signature'] == run_semantics['comparison_signature'])
-        changes = []
-        if comparable:
-            lookup = {r['downwind_m']: r for r in report['receptors']}
-            for point in baseline['receptors']:
-                a, b = point['value_ppm'], lookup[point['downwind_m']]['value_ppm']
-                changes.append({'downwind_m': point['downwind_m'], 'baseline_ppm': a, 'variant_ppm': b,
-                                'difference_ppm': None if a is None or b is None else b - a,
-                                'ratio': None if a in (None, 0) or b is None else b / a})
+        blockers = comparison_blockers(baseline, report)
+        comparable = not blockers
+        base_inputs, variant_inputs = cases['baseline']['model_inputs'], cases[name]['model_inputs']
+        units = {'rate_kg_s': 'kg/s', 'wind_m_s': 'm/s'}
+        changed_inputs = []
+        for field, value in base_inputs.items():
+            if value != variant_inputs[field]:
+                require(field in units, 'Sensitivity input change needs a reviewed unit mapping')
+                changed_inputs.append({'field': field, 'unit': units[field],
+                                       'baseline': value, 'variant': variant_inputs[field]})
         comparisons.append({'variant': name, 'comparable_basis': comparable,
+                            'changed_inputs': changed_inputs, 'comparison_blockers': blockers,
                             'reason': 'Matched method, basis and structured output meaning for same-engine diagnostics only; no monotonic trend assumed' if comparable else 'Method/basis differs or structured output meaning is missing; numerical comparison withheld',
-                            'receptor_changes': changes})
+                            'receptor_changes': output_changes(baseline, report, 'receptors', 'downwind_m', 'value_ppm', 'ppm') if comparable else [],
+                            'contour_changes': output_changes(baseline, report, 'contours', 'level_ppm', 'downwind_m', 'm') if comparable else []})
     return {'status': 'observed_records_compared_review_pending', 'runs': reports, 'comparisons': comparisons,
             'propylene_qualified': False, 'field_validated': False, 'dashboard_adapter_enabled': False}
 

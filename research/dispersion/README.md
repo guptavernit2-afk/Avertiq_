@@ -92,3 +92,7 @@ The parser also rejects non-finite numeric constants, exponent overflow (for exa
 Rejected observations produce no inspection, normalization, comparison or new archive output. The input file is not repaired or modified automatically: resolve ambiguous fields against raw evidence and save a reviewed correction separately. Parsing only checks representation; it cannot authenticate an operator's claims or close scientific review gates.
 
 Seven new regression tests cover nested/escaped duplicates, numeric overflow/underflow, valid zero/null handling and the observation CLI entry points. The full suite passes 66 tests locally. Frozen cases, unrun templates and public preparation/reference records remain unchanged. Archive provenance already hashes the shared parser module; archives created with older tooling therefore retain the existing integrity-only/reinspection-pending behaviour when code provenance differs. Actual physics results remain pending.
+
+## Sensitivity comparison report
+
+The [planned sensitivity-report task](../../docs/research/PROPYLENE_SENSITIVITY_REPORT.md) extends `compare-runs` with frozen input differences, diagnostic contour-distance changes and explicit comparison blockers. Missing/bounded values preserve each side's reason and bound metadata; zero-baseline and unrepresentable ratios remain null with an explanation. All existing run/evidence/semantics checks still apply. Eight new synthetic tests bring the suite to 74 passing tests. Actual propylene runs and results remain pending.

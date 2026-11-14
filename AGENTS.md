@@ -40,3 +40,7 @@ For documentation changes, check links, paths, CSV structure, scope consistency,
 User authorizes daily independent backend progress and scoped commits/pushes for six days. Follow docs/BACKEND_DAILY_PLAN.md. Use CLI only; no computer-use, native app control, browser automation or visible windows. Keep the existing physics qualification gates and demo labels. No deployments.
 
 Latest direction: work in this chat, no scheduled runs. User requested 3–4 meaningful tasks per active workday; do not fabricate completion or run outside an active session. Continue scoped CLI implementation, verification and pushes.
+
+## Plan and PR workflow (15 November 2026)
+
+The user now requires this workflow for further project work: first state and record a bounded task plan tied to the existing project milestones; then implement and test on a `codex/` feature branch, push it, open a pull request, review the diff and checks, and merge after successful verification. The user explicitly authorizes opening and merging the PR for the current task. Do not replace this sequence with a direct implementation push to main. Preserve the CLI-only and pending-physics boundaries above.

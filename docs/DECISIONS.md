@@ -297,3 +297,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 - Reproduce ordinary JSON intake accepting duplicate fields and rounding nonzero underflow to zero. Unify file/archive parsing and reject duplicates, non-finite values, overflow and underflow before a record can generate an inspection or comparison.
 - Keep source files, frozen inputs and historic public reports unchanged. Valid zero/null data remains supported; no automatic repair, physical inference or new qualification status is introduced.
 - Add seven synthetic regression tests, including CLI checks that rejected inputs create no output. All 66 qualification-tool tests pass locally. See [JSON intake policy](../research/dispersion/README.md#unambiguous-evidence-json-intake).
+
+## 2026-11-15 - Planned sensitivity report and PR delivery
+
+- Adopt the user's plan-first, feature-branch, test, PR and merge workflow for future project work; record it in AGENTS.md. Commit the [bounded task plan](research/PROPYLENE_SENSITIVITY_REPORT.md) before implementing its reporting work.
+- Complete the comparison preparation for qualification gates 5/6: changed frozen inputs with units, contour and receptor changes matched by identifiers, explicit compatibility blockers and preserved unavailable/bounded readings. Never derive a point estimate from a bound or claim a monotonic physical trend.
+- Pass 74 local synthetic qualification-tool tests. No actual ALOHA execution, physics acceptance, dashboard integration or deployment. Merge is contingent on PR diff review and successful CI.
