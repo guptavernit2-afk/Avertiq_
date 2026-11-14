@@ -1,0 +1,77 @@
+{
+  "id": "aloha-direct-source-treatment-v1",
+  "review_date": "2026-11-14",
+  "engine": "ALOHA",
+  "installed_version": "5.4.7",
+  "scope": "Documentation review of prescribed mass-rate Direct Source; no model execution or source-code inspection",
+  "installed_help_manifest": "mapping-evidence.json",
+  "findings": [
+    {
+      "id": "airborne_rate",
+      "source_id": "SRC-097",
+      "locator": "AlohaHelp/Source/DirectSource/Direct_Source.htm; Direct_Source_Inputs.htm",
+      "finding": "Rate means gas entering air, not liquid loss from a vessel. Direct bypasses source-strength estimation."
+    },
+    {
+      "id": "constant_duration",
+      "source_id": "SRC-097",
+      "locator": "AlohaHelp/Source/DirectSource/Direct_Source_Inputs.htm",
+      "finding": "Continuous source uses constant rate and duration in minutes. This review is restricted to greater than one and at most 60 minutes."
+    },
+    {
+      "id": "source_state",
+      "source_id": "SRC-097",
+      "locator": "AlohaHelp/Source/DirectSource/Direct_Source_Inputs.htm",
+      "finding": "Mass entry has no independent source temperature or pressure field. Volume-mode storage inputs are documented for volume-to-mass conversion; they do not establish dispersion source enthalpy."
+    },
+    {
+      "id": "phase_warning",
+      "source_id": "SRC-097",
+      "locator": "AlohaHelp/Source/DirectSource/Direct_Source.htm: Two-phase flow",
+      "finding": "Limited Direct inputs may not distinguish gas from two-phase release. Warning presence or absence is not a measured phase or flash fraction."
+    },
+    {
+      "id": "height",
+      "source_id": "SRC-097",
+      "locator": "AlohaHelp/Source/DirectSource/Direct_Source_Inputs.htm: Source Height",
+      "finding": "Heavy Gas uses ground-level source even if an entered elevated height is printed. Our zero-height case avoids this particular ambiguity."
+    },
+    {
+      "id": "energy_dependency",
+      "source_id": "SRC-062",
+      "locator": "5.4.4 technical documentation sections 4.4 and 4.4.3, printed pages 45 and 50-51",
+      "finding": "Heavy-gas formulation includes primary-source enthalpy and surface heat flux; ambient pressure is position/time independent and initial jet momentum is omitted. These passages do not specify the 5.4.7 mass-Direct source temperature, pressure value or vapour fraction."
+    },
+    {
+      "id": "interfaces",
+      "source_id": "SRC-099",
+      "locator": "Communicating with ALOHA, March 2009, sections 1-2 and appendices 1-2",
+      "finding": "Documents map/threat-point exchange and weather input. No source thermodynamic-state query or complete headless scenario-execution interface is established by these sections."
+    },
+    {
+      "id": "pass_files",
+      "source_id": "SRC-100",
+      "locator": "ALOHA Status Files and Pass Files, April 2007, pages 1-3",
+      "finding": "Documents zone drawing data, display text and receptor coordinates. No typed effective source temperature, pressure, enthalpy or aerosol fraction is specified."
+    }
+  ],
+  "unknown_effective_source_fields": [
+    "temperature_K",
+    "pressure_Pa",
+    "vapor_mass_fraction",
+    "specific_enthalpy_J_kg"
+  ],
+  "decision": "Retain frozen prescribed-gas cases for exploratory runs; source-state equivalence and physical qualification remain pending.",
+  "next_evidence": "Version-specific explanation of mass-unit Direct initialization and applicability, tied to the installed engine; then archived supervised runs and remaining mapping checks.",
+  "not_evidence_of_source_equivalence": [
+    "declared_equilibrium_screen",
+    "matching_air_temperature",
+    "matching_integrated_mass",
+    "volume_conversion_storage_fields",
+    "absence_of_two_phase_warning",
+    "Heavy Gas selection",
+    "propane_reference_reproduction",
+    "zone_polygon"
+  ],
+  "actual_propylene_results": "pending"
+}

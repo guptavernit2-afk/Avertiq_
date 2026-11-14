@@ -261,3 +261,9 @@ Record date, decision, reason, evidence, affected documents and any superseded d
 
 - Add an independent NIST-based screen for the declared pure propylene state without altering frozen inputs. Do not extrapolate the published low-temperature Antoine fit to ambient temperature.
 - Keep actual tanker discharge state and installed ALOHA source thermodynamics unresolved. Passing this screen never enables result acceptance or dashboard physics. See [state review](research/PROPYLENE_SOURCE_STATE.md).
+
+## 2026-11-14 - ALOHA Direct Source treatment investigation
+
+- Record partial compatibility of the prescribed airborne-gas input contract; keep internal temperature, pressure, vapour fraction and enthalpy unknown. Do not infer these from storage conversion fields, warnings, mass totals or map polygons.
+- Reviewed the official mapping/weather and pass-file specifications without invoking ALOHA or its DLL. They do not establish a complete headless execution or source-state inspection route.
+- Add source-treatment checks and provenance to research reports, preserving frozen cases and all qualification gates. See [investigation and next evidence](research/ALOHA_DIRECT_SOURCE_REVIEW.md).

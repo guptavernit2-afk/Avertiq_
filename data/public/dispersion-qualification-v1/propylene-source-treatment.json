@@ -1,0 +1,45 @@
+{
+  "case_id": "D-001-PHYS-002-baseline",
+  "case_sha256": "7f98707eea7569b8b43e17f8dac90bcb1b92c688b06b351a4b4dadb062ed4d24",
+  "review_id": "aloha-direct-source-treatment-v1",
+  "review_sha256": "f7a46d8be1be396b747adc8fc683cad413ab0cad6939653eb811c2b41b3404b0",
+  "help_manifest_sha256": "40234763a3d914b12d83b4ef4a41864f4088d2c37f44a1a20cbb2b5d4650ed9a",
+  "engine": {
+    "name": "ALOHA",
+    "version": "5.4.7"
+  },
+  "status": "documented_input_subset_matches_internal_state_pending",
+  "documented_input_subset_matches": true,
+  "checks": {
+    "prescribed_airborne_gas_rate": true,
+    "direct_continuous_entry": true,
+    "pure_propylene_identity": true,
+    "gas_only_without_droplets_declared": true,
+    "mass_rate_matches": true,
+    "continuous_duration_matches": true,
+    "ground_level_matches": true,
+    "no_jet_calculation_declared": true,
+    "declared_equilibrium_screen_supported": true
+  },
+  "conflicts": [],
+  "declared_source_state": {
+    "temperature_K": 298.15,
+    "pressure_Pa": 101325.0,
+    "phase": "gas_only",
+    "droplets": false
+  },
+  "effective_model_source_state": {
+    "temperature_K": null,
+    "pressure_Pa": null,
+    "vapor_mass_fraction": null,
+    "specific_enthalpy_J_kg": null
+  },
+  "effective_state_reason": "Not established for installed 5.4.7 mass-unit Direct Source by reviewed documentation; no values inferred from air or storage-conversion fields.",
+  "source_state_equivalence_established": false,
+  "tank_discharge_calculated": false,
+  "model_calculation_performed": false,
+  "propylene_qualified": false,
+  "field_validated": false,
+  "dashboard_adapter_enabled": false,
+  "label": "Source input contract review only; internal thermodynamics and actual propylene results pending"
+}

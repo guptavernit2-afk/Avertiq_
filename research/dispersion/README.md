@@ -50,3 +50,7 @@ The [preparation milestone](../../docs/research/PROPYLENE_PREPARATION.md) maps d
 ## Declared source-state review
 
 The [temperature/phase review](../../docs/research/PROPYLENE_SOURCE_STATE.md) independently supports the assumed equilibrium gas state, while retaining actual release and ALOHA internal-state gates. `source-state-check` adds a bounded property-based screen, with no extrapolated vapour pressure or model predictions. The package now has 18 passing tests. Frozen cases and observed templates are unchanged.
+
+## Direct Source treatment investigation
+
+The [source-treatment review](../../docs/research/ALOHA_DIRECT_SOURCE_REVIEW.md) distinguishes the documented prescribed-gas input subset from unresolved internal thermodynamics. `source-treatment-check` checks source semantics and normalized entries, retaining null effective state and false qualification flags. `inspect-run` includes this review separately from observed outputs. Eight new tests bring the package to 26; frozen cases and unrun templates are unchanged. Actual propylene results remain pending.

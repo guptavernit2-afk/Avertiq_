@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from qualify import ROOT, case_hash, check_input, read_json
 from source_state import screen_source_state
+from source_treatment import review_source_treatment
 
 NAMES = ('baseline', 'rate-half', 'rate-double', 'wind-higher')
 SUITE = ROOT / 'cases/propylene-v2'
@@ -137,6 +138,7 @@ def inspect_run(case, observed, evidence_base):
         'receptors': observed['receptors'], 'contours': observed['contours'], 'warnings': warnings,
         'operator_notes': observed['operator_notes'], 'mapping_review': observed['mapping_review'], 'evidence_files': files,
         'declared_source_state_screen': screen_source_state(case),
+        'source_treatment_review': review_source_treatment(case),
         'open_mapping_gates': case['mapping_pending'], 'propylene_qualified': False, 'field_validated': False,
         'dashboard_adapter_enabled': False, 'label': 'Observed record checked for consistency only; human applicability review still required',
     }
@@ -175,7 +177,7 @@ def compare_runs(runs_dir):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['prepare-check', 'template', 'inspect-run', 'compare-runs', 'source-state-check'])
+    parser.add_argument('command', choices=['prepare-check', 'template', 'inspect-run', 'compare-runs', 'source-state-check', 'source-treatment-check'])
     parser.add_argument('--case', choices=NAMES, default='baseline')
     parser.add_argument('--observed', type=Path)
     parser.add_argument('--runs-dir', type=Path)
@@ -183,6 +185,7 @@ def main():
     args = parser.parse_args()
     if args.command == 'prepare-check': result = preparation_report()
     elif args.command == 'source-state-check': result = screen_source_state(registered_case(args.case))
+    elif args.command == 'source-treatment-check': result = review_source_treatment(registered_case(args.case))
     elif args.command == 'compare-runs':
         if args.runs_dir is None: parser.error('--runs-dir is required')
         result = compare_runs(args.runs_dir)

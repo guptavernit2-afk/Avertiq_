@@ -57,6 +57,8 @@ class PropyleneTests(unittest.TestCase):
             self.assertFalse(result['field_validated'])
             self.assertFalse(result['dashboard_adapter_enabled'])
             self.assertTrue(result['open_mapping_gates'])
+            self.assertFalse(result['source_treatment_review']['source_state_equivalence_established'])
+            self.assertIsNone(result['source_treatment_review']['effective_model_source_state']['temperature_K'])
 
     def test_identity_units_missing_metadata_and_source_mismatch_rejected(self):
         with tempfile.TemporaryDirectory() as folder:

@@ -1,5 +1,7 @@
 # Propylene temperature and phase review
 
+Follow-up: the [Direct Source treatment investigation](ALOHA_DIRECT_SOURCE_REVIEW.md) confirms a partial input-contract match and reviews the documented data interfaces; internal source thermodynamics remain unresolved.
+
 14 November 2026. CLI-only review; no ALOHA execution. Frozen v1/v2 cases and unrun observed templates are unchanged.
 
 ## What the evidence resolves
