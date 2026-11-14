@@ -38,3 +38,5 @@ For documentation changes, check links, paths, CSV structure, scope consistency,
 ## Exam-period backend authorization (14 November 2026)
 
 User authorizes daily independent backend progress and scoped commits/pushes for six days. Follow docs/BACKEND_DAILY_PLAN.md. Use CLI only; no computer-use, native app control, browser automation or visible windows. Keep the existing physics qualification gates and demo labels. No deployments.
+
+Latest direction: work in this chat, no scheduled runs. User requested 3–4 meaningful tasks per active workday; do not fabricate completion or run outside an active session. Continue scoped CLI implementation, verification and pushes.

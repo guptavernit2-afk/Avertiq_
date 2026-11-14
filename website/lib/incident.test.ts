@@ -119,3 +119,34 @@ test('database errors stay unavailable; exports cannot leak a matching preset wi
     assert.ok(unavailable.data.error); assert.equal(unavailable.data.incident,undefined);
   } finally { sqlite.close(); }
 });
+
+test('invalid envelopes and media types do not initialize or recover state', async () => {
+  const {sqlite,store}=connection();
+  try {
+    const api=incidentApi(store);
+    for (const body of ['null','[]','42','"text"','{','{}','{"expectedVersion":"1"}']) {
+      assert.equal((await api(new Request('http://localhost/api/incident',{method:'POST',headers:{'Content-Type':'application/json'},body}))).status,400);
+    }
+    for (const type of ['text/plain','application/jsonp','text/application/json']) {
+      assert.equal((await api(new Request('http://localhost/api/incident',{method:'POST',headers:{'Content-Type':type},body:'{"expectedVersion":1}'}))).status,415);
+    }
+    assert.equal((sqlite.prepare('SELECT count(*) AS n FROM incidents').get() as {n:number}).n,0);
+    const old=new Date(Date.now()-120000).toISOString();
+    let state=await store.initialize(old);
+    state=await store.write(queueAssessment(state,'pending',old),state.version);
+    await api(new Request('http://localhost/api/incident',{method:'POST',headers:{'Content-Type':'application/json'},body:'{'}));
+    assert.deepEqual(await store.read(),state);
+  } finally { sqlite.close(); }
+});
+
+test('request limit counts UTF-8 bytes and valid JSON parameters remain accepted', async () => {
+  const {sqlite,store}=connection();
+  try {
+    const api=incidentApi(store);
+    const oversized=JSON.stringify({expectedVersion:1,padding:'\u0905'.repeat(90000)});
+    assert.ok(oversized.length<256000);
+    assert.equal((await api(new Request('http://localhost/api/incident',{method:'POST',headers:{'Content-Type':'application/json'},body:oversized}))).status,413);
+    assert.equal((sqlite.prepare('SELECT count(*) AS n FROM incidents').get() as {n:number}).n,0);
+    assert.equal((await api(new Request('http://localhost/api/incident',{method:'POST',headers:{'Content-Type':'Application/JSON; charset=utf-8'},body:'{"expectedVersion":1}'}))).status,200);
+  } finally { sqlite.close(); }
+});

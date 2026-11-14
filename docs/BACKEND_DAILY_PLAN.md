@@ -1,10 +1,10 @@
 # Daily backend plan: 14–20 November 2026
 
-User authorized independent CLI-only backend work and daily scoped commits/pushes during exams. No computer control, browser automation, visible windows or ALOHA runs. Local scheduled runs depend on the Codex app/machine being available; missed execution is not completed work.
+User authorized independent CLI-only backend work and daily scoped commits/pushes during exams. No computer control, browser automation, visible windows or ALOHA runs. Work stays in this chat. The user cancelled scheduling; no autonomous daily run is configured.
 
 ## Bounded order
 
-Complete at most one substantive item per daily run, inspecting existing implementation first. Skip already satisfied requirements; do not add features just to consume credits.
+Aim for 3–4 bounded tasks per active workday, inspecting existing implementation first; prioritize tested completion over task counts. Skip already satisfied requirements; do not add features just to consume credits.
 
 1. Audit incident API input boundaries: malformed bodies, numeric/unit bounds, unsupported chemicals, and forged calculated results. Fix demonstrated gaps with regression tests.
 2. Assess duplicate assessment submissions and version conflicts. Make retry behaviour deterministic without duplicate jobs or overwriting immutable input revisions; preserve existing API compatibility.
@@ -20,3 +20,5 @@ Keep D-001 single-incident scope. No agency authentication, multi-tenant deploym
 ## Progress
 
 - 14 November: reconciled qualification documentation with the archived successful propane software reference. Propylene setup was unsaved and remains pending. Frozen input sheets retain their original pre-run gates; the separate comparison report records subsequent evidence. Daily backend work scheduled for six runs; inspect this log on each run to avoid duplication.
+
+- 14 November follow-up: deleted the scheduled automation at user request. Completed first API boundary audit: streamed UTF-8 byte limit, exact JSON media-type and object/version validation, and rejection before storage initialization/recovery. Added two regression tests covering malformed envelopes, media types, multibyte limits and state preservation. Existing tests retain numeric/unsupported-input and forged-result protections. All 15 tests and typecheck pass. Browser checks intentionally omitted under user instruction.
